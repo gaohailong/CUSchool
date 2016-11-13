@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.sxau.cyschool.pojo.ImageEntity" table="image" schema="cyschool">
+        <id name="iId" column="i_id"/>
+        <property name="iLink" column="i_link"/>
+        <property name="iDes" column="i_des"/>
+        <property name="iHead" column="i_head"/>
+        <property name="iClick" column="i_click"/>
+        <property name="iPosition" column="i_position"/>
+    </class>
+</hibernate-mapping>

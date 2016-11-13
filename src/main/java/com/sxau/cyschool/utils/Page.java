@@ -8,7 +8,7 @@ import java.util.List;
 public class Page<T> {
     private List<T> rows;
     private long total;//总条数
-    private int pageNum;//
+    private int pageNum;//第几页
     private int offest;//第几条记录
     private int totalPage;//总页数
     private int limit;//显示条数

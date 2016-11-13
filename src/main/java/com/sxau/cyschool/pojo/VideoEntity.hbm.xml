@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.sxau.cyschool.pojo.VideoEntity" table="video" schema="cyschool">
+        <id name="vId" column="v_id"/>
+        <property name="vLink" column="v_link"/>
+        <property name="vType" column="v_type"/>
+        <property name="vDes" column="v_des"/>
+        <property name="vDate" column="v_date"/>
+        <property name="vRead" column="v_read"/>
+    </class>
+</hibernate-mapping>

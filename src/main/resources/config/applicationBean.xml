@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--扫描的包配置-->
+    <context:component-scan base-package="com.sxau.cyschool"/>
+    <!--hibernate配置-->
+    <bean id="baseHibernateDaoImpl" class="com.sxau.cyschool.dao.impl.BaseHibernateDaoImpl" abstract="true">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!--文章-->
+    <bean id="titleDao" class="com.sxau.cyschool.dao.impl.TitleDaoImpl" parent="baseHibernateDaoImpl"/>
+    <bean id="titleService" class="com.sxau.cyschool.service.impl.TitleServiceImpl">
+        <property name="titleDao" ref="titleDao"/>
+    </bean>
+    <bean id="title" class="com.sxau.cyschool.controller.TitleAction" scope="prototype">
+        <property name="titleService" ref="titleService"/>
+    </bean>
+</beans>

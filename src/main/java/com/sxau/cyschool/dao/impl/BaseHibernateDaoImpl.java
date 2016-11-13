@@ -20,6 +20,10 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         this.sessionFactory = sessionFactory;
     }
 
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
     public Serializable saveObject(T t) throws Exception {
         if (t != null) {
             throw new SystemException("传入参数为空");
