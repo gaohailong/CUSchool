@@ -66,6 +66,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
 
     //TODO 为何不直接使用delete sessionFactory.getCurrentSession().delete();
     public int deleteAll(Class<T> clazz) throws Exception {
+        //   sessionFactory.getCurrentSession().delete(clazz);
         if (clazz != null) {
             return sessionFactory.getCurrentSession().createQuery("delete " + clazz.getName()).executeUpdate();
         } else {
@@ -169,6 +170,20 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
             return this.queryObject(sql);
         } else {
             throw new SystemException("传入参数为空");
+        }
+    }
+
+    public List<T> findDataByCondition(String queryString, int page, int rows) throws Exception {
+        if (queryString != null) {
+            throw new SystemException("传入的参数为空！");
+        } else if (page < 0 || rows < 0) {
+            throw new SystemException("传入startIndex或limit不符合要求");
+        } else {
+            Query query = getSessionFactory().getCurrentSession().createQuery(queryString);
+            query.setFirstResult((page - 1) * rows);
+            query.setMaxResults(rows);
+            List<T> resultLists = query.list();
+            return resultLists;
         }
     }
 

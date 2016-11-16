@@ -135,6 +135,12 @@ public interface BaseHibernateDao<T> {
      */
     List<T> queryObjectByIds(Class<T> clazz, String[] ids) throws Exception;
 
+
+    /**
+     * 自己写的分页查询
+     */
+    List<T> findDataByCondition(String queryString, int page, int rows) throws Exception;
+
     /**
      * 分页查询
      *
@@ -197,4 +203,6 @@ public interface BaseHibernateDao<T> {
      * @throws Exception
      */
     int getInt(String sql, Object[] parameters) throws Exception;
+
+
 }

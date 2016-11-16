@@ -1,8 +1,7 @@
 package com.sxau.cyschool.dao.impl;
 
 import com.sxau.cyschool.dao.TitleDao;
-import com.sxau.cyschool.pojo.TitleEntity;
-import org.springframework.stereotype.Repository;
+import com.sxau.cyschool.pojo.Title;
 
 import java.util.List;
 import java.util.Map;
@@ -10,40 +9,63 @@ import java.util.Map;
 /**
  * Created by gaohailong on 2016/11/13.
  */
-public class TitleDaoImpl extends BaseHibernateDaoImpl<TitleEntity> implements TitleDao {
-    public void saveTitle(TitleEntity titleEntity) throws Exception {
-        this.saveObject(titleEntity);
+public class TitleDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDao {
+    public void saveTitle(Title Title) throws Exception {
+        this.saveObject(Title);
     }
 
     public void deleteTitleById(int id) throws Exception {
-        String sql = "delete from TitleEntity where id=" + id;
-        this.deleteObjectsByIds(TitleEntity.class, new String[]{String.valueOf(id)});
+        String sql = "delete from Title where id=" + id;
+        this.deleteObjectsByIds(Title.class, new String[]{String.valueOf(id)});
     }
 
-    public void updateTitle(TitleEntity titleEntity) throws Exception {
-        this.saveOrUpdateObject(titleEntity);
+    public void updateTitle(Title Title) throws Exception {
+        this.saveOrUpdateObject(Title);
     }
 
-    public TitleEntity findTitleById(int id) throws Exception {
-        TitleEntity titleEntity = this.loadObject(TitleEntity.class, id);
-        return titleEntity;
+    public Title findTitleById(int id) throws Exception {
+        Title Title = this.loadObject(Title.class, id);
+        return Title;
     }
 
-    public List<TitleEntity> queryTitle(int offset, int limit, Map<String, Object> paramMap) throws Exception {
-        StringBuffer hql = new StringBuffer("from TitleEntity t where 1= 1");
+    public List<Title> queryTitle(int offset, int limit, Map<String, Object> paramMap) throws Exception {
+        StringBuffer hql = new StringBuffer("from Title t where 1 = 1");
         if (paramMap.size() != 0) {
             hql.append("and (t.tName like :key or t.tRead like :key)");
         }
-        List<TitleEntity> titleEntities = this.findPageByQuery(hql.toString(), paramMap, offset, limit);
+        List<Title> titleEntities = this.findPageByQuery(hql.toString(), paramMap, offset, limit);
         return titleEntities;
     }
 
     public int queryTitleCount(Map<String, Object> paramMap) throws Exception {
-        StringBuffer hql = new StringBuffer("select count(*) from TitleEntity t where 1=1");
+        StringBuffer hql = new StringBuffer("select count(*) from Title t where 1=1");
         if (paramMap.size() != 0) {
             hql.append("and (t.tName like :key or t.tRead like :key)");
         }
         int count = this.getInt(hql.toString(), paramMap);
         return count;
     }
+
+    public List<Title> queryTitleByPageAndCondition(Title title, int page, int rows) throws Exception {
+        StringBuffer string = new StringBuffer("from Title t where 1 = 1 ");
+        if (title != null) {
+            if (title.getTName() != null) {
+                string.append("and t.TName like '%" + title.getTName() + "%'");
+            }
+        }
+        List<Title> titles = findDataByCondition(string.toString(), page, rows);
+        return titles;
+    }
+
+    public int queryTitleCondition(Title title) throws Exception {
+        StringBuffer stringBuffer = new StringBuffer("select count(*) from Title t where 1 =1 ");
+        if (title != null) {
+            if (title.getTName() != null) {
+                stringBuffer.append("and t.TName like '%" + title.getTName() + "%'");
+            }
+        }
+        return this.getInt(stringBuffer.toString());
+    }
+
+
 }

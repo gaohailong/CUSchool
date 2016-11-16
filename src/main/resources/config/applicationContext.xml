@@ -65,4 +65,21 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
     <!--添加注解功能-->
     <context:annotation-config/>
+
+    <!--hibernate配置-->
+    <bean id="baseHibernateDaoImpl" class="com.sxau.cyschool.dao.impl.BaseHibernateDaoImpl" abstract="true">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    <!--文章-->
+    <bean id="titleDao" class="com.sxau.cyschool.dao.impl.TitleDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="titleService" class="com.sxau.cyschool.service.impl.TitleServiceImpl">
+        <property name="titleDao" ref="titleDao"/>
+    </bean>
+
+    <bean id="titleAction" class="com.sxau.cyschool.controller.TitleAction" scope="prototype">
+        <property name="titleService" ref="titleService"/>
+    </bean>
 </beans>

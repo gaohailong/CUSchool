@@ -1,9 +1,10 @@
 package com.sxau.cyschool.service.impl;
 
 import com.sxau.cyschool.dao.TitleDao;
-import com.sxau.cyschool.pojo.TitleEntity;
+import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.TitleService;
 import com.sxau.cyschool.utils.Page;
+
 import java.util.Map;
 
 /**
@@ -17,36 +18,46 @@ public class TitleServiceImpl implements TitleService {
         this.titleDao.deleteTitleById(id);
     }
 
-    public TitleEntity findTitleById(int id) throws Exception {
+    public Title findTitleById(int id) throws Exception {
         return this.titleDao.findTitleById(id);
     }
 
-    public void updateTitle(TitleEntity titleEntity) throws Exception {
-        this.titleDao.updateTitle(titleEntity);
+    public void updateTitle(Title Title) throws Exception {
+        this.titleDao.updateTitle(Title);
     }
 
-    public void saveTitle(TitleEntity titleEntity) throws Exception {
-        this.titleDao.saveObject(titleEntity);
+    public void saveTitle(Title Title) throws Exception {
+        this.titleDao.saveObject(Title);
     }
 
-    public Page<TitleEntity> queryBook(int offset, int limit, Map<String, Object> pararmMap) throws Exception {
-        Page<TitleEntity> titleEntityPage = new Page<TitleEntity>();
-        titleEntityPage.setRows(titleDao.queryTitle(offset, limit, pararmMap));
+    public Page<Title> queryTitle(int offset, int limit, Map<String, Object> pararmMap) throws Exception {
+        Page<Title> titlePage = new Page<Title>();
+        titlePage.setRows(titleDao.queryTitle(offset, limit, pararmMap));
         int total = titleDao.queryTitleCount(pararmMap);
-        titleEntityPage.setTotal(total);
+        titlePage.setTotal(total);
         int totalPage = total / limit == 0 ? total / limit : total / limit + 1;
-        titleEntityPage.setTotalPage(totalPage);
+        titlePage.setTotalPage(totalPage);
         int pageNum = (offset / limit) + 1;
         if (pageNum < 1)
             pageNum = 1;
         if (pageNum > totalPage)
             pageNum = totalPage;
-        titleEntityPage.setPageNum(pageNum);
-        return titleEntityPage;
+        titlePage.setPageNum(pageNum);
+        return titlePage;
     }
 
-    public int queryBookCount(Map<String, Object> paramMap) throws Exception {
+    public int queryTitleCount(Map<String, Object> paramMap) throws Exception {
         return titleDao.queryTitleCount(paramMap);
+    }
+
+    public Page<Title> queryTitleByCondition(Title title, int page, int rows) throws Exception {
+        Page<Title> pagee = new Page<Title>();
+        pagee.setRows(titleDao.queryTitleByPageAndCondition(title, page, rows));
+        int totals = titleDao.queryTitleCondition(title);
+        pagee.setTotal(totals);
+        int totalPage = totals / rows == 0 ? totals / rows : totals / rows + 1;
+        pagee.setTotalPage(totalPage);
+        return pagee;
     }
 
     public TitleDao getTitleDao() {
