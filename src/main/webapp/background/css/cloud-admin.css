@@ -6406,6 +6406,20 @@ fieldset[disabled] .btn-yellow.active {
   color: #555555 !important;
   margin: 5px 0 0px;
 }
+
+.separator-three {
+  height: 1px;
+  border-bottom: 1px solid #FFFFFF !important;
+  border-top: 1px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+  margin: 10px 0 30px;
+}
+
+.separator-four {
+  height: 1px;
+  color: #555555 !important;
+  margin: 10px 0 30px;
+}
 /* Badges */
 .badge-green {
   background-color: #a8bc7b;

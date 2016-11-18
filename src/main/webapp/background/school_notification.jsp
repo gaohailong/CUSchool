@@ -32,6 +32,16 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" href="css/inbox.css">
     <!-- FONTS -->
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+    <!--ueditor-->
+    <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.config.js"></script>
+    <link href="<%=request.getContextPath()%>/ueditor/themes/default/css/ueditor.css" rel="stylesheet" type="text/css" />
+    <script src="<%=request.getContextPath()%>/ueditor/ueditor.all.js" type="text/javascript"></script>
+    <!-- 语言包文件(建议手动加载语言包，避免在ie下，因为加载语言失败导致编辑器加载失败) -->
+    <script language="javascript" src="<%=request.getContextPath()%>/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+    <!--title-js-->
+    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/title.js"></script>
+    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/jquery-2.0.3.min.js"></script>
 </head>
 <body>
 <!-- HEADER -->
@@ -496,8 +506,8 @@ To change this template use File | Settings | File Templates.
     <div id="main-content">
         <div class="container">
             <div class="row">
-                <div class="separator"></div>
-                <div class="col-md-12">
+                <div class="separator-four"></div>
+               <%-- <iv class="col-md-12">
                     <!-- BOX -->
                     <div class="box border inverse">
                         <div class="box-title">
@@ -558,6 +568,25 @@ To change this template use File | Settings | File Templates.
                         </div>
                     </div>
                     <!-- /BOX -->
+                </div>--%>
+                <div class="col-md-12">
+                    <div class="form-group" style="margin-bottom: 60px;">
+                        <label class="col-sm-1"></label>
+                        <label for="t-notification" class="col-sm-1 control-label">标题</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="t-notification" placeholder="">
+                        </div>
+                    </div>
+                    <script id="container" name="content" type="text/plain"></script>
+                    <script type="text/javascript">
+                        var editor = UE.getEditor('container')
+                        function getContentByUeditor() {
+                            return editor.getContent();
+                        }
+                        //addContentForEditorDoUpdate();
+                    </script>
+                    <div class="separator-two"></div>
+                    <button class="btn btn-block btn-primary" onclick="javascript:addNotification()">提交</button>
                 </div>
             </div>
         </div>

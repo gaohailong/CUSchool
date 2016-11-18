@@ -110,11 +110,11 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
     }
 
     public List<T> queryObject(String queryString) throws Exception {
-        if (queryString != null) {
-            List<T> lists = sessionFactory.getCurrentSession().createQuery(queryString).list();
-            return lists;
-        } else {
+        if (queryString == null) {
             throw new SystemException("传入的参数为空");
+        } else {
+            List<T> lists = sessionFactory.getCurrentSession().createSQLQuery(queryString).list();
+            return lists;
         }
     }
 
@@ -174,7 +174,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
     }
 
     public List<T> findDataByCondition(String queryString, int page, int rows) throws Exception {
-        if (queryString != null) {
+        if (queryString == null) {
             throw new SystemException("传入的参数为空！");
         } else if (page < 0 || rows < 0) {
             throw new SystemException("传入startIndex或limit不符合要求");

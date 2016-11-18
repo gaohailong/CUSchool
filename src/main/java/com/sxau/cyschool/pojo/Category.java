@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Category entity. @author MyEclipse Persistence Tools
+ * CategoryDao entity. @author MyEclipse Persistence Tools
  */
 
 public class Category implements java.io.Serializable {

@@ -22,6 +22,13 @@ public class Image implements java.io.Serializable {
 	public Image() {
 	}
 
+	/** minimal constructor */
+	public Image(Admin admin, String ILink, String IDes) {
+		this.admin = admin;
+		this.ILink = ILink;
+		this.IDes = IDes;
+	}
+
 	/** full constructor */
 	public Image(Admin admin, String ILink, String IDes, String IHead,
 			Integer IClick, Integer IPosition) {

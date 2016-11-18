@@ -6,9 +6,9 @@
 
 <struts>
 
-    <package name="default" extends="struts-default">
+    <package name="titleAction" extends="struts-default">
         <action name="*Title" class="titleAction" method="{1}">
-            <result name="queryByPage">/index.jsp</result>
+            <result name="findNotification">/background/school_notification.jsp</result>
         </action>
     </package>
 

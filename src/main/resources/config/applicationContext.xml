@@ -71,7 +71,6 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-
     <!--文章-->
     <bean id="titleDao" class="com.sxau.cyschool.dao.impl.TitleDaoImpl" parent="baseHibernateDaoImpl"/>
 
@@ -81,5 +80,12 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
     <bean id="titleAction" class="com.sxau.cyschool.controller.TitleAction" scope="prototype">
         <property name="titleService" ref="titleService"/>
+    </bean>
+
+    <!--分类-->
+    <bean id="categoryDao" class="com.sxau.cyschool.dao.impl.CategoryDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="categoryService" class="com.sxau.cyschool.service.impl.CategoryServiceImpl">
+        <property name="categoryDao" ref="categoryDao"/>
     </bean>
 </beans>

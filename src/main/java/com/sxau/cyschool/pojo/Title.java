@@ -29,14 +29,13 @@ public class Title implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Title(TitleId id, Category category, String TName, String TContent,
-			Integer TRead, Date TDate, Integer TLike) {
+			Integer TRead, Date TDate) {
 		this.id = id;
 		this.category = category;
 		this.TName = TName;
 		this.TContent = TContent;
 		this.TRead = TRead;
 		this.TDate = TDate;
-		this.TLike = TLike;
 	}
 
 	/** full constructor */

@@ -27,13 +27,15 @@ public class Admin implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Admin(String AName, String APhone) {
+	public Admin(String AName, String APhone, String APass) {
 		this.AName = AName;
 		this.APhone = APhone;
+		this.APass = APass;
 	}
 
-	public Admin(Integer AId, String AName, String APhone, Integer AGrade, String APass, Set images, Set videos, Set titles) {
-		this.AId = AId;
+	/** full constructor */
+	public Admin(String AName, String APhone, Integer AGrade, String APass,
+			Set images, Set videos, Set titles) {
 		this.AName = AName;
 		this.APhone = APhone;
 		this.AGrade = AGrade;
@@ -42,9 +44,6 @@ public class Admin implements java.io.Serializable {
 		this.videos = videos;
 		this.titles = titles;
 	}
-
-	/** full constructor */
-
 
 	// Property accessors
 
@@ -80,6 +79,14 @@ public class Admin implements java.io.Serializable {
 		this.AGrade = AGrade;
 	}
 
+	public String getAPass() {
+		return this.APass;
+	}
+
+	public void setAPass(String APass) {
+		this.APass = APass;
+	}
+
 	public Set getImages() {
 		return this.images;
 	}
@@ -104,11 +111,4 @@ public class Admin implements java.io.Serializable {
 		this.titles = titles;
 	}
 
-	public String getAPass() {
-		return APass;
-	}
-
-	public void setAPass(String APass) {
-		this.APass = APass;
-	}
 }

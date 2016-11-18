@@ -411,7 +411,7 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="findNotificationTitle"><span class="sub-menu-text">通知公告</span></a></li>
+                        <li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
                         <li><a class="" href="school_rotate_picture.html"><span class="sub-menu-text">首页轮播图</span></a>
                         </li>
                         <li><a class="" href="school_news.html"><span class="sub-menu-text">学校要闻</span></a></li>
