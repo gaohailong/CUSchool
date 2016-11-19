@@ -25,3 +25,26 @@ function addNotification() {
         });
     }
 }
+
+//格式化时间的操作
+function format(time) {
+    var date = new Date(time);
+    var year = date.getYear();
+    var month = date.getMonth();
+    var day = date.getDay();
+    var formatTime = date + year + day;
+    return formatTime
+}
+
+//激活当前页
+function pageActive() {
+
+}
+
+//确认删除文章
+function confirmDelete() {
+    if (confirm("确定要删除这篇文章吗？")) {
+        //TODO 无法跳转
+        location.href("deleteNotificationTitle.action");
+    }
+}

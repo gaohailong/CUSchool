@@ -9,6 +9,8 @@
     <package name="titleAction" extends="struts-default">
         <action name="*Title" class="titleAction" method="{1}">
             <result name="findNotification">/background/school_notification.jsp</result>
+            <result name="addNotification">/background/school_notification_add.jsp</result>
+            <result name="success">/background/success.jsp</result>
         </action>
     </package>
 

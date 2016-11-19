@@ -56,10 +56,11 @@ public class TitleServiceImpl implements TitleService {
         pagee.setRows(titleDao.queryTitleByPageAndCondition(title, page, rows));
         int totals = titleDao.queryTitleCondition(title);
         pagee.setTotal(totals);
-        int totalPage = totals / rows == 0 ? totals / rows : totals / rows + 1;
+        int totalPage = totals / rows == 0 ? totals / rows + 1 : totals / rows;
         pagee.setTotalPage(totalPage);
         return pagee;
     }
+
 
     public TitleDao getTitleDao() {
         return titleDao;

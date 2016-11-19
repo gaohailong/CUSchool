@@ -5,34 +5,37 @@ import com.sxau.cyschool.pojo.Category;
 import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.CategoryService;
 import com.sxau.cyschool.service.TitleService;
+import com.sxau.cyschool.utils.Page;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by gaohailong on 2016/11/13.
  */
 public class TitleAction extends ActionSupport {
+    //注入元素
     private TitleService titleService;
     private CategoryService categoryService;
-
-    private Title title;
-    //    private Page<Title> page;
-    private Integer nowPage;
+    //传输部分
     private String notificationHead;
     private String notificationContent;
-
-//    public String addTitle() {
-//        HttpServletRequest request = this.getRequest();
-//        Title titleEntity = new Title();
-//        return null;
-//    }
+    private List<Title> titleList;
+    private Title title;
+    private Integer nowPage;
+    private int totalPage;
+    //变量
+    private Page<Title> page;
 
     //查找通知
     public String findNotification() throws Exception {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
-//        page = titleService.queryTitleByCondition(title, page.getPageNum(), 10);
+        page = titleService.queryTitleByCondition(title, nowPage, 10);
+        titleList = page.getRows();
+//        nowPage = page.getPageNum();
+        totalPage = page.getTotalPage();
         return "findNotification";
     }
 
@@ -46,24 +49,12 @@ public class TitleAction extends ActionSupport {
         Category category = categoryService.getCategoryByName("通知公告");
         title.setCategory(category);
         titleService.saveTitle(title);
-
         return null;
     }
 
-//    public Page<Title> getPage() {
-//        return page;
-//    }
-
-//    public void setPage(Page<Title> page) {
-//        this.page = page;
-//    }
-
-    public Title getTitle() {
-        return title;
-    }
-
-    public void setTitle(Title title) {
-        this.title = title;
+    public String deleteNotification() throws Exception {
+        System.out.print("=====");
+        return SUCCESS;
     }
 
     public TitleService getTitleService() {
@@ -74,12 +65,12 @@ public class TitleAction extends ActionSupport {
         this.titleService = titleService;
     }
 
-    public Integer getNowPage() {
-        return nowPage;
+    public CategoryService getCategoryService() {
+        return categoryService;
     }
 
-    public void setNowPage(Integer nowPage) {
-        this.nowPage = nowPage;
+    public void setCategoryService(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 
     public String getNotificationHead() {
@@ -98,11 +89,35 @@ public class TitleAction extends ActionSupport {
         this.notificationContent = notificationContent;
     }
 
-    public CategoryService getCategoryService() {
-        return categoryService;
+    public List<Title> getTitleList() {
+        return titleList;
     }
 
-    public void setCategoryService(CategoryService categoryService) {
-        this.categoryService = categoryService;
+    public void setTitleList(List<Title> titleList) {
+        this.titleList = titleList;
+    }
+
+    public Title getTitle() {
+        return title;
+    }
+
+    public void setTitle(Title title) {
+        this.title = title;
+    }
+
+    public Integer getNowPage() {
+        return nowPage;
+    }
+
+    public void setNowPage(Integer nowPage) {
+        this.nowPage = nowPage;
+    }
+
+    public int getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(int totalPage) {
+        this.totalPage = totalPage;
     }
 }

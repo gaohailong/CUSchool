@@ -421,7 +421,7 @@ To change this template use File | Settings | File Templates.
                     </ul>
                 </li>
                 <li class="has-sub">
-                    <a  href="javascript:;" class="">
+                    <a href="javascript:;" class="">
                         <i class="fa fa-th-large fa-fw"></i> <span class="menu-text">学校概况</span>
                         <span class="arrow"></span>
                     </a>

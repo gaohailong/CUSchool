@@ -40,7 +40,7 @@ public class TitleDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDa
     public int queryTitleCount(Map<String, Object> paramMap) throws Exception {
         StringBuffer hql = new StringBuffer("select count(*) from Title t where 1=1");
         if (paramMap.size() != 0) {
-            hql.append("and (t.tName like :key or t.tRead like :key)");
+            hql.append("and (t.tName like :key)");
         }
         int count = this.getInt(hql.toString(), paramMap);
         return count;
@@ -53,19 +53,19 @@ public class TitleDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDa
                 string.append("and t.TName like '%" + title.getTName() + "%'");
             }
         }
+        string.append("and t.category.CContent='通知公告'");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
 
     public int queryTitleCondition(Title title) throws Exception {
-        StringBuffer stringBuffer = new StringBuffer("select count(*) from Title t where 1 =1 ");
+        StringBuffer stringBuffer = new StringBuffer("select count(*) from Title t where 1 = 1 ");
         if (title != null) {
             if (title.getTName() != null) {
                 stringBuffer.append("and t.TName like '%" + title.getTName() + "%'");
             }
         }
+        stringBuffer.append("and t.category.CContent='通知公告'");
         return this.getInt(stringBuffer.toString());
     }
-
-
 }
