@@ -9,7 +9,6 @@ public class Image implements java.io.Serializable {
 	// Fields
 
 	private Integer IId;
-	private Admin admin;
 	private String ILink;
 	private String IDes;
 	private String IHead;
@@ -23,16 +22,14 @@ public class Image implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Image(Admin admin, String ILink, String IDes) {
-		this.admin = admin;
+	public Image(String ILink, String IDes) {
 		this.ILink = ILink;
 		this.IDes = IDes;
 	}
 
 	/** full constructor */
-	public Image(Admin admin, String ILink, String IDes, String IHead,
-			Integer IClick, Integer IPosition) {
-		this.admin = admin;
+	public Image(String ILink, String IDes, String IHead, Integer IClick,
+			Integer IPosition) {
 		this.ILink = ILink;
 		this.IDes = IDes;
 		this.IHead = IHead;
@@ -48,14 +45,6 @@ public class Image implements java.io.Serializable {
 
 	public void setIId(Integer IId) {
 		this.IId = IId;
-	}
-
-	public Admin getAdmin() {
-		return this.admin;
-	}
-
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
 	}
 
 	public String getILink() {

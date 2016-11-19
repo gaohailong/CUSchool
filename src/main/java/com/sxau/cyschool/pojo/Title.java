@@ -10,7 +10,7 @@ public class Title implements java.io.Serializable {
 
 	// Fields
 
-	private TitleId id;
+	private Integer TId;
 	private Category category;
 	private String TName;
 	private String TContent;
@@ -28,9 +28,8 @@ public class Title implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Title(TitleId id, Category category, String TName, String TContent,
+	public Title(Category category, String TName, String TContent,
 			Integer TRead, Date TDate) {
-		this.id = id;
 		this.category = category;
 		this.TName = TName;
 		this.TContent = TContent;
@@ -39,10 +38,9 @@ public class Title implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Title(TitleId id, Category category, String TName, String TContent,
+	public Title(Category category, String TName, String TContent,
 			Integer TRead, Date TDate, Integer TLike, Integer TSort,
 			String TImage, String TShortDes) {
-		this.id = id;
 		this.category = category;
 		this.TName = TName;
 		this.TContent = TContent;
@@ -56,12 +54,12 @@ public class Title implements java.io.Serializable {
 
 	// Property accessors
 
-	public TitleId getId() {
-		return this.id;
+	public Integer getTId() {
+		return this.TId;
 	}
 
-	public void setId(TitleId id) {
-		this.id = id;
+	public void setTId(Integer TId) {
+		this.TId = TId;
 	}
 
 	public Category getCategory() {

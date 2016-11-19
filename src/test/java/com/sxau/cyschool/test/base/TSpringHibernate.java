@@ -1,5 +1,6 @@
 package com.sxau.cyschool.test.base;
 
+import com.sxau.cyschool.service.CategoryService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,9 +14,11 @@ import java.sql.SQLException;
  */
 public class TSpringHibernate {
     private ApplicationContext ctx = null;
+//    private CategoryService categoryService = null;
 
     {
         ctx = new ClassPathXmlApplicationContext("config/applicationContext.xml");
+//        ctx.getBean(CategoryService.class);
     }
 
     @Test

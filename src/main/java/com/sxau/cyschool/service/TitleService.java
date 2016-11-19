@@ -29,18 +29,18 @@ public interface TitleService {
     /**
      * 更新一篇文章
      *
-     * @param Title
+     * @param title
      * @throws Exception
      */
-    void updateTitle(Title Title) throws Exception;
+    void updateTitle(Title title) throws Exception;
 
     /**
      * 保存书籍
      *
-     * @param Title
+     * @param title
      * @throws Exception
      */
-    void saveTitle(Title Title) throws Exception;
+    void saveTitle(Title title) throws Exception;
 
     /**
      * 分页查询

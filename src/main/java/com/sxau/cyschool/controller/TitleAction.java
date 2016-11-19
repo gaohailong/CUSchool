@@ -5,9 +5,7 @@ import com.sxau.cyschool.pojo.Category;
 import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.CategoryService;
 import com.sxau.cyschool.service.TitleService;
-import com.sxau.cyschool.utils.Page;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
@@ -18,7 +16,7 @@ public class TitleAction extends ActionSupport {
     private CategoryService categoryService;
 
     private Title title;
-//    private Page<Title> page;
+    //    private Page<Title> page;
     private Integer nowPage;
     private String notificationHead;
     private String notificationContent;
@@ -45,11 +43,10 @@ public class TitleAction extends ActionSupport {
         title.setTContent(notificationContent);
         title.setTName(notificationHead);
         title.setTDate(new Date());
-        //todo 数据库乱码导致无法查询中文，待更改
-//        Category category = categoryService.getCategoryByName("通知公告");
-        Category category = categoryService.getCategoryByName("test");
+        Category category = categoryService.getCategoryByName("通知公告");
         title.setCategory(category);
         titleService.saveTitle(title);
+
         return null;
     }
 

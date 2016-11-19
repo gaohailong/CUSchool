@@ -12,10 +12,10 @@ public interface TitleDao extends BaseHibernateDao<Title> {
     /**
      * 保存一个实体
      *
-     * @param Title
+     * @param title
      * @throws Exception
      */
-    void saveTitle(Title Title) throws Exception;
+    void saveTitle(Title title) throws Exception;
 
     /**
      * 删除一个实体

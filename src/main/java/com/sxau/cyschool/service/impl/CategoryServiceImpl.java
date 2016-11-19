@@ -4,6 +4,8 @@ import com.sxau.cyschool.dao.CategoryDao;
 import com.sxau.cyschool.pojo.Category;
 import com.sxau.cyschool.service.CategoryService;
 
+import java.util.List;
+
 /**
  * Created by gaohailong on 2016/11/18.
  */
@@ -12,7 +14,9 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao;
 
     public Category getCategoryByName(String name) throws Exception {
-        return categoryDao.getCategoryByName(name);
+        List<Category> categories = categoryDao.getSingleCategoryByName(name);
+//        System.out.print("过程第二步");
+        return categories.get(0);
     }
 
     public CategoryDao getCategoryDao() {

@@ -2,6 +2,8 @@ package com.sxau.cyschool.dao;
 
 import com.sxau.cyschool.pojo.Category;
 
+import java.util.List;
+
 /**
  * Created by gaohailong on 2016/11/18.
  */
@@ -12,5 +14,5 @@ public interface CategoryDao {
      * @return
      * @throws Exception
      */
-     Category getCategoryByName(String categoryName) throws Exception;
+     List<Category> getSingleCategoryByName(String categoryName) throws Exception;
 }

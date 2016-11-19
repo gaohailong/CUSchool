@@ -22,12 +22,13 @@ public class TitleServiceImpl implements TitleService {
         return this.titleDao.findTitleById(id);
     }
 
-    public void updateTitle(Title Title) throws Exception {
-        this.titleDao.updateTitle(Title);
+    public void updateTitle(Title title) throws Exception {
+        this.titleDao.updateTitle(title);
     }
 
-    public void saveTitle(Title Title) throws Exception {
-        this.titleDao.saveObject(Title);
+    public void saveTitle(Title title) throws Exception {
+        this.titleDao.saveTitle(title);
+//        System.out.print(titleDao.queryTitleCondition(null));
     }
 
     public Page<Title> queryTitle(int offset, int limit, Map<String, Object> pararmMap) throws Exception {

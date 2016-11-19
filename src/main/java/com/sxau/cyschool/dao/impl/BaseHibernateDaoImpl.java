@@ -1,8 +1,10 @@
 package com.sxau.cyschool.dao.impl;
 
+import com.mchange.v2.c3p0.DataSources;
 import com.sxau.cyschool.dao.BaseHibernateDao;
 import com.sxau.cyschool.exception.SystemException;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.io.Serializable;
@@ -16,16 +18,12 @@ import java.util.Map;
 public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
     private SessionFactory sessionFactory;
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
+    private Session getSession() {
+        return sessionFactory.getCurrentSession();
     }
 
     public Serializable saveObject(T t) throws Exception {
-        if (t != null) {
+        if (t == null) {
             throw new SystemException("传入参数为空");
         } else {
             return sessionFactory.getCurrentSession().save(t);
@@ -33,7 +31,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
     }
 
     public void saveOrUpdateObject(T t) throws Exception {
-        if (t != null) {
+        if (t == null) {
             throw new SystemException("传入的参数为空");
         } else {
             sessionFactory.getCurrentSession().saveOrUpdate(t);
@@ -41,7 +39,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
     }
 
     public void deleteObject(T t) throws Exception {
-        if (t != null) {
+        if (t == null) {
             throw new SystemException("传入的参数为空");
         } else {
             sessionFactory.getCurrentSession().delete(t);
@@ -113,8 +111,18 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         if (queryString == null) {
             throw new SystemException("传入的参数为空");
         } else {
-            List<T> lists = sessionFactory.getCurrentSession().createSQLQuery(queryString).list();
+//            System.out.print(sessionFactory);
+            List<T> lists = getSession().createQuery(queryString).list();
             return lists;
+        }
+    }
+
+    public List<T> querySingleObject(String queryString, String name) throws Exception {
+        if (queryString == null) {
+            throw new SystemException("传入的参数为空");
+        } else {
+            List<T> object = getSession().createQuery(queryString).setString(0, name).list();
+            return object;
         }
     }
 
@@ -205,7 +213,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         if (conditionMap != null) {
             return this.findPageByQuery(queryString, startIndex, endIndex);
         } else {
-            if (queryString != null) {
+            if (queryString == null) {
                 throw new SystemException("传入参数为空");
             } else if (startIndex < 0 || endIndex < 0) {
                 throw new SystemException("传入startIndex或limit不符合要求");
@@ -297,5 +305,14 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
                 throw new SystemException("传入的sql语句不符合条件：能够返回一个能转化为整形的值");
             }
         }
+    }
+
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
     }
 }

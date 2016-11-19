@@ -11,7 +11,6 @@ public class Video implements java.io.Serializable {
 	// Fields
 
 	private Integer VId;
-	private Admin admin;
 	private String VLink;
 	private String VType;
 	private String VDes;
@@ -25,9 +24,7 @@ public class Video implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Video(Admin admin, String VLink, String VDes, Date VDate,
-			Integer VRead) {
-		this.admin = admin;
+	public Video(String VLink, String VDes, Date VDate, Integer VRead) {
 		this.VLink = VLink;
 		this.VDes = VDes;
 		this.VDate = VDate;
@@ -35,9 +32,8 @@ public class Video implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Video(Admin admin, String VLink, String VType, String VDes,
-			Date VDate, Integer VRead) {
-		this.admin = admin;
+	public Video(String VLink, String VType, String VDes, Date VDate,
+			Integer VRead) {
 		this.VLink = VLink;
 		this.VType = VType;
 		this.VDes = VDes;
@@ -53,14 +49,6 @@ public class Video implements java.io.Serializable {
 
 	public void setVId(Integer VId) {
 		this.VId = VId;
-	}
-
-	public Admin getAdmin() {
-		return this.admin;
-	}
-
-	public void setAdmin(Admin admin) {
-		this.admin = admin;
 	}
 
 	public String getVLink() {

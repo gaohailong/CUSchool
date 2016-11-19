@@ -10,8 +10,8 @@ import java.util.Map;
  * Created by gaohailong on 2016/11/13.
  */
 public class TitleDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDao {
-    public void saveTitle(Title Title) throws Exception {
-        this.saveObject(Title);
+    public void saveTitle(Title title) throws Exception {
+        this.saveObject(title);
     }
 
     public void deleteTitleById(int id) throws Exception {

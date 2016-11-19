@@ -1,8 +1,5 @@
 package com.sxau.cyschool.pojo;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Admin entity. @author MyEclipse Persistence Tools
  */
@@ -16,9 +13,6 @@ public class Admin implements java.io.Serializable {
 	private String APhone;
 	private Integer AGrade;
 	private String APass;
-	private Set images = new HashSet(0);
-	private Set videos = new HashSet(0);
-	private Set titles = new HashSet(0);
 
 	// Constructors
 
@@ -34,15 +28,11 @@ public class Admin implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Admin(String AName, String APhone, Integer AGrade, String APass,
-			Set images, Set videos, Set titles) {
+	public Admin(String AName, String APhone, Integer AGrade, String APass) {
 		this.AName = AName;
 		this.APhone = APhone;
 		this.AGrade = AGrade;
 		this.APass = APass;
-		this.images = images;
-		this.videos = videos;
-		this.titles = titles;
 	}
 
 	// Property accessors
@@ -85,30 +75,6 @@ public class Admin implements java.io.Serializable {
 
 	public void setAPass(String APass) {
 		this.APass = APass;
-	}
-
-	public Set getImages() {
-		return this.images;
-	}
-
-	public void setImages(Set images) {
-		this.images = images;
-	}
-
-	public Set getVideos() {
-		return this.videos;
-	}
-
-	public void setVideos(Set videos) {
-		this.videos = videos;
-	}
-
-	public Set getTitles() {
-		return this.titles;
-	}
-
-	public void setTitles(Set titles) {
-		this.titles = titles;
 	}
 
 }

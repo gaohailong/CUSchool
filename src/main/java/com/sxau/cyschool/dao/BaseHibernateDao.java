@@ -204,5 +204,5 @@ public interface BaseHibernateDao<T> {
      */
     int getInt(String sql, Object[] parameters) throws Exception;
 
-
+    List<T> querySingleObject(String queryString, String name) throws Exception;
 }
