@@ -7,7 +7,7 @@
 <hibernate-mapping>
     <class name="com.sxau.cyschool.pojo.Title" table="title" catalog="cyschool">
         <id name="TId" type="java.lang.Integer">
-            <column name="t_id" />
+            <column name="id" />
             <generator class="native" />
         </id>
         <many-to-one name="category" class="com.sxau.cyschool.pojo.Category" fetch="select">

@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by gaohailong on 2016/11/13.
  */
-public class TitleAction extends ActionSupport {
+public class NotificationAction extends ActionSupport {
     //注入元素
     private TitleService titleService;
     private CategoryService categoryService;
@@ -24,6 +24,7 @@ public class TitleAction extends ActionSupport {
     private Title title;
     private Integer nowPage;
     private int totalPage;
+    private Integer tid;
     //变量
     private Page<Title> page;
 
@@ -39,6 +40,16 @@ public class TitleAction extends ActionSupport {
         return "findNotification";
     }
 
+    //查找一个通知
+    public String findOneNotification() throws Exception {
+        if (tid == 0 && tid == null) {
+            return ERROR;
+        }
+        title = titleService.findTitleById(tid);
+//        System.out.print(title.getTId());
+        return "updateNotification";
+    }
+
     //添加通知
     public String addNotification() throws Exception {
         Title title = new Title();
@@ -46,14 +57,26 @@ public class TitleAction extends ActionSupport {
         title.setTContent(notificationContent);
         title.setTName(notificationHead);
         title.setTDate(new Date());
+        title.setTRead(0);
         Category category = categoryService.getCategoryByName("通知公告");
         title.setCategory(category);
         titleService.saveTitle(title);
         return null;
     }
 
+    //删除通知
     public String deleteNotification() throws Exception {
-        System.out.print("=====");
+        titleService.deleteTitle(tid);
+        return SUCCESS;
+    }
+
+    //修改通知
+    public String updateNotification() throws Exception {
+        Title title = new Title();
+        title.setTId(tid);
+        title.setTName(notificationHead);
+        title.setTContent(notificationContent);
+        titleService.updateTitle(title);
         return SUCCESS;
     }
 
@@ -119,5 +142,13 @@ public class TitleAction extends ActionSupport {
 
     public void setTotalPage(int totalPage) {
         this.totalPage = totalPage;
+    }
+
+    public int getTid() {
+        return tid;
+    }
+
+    public void setTid(int tid) {
+        this.tid = tid;
     }
 }

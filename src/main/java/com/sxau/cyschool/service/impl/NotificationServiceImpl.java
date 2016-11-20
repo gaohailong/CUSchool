@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Created by gaohailong on 2016/11/13.
  */
-public class TitleServiceImpl implements TitleService {
+public class NotificationServiceImpl implements TitleService {
 
     private TitleDao titleDao;
 
@@ -23,7 +23,7 @@ public class TitleServiceImpl implements TitleService {
     }
 
     public void updateTitle(Title title) throws Exception {
-        this.titleDao.updateTitle(title);
+        this.titleDao.updateObjectOfUpdate(title);
     }
 
     public void saveTitle(Title title) throws Exception {

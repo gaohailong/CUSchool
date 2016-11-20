@@ -7,7 +7,7 @@
 <hibernate-mapping>
     <class name="com.sxau.cyschool.pojo.Sort" table="sort" catalog="cyschool">
         <id name="SId" type="java.lang.Integer">
-            <column name="s_id" />
+            <column name="id" />
             <generator class="native" />
         </id>
         <property name="SGrade" type="java.lang.Integer">

@@ -50,11 +50,11 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         if (clazz != null && ids != null) {
             StringBuffer stringBuffer = new StringBuffer();
             for (int i = 0; i < ids.length - 1; i++) {
-                stringBuffer.append("'" + ids[i] + "'，");
+                stringBuffer.append("'" + ids[i] + "',");
             }
             stringBuffer = stringBuffer.append("'" + ids[ids.length - 1] + "'");
 
-            final String sql = "delete from " + clazz.getName() + "where id in (" + stringBuffer.toString() + ")";
+            final String sql = "delete from " + clazz.getName() + " where id in (" + stringBuffer.toString() + ")";
             Object resultObject = sessionFactory.getCurrentSession().createQuery(sql).executeUpdate();
             return Integer.parseInt(resultObject.toString());
         } else {
@@ -62,7 +62,6 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         }
     }
 
-    //TODO 为何不直接使用delete sessionFactory.getCurrentSession().delete();
     public int deleteAll(Class<T> clazz) throws Exception {
         //   sessionFactory.getCurrentSession().delete(clazz);
         if (clazz != null) {
@@ -304,6 +303,14 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
             } catch (Exception e) {
                 throw new SystemException("传入的sql语句不符合条件：能够返回一个能转化为整形的值");
             }
+        }
+    }
+
+    public void updateObjectOfUpdate(T t) throws Exception {
+        if (t == null) {
+            throw new SystemException("参数不能为空");
+        } else {
+            sessionFactory.getCurrentSession().update(t);
         }
     }
 

@@ -81,15 +81,15 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <!--文章-->
-    <bean id="titleDao" class="com.sxau.cyschool.dao.impl.TitleDaoImpl" parent="baseHibernateDaoImpl"/>
+    <!--通知-->
+    <bean id="notificationDao" class="com.sxau.cyschool.dao.impl.NotificationDaoImpl" parent="baseHibernateDaoImpl"/>
 
-    <bean id="titleService" class="com.sxau.cyschool.service.impl.TitleServiceImpl">
-        <property name="titleDao" ref="titleDao"/>
+    <bean id="notificationService" class="com.sxau.cyschool.service.impl.NotificationServiceImpl">
+        <property name="titleDao" ref="notificationDao"/>
     </bean>
 
-    <bean id="titleAction" class="com.sxau.cyschool.controller.TitleAction" scope="prototype">
-        <property name="titleService" ref="titleService"/>
+    <bean id="notificationAction" class="com.sxau.cyschool.controller.NotificationAction" scope="prototype">
+        <property name="titleService" ref="notificationService"/>
         <property name="categoryService" ref="categoryService"/>
     </bean>
 

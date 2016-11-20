@@ -7,7 +7,7 @@
 <hibernate-mapping>
     <class name="com.sxau.cyschool.pojo.Image" table="image" catalog="cyschool">
         <id name="IId" type="java.lang.Integer">
-            <column name="i_id" />
+            <column name="id" />
             <generator class="native" />
         </id>
         <property name="ILink" type="java.lang.String">

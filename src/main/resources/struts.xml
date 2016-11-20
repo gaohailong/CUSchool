@@ -6,11 +6,13 @@
 
 <struts>
 
-    <package name="titleAction" extends="struts-default">
-        <action name="*Title" class="titleAction" method="{1}">
+    <package name="notificationAction" extends="struts-default">
+        <action name="*Title" class="notificationAction" method="{1}">
             <result name="findNotification">/background/school_notification.jsp</result>
             <result name="addNotification">/background/school_notification_add.jsp</result>
+            <result name="updateNotification">/background/school_notification_update.jsp</result>
             <result name="success">/background/success.jsp</result>
+            <result name="error">/background/fail.jsp</result>
         </action>
     </package>
 

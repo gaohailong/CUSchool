@@ -10,7 +10,7 @@ To change this template use File | Settings | File Templates.
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>成功</title>
+    <title>失败</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -481,7 +481,7 @@ To change this template use File | Settings | File Templates.
                     <div class="row">
                         <div class="col-md-12 not-found text-center">
                             <div class="error">
-                                SUCCESS
+                                FAIL
                             </div>
                         </div>
                         <div class="col-md-4 col-md-offset-4 not-found text-center">

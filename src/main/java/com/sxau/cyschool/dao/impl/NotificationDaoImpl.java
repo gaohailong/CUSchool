@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by gaohailong on 2016/11/13.
  */
-public class TitleDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDao {
+public class NotificationDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDao {
     public void saveTitle(Title title) throws Exception {
         this.saveObject(title);
     }
@@ -24,7 +24,7 @@ public class TitleDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDa
     }
 
     public Title findTitleById(int id) throws Exception {
-        Title Title = this.loadObject(Title.class, id);
+        Title Title = this.getObject(Title.class, id);
         return Title;
     }
 

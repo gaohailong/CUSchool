@@ -10,17 +10,45 @@ function addNotification() {
     } else if (head == null) {
         alert("请输入文章标题！");
     } else {
-        var data = {"notificationHead": content, "notificationContent": head};
+        var data = {"notificationHead": head, "notificationContent": content};
         $.ajax({
             type: "POST",
             url: "addNotificationTitle.action",
             data: data,
             dataType: "text",
             success: function (data) {
-                alert("添加成功！");
+                window.location.href = "/background/success.jsp";
             },
             error: function (error) {
-                alert("添加失败！");
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//修改通知新闻
+function updateNotification(id) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    var id = $("#t_id").val();
+    if (id == null) {
+        alert("无法修改!");
+    } else if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"tid": id, "notificationHead": content, "notificationContent": head};
+        $.ajax({
+            type: "POST",
+            url: "updateNotificationTitle.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
             }
         });
     }
@@ -32,7 +60,7 @@ function format(time) {
     var year = date.getYear();
     var month = date.getMonth();
     var day = date.getDay();
-    var formatTime = date + year + day;
+    var formatTime = year + month + day;
     return formatTime
 }
 
@@ -42,9 +70,10 @@ function pageActive() {
 }
 
 //确认删除文章
-function confirmDelete() {
+function confirmDelete(tid) {
     if (confirm("确定要删除这篇文章吗？")) {
-        //TODO 无法跳转
-        location.href("deleteNotificationTitle.action");
+        location.href = 'deleteNotificationTitle.action?tid=' + tid;
     }
 }
+
+

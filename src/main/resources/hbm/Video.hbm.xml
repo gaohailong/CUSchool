@@ -7,7 +7,7 @@
 <hibernate-mapping>
     <class name="com.sxau.cyschool.pojo.Video" table="video" catalog="cyschool">
         <id name="VId" type="java.lang.Integer">
-            <column name="v_id" />
+            <column name="id" />
             <generator class="native" />
         </id>
         <property name="VLink" type="java.lang.String">

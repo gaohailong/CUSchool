@@ -2,8 +2,6 @@ package com.sxau.cyschool.test.service;
 
 import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.TitleService;
-import com.sxau.cyschool.service.impl.TitleServiceImpl;
-import com.sxau.cyschool.test.base.TSpringHibernate;
 import com.sxau.cyschool.utils.Page;
 import org.junit.Test;
 import org.junit.runner.RunWith;
