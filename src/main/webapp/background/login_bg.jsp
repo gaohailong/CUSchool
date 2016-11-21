@@ -1,5 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<%--
+Created by IntelliJ IDEA.
+User: gaohailong
+Date: 2016/11/21
+Time: 上午 11:06
+To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
@@ -48,9 +55,9 @@
 								<div class="divide-40"></div>
 								<form role="form">
 								  <div class="form-group">
-									<label for="exampleInputEmail12">用户名</label>
+									<label for="text">用户名</label>
 									<i class="fa fa-envelope"></i>
-									<input type="email" class="form-control" id="exampleInputEmail12" >
+									<input type="email" class="form-control" id="text" >
 								  </div>
 								  <div class="form-group"> 
 									<label for="exampleInputPassword12">密码</label>

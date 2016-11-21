@@ -81,6 +81,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+
     <!--通知-->
     <bean id="notificationDao" class="com.sxau.cyschool.dao.impl.NotificationDaoImpl" parent="baseHibernateDaoImpl"/>
 
@@ -92,6 +93,20 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleService" ref="notificationService"/>
         <property name="categoryService" ref="categoryService"/>
     </bean>
+
+
+    <!--校内新闻-->
+    <bean id="schoolNewsDao" class="com.sxau.cyschool.dao.impl.SchoolNewsDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolNewsServiceImpl" class="com.sxau.cyschool.service.impl.SchoolNewsServiceImpl">
+        <property name="titleDao" ref="schoolNewsDao"/>
+    </bean>
+
+    <bean id="schoolNewsAction" class="com.sxau.cyschool.controller.SchoolNewsAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="schoolNewsServiceImpl"/>
+    </bean>
+
 
     <!--分类-->
     <bean id="categoryDao" class="com.sxau.cyschool.dao.impl.CategoryDaoImpl" parent="baseHibernateDaoImpl"/>

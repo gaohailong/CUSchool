@@ -40,8 +40,8 @@ To change this template use File | Settings | File Templates.
     <script language="javascript" src="<%=request.getContextPath()%>/ueditor/lang/zh-cn/zh-cn.js"></script>
 
     <!--title-js-->
-    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/title.js"></script>
     <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/jquery-2.0.3.min.js"></script>
+    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/title.js"></script>
     <link href="<%=request.getContextPath()%>/background/self/css/title.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -101,7 +101,7 @@ To change this template use File | Settings | File Templates.
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="login_bg.html"><i class="fa fa-power-off"></i> Log Out</a></li>
+                    <li><a href="login_bg.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
                 </ul>
             </li>
             <!-- END USER LOGIN DROPDOWN -->
@@ -427,12 +427,12 @@ To change this template use File | Settings | File Templates.
                     </a>
                     <ul class="sub">
                         <li><a class="" href="school_notification.jsp"><span class="sub-menu-text">通知公告</span></a></li>
-                        <li><a class="" href="school_rotate_picture.html"><span class="sub-menu-text">首页轮播图</span></a>
+                        <li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a>
                         </li>
-                        <li><a class="" href="school_news.html"><span class="sub-menu-text">学校要闻</span></a></li>
-                        <li><a class="" href="school_video.html"><span class="sub-menu-text">视频展示</span></a></li>
-                        <li><a class="" href="school_graduation.html"><span class="sub-menu-text">毕业风采</span></a></li>
-                        <li><a class="" href="school_gallery.html"><span class="sub-menu-text">校内图册</span></a></li>
+                        <li><a class="" href="school_news.jsp"><span class="sub-menu-text">学校要闻</span></a></li>
+                        <li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
+                        <li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
+                        <li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -441,9 +441,9 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="school_principal.html"><span class="sub-menu-text">校长致辞</span></a></li>
-                        <li><a class="" href="school_lead.html"><span class="sub-menu-text">现任领导</span></a></li>
-                        <li><a class="" href="school_introduce.html"><span class="sub-menu-text">学校简介</span></a></li>
+                        <li><a class="" href="school_principal.jsp"><span class="sub-menu-text">校长致辞</span></a></li>
+                        <li><a class="" href="school_lead.jsp"><span class="sub-menu-text">现任领导</span></a></li>
+                        <li><a class="" href="school_introduce.jsp"><span class="sub-menu-text">学校简介</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -453,9 +453,9 @@ To change this template use File | Settings | File Templates.
                     </a>
                     <ul class="sub">
                         <li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
-                        <li><a class="" href="teaching_institutions.html"><span class="sub-menu-text">教辅机构</span></a>
+                        <li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
-                        <li><a class="" href="immediate_and_other.html"><span class="sub-menu-text">直属及其他</span></a>
+                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a>
                         </li>
                     </ul>
                 </li>
@@ -465,10 +465,10 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="teachers_service.html"><span class="sub-menu-text">师资服务</span></a></li>
+                        <li><a class="" href="teachers_service.jsp"><span class="sub-menu-text">师资服务</span></a></li>
                         <li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a>
                         </li>
-                        <li><a class="" href="nice_class.html"><span class="sub-menu-text">精品课程</span></a></li>
+                        <li><a class="" href="nice_class.jsp"><span class="sub-menu-text">精品课程</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -477,13 +477,13 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="subject_build.html"><span class="sub-menu-text">学科建设</span></a></li>
-                        <li><a class="" href="society_service.html"><span class="sub-menu-text">社会服务</span></a></li>
+                        <li><a class="" href="subject_build.jsp"><span class="sub-menu-text">学科建设</span></a></li>
+                        <li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
                     </ul>
                 </li>
                 <li class=""><a class="" href="commity_work.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
                         class="menu-text">交流合作</span><span class="selected"></span></a></li>
-                <li class=""><a class="" href="for_recruitment.html"><i class="fa fa-file-text fa-fw"></i> <span
+                <li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
                         class="menu-text">招就招聘</span><span class="selected"></span></a></li>
                 <li class="has-sub">
                     <a href="javascript:;" class="">
@@ -491,7 +491,7 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="simple_table.html"><span class="sub-menu-text">Simple Tables</span></a>
+                        <li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a>
                         </li>
                         <li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a>
                         </li>
@@ -528,11 +528,9 @@ To change this template use File | Settings | File Templates.
                         function getContentByUeditor() {
                             return editor.getContent();
                         }
-
-                        //addContentForEditorDoUpdate();
                     </script>
                     <div class="separator-two"></div>
-                    <button class="btn btn-block btn-primary" onclick="javascript:updateNotification(${title.TId})">提交</button>
+                    <button class="btn btn-block btn-primary" onclick="javascript:updateSchoolNews(${title.TId})">提交</button>
                 </div>
             </div>
         </div>

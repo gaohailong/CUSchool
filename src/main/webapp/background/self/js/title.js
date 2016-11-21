@@ -52,6 +52,76 @@ function updateNotification(id) {
     }
 }
 
+//删除通知新闻
+function confirmDelete(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteNotificationTitle.action?tid=' + tid;
+    }
+}
+
+//添加学校要闻
+function addSchoolNews() {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "addSchoolNews.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//修改学校要闻
+function updateSchoolNews(id) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"tid": id, "notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "updateSchoolNews.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//删除通知新闻
+function confirmDeleteNews(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteSchoolNews.action?tid=' + tid;
+    }
+}
+
+//激活当前页
+function pageActive() {
+
+}
+
+
 //格式化时间的操作
 function formatDate(time) {
     var date = new Date(time);
@@ -62,16 +132,5 @@ function formatDate(time) {
     return formatTime
 }
 
-//激活当前页
-function pageActive() {
-
-}
-
-//确认删除文章
-function confirmDelete(tid) {
-    if (confirm("确定要删除这篇文章吗？")) {
-        location.href = 'deleteNotificationTitle.action?tid=' + tid;
-    }
-}
 
 

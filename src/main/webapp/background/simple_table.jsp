@@ -1,5 +1,13 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<%--
+Created by IntelliJ IDEA.
+User: gaohailong
+Date: 2016/11/21
+Time: 上午 11:06
+To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+
+<html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
@@ -687,7 +695,7 @@
 								<span class="selected"></span>
 								</a>
 								<ul class="sub">
-									<li><a class="" href="simple_table.html"><span class="sub-menu-text">Simple Tables</span></a></li>
+									<li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a></li>
 									<li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a></li>
 									<li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jqGrid Plugin</span></a></li>
 								</ul>
@@ -755,7 +763,7 @@
 								<span class="arrow"></span>
 								</a>
 								<ul class="sub">
-									<li><a class="" href="login.html"><span class="sub-menu-text">Login & Register Option 1</span></a></li><li><a class="" href="login_bg.html"><span class="sub-menu-text">Login & Register Option 2</span></a></li>
+									<li><a class="" href="login.html"><span class="sub-menu-text">Login & Register Option 1</span></a></li><li><a class="" href="login_bg.jsp"><span class="sub-menu-text">Login & Register Option 2</span></a></li>
 									<li><a class="" href="user_profile.html"><span class="sub-menu-text">User profile</span></a></li>
 									
 									<li><a class="" href="chats.html"><span class="sub-menu-text">Chats</span></a></li>

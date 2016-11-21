@@ -5,14 +5,25 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-
     <package name="notificationAction" extends="struts-default">
+        <global-results>
+            <result name="success">/background/success.jsp</result>
+            <result name="error">/background/fail.jsp</result>
+        </global-results>
+        <!--校内通知-->
         <action name="*Title" class="notificationAction" method="{1}">
             <result name="findNotification">/background/school_notification.jsp</result>
             <result name="addNotification">/background/school_notification_add.jsp</result>
             <result name="updateNotification">/background/school_notification_update.jsp</result>
             <result name="success">/background/success.jsp</result>
             <result name="error">/background/fail.jsp</result>
+        </action>
+
+        <!--学校要闻-->
+        <action name="*News" class="schoolNewsAction" method="{1}">
+            <result name="findSchoolNews">/background/school_news.jsp</result>
+            <result name="addNotification">/background/school_notification_add.jsp</result>
+            <result name="updateSchoolNews">/background/school_notification_update.jsp</result>
         </action>
     </package>
 

@@ -15,7 +15,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     public Category getCategoryByName(String name) throws Exception {
         List<Category> categories = categoryDao.getSingleCategoryByName(name);
-//        System.out.print("过程第二步");
         return categories.get(0);
     }
 
