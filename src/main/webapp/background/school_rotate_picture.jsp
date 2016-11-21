@@ -6,7 +6,7 @@ Time: 上午 11:06
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -19,7 +19,7 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" type="text/css" href="css/cloud-admin.css" >
 	<link rel="stylesheet" type="text/css"  href="css/themes/default.css" id="skin-switcher" >
 	<link rel="stylesheet" type="text/css"  href="css/responsive.css" >
-	
+
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<!-- DATE RANGE PICKER -->
 	<link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
@@ -62,8 +62,8 @@ To change this template use File | Settings | File Templates.
 					<!-- /TEAM STATUS FOR MOBILE -->
 					<!-- SIDEBAR COLLAPSE -->
 					<div id="sidebar-collapse" class="sidebar-collapse btn">
-						<i class="fa fa-bars" 
-							data-icon1="fa fa-bars" 
+						<i class="fa fa-bars"
+							data-icon1="fa fa-bars"
 							data-icon2="fa fa-bars" ></i>
 					</div>
 					<!-- /SIDEBAR COLLAPSE -->
@@ -90,7 +90,7 @@ To change this template use File | Settings | File Templates.
 					</li>
 				</ul>
 				<!-- /NAVBAR LEFT -->
-				<!-- BEGIN TOP NAVIGATION MENU -->					
+				<!-- BEGIN TOP NAVIGATION MENU -->
 				<ul class="nav navbar-nav pull-right">
 					<!-- BEGIN USER LOGIN DROPDOWN -->
 					<li class="dropdown user" id="header-user">
@@ -107,7 +107,7 @@ To change this template use File | Settings | File Templates.
 				</ul>
 				<!-- END TOP NAVIGATION MENU -->
 		</div>
-		
+
 		<!-- TEAM STATUS -->
 		<div class="container team-status" id="team-status">
 		  <div id="scrollbar">
@@ -402,7 +402,6 @@ To change this template use File | Settings | File Templates.
 		<!-- /TEAM STATUS -->
 	</header>
 	<!--/HEADER -->
-	
 	<!-- PAGE -->
 	<section id="page">
 				<!-- SIDEBAR -->
@@ -414,11 +413,6 @@ To change this template use File | Settings | File Templates.
 							<input class="search" type="text" placeholder="Search"><i class="fa fa-search search-icon"></i>
 						</div>
 						<!-- /SEARCH BAR -->
-						
-						<!-- SIDEBAR QUICK-LAUNCH -->
-						<!-- <div id="quicklaunch">
-						<!-- /SIDEBAR QUICK-LAUNCH -->
-						
 						<!-- SIDEBAR MENU -->
 						<ul>
 							<li class="active"><a class="" href="inbox.jsp"><i class="fa fa-briefcase fa-fw"></i> <span
@@ -429,12 +423,11 @@ To change this template use File | Settings | File Templates.
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub">
-									<li><a class="" href="school_notification.jsp"><span class="sub-menu-text">通知公告</span></a></li>
-									<li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a>
-									</li>
-									<li><a class="" href="school_news.jsp"><span class="sub-menu-text">学校要闻</span></a></li>
+									<li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
+									<li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a></li>
+									<li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
 									<li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
-									<li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
+									<li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
 									<li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
 								</ul>
 							</li>
@@ -509,58 +502,66 @@ To change this template use File | Settings | File Templates.
 				<div class="separator"></div>
 				<div class="col-md-12">
 					<!-- BASIC -->
-					<div class="box border orange">
-						<div class="box-title">
-							<h4><i class="fa fa-bars"></i>轮播图</h4>
-						</div>
 						<div class="box-body big">
-							<h3 class="form-title">添加图片</h3>
-								<div class="form-group">
-									<label for="exampleInputText">图片一</label>
-									<input type="email" class="form-control" id="exampleInputText" placeholder="">
-									<div class="separator-two"></div>
-									<span class="btn btn-success fileinput-button">
-													<i class="fa fa-plus"></i>
-													<span>Add files...</span>
-													<input type="file" name="files[]" multiple>
-												</span>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputPassword1">图片二</label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
-									<div class="separator-two"></div>
-									<span class="btn btn-success fileinput-button">
-													<i class="fa fa-plus"></i>
-													<span>Add files...</span>
-													<input type="file" name="files[]" multiple>
-												</span>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputPassword3">图片二</label>
-									<input type="password" class="form-control" id="exampleInputPassword3" placeholder="">
-									<div class="separator-two"></div>
-									<span class="btn btn-success fileinput-button">
-													<i class="fa fa-plus"></i>
-													<span>Add files...</span>
-													<input type="file" name="files[]" multiple>
-												</span>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputPassword4">图片二</label>
-									<input type="password" class="form-control" id="exampleInputPassword4" placeholder="">
-									<div class="separator-two"></div>
-									<span class="btn btn-success fileinput-button">
-													<i class="fa fa-plus"></i>
-													<span>Add files...</span>
-													<input type="file" name="files[]" multiple>
-												</span>
-								</div>
-								<button type="submit" class="btn btn-success">Submit</button>
+                            <!-- TOOLTIPS -->
+                                <div class="box border inverse">
+                                    <div class="box-title">
+                                        <h4><i class=""></i>文章一</h4>
+                                        <div class="tools">
+                                            <button class="btn btn-danger tip-left" >删除</button>
+                                            <button class="btn btn-success tip-right" >替换</button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body center">
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                    </div>
+                                </div>
+                              <!--TOOLTIPS-->
+                            <!-- TOOLTIPS -->
+                                <div class="box border inverse">
+                                    <div class="box-title">
+                                        <h4><i class=""></i>文章二</h4>
+                                        <div class="tools">
+                                            <button class="btn btn-danger tip-left" >删除</button>
+                                            <button class="btn btn-success tip-right" >替换</button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body center">
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                    </div>
+                                </div>
+                            <!--TOOLTIPS-->
+                            <!-- TOOLTIPS -->
+                                <div class="box border inverse">
+                                    <div class="box-title">
+                                        <h4><i class=""></i>文章三</h4>
+                                        <div class="tools">
+                                            <button class="btn btn-danger tip-left">删除</button>
+                                            <button class="btn btn-success tip-right">替换</button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body center">
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                    </div>
+                                </div>
+                            <!--TOOLTIPS-->
+                            <!-- TOOLTIPS -->
+                                <div class="box border inverse">
+                                    <div class="box-title">
+                                        <h4><i class=""></i>文章四</h4>
+                                        <div class="tools">
+                                            <button class="btn btn-danger tip-left">删除</button>
+                                            <button class="btn btn-success tip-right">替换</button>
+                                        </div>
+                                    </div>
+                                    <div class="box-body center">
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                    </div>
+                                </div>
+                            <!--TOOLTIPS-->
 							<div class="separator"></div>
 						</div>
-					</div>
 					<!-- /BASIC -->
-
 				</div>
 			</div>
 		</div>
@@ -600,7 +601,7 @@ To change this template use File | Settings | File Templates.
 	<script src="js/script.js"></script>
 	<script src="js/inbox.js"></script>
 	<script>
-		jQuery(document).ready(function() {		
+		jQuery(document).ready(function() {
 			App.setPage("school_rotate_picture");  //Set current page
 			App.init(); //Initialise plugins and elements
 //			Inbox.init();

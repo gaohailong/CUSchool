@@ -42,6 +42,7 @@ To change this template use File | Settings | File Templates.
     <!--title-js-->
     <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/jquery-2.0.3.min.js"></script>
     <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/title.js"></script>
+    <link href="<%=request.getContextPath()%>/background/self/css/title.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- HEADER -->
@@ -425,11 +426,12 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
-                        <li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a></li>
-                        <li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
+                        <li><a class="" href="school_notification.jsp"><span class="sub-menu-text">通知公告</span></a></li>
+                        <li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a>
+                        </li>
+                        <li><a class="" href="school_news.jsp"><span class="sub-menu-text">学校要闻</span></a></li>
                         <li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
-                        <li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
+                        <li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
                         <li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
                     </ul>
                 </li>
@@ -483,6 +485,20 @@ To change this template use File | Settings | File Templates.
                         class="menu-text">交流合作</span><span class="selected"></span></a></li>
                 <li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
                         class="menu-text">招就招聘</span><span class="selected"></span></a></li>
+                <li class="has-sub">
+                    <a href="javascript:;" class="">
+                        <i class="fa fa-table fa-fw"></i> <span class="menu-text">Tables</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a>
+                        </li>
+                        <li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a>
+                        </li>
+                        <li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jqGrid Plugin</span></a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
             <!-- /SIDEBAR MENU -->
         </div>
@@ -492,61 +508,29 @@ To change this template use File | Settings | File Templates.
         <div class="container">
             <div class="row">
                 <div class="separator-four"></div>
-                <div class="col-md-12"><a href="<%request.getContextPath();%>/background/school_notification_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
-                <div class="col-md-12" id="find" style="margin-top: 20px">
-                    <!-- BOX -->
-                    <div class="box border inverse">
-                        <div class="box-title">
-                            <h4><i class="fa fa-table"></i>通告列表</h4>
-                        </div>
-                        <div class="box-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>序号</th>
-                                    <th>标题</th>
-                                    <th>日期</th>
-                                    <th>浏览量</th>
-                                    <th>操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach var="titles" items="${titleList}" step="1" varStatus="i">
-                                    <tr>
-                                        <td>${i.index+1}</td>
-                                        <td>${titles.TName}</td>
-                                        <td>${titles.TDate}</td>
-                                        <td>${titles.TRead}</td>
-                                        <td>
-                                            <a href="findOneNotificationTitle.action?tid=${titles.TId}" style="text-underline: none">
-                                                <img src="self/images/update.png" alt="update"
-                                                     style="width: 20px;height: 20px;margin-left: 10px"/>
-                                            </a>
-                                            <a href="javascript:confirmDelete(${titles.TId});">
-                                                 <img src="self/images/delete.png" alt="delete"
-                                                      style="width: 20px;height: 20px;margin-left: 10px">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
-                            </table>
+                <div class="col-md-12" id="add">
+                    <div class="form-group" style="margin-bottom: 60px;">
+                        <label class="col-sm-1"></label>
+                        <%--<input type="hidden" value="${title.category}" id="t_category"/>--%>
+                        <label for="t-notification" class="col-sm-1 control-label">标题</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="t-notification" value="${title.TName}">
                         </div>
                     </div>
-                    <!-- /BOX -->
-                    <i class="col-md-5"></i>
-                    <ul class="col-md-7 pagination pagination-lg  ">
-                        <c:forEach begin="1" end="${totalPage}" varStatus="i">
-                            <li><a href="findNotificationTitle.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
-                        </c:forEach>
-                        <%--<li><a href="#">&laquo;</a></li>--%>
-                        <%--<li class="active"><a href="#">1</a></li>--%>
-                        <%--<li><a href="#">2</a></li>--%>
-                        <%--<li><a href="#">3</a></li>--%>
-                        <%--<li><a href="#">4</a></li>--%>
-                        <%--<li><a href="#">5</a></li>--%>
-                        <%--<li><a href="#">&raquo;</a></li>--%>
-                    </ul>
+                    <script id="container" name="content" type="text/plain"></script>
+                    <script type="text/javascript">
+                        var editor = UE.getEditor('container')
+
+                        editor.ready(function () {
+                            editor.setContent("${title.TContent}");
+                        });
+
+                        function getContentByUeditor() {
+                            return editor.getContent();
+                        }
+                    </script>
+                    <div class="separator-two"></div>
+                    <button class="btn btn-block btn-primary" onclick="javascript:updateSchoolNews(${title.TId})">提交</button>
                 </div>
             </div>
         </div>

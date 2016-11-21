@@ -415,7 +415,7 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a></li>
                         <li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
                         <li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
-                        <li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
+                        <li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
                         <li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
                     </ul>
                 </li>

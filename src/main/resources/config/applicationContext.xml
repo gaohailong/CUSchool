@@ -108,6 +108,20 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     </bean>
 
 
+    <!--毕业风采-->
+    <bean id="schoolGraduationDao" class="com.sxau.cyschool.dao.impl.SchoolGraduationDaoImpl"
+          parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolNewsService" class="com.sxau.cyschool.service.impl.SchoolNewsServiceImpl">
+        <property name="titleDao" ref="schoolGraduationDao"/>
+    </bean>
+
+    <bean id="schoolGraduationAction" class="com.sxau.cyschool.controller.SchoolGraduationAction" scope="prototype">
+        <property name="titleService" ref="schoolNewsService"/>
+        <property name="categoryService" ref="categoryService"/>
+    </bean>
+
+
     <!--分类-->
     <bean id="categoryDao" class="com.sxau.cyschool.dao.impl.CategoryDaoImpl" parent="baseHibernateDaoImpl"/>
 

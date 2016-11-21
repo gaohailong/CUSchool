@@ -116,6 +116,63 @@ function confirmDeleteNews(tid) {
     }
 }
 
+//添加毕业风采
+function addGraduation() {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "addSchoolGraduation.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//修改毕业风采
+function updateSchoolGraduation(id) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"tid": id, "notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "updateSchoolGraduation.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//删除毕业风采
+function confirmDeleteGraduation(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteSchoolGraduation.action?tid=' + tid;
+    }
+}
+
 //激活当前页
 function pageActive() {
 

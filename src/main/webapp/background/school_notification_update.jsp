@@ -530,7 +530,7 @@ To change this template use File | Settings | File Templates.
                         }
                     </script>
                     <div class="separator-two"></div>
-                    <button class="btn btn-block btn-primary" onclick="javascript:updateSchoolNews(${title.TId})">提交</button>
+                    <button class="btn btn-block btn-primary" onclick="javascript:updateNotification(${title.TId})">提交</button>
                 </div>
             </div>
         </div>

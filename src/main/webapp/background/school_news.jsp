@@ -416,12 +416,11 @@ To change this template use File | Settings | File Templates.
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub">
-									<li><a class="" href="school_notification.jsp"><span class="sub-menu-text">通知公告</span></a></li>
-									<li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a>
-									</li>
-									<li><a class="" href="school_news.jsp"><span class="sub-menu-text">学校要闻</span></a></li>
+									<li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
+									<li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a></li>
+									<li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
 									<li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
-									<li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
+									<li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
 									<li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
 								</ul>
 							</li>
@@ -537,6 +536,19 @@ To change this template use File | Settings | File Templates.
 							</div>
 						</div>
 						<!-- /BOX -->
+						<i class="col-md-5"></i>
+						<ul class="col-md-7 pagination pagination-lg  ">
+							<c:forEach begin="1" end="${totalPage}" varStatus="i">
+								<li><a href="findSchoolNews.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+							</c:forEach>
+							<%--<li><a href="#">&laquo;</a></li>--%>
+							<%--<li class="active"><a href="#">1</a></li>--%>
+							<%--<li><a href="#">2</a></li>--%>
+							<%--<li><a href="#">3</a></li>--%>
+							<%--<li><a href="#">4</a></li>--%>
+							<%--<li><a href="#">5</a></li>--%>
+							<%--<li><a href="#">&raquo;</a></li>--%>
+						</ul>
 					</div>
 				</div>
 			</div>
