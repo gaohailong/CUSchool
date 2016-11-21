@@ -28,7 +28,6 @@ public class NotificationServiceImpl implements TitleService {
 
     public void saveTitle(Title title) throws Exception {
         this.titleDao.saveTitle(title);
-//        System.out.print(titleDao.queryTitleCondition(null));
     }
 
     public Page<Title> queryTitle(int offset, int limit, Map<String, Object> pararmMap) throws Exception {

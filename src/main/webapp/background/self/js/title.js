@@ -30,15 +30,13 @@ function addNotification() {
 function updateNotification(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    var id = $("#t_id").val();
-    if (id == null) {
-        alert("无法修改!");
-    } else if (content == null) {
+    // var t_category = $("#t_category").val();
+    if (content == null) {
         alert("未输入任何内容！");
     } else if (head == null) {
         alert("请输入文章标题！");
     } else {
-        var data = {"tid": id, "notificationHead": content, "notificationContent": head};
+        var data = {"tid": id, "notificationHead": head, "notificationContent": content};
         $.ajax({
             type: "POST",
             url: "updateNotificationTitle.action",
@@ -55,7 +53,7 @@ function updateNotification(id) {
 }
 
 //格式化时间的操作
-function format(time) {
+function formatDate(time) {
     var date = new Date(time);
     var year = date.getYear();
     var month = date.getMonth();

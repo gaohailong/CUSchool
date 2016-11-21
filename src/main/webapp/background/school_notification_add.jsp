@@ -452,7 +452,7 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="administration.html"><span class="sub-menu-text">行政机构</span></a></li>
+                        <li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
                         <li><a class="" href="teaching_institutions.html"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
                         <li><a class="" href="immediate_and_other.html"><span class="sub-menu-text">直属及其他</span></a>
@@ -466,7 +466,7 @@ To change this template use File | Settings | File Templates.
                     </a>
                     <ul class="sub">
                         <li><a class="" href="teachers_service.html"><span class="sub-menu-text">师资服务</span></a></li>
-                        <li><a class="" href="featured_professional.html"><span class="sub-menu-text">特色专业</span></a>
+                        <li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a>
                         </li>
                         <li><a class="" href="nice_class.html"><span class="sub-menu-text">精品课程</span></a></li>
                     </ul>
@@ -481,7 +481,7 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="society_service.html"><span class="sub-menu-text">社会服务</span></a></li>
                     </ul>
                 </li>
-                <li class=""><a class="" href="commity_work.html"><i class="fa fa-envelope-o fa-fw"></i> <span
+                <li class=""><a class="" href="commity_work.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
                         class="menu-text">交流合作</span><span class="selected"></span></a></li>
                 <li class=""><a class="" href="for_recruitment.html"><i class="fa fa-file-text fa-fw"></i> <span
                         class="menu-text">招就招聘</span><span class="selected"></span></a></li>

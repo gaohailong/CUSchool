@@ -25,6 +25,7 @@ public class NotificationAction extends ActionSupport {
     private Integer nowPage;
     private int totalPage;
     private Integer tid;
+    private Category t_category;
     //变量
     private Page<Title> page;
 
@@ -72,8 +73,10 @@ public class NotificationAction extends ActionSupport {
 
     //修改通知
     public String updateNotification() throws Exception {
-        Title title = new Title();
-        title.setTId(tid);
+        if (tid == 0 && tid == null) {
+            return ERROR;
+        }
+        title = titleService.findTitleById(tid);
         title.setTName(notificationHead);
         title.setTContent(notificationContent);
         titleService.updateTitle(title);
@@ -150,5 +153,13 @@ public class NotificationAction extends ActionSupport {
 
     public void setTid(int tid) {
         this.tid = tid;
+    }
+
+    public Category getT_category() {
+        return t_category;
+    }
+
+    public void setT_category(Category t_category) {
+        this.t_category = t_category;
     }
 }

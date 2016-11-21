@@ -311,6 +311,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
             throw new SystemException("参数不能为空");
         } else {
             sessionFactory.getCurrentSession().update(t);
+            sessionFactory.getCurrentSession().flush();
         }
     }
 
