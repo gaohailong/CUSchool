@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by gaohailong on 2016/11/13.
  */
-public class RotateDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDao {
+public class RotatePictureDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDao {
     public void saveTitle(Title title) throws Exception {
         this.saveObject(title);
     }
@@ -53,7 +53,7 @@ public class RotateDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleD
                 string.append("and t.TName like '%" + title.getTName() + "%'");
             }
         }
-        string.append("and t.category.CContent='通知公告'");
+        string.append("and t.category.CContent='首页轮播图'");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -65,7 +65,7 @@ public class RotateDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleD
                 stringBuffer.append("and t.TName like '%" + title.getTName() + "%'");
             }
         }
-        stringBuffer.append("and t.category.CContent='通知公告'");
+        stringBuffer.append("and t.category.CContent='首页轮播图'");
         return this.getInt(stringBuffer.toString());
     }
 }

@@ -11,7 +11,7 @@ To change this template use File | Settings | File Templates.
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Cloud Admin | Inbox</title>
+	<title>轮播图</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -28,7 +28,7 @@ To change this template use File | Settings | File Templates.
 	<!-- INBOX CSS -->
 	<link rel="stylesheet" href="css/inbox.css">
 
-	<link rel="stylesheet" type="text/css" href="js/typeahead/typeahead.css" />
+	<%--<link rel="stylesheet" type="text/css" href="js/typeahead/typeahead.css" />--%>
 	<!-- FILE UPLOAD -->
 	<link rel="stylesheet" type="text/css" href="js/select2/select2.min.css" />
 	<!-- JQUERY UPLOAD -->
@@ -42,6 +42,10 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" type="text/css" href="css/animatecss/animate.min.css" />
 	<!-- FONTS -->
 	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+	<!--title-js-->
+	<script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/jquery-2.0.3.min.js"></script>
+	<script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/title.js"></script>
+	<link href="<%=request.getContextPath()%>/background/self/css/title.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 	<!-- HEADER -->
@@ -404,161 +408,108 @@ To change this template use File | Settings | File Templates.
 	<!--/HEADER -->
 	<!-- PAGE -->
 	<section id="page">
-				<!-- SIDEBAR -->
-				<div id="sidebar" class="sidebar">
-					<div class="sidebar-menu nav-collapse">
-						<div class="divide-20"></div>
-						<!-- SEARCH BAR -->
-						<div id="search-bar">
-							<input class="search" type="text" placeholder="Search"><i class="fa fa-search search-icon"></i>
-						</div>
-						<!-- /SEARCH BAR -->
-						<!-- SIDEBAR MENU -->
-						<ul>
-							<li class="active"><a class="" href="inbox.jsp"><i class="fa fa-briefcase fa-fw"></i> <span
-									class="menu-text">欢迎</span><span class="selected"></span></a></li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">首页</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
-									<li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a></li>
-									<li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
-									<li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
-									<li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
-									<li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
-								</ul>
-							</li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-th-large fa-fw"></i> <span class="menu-text">学校概况</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="school_principal.jsp"><span class="sub-menu-text">校长致辞</span></a></li>
-									<li><a class="" href="school_lead.jsp"><span class="sub-menu-text">现任领导</span></a></li>
-									<li><a class="" href="school_introduce.jsp"><span class="sub-menu-text">学校简介</span></a></li>
-								</ul>
-							</li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-columns fa-fw"></i> <span class="menu-text">组织结构</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
-									<li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a></li>
-									<li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a></li>
-								</ul>
-							</li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-table fa-fw"></i> <span class="menu-text">人才培养</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="teachers_service.jsp"><span class="sub-menu-text">师资服务</span></a></li>
-									<li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a></li>
-									<li><a class="" href="nice_class.jsp"><span class="sub-menu-text">精品课程</span></a></li>
-								</ul>
-							</li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-file-text fa-fw"></i> <span class="menu-text">科研服务</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="subject_build.jsp"><span class="sub-menu-text">学科建设</span></a></li>
-									<li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
-								</ul>
-							</li>
-							<li class=""><a class="" href="commity_work.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
-									class="menu-text">交流合作</span><span class="selected"></span></a></li>
-							<li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
-									class="menu-text">招就招聘</span><span class="selected"></span></a></li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-table fa-fw"></i> <span class="menu-text">Tables</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a>
-									</li>
-									<li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a>
-									</li>
-									<li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jqGrid Plugin</span></a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<!-- /SIDEBAR MENU -->
-					</div>
+		<!-- SIDEBAR -->
+		<div id="sidebar" class="sidebar">
+			<div class="sidebar-menu nav-collapse">
+				<div class="divide-20"></div>
+				<!-- SEARCH BAR -->
+				<div id="search-bar">
+					<input class="search" type="text" placeholder="Search"><i class="fa fa-search search-icon"></i>
 				</div>
-				<!-- /SIDEBAR -->
+				<!-- /SEARCH BAR -->
+				<!-- SIDEBAR MENU -->
+				<ul>
+					<li class="active"><a class="" href="inbox.jsp"><i class="fa fa-briefcase fa-fw"></i> <span
+							class="menu-text">欢迎</span><span class="selected"></span></a></li>
+					<li class="has-sub">
+						<a href="javascript:;" class="">
+							<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">首页</span>
+							<span class="arrow"></span>
+						</a>
+						<ul class="sub">
+							<li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
+							<li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a></li>
+							<li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
+							<li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
+							<li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
+							<li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
+						</ul>
+					</li>
+					<li class="has-sub">
+						<a href="javascript:;" class="">
+							<i class="fa fa-th-large fa-fw"></i> <span class="menu-text">学校概况</span>
+							<span class="arrow"></span>
+						</a>
+						<ul class="sub">
+							<li><a class="" href="school_principal.jsp"><span class="sub-menu-text">校长致辞</span></a></li>
+							<li><a class="" href="school_lead.jsp"><span class="sub-menu-text">现任领导</span></a></li>
+							<li><a class="" href="school_introduce.jsp"><span class="sub-menu-text">学校简介</span></a></li>
+						</ul>
+					</li>
+					<li class="has-sub">
+						<a href="javascript:;" class="">
+							<i class="fa fa-columns fa-fw"></i> <span class="menu-text">组织结构</span>
+							<span class="arrow"></span>
+						</a>
+						<ul class="sub">
+							<li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
+							<li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a></li>
+							<li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a></li>
+						</ul>
+					</li>
+					<li class="has-sub">
+						<a href="javascript:;" class="">
+							<i class="fa fa-table fa-fw"></i> <span class="menu-text">人才培养</span>
+							<span class="arrow"></span>
+						</a>
+						<ul class="sub">
+							<li><a class="" href="teachers_service.jsp"><span class="sub-menu-text">师资服务</span></a></li>
+							<li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a></li>
+							<li><a class="" href="nice_class.jsp"><span class="sub-menu-text">精品课程</span></a></li>
+						</ul>
+					</li>
+					<li class="has-sub">
+						<a href="javascript:;" class="">
+							<i class="fa fa-file-text fa-fw"></i> <span class="menu-text">科研服务</span>
+							<span class="arrow"></span>
+						</a>
+						<ul class="sub">
+							<li><a class="" href="subject_build.jsp"><span class="sub-menu-text">学科建设</span></a></li>
+							<li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
+						</ul>
+					</li>
+					<li class=""><a class="" href="commity_work.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
+							class="menu-text">交流合作</span><span class="selected"></span></a></li>
+					<li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
+							class="menu-text">招就招聘</span><span class="selected"></span></a></li>
+				</ul>
+				<!-- /SIDEBAR MENU -->
+			</div>
+		</div>
+		<!-- /SIDEBAR -->
 		<div id="main-content">
 			<div class="container">
 				<div class="separator"></div>
-				<div class="col-md-12">
+                <div class="col-md-12"><a href="<%request.getContextPath();%>/background/school_rotate_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+                <div class="col-md-12" style="margin-top: 20px;">
 					<!-- BASIC -->
 						<div class="box-body big">
-                            <!-- TOOLTIPS -->
+                            <c:forEach var="title" items="${titleList}" varStatus="i" step="1">
+                                <!-- TOOLTIPS -->
                                 <div class="box border inverse">
                                     <div class="box-title">
-                                        <h4><i class=""></i>文章一</h4>
+                                        <h4><i class=""></i>轮播${i.index+1}</h4>
                                         <div class="tools">
-                                            <button class="btn btn-danger tip-left" >删除</button>
-                                            <button class="btn btn-success tip-right" >替换</button>
+                                            <a href="javascript:confirmRotate(${title.TId});"><button class="btn btn-danger tip-left" >删除</button></a>
+											<a href="findOneSchoolRotatePicture.action?tid=${title.TId}"><button class="btn btn-success tip-right" >修改</button></a>
                                         </div>
                                     </div>
                                     <div class="box-body center">
-                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                                        <p>${title.TName}</p>
                                     </div>
                                 </div>
-                              <!--TOOLTIPS-->
-                            <!-- TOOLTIPS -->
-                                <div class="box border inverse">
-                                    <div class="box-title">
-                                        <h4><i class=""></i>文章二</h4>
-                                        <div class="tools">
-                                            <button class="btn btn-danger tip-left" >删除</button>
-                                            <button class="btn btn-success tip-right" >替换</button>
-                                        </div>
-                                    </div>
-                                    <div class="box-body center">
-                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                    </div>
-                                </div>
-                            <!--TOOLTIPS-->
-                            <!-- TOOLTIPS -->
-                                <div class="box border inverse">
-                                    <div class="box-title">
-                                        <h4><i class=""></i>文章三</h4>
-                                        <div class="tools">
-                                            <button class="btn btn-danger tip-left">删除</button>
-                                            <button class="btn btn-success tip-right">替换</button>
-                                        </div>
-                                    </div>
-                                    <div class="box-body center">
-                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                    </div>
-                                </div>
-                            <!--TOOLTIPS-->
-                            <!-- TOOLTIPS -->
-                                <div class="box border inverse">
-                                    <div class="box-title">
-                                        <h4><i class=""></i>文章四</h4>
-                                        <div class="tools">
-                                            <button class="btn btn-danger tip-left">删除</button>
-                                            <button class="btn btn-success tip-right">替换</button>
-                                        </div>
-                                    </div>
-                                    <div class="box-body center">
-                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                                    </div>
-                                </div>
-                            <!--TOOLTIPS-->
+                                <!--TOOLTIPS-->
+                            </c:forEach>
 							<div class="separator"></div>
 						</div>
 					<!-- /BASIC -->

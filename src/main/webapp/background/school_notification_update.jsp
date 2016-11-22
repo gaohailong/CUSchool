@@ -522,7 +522,7 @@ To change this template use File | Settings | File Templates.
                         var editor = UE.getEditor('container')
 
                         editor.ready(function () {
-                            editor.setContent("${title.TContent}");
+                            editor.setContent('${title.TContent}');
                         });
 
                         function getContentByUeditor() {

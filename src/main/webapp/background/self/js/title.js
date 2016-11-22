@@ -59,6 +59,67 @@ function confirmDelete(tid) {
     }
 }
 
+
+//添加轮播图
+function addRotatePicture() {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    var picUrl = getPictureUrl(content);
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content, "picUrl": picUrl};
+        $.ajax({
+            type: "POST",
+            url: "addRotatePicture.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//修改轮播图
+function updateRotatePicture(tid) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    var picUrl = getPictureUrl(content);
+    // var t_category = $("#t_category").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"tid": id, "notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "updateSchoolRotateTitle.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//删除轮播图
+function confirmRotate(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteSchoolRotatePicture.action?tid=' + tid;
+    }
+}
+
 //添加学校要闻
 function addSchoolNews() {
     var content = getContentByUeditor();
@@ -120,12 +181,13 @@ function confirmDeleteNews(tid) {
 function addGraduation() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
+    var picUrl = getPictureUrl(content);
     if (content == null) {
         alert("未输入任何内容！");
     } else if (head == null) {
         alert("请输入文章标题！");
     } else {
-        var data = {"notificationHead": head, "notificationContent": content};
+        var data = {"notificationHead": head, "notificationContent": content, "picUrl": picUrl};
         $.ajax({
             type: "POST",
             url: "addSchoolGraduation.action",
@@ -145,12 +207,13 @@ function addGraduation() {
 function updateSchoolGraduation(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
+    var picUrl = getPictureUrl(content);
     if (content == null) {
         alert("未输入任何内容！");
     } else if (head == null) {
         alert("请输入文章标题！");
     } else {
-        var data = {"tid": id, "notificationHead": head, "notificationContent": content};
+        var data = {"tid": id, "notificationHead": head, "notificationContent": content, "picUrl": picUrl};
         $.ajax({
             type: "POST",
             url: "updateSchoolGraduation.action",
@@ -189,5 +252,25 @@ function formatDate(time) {
     return formatTime
 }
 
+//获取图片的链接
+function getPictureUrl(htmlStr) {
+    var arraydata = new Array();
+    var finalData;
+    $(htmlStr).find("img").each(function (index, element) {
+        var temp = element.src;
+        var reg = '/upload/upload_image';
+        var data = temp.match(reg);
+        if (data != null) {
+            arraydata[index] = temp;
+        }
+    });
+    for (var i = 0; i < arraydata.length; i++) {
+        if (arraydata != null) {
+            finalData = arraydata[i];
+            break;
+        }
+    }
+    return finalData;
+}
 
 

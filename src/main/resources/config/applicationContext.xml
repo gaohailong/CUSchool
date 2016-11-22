@@ -82,7 +82,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     </bean>
 
 
-    <!--通知-->
+    <!--通知公告-->
     <bean id="notificationDao" class="com.sxau.cyschool.dao.impl.NotificationDaoImpl" parent="baseHibernateDaoImpl"/>
 
     <bean id="notificationService" class="com.sxau.cyschool.service.impl.NotificationServiceImpl">
@@ -94,8 +94,19 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="categoryService" ref="categoryService"/>
     </bean>
 
+    <!--首页轮播图-->
+    <bean id="rotatePictureDao" class="com.sxau.cyschool.dao.impl.RotatePictureDaoImpl" parent="baseHibernateDaoImpl"/>
 
-    <!--校内新闻-->
+    <bean id="rotateService" class="com.sxau.cyschool.service.impl.RotateServiceImpl">
+        <property name="titleDao" ref="rotatePictureDao"/>
+    </bean>
+
+    <bean id="rotatePictureAction" class="com.sxau.cyschool.controller.RotatePictureAction" scope="prototype">
+        <property name="titleService" ref="rotateService"/>
+        <property name="categoryService" ref="categoryService"/>
+    </bean>
+
+    <!--学校要闻-->
     <bean id="schoolNewsDao" class="com.sxau.cyschool.dao.impl.SchoolNewsDaoImpl" parent="baseHibernateDaoImpl"/>
 
     <bean id="schoolNewsServiceImpl" class="com.sxau.cyschool.service.impl.SchoolNewsServiceImpl">
@@ -107,6 +118,16 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleService" ref="schoolNewsServiceImpl"/>
     </bean>
 
+    <!--视频展示-->
+    <bean id="videoDaoImpl" class="com.sxau.cyschool.dao.impl.VideoDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="videoServiceImpl" class="com.sxau.cyschool.service.impl.VideoServiceImpl">
+        <property name="videoDao" ref="videoDaoImpl"/>
+    </bean>
+
+    <bean id="videoAction" class="com.sxau.cyschool.controller.VideoAction">
+        <property name="videoService" ref="videoServiceImpl"/>
+    </bean>
 
     <!--毕业风采-->
     <bean id="schoolGraduationDao" class="com.sxau.cyschool.dao.impl.SchoolGraduationDaoImpl"

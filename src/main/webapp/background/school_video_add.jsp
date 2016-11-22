@@ -2,15 +2,16 @@
 Created by IntelliJ IDEA.
 User: gaohailong
 Date: 2016/11/21
-Time: 下午1:15
+Time: 上午 11:06
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>首页</title>
+    <title>Cloud Admin | Inbox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -31,6 +32,9 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" href="css/inbox.css">
     <!-- FONTS -->
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+
+    <!--video的js-->
+    <script src="self/js/video.js"></script>
 </head>
 <body>
 <!-- HEADER -->
@@ -89,7 +93,7 @@ To change this template use File | Settings | File Templates.
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="login.html"><i class="fa fa-power-off"></i> Log Out</a></li>
+                    <li><a href="login_bg.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
                 </ul>
             </li>
             <!-- END USER LOGIN DROPDOWN -->
@@ -411,11 +415,12 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
-                        <li><a class="" href="findRotatePicture.action"><span class="sub-menu-text">首页轮播图</span></a></li>
-                        <li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
-                        <li><a class="" href="findSchoolVideo.action"><span class="sub-menu-text">视频展示</span></a></li>
-                        <li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
+                        <li><a class="" href="school_notification.jsp"><span class="sub-menu-text">通知公告</span></a></li>
+                        <li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a>
+                        </li>
+                        <li><a class="" href="school_news.jsp"><span class="sub-menu-text">学校要闻</span></a></li>
+                        <li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
+                        <li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
                         <li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
                     </ul>
                 </li>
@@ -439,8 +444,7 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
                         <li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
-                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a>
-                        </li>
+                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -490,27 +494,49 @@ To change this template use File | Settings | File Templates.
     <!-- /SIDEBAR -->
     <div id="main-content">
         <div class="container">
+            <div class="separator"></div>
             <div class="row">
-                <div class="separator"></div>
-                <div class="col-md-12">
-                    <div class="box border blue">
-                        <div class="box-title">
-                            <h4><i class="fa fa-dot-circle-o"></i>欢迎</h4>
-                        </div>
-                        <div class="box-body big">
-                            <div class="jumbotron">
-                                <h1>欢迎登陆学校管理系统!</h1>
-                                <p>Welcome to the school management system！</p>
-                                <!--<p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>-->
+                <div class="col-md-12" style="margin-top: 20px;">
+                    <!-- BASIC -->
+                    <div class="box-body big">
+                        <!-- TOOLTIPS -->
+                        <div class="box border inverse">
+                            <div class="box-title">
+                                <h4><i class=""></i>视频</h4>
+                                <div class="tools">
+                                    <a href="javascript:addVideo()">
+                                        <button class="btn btn-success tip-right">提交</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="box-body big">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label for="video_link" class="col-sm-2 control-label">视频链接</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="${video.VLink}" id="video_link" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="video_link" class="col-sm-2 control-label">视频描述</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" value="${video.VDes}" id="video_des" placeholder="">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
+                        <!--TOOLTIPS-->
                     </div>
+                    <!-- /BASIC -->
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--/PAGE -->
+<!-- JAVASCRIPTS -->
+<!-- Placed at the end of the document so the pages load faster -->
 <!-- JQUERY -->
 <script src="js/jquery/jquery-2.0.3.min.js"></script>
 <!-- JQUERY UI-->
@@ -539,9 +565,9 @@ To change this template use File | Settings | File Templates.
 <script src="js/inbox.js"></script>
 <script>
     jQuery(document).ready(function () {
-        App.setPage("inbox");  //Set current page
+        App.setPage("school_video");  //Set current page
         App.init(); //Initialise plugins and elements
-        Inbox.init();
+//			Inbox.init();
     });
 </script>
 <!-- /JAVASCRIPTS -->

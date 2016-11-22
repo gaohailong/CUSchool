@@ -159,7 +159,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
 
     public List<T> queryAll(Class<T> clazz) throws Exception {
         if (clazz != null) {
-            List<T> resultList = sessionFactory.getCurrentSession().createQuery("from" + clazz.getSimpleName()).list();
+            List<T> resultList = sessionFactory.getCurrentSession().createQuery(" from " + clazz.getSimpleName()).list();
             return resultList;
         } else {
             throw new SystemException("传入参数为空");
@@ -173,7 +173,7 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
                 stringBuffer.append("'" + ids[i] + "',");
             }
             stringBuffer.append("'" + ids[ids.length - 1] + "'");
-            String sql = "from" + clazz.getName() + "where id in (" + stringBuffer.toString() + ")";
+            String sql = "from" + clazz.getName() + " where id in (" + stringBuffer.toString() + ")";
             return this.queryObject(sql);
         } else {
             throw new SystemException("传入参数为空");
@@ -255,7 +255,6 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
             throw new SystemException("传入参数为空");
         } else {
             try {
-
                 Query query = sessionFactory.getCurrentSession().createQuery(sql);
                 Long result = (Long) query.uniqueResult();
                 return result.intValue();

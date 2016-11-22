@@ -11,9 +11,9 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by gaohailong on 2016/11/13.
+ * Created by gaohailong on 2016/11/22.
  */
-public class SchoolGraduationAction extends ActionSupport {
+public class RotatePictureAction extends ActionSupport {
     //注入元素
     private TitleService titleService;
     private CategoryService categoryService;
@@ -30,28 +30,28 @@ public class SchoolGraduationAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
-    //查找通知
-    public String findSchool() throws Exception {
+    //查找所有轮播图文章
+    public String findRotate() throws Exception {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         totalPage = page.getTotalPage();
-        return "findGraduation";
+        return "findRotate";
     }
 
-    //查找一个通知
-    public String findOneSchool() throws Exception {
+    //查找一个轮播图文章
+    public String findOneSchoolRotate() throws Exception {
         if (tid == 0 && tid == null) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
-        return "updateSchoolGraduation";
+        return "findOneSchoolRotate";
     }
 
-    //添加通知
-    public String addSchool() throws Exception {
+    //添加轮播图文章
+    public String addRotate() throws Exception {
         Title title = new Title();
         //将其他数据保存
         title.setTContent(notificationContent);
@@ -59,25 +59,33 @@ public class SchoolGraduationAction extends ActionSupport {
         title.setTDate(new Date());
         title.setTRead(0);
         title.setTImage(picUrl);
-        Category category = categoryService.getCategoryByName("毕业风采");
+        Category category = categoryService.getCategoryByName("首页轮播图");
         title.setCategory(category);
         titleService.saveTitle(title);
         return null;
     }
 
-    //删除通知
-    public String deleteSchool() throws Exception {
-        titleService.deleteTitle(tid);
-        return SUCCESS;
-    }
-
-    //修改通知
-    public String updateSchool() throws Exception {
+    //删除轮播图文章
+    public String deleteSchoolRotate() throws Exception {
+//       titleService.deleteTitle(tid);
+        //TODO 和修改一样，只是将文章的category改为学校要闻
         if (tid == 0 && tid == null) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
-        title.setTImage(picUrl);
+        Category category = categoryService.getCategoryByName("学校要闻");
+        title.setCategory(category);
+        titleService.updateTitle(title);
+        return SUCCESS;
+    }
+
+    //修改轮播图文章
+    public String updateSchoolRotate() throws Exception {
+        if (tid == 0 && tid == null) {
+            return ERROR;
+        }
+        title = titleService.findTitleById(tid);
+        //TODO 设置图片的链接
         title.setTName(notificationHead);
         title.setTContent(notificationContent);
         titleService.updateTitle(title);
