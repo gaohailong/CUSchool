@@ -522,19 +522,14 @@ To change this template use File | Settings | File Templates.
 							</div>
 						</div>
 						<!-- /BOX -->
-						<i class="col-md-5"></i>
-						<ul class="col-md-7 pagination pagination-lg  ">
-							<c:forEach begin="1" end="${totalPage}" varStatus="i">
-								<li><a href="findSchoolNews.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
-							</c:forEach>
-							<%--<li><a href="#">&laquo;</a></li>--%>
-							<%--<li class="active"><a href="#">1</a></li>--%>
-							<%--<li><a href="#">2</a></li>--%>
-							<%--<li><a href="#">3</a></li>--%>
-							<%--<li><a href="#">4</a></li>--%>
-							<%--<li><a href="#">5</a></li>--%>
-							<%--<li><a href="#">&raquo;</a></li>--%>
-						</ul>
+						<div class="col-md-offset-4">
+							<i class="col-md-5"></i>
+							<ul class="col-md-7 pagination pagination-lg  ">
+								<c:forEach begin="1" end="${totalPage}" varStatus="i">
+									<li><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
+								</c:forEach>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

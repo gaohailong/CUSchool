@@ -521,7 +521,7 @@ function confirmDeleteRecruitment(tid) {
     }
 }
 
-//激活当前页
+//激活当前页(分页)
 function pageActive() {
 
 }
