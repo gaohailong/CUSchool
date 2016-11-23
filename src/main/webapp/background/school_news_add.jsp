@@ -499,7 +499,7 @@ To change this template use File | Settings | File Templates.
                         <label class="col-sm-1"></label>
                         <label for="t-notification" class="col-sm-1 control-label">标题</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="t-notification" placeholder="">
+                            <input type="text" class="form-control" id="t-notification" placeholder="">
                         </div>
                     </div>
                     <script id="container" name="content" type="text/plain"></script>

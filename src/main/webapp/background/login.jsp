@@ -57,7 +57,7 @@ To change this template use File | Settings | File Templates.
 								  <div class="form-group">
 									<label for="text">用户名</label>
 									<i class="fa fa-envelope"></i>
-									<input type="email" class="form-control" id="text" >
+									<input type="text" class="form-control" id="text" >
 								  </div>
 								  <div class="form-group"> 
 									<label for="exampleInputPassword12">密码</label>
