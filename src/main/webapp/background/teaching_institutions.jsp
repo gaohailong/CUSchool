@@ -466,20 +466,6 @@ To change this template use File | Settings | File Templates.
 									class="menu-text">交流合作</span><span class="selected"></span></a></li>
 							<li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
 									class="menu-text">招就招聘</span><span class="selected"></span></a></li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-table fa-fw"></i> <span class="menu-text">Tables</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a>
-									</li>
-									<li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a>
-									</li>
-									<li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jqGrid Plugin</span></a>
-									</li>
-								</ul>
-							</li>
 						</ul>
 						<!-- /SIDEBAR MENU -->
 					</div>
@@ -488,33 +474,6 @@ To change this template use File | Settings | File Templates.
 		<div id="main-content">
 			<div class="container">
 				<div class="separator"></div>
-				<!-- PAGE HEADER-->
-				<!--<div class="row">-->
-					<!--<div class="col-sm-12">-->
-						<!--<div class="page-header">-->
-							<!--&lt;!&ndash; STYLER &ndash;&gt;-->
-
-							<!--&lt;!&ndash; /STYLER &ndash;&gt;-->
-							<!--&lt;!&ndash; BREADCRUMBS &ndash;&gt;-->
-							<!--<ul class="breadcrumb">-->
-								<!--<li>-->
-									<!--<i class="fa fa-home"></i>-->
-									<!--<a href="inbox.jsp">Home</a>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<a href="#">Tables</a>-->
-								<!--</li>-->
-								<!--<li>Simple Tables</li>-->
-							<!--</ul>-->
-							<!--&lt;!&ndash; /BREADCRUMBS &ndash;&gt;-->
-							<!--<div class="clearfix">-->
-								<!--<h3 class="content-title pull-left">Simple Tables</h3>-->
-							<!--</div>-->
-							<!--<div class="description">Simple Tables with exclusive UI experience</div>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!-- /PAGE HEADER -->
 				<div class="row">
 					<div class="col-md-12">
 						<!-- BOX -->

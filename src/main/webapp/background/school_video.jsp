@@ -468,20 +468,6 @@ To change this template use File | Settings | File Templates.
 									class="menu-text">交流合作</span><span class="selected"></span></a></li>
 							<li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
 									class="menu-text">招就招聘</span><span class="selected"></span></a></li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-table fa-fw"></i> <span class="menu-text">Tables</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a>
-									</li>
-									<li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a>
-									</li>
-									<li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jqGrid Plugin</span></a>
-									</li>
-								</ul>
-							</li>
 						</ul>
 						<!-- /SIDEBAR MENU -->
 					</div>
