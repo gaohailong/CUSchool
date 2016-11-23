@@ -457,10 +457,67 @@ function updateExchangeWork(id) {
     }
 }
 
-//删除师资服务
+//删除交流合作
 function confirmDeleteExchangeWork(tid) {
     if (confirm("确定要删除这篇文章吗？")) {
         location.href = 'deleteServiceExchangeWork.action?tid=' + tid;
+    }
+}
+
+//添加招就招聘
+function addRecruitment() {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "addSchoolRecruitment.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//修改招就招聘
+function updateRecruitment(id) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "updateSchoolRecruitment.action?tid="+id,
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//删除招就招聘
+function confirmDeleteRecruitment(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteSchoolRecruitment.action?tid=' + tid;
     }
 }
 

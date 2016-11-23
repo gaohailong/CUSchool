@@ -125,7 +125,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="videoDao" ref="videoDaoImpl"/>
     </bean>
 
-    <bean id="videoAction" class="com.sxau.cyschool.controller.VideoAction">
+    <bean id="videoAction" class="com.sxau.cyschool.controller.VideoAction" scope="prototype">
         <property name="videoService" ref="videoServiceImpl"/>
     </bean>
 
@@ -140,13 +140,6 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     <bean id="schoolGraduationAction" class="com.sxau.cyschool.controller.SchoolGraduationAction" scope="prototype">
         <property name="titleService" ref="schoolNewsService"/>
         <property name="categoryService" ref="categoryService"/>
-    </bean>
-
-    <!--分类-->
-    <bean id="categoryDao" class="com.sxau.cyschool.dao.impl.CategoryDaoImpl" parent="baseHibernateDaoImpl"/>
-
-    <bean id="categoryService" class="com.sxau.cyschool.service.impl.CategoryServiceImpl">
-        <property name="categoryDao" ref="categoryDao"/>
     </bean>
 
     <!--校长致辞-->
@@ -168,7 +161,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="introduceDao"/>
     </bean>
 
-    <bean id="introduceAction" class="com.sxau.cyschool.controller.IntroduceAction">
+    <bean id="introduceAction" class="com.sxau.cyschool.controller.IntroduceAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="introduceService"/>
     </bean>
@@ -180,7 +173,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="schooServiceTeacherDao"/>
     </bean>
 
-    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction">
+    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="schoolServiceTeacher"/>
     </bean>
@@ -192,8 +185,27 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="exchangeWorkDao"/>
     </bean>
 
-    <bean id="exchangeWorkAction" class="com.sxau.cyschool.controller.ExchangeWorkAction">
+    <bean id="exchangeWorkAction" class="com.sxau.cyschool.controller.ExchangeWorkAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="exchangeWorkService"/>
+    </bean>
+
+    <!--招就招聘-->
+    <bean id="recruitmentDao" class="com.sxau.cyschool.dao.impl.RecruitmentDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="recruitmentService" class="com.sxau.cyschool.service.impl.RecruitmentServiceImpl">
+        <property name="titleDao" ref="recruitmentDao"/>
+    </bean>
+
+    <bean id="recruitmentAction" class="com.sxau.cyschool.controller.RecruitmentAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="recruitmentService"/>
+    </bean>
+
+    <!--分类-->
+    <bean id="categoryDao" class="com.sxau.cyschool.dao.impl.CategoryDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="categoryService" class="com.sxau.cyschool.service.impl.CategoryServiceImpl">
+        <property name="categoryDao" ref="categoryDao"/>
     </bean>
 </beans>

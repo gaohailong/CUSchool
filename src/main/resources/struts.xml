@@ -65,6 +65,13 @@
             <result name="addExchangeSchool">/background/exchange_add.jsp</result>
             <result name="updateOneExchange">/background/exchange_update.jsp</result>
         </action>
+
+        <!--招就招聘-->
+        <action name="*Recruitment" class="recruitmentAction" method="{1}">
+            <result name="findRecruitmentSchool">/background/for_recruitment.jsp</result>
+            <result name="addRecruitmentSchool">/background/for_recruitment_add.jsp</result>
+            <result name="updateOneRecruitment">/background/for_recruitment_update.jsp</result>
+        </action>
     </package>
 
 </struts>

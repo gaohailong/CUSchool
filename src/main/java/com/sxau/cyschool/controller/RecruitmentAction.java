@@ -31,7 +31,7 @@ public class RecruitmentAction extends ActionSupport {
     private Page<Title> page;
 
     //查找通知
-    public String exchangeSchool() throws Exception {
+    public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
@@ -39,43 +39,43 @@ public class RecruitmentAction extends ActionSupport {
         titleList = page.getRows();
         totalPage = page.getTotalPage();
         if (titleList.size() > 0) {
-            return "findExchangeSchool";
+            return "findRecruitmentSchool";
         }else {
-            return "addExchangeSchool";
+            return "addRecruitmentSchool";
         }
     }
 
     //查找一个通知
-    public String findOneExchange() throws Exception {
+    public String findOne() throws Exception {
         if (tid == 0 && tid == null) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
-        return "updateOneExchange";
+        return "updateOneRecruitment";
     }
 
     //添加
-    public String addExchange() throws Exception {
+    public String addSchool() throws Exception {
         Title title = new Title();
         //将其他数据保存
         title.setTContent(notificationContent);
         title.setTName(notificationHead);
         title.setTDate(new Date());
         title.setTRead(0);
-        Category category = categoryService.getCategoryByName("交流合作");
+        Category category = categoryService.getCategoryByName("招就招聘");
         title.setCategory(category);
         titleService.saveTitle(title);
         return null;
     }
 
     //删除通知
-    public String deleteServiceExchange() throws Exception {
+    public String deleteSchool() throws Exception {
         titleService.deleteTitle(tid);
         return SUCCESS;
     }
 
     //修改通知
-    public String updateExchange() throws Exception {
+    public String updateSchool() throws Exception {
         if (tid == 0 && tid == null) {
             return ERROR;
         }

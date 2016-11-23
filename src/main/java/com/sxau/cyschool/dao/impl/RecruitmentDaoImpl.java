@@ -53,7 +53,7 @@ public class RecruitmentDaoImpl extends BaseHibernateDaoImpl<Title> implements T
                 string.append("and t.TName like '%" + title.getTName() + "%'");
             }
         }
-        string.append("and t.category.CContent='交流合作'");
+        string.append("and t.category.CContent='招就招聘'");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -65,7 +65,7 @@ public class RecruitmentDaoImpl extends BaseHibernateDaoImpl<Title> implements T
                 stringBuffer.append("and t.TName like '%" + title.getTName() + "%'");
             }
         }
-        stringBuffer.append("and t.category.CContent='交流合作'");
+        stringBuffer.append("and t.category.CContent='招就招聘'");
         return this.getInt(stringBuffer.toString());
     }
 }
