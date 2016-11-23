@@ -55,7 +55,15 @@
 
         <!--师资服务-->
         <action name="*Teacher" class="schoolServiceTeacherAction" method="{1}">
+            <result name="findServiceTeacher">/background/teachers_service.jsp</result>
+            <result name="findOneTeacherService">/background/teacher_service_update.jsp</result>
+        </action>
 
+        <!--交流合作-->
+        <action name="*Work" class="exchangeWorkAction" method="{1}">
+            <result name="findExchangeSchool">/background/exchange.jsp</result>
+            <result name="addExchangeSchool">/background/exchange_add.jsp</result>
+            <result name="updateOneExchange">/background/exchange_update.jsp</result>
         </action>
     </package>
 

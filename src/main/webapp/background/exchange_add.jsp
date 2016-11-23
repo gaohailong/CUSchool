@@ -40,8 +40,8 @@ To change this template use File | Settings | File Templates.
     <script language="javascript" src="<%=request.getContextPath()%>/ueditor/lang/zh-cn/zh-cn.js"></script>
 
     <!--title-js-->
-    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/jquery-2.0.3.min.js"></script>
     <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/title.js"></script>
+    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/jquery-2.0.3.min.js"></script>
     <link href="<%=request.getContextPath()%>/background/self/css/title.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -511,26 +511,21 @@ To change this template use File | Settings | File Templates.
                 <div class="col-md-12" id="add">
                     <div class="form-group" style="margin-bottom: 60px;">
                         <label class="col-sm-1"></label>
-                        <%--<input type="hidden" value="${title.category}" id="t_category"/>--%>
                         <label for="t-notification" class="col-sm-1 control-label">标题</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="t-notification" value="${title.TName}">
+                            <input type="email" class="form-control" id="t-notification" placeholder="">
                         </div>
                     </div>
                     <script id="container" name="content" type="text/plain"></script>
                     <script type="text/javascript">
                         var editor = UE.getEditor('container')
-
-                        editor.ready(function () {
-                            editor.setContent('${title.TContent}');
-                        });
-
                         function getContentByUeditor() {
                             return editor.getContent();
                         }
+                        //addContentForEditorDoUpdate();
                     </script>
                     <div class="separator-two"></div>
-                    <button class="btn btn-block btn-primary" onclick="javascript:updateIntroduce(${title.TId})">提交</button>
+                    <button class="btn btn-block btn-primary" onclick="javascript:addExchange()">提交</button>
                 </div>
             </div>
         </div>

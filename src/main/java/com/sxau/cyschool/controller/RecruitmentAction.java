@@ -11,9 +11,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by gaohailong on 2016/11/13.
+ * Created by gaohailong on 2016/11/22.
+ * 招就招聘
  */
-public class SchoolServiceTeacherAction extends ActionSupport {
+public class RecruitmentAction extends ActionSupport {
     //注入元素
     private TitleService titleService;
     private CategoryService categoryService;
@@ -30,47 +31,51 @@ public class SchoolServiceTeacherAction extends ActionSupport {
     private Page<Title> page;
 
     //查找通知
-    public String findService() throws Exception {
+    public String exchangeSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         totalPage = page.getTotalPage();
-        return "findServiceTeacher";
+        if (titleList.size() > 0) {
+            return "findExchangeSchool";
+        }else {
+            return "addExchangeSchool";
+        }
     }
 
     //查找一个通知
-    public String findOneService() throws Exception {
+    public String findOneExchange() throws Exception {
         if (tid == 0 && tid == null) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
-        return "findOneTeacherService";
+        return "updateOneExchange";
     }
 
-    //添加通知
-    public String addService() throws Exception {
+    //添加
+    public String addExchange() throws Exception {
         Title title = new Title();
         //将其他数据保存
         title.setTContent(notificationContent);
         title.setTName(notificationHead);
         title.setTDate(new Date());
         title.setTRead(0);
-        Category category = categoryService.getCategoryByName("师资服务");
+        Category category = categoryService.getCategoryByName("交流合作");
         title.setCategory(category);
         titleService.saveTitle(title);
         return null;
     }
 
     //删除通知
-    public String deleteService() throws Exception {
+    public String deleteServiceExchange() throws Exception {
         titleService.deleteTitle(tid);
         return SUCCESS;
     }
 
     //修改通知
-    public String updateService() throws Exception {
+    public String updateExchange() throws Exception {
         if (tid == 0 && tid == null) {
             return ERROR;
         }

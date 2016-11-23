@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Created by gaohailong on 2016/11/13.
  */
-public class SchoolGraduationImpl implements TitleService {
+public class ExchangeWorkServiceImpl implements TitleService {
 
     private TitleDao titleDao;
 

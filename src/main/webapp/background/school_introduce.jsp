@@ -469,7 +469,7 @@ To change this template use File | Settings | File Templates.
 									<li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
 								</ul>
 							</li>
-							<li class=""><a class="" href="commity_work.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
+							<li class=""><a class="" href="exchange.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
 									class="menu-text">交流合作</span><span class="selected"></span></a></li>
 							<li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
 									class="menu-text">招就招聘</span><span class="selected"></span></a></li>

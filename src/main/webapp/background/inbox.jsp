@@ -449,7 +449,7 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="teachers_service.jsp"><span class="sub-menu-text">师资服务</span></a></li>
+                        <li><a class="" href="findServiceTeacher.action"><span class="sub-menu-text">师资服务</span></a></li>
                         <li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a>
                         </li>
                         <li><a class="" href="nice_class.jsp"><span class="sub-menu-text">精品课程</span></a></li>
@@ -465,24 +465,10 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
                     </ul>
                 </li>
-                <li class=""><a class="" href="commity_work.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
+                <li class=""><a class="" href="exchangeSchoolWork.action"><i class="fa fa-envelope-o fa-fw"></i> <span
                         class="menu-text">交流合作</span><span class="selected"></span></a></li>
                 <li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
                         class="menu-text">招就招聘</span><span class="selected"></span></a></li>
-                <li class="has-sub">
-                    <a href="javascript:;" class="">
-                        <i class="fa fa-table fa-fw"></i> <span class="menu-text">Tables</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub">
-                        <li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a>
-                        </li>
-                        <li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a>
-                        </li>
-                        <li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jqGrid Plugin</span></a>
-                        </li>
-                    </ul>
-                </li>
             </ul>
             <!-- /SIDEBAR MENU -->
         </div>

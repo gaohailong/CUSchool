@@ -29,6 +29,8 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" href="css/inbox.css">
 	<!-- FONTS -->
 	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+
+	<script src="self/js/title.js"></script>
 </head>
 <body>
 	<!-- HEADER -->
@@ -463,7 +465,7 @@ To change this template use File | Settings | File Templates.
 									<li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
 								</ul>
 							</li>
-							<li class=""><a class="" href="commity_work.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
+							<li class=""><a class="" href="exchange.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
 									class="menu-text">交流合作</span><span class="selected"></span></a></li>
 							<li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
 									class="menu-text">招就招聘</span><span class="selected"></span></a></li>
@@ -490,7 +492,7 @@ To change this template use File | Settings | File Templates.
             <div class="container">
                 <div class="separator"></div>
                 <div class="row">
-                    <div class="col-md-12"><a href="<%request.getContextPath();%>/background/school_news_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+                    <div class="col-md-12"><a href="<%request.getContextPath();%>/background/teacher_service_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
                     <div class="col-md-12" style="margin-top: 20px;">
                         <!-- BOX -->
                         <div class="box border inverse">
@@ -516,11 +518,11 @@ To change this template use File | Settings | File Templates.
                                             <td>${titles.TDate}</td>
                                             <td>${titles.TRead}</td>
                                             <td>
-                                                <a href="findOneSchoolNews.action?tid=${titles.TId}" style="text-underline: none">
+                                                <a href="findOneServiceTeacher.action?tid=${titles.TId}" style="text-underline: none">
                                                     <img src="self/images/update.png" alt="update"
                                                          style="width: 20px;height: 20px;margin-left: 10px"/>
                                                 </a>
-                                                <a href="javascript:confirmDeleteNews(${titles.TId});">
+                                                <a href="javascript:confirmDeleteTeacherService(${titles.TId});">
                                                     <img src="self/images/delete.png" alt="delete"
                                                          style="width: 20px;height: 20px;margin-left: 10px">
                                                 </a>
@@ -535,7 +537,7 @@ To change this template use File | Settings | File Templates.
                         <i class="col-md-5"></i>
                         <ul class="col-md-7 pagination pagination-lg  ">
                             <c:forEach begin="1" end="${totalPage}" varStatus="i">
-                                <li><a href="findSchoolNews.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+                                <li><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
                             </c:forEach>
                             <%--<li><a href="#">&laquo;</a></li>--%>
                             <%--<li class="active"><a href="#">1</a></li>--%>

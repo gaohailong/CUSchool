@@ -176,12 +176,24 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     <!--师资服务-->
     <bean id="schooServiceTeacherDao" class="com.sxau.cyschool.dao.impl.SchooServiceTeacherDaoImpl" parent="baseHibernateDaoImpl"/>
 
-    <bean id="schoolServiceTeacher" class="com.sxau.cyschool.service.impl.SchoolServiceTeacherImpl">
+    <bean id="schoolServiceTeacher" class="com.sxau.cyschool.service.impl.SchoolServiceTeacherServiceImpl">
         <property name="titleDao" ref="schooServiceTeacherDao"/>
     </bean>
 
     <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="schoolServiceTeacher"/>
+    </bean>
+
+    <!--交流合作-->
+    <bean id="exchangeWorkDao" class="com.sxau.cyschool.dao.impl.ExchangeWorkDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="exchangeWorkService" class="com.sxau.cyschool.service.impl.ExchangeWorkServiceImpl">
+        <property name="titleDao" ref="exchangeWorkDao"/>
+    </bean>
+
+    <bean id="exchangeWorkAction" class="com.sxau.cyschool.controller.ExchangeWorkAction">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="exchangeWorkService"/>
     </bean>
 </beans>
