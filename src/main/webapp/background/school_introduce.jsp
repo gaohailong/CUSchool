@@ -1,4 +1,5 @@
-﻿<%--
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: gaohailong
 Date: 2016/11/21
@@ -11,7 +12,7 @@ To change this template use File | Settings | File Templates.
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Cloud Admin | Simple Tables</title>
+	<title>学校简介</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -27,6 +28,9 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" type="text/css" href="js/tablecloth/css/tablecloth.min.css" />
 	<!-- FONTS -->
 	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+
+	<!--title js-->
+	<script src="self/js/title.js"></script>
 </head>
 <body>
 	<!-- HEADER -->
@@ -85,7 +89,7 @@ To change this template use File | Settings | File Templates.
 						<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="login.html"><i class="fa fa-power-off"></i> Log Out</a></li>
+						<li><a href="login.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
 					</ul>
 				</li>
 				<!-- END USER LOGIN DROPDOWN -->
@@ -469,54 +473,72 @@ To change this template use File | Settings | File Templates.
 									class="menu-text">交流合作</span><span class="selected"></span></a></li>
 							<li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
 									class="menu-text">招就招聘</span><span class="selected"></span></a></li>
-							<li class="has-sub">
-								<a href="javascript:;" class="">
-									<i class="fa fa-table fa-fw"></i> <span class="menu-text">Tables</span>
-									<span class="arrow"></span>
-								</a>
-								<ul class="sub">
-									<li><a class="" href="simple_table.jsp"><span class="sub-menu-text">Simple Tables</span></a>
-									</li>
-									<li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">Dynamic Tables</span></a>
-									</li>
-									<li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">jqGrid Plugin</span></a>
-									</li>
-								</ul>
-							</li>
 						</ul>
 						<!-- /SIDEBAR MENU -->
 					</div>
 				</div>
 				<!-- /SIDEBAR -->
 		<div id="main-content">
-			<!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
-			<div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-				  <div class="modal-content">
-					<div class="modal-header">
-					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					  <h4 class="modal-title">Box Settings</h4>
-					</div>
-					<div class="modal-body">
-					  Here goes box setting content.
-					</div>
-					<div class="modal-footer">
-					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					  <button type="button" class="btn btn-primary">Save changes</button>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			<!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
 			<div class="container">
-				<div class="row">
-					<div class="footer-tools">
-							<span class="go-top">
-								<i class="fa fa-chevron-up"></i> Top
-							</span>
-						</div>
-					</div><!-- /CONTENT-->
 				<div class="separator"></div>
+				<div class="row">
+					<div class="col-md-12"><a href="<%request.getContextPath();%>/background/school_introduce_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+					<div class="col-md-12" style="margin-top: 20px;">
+						<!-- BOX -->
+						<div class="box border inverse">
+							<div class="box-title">
+								<h4><i class="fa fa-table"></i>要闻列表</h4>
+							</div>
+							<div class="box-body">
+								<table class="table table-bordered">
+									<thead>
+									<tr>
+										<th>序号</th>
+										<th>标题</th>
+										<th>日期</th>
+										<th>浏览量</th>
+										<th>操作</th>
+									</tr>
+									</thead>
+									<tbody>
+									<c:forEach var="titles" items="${titleList}" step="1" varStatus="i">
+										<tr>
+											<td>${i.index+1}</td>
+											<td>${titles.TName}</td>
+											<td>${titles.TDate}</td>
+											<td>${titles.TRead}</td>
+											<td>
+												<a href="findOneSchoolIntroduce.action?tid=${titles.TId}" style="text-underline: none">
+													<img src="self/images/update.png" alt="update"
+														 style="width: 20px;height: 20px;margin-left: 10px"/>
+												</a>
+												<a href="javascript:confirmDeleteIntroduce(${titles.TId});">
+													<img src="self/images/delete.png" alt="delete"
+														 style="width: 20px;height: 20px;margin-left: 10px">
+												</a>
+											</td>
+										</tr>
+									</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- /BOX -->
+						<i class="col-md-5"></i>
+						<ul class="col-md-7 pagination pagination-lg  ">
+							<c:forEach begin="1" end="${totalPage}" varStatus="i">
+								<li><a href="findSchoolIntroduce.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+							</c:forEach>
+							<%--<li><a href="#">&laquo;</a></li>--%>
+							<%--<li class="active"><a href="#">1</a></li>--%>
+							<%--<li><a href="#">2</a></li>--%>
+							<%--<li><a href="#">3</a></li>--%>
+							<%--<li><a href="#">4</a></li>--%>
+							<%--<li><a href="#">5</a></li>--%>
+							<%--<li><a href="#">&raquo;</a></li>--%>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

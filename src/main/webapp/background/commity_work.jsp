@@ -86,7 +86,7 @@ To change this template use File | Settings | File Templates.
 							<i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="login_bg.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
+							<li><a href="login.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
 						</ul>
 					</li>
 					<!-- END USER LOGIN DROPDOWN -->

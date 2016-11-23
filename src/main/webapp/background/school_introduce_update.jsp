@@ -1,8 +1,8 @@
 ﻿<%--
 Created by IntelliJ IDEA.
 User: gaohailong
-Date: 2016/11/21
-Time: 上午 11:06
+Date: 2016/11/15
+Time: 下午7:45
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
@@ -11,7 +11,7 @@ To change this template use File | Settings | File Templates.
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Cloud Admin | Inbox</title>
+    <title>通知公告</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -32,9 +32,17 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" href="css/inbox.css">
     <!-- FONTS -->
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+    <!--ueditor-->
+    <script type="text/javascript" src="<%=request.getContextPath()%>/ueditor/ueditor.config.js"></script>
+    <link href="<%=request.getContextPath()%>/ueditor/themes/default/css/ueditor.css" rel="stylesheet" type="text/css"/>
+    <script src="<%=request.getContextPath()%>/ueditor/ueditor.all.js" type="text/javascript"></script>
+    <!-- 语言包文件(建议手动加载语言包，避免在ie下，因为加载语言失败导致编辑器加载失败) -->
+    <script language="javascript" src="<%=request.getContextPath()%>/ueditor/lang/zh-cn/zh-cn.js"></script>
 
-    <!--video的js-->
-    <script src="self/js/video.js"></script>
+    <!--title-js-->
+    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/jquery-2.0.3.min.js"></script>
+    <script language="JavaScript" src="<%=request.getContextPath()%>/background/self/js/title.js"></script>
+    <link href="<%=request.getContextPath()%>/background/self/css/title.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <!-- HEADER -->
@@ -406,6 +414,9 @@ To change this template use File | Settings | File Templates.
             <div id="search-bar">
                 <input class="search" type="text" placeholder="Search"><i class="fa fa-search search-icon"></i>
             </div>
+            <!-- /SEARCH BAR -->
+
+            <!-- SIDEBAR MENU -->
             <ul>
                 <li class="active"><a class="" href="inbox.jsp"><i class="fa fa-briefcase fa-fw"></i> <span
                         class="menu-text">欢迎</span><span class="selected"></span></a></li>
@@ -444,7 +455,8 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
                         <li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
-                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a></li>
+                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a>
+                        </li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -494,41 +506,31 @@ To change this template use File | Settings | File Templates.
     <!-- /SIDEBAR -->
     <div id="main-content">
         <div class="container">
-            <div class="separator"></div>
             <div class="row">
-                <div class="col-md-12" style="margin-top: 20px;">
-                    <!-- BASIC -->
-                    <div class="box-body big">
-                        <!-- TOOLTIPS -->
-                        <div class="box border inverse">
-                            <div class="box-title">
-                                <h4><i class=""></i>视频</h4>
-                                <div class="tools">
-                                    <a href="javascript:addVideo()">
-                                        <button class="btn btn-success tip-right">提交</button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box-body big">
-                                <form class="form-horizontal" role="form">
-                                    <div class="form-group">
-                                        <label for="video_link" class="col-sm-2 control-label">视频链接</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="${video.VLink}" id="video_link" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="video_link" class="col-sm-2 control-label">视频描述</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="${video.VDes}" id="video_des" placeholder="">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                <div class="separator-four"></div>
+                <div class="col-md-12" id="add">
+                    <div class="form-group" style="margin-bottom: 60px;">
+                        <label class="col-sm-1"></label>
+                        <%--<input type="hidden" value="${title.category}" id="t_category"/>--%>
+                        <label for="t-notification" class="col-sm-1 control-label">标题</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="t-notification" value="${title.TName}">
                         </div>
-                        <!--TOOLTIPS-->
                     </div>
-                    <!-- /BASIC -->
+                    <script id="container" name="content" type="text/plain"></script>
+                    <script type="text/javascript">
+                        var editor = UE.getEditor('container')
+
+                        editor.ready(function () {
+                            editor.setContent('${title.TContent}');
+                        });
+
+                        function getContentByUeditor() {
+                            return editor.getContent();
+                        }
+                    </script>
+                    <div class="separator-two"></div>
+                    <button class="btn btn-block btn-primary" onclick="javascript:updateIntroduce(${title.TId})">提交</button>
                 </div>
             </div>
         </div>
@@ -565,7 +567,7 @@ To change this template use File | Settings | File Templates.
 <script src="js/inbox.js"></script>
 <script>
     jQuery(document).ready(function () {
-        App.setPage("school_video");  //Set current page
+        App.setPage("school_notification");  //Set current page
         App.init(); //Initialise plugins and elements
 //			Inbox.init();
     });

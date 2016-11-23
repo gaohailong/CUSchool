@@ -427,7 +427,7 @@ To change this template use File | Settings | File Templates.
                     <ul class="sub">
                         <li><a class="" href="findSchoolPrincipal.action"><span class="sub-menu-text">校长致辞</span></a></li>
                         <li><a class="" href="school_lead.jsp"><span class="sub-menu-text">现任领导</span></a></li>
-                        <li><a class="" href="school_introduce.jsp"><span class="sub-menu-text">学校简介</span></a></li>
+                        <li><a class="" href="findSchoolIntroduce.action"><span class="sub-menu-text">学校简介</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">

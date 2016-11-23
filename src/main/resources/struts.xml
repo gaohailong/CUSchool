@@ -46,6 +46,17 @@
             <result name="findPrincipal">/background/school_principal.jsp</result>
             <result name="updatePrincipal">/background/school_principal_update.jsp</result>
         </action>
+
+        <!--学校简介-->
+        <action name="*Introduce" class="introduceAction" method="{1}">
+            <result name="findIntroduce">/background/school_introduce.jsp</result>
+            <result name="updateIntroduce">/background/school_introduce_update.jsp</result>
+        </action>
+
+        <!--师资服务-->
+        <action name="*Teacher" class="schoolServiceTeacherAction" method="{1}">
+
+        </action>
     </package>
 
 </struts>

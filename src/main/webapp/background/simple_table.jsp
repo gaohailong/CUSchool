@@ -763,7 +763,7 @@ To change this template use File | Settings | File Templates.
 								<span class="arrow"></span>
 								</a>
 								<ul class="sub">
-									<li><a class="" href="login.html"><span class="sub-menu-text">Login & Register Option 1</span></a></li><li><a class="" href="login_bg.jsp"><span class="sub-menu-text">Login & Register Option 2</span></a></li>
+									<li><a class="" href="login.html"><span class="sub-menu-text">Login & Register Option 1</span></a></li><li><a class="" href="login.jsp"><span class="sub-menu-text">Login & Register Option 2</span></a></li>
 									<li><a class="" href="user_profile.html"><span class="sub-menu-text">User profile</span></a></li>
 									
 									<li><a class="" href="chats.html"><span class="sub-menu-text">Chats</span></a></li>

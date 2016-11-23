@@ -1,4 +1,5 @@
-﻿<%--
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: gaohailong
 Date: 2016/11/21
@@ -10,7 +11,7 @@ To change this template use File | Settings | File Templates.
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Cloud Admin | Inbox</title>
+	<title>师资服务</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -86,7 +87,7 @@ To change this template use File | Settings | File Templates.
 							<i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="login_bg.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
+							<li><a href="login.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
 						</ul>
 					</li>
 					<!-- END USER LOGIN DROPDOWN -->
@@ -486,79 +487,67 @@ To change this template use File | Settings | File Templates.
 				</div>
 				<!-- /SIDEBAR -->
 		<div id="main-content">
-			<div class="container">
-				<div class="separator"></div>
-				<!-- PAGE HEADER-->
-				<!--<div class="row">-->
-					<!--<div class="col-sm-12">-->
-						<!--<div class="page-header">-->
-							<!--&lt;!&ndash; STYLER &ndash;&gt;-->
-
-							<!--&lt;!&ndash; /STYLER &ndash;&gt;-->
-							<!--&lt;!&ndash; BREADCRUMBS &ndash;&gt;-->
-							<!--<ul class="breadcrumb">-->
-								<!--<li>-->
-									<!--<i class="fa fa-home"></i>-->
-									<!--<a href="inbox.jsp">Home</a>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<a href="#">Tables</a>-->
-								<!--</li>-->
-								<!--<li>Simple Tables</li>-->
-							<!--</ul>-->
-							<!--&lt;!&ndash; /BREADCRUMBS &ndash;&gt;-->
-							<!--<div class="clearfix">-->
-								<!--<h3 class="content-title pull-left">Simple Tables</h3>-->
-							<!--</div>-->
-							<!--<div class="description">Simple Tables with exclusive UI experience</div>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!-- /PAGE HEADER -->
-				<div class="row">
-					<div class="col-md-12">
-						<!-- BOX -->
-						<div class="box border inverse">
-							<div class="box-title">
-								<h4><i class="fa fa-table"></i>要闻列表</h4>
-							</div>
-							<div class="box-body">
-								<table class="table table-bordered">
-									<thead>
-									<tr>
-										<th>#</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Username</th>
-									</tr>
-									</thead>
-									<tbody>
-									<tr>
-										<td>1</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Larry</td>
-										<td>the Bird</td>
-										<td>@twitter</td>
-									</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<!-- /BOX -->
-					</div>
-				</div>
-			</div>
+            <div class="container">
+                <div class="separator"></div>
+                <div class="row">
+                    <div class="col-md-12"><a href="<%request.getContextPath();%>/background/school_news_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+                    <div class="col-md-12" style="margin-top: 20px;">
+                        <!-- BOX -->
+                        <div class="box border inverse">
+                            <div class="box-title">
+                                <h4><i class="fa fa-table"></i>要闻列表</h4>
+                            </div>
+                            <div class="box-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>标题</th>
+                                        <th>日期</th>
+                                        <th>浏览量</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach var="titles" items="${titleList}" step="1" varStatus="i">
+                                        <tr>
+                                            <td>${i.index+1}</td>
+                                            <td>${titles.TName}</td>
+                                            <td>${titles.TDate}</td>
+                                            <td>${titles.TRead}</td>
+                                            <td>
+                                                <a href="findOneSchoolNews.action?tid=${titles.TId}" style="text-underline: none">
+                                                    <img src="self/images/update.png" alt="update"
+                                                         style="width: 20px;height: 20px;margin-left: 10px"/>
+                                                </a>
+                                                <a href="javascript:confirmDeleteNews(${titles.TId});">
+                                                    <img src="self/images/delete.png" alt="delete"
+                                                         style="width: 20px;height: 20px;margin-left: 10px">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /BOX -->
+                        <i class="col-md-5"></i>
+                        <ul class="col-md-7 pagination pagination-lg  ">
+                            <c:forEach begin="1" end="${totalPage}" varStatus="i">
+                                <li><a href="findSchoolNews.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+                            </c:forEach>
+                            <%--<li><a href="#">&laquo;</a></li>--%>
+                            <%--<li class="active"><a href="#">1</a></li>--%>
+                            <%--<li><a href="#">2</a></li>--%>
+                            <%--<li><a href="#">3</a></li>--%>
+                            <%--<li><a href="#">4</a></li>--%>
+                            <%--<li><a href="#">5</a></li>--%>
+                            <%--<li><a href="#">&raquo;</a></li>--%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</section>
 	<!--/PAGE -->

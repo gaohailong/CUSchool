@@ -160,4 +160,28 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="principalService"/>
     </bean>
+
+    <!--学校简介-->
+    <bean id="introduceDao" class="com.sxau.cyschool.dao.impl.IntroduceDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="introduceService" class="com.sxau.cyschool.service.impl.IntroduceServiceImpl">
+        <property name="titleDao" ref="introduceDao"/>
+    </bean>
+
+    <bean id="introduceAction" class="com.sxau.cyschool.controller.IntroduceAction">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="introduceService"/>
+    </bean>
+
+    <!--师资服务-->
+    <bean id="schooServiceTeacherDao" class="com.sxau.cyschool.dao.impl.SchooServiceTeacherDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolServiceTeacher" class="com.sxau.cyschool.service.impl.SchoolServiceTeacherImpl">
+        <property name="titleDao" ref="schooServiceTeacherDao"/>
+    </bean>
+
+    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="schoolServiceTeacher"/>
+    </bean>
 </beans>
