@@ -142,11 +142,22 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="categoryService" ref="categoryService"/>
     </bean>
 
-
     <!--分类-->
     <bean id="categoryDao" class="com.sxau.cyschool.dao.impl.CategoryDaoImpl" parent="baseHibernateDaoImpl"/>
 
     <bean id="categoryService" class="com.sxau.cyschool.service.impl.CategoryServiceImpl">
         <property name="categoryDao" ref="categoryDao"/>
+    </bean>
+
+    <!--校长致辞-->
+    <bean id="principalDao" class="com.sxau.cyschool.dao.impl.PrincipalDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="principalService" class="com.sxau.cyschool.service.impl.PrincipalServiceImpl">
+        <property name="titleDao" ref="principalDao"/>
+    </bean>
+
+    <bean id="principalAction" class="com.sxau.cyschool.controller.PrincipalAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="principalService"/>
     </bean>
 </beans>

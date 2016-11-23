@@ -40,6 +40,12 @@
             <result name="findGraduation">/background/school_graduation.jsp</result>
             <result name="updateSchoolGraduation">/background/school_graduaction_update.jsp</result>
         </action>
+
+        <!--校长致辞-->
+        <action name="*Principal" class="principalAction" method="{1}">
+            <result name="findPrincipal">/background/school_principal.jsp</result>
+            <result name="updatePrincipal">/background/school_principal_update.jsp</result>
+        </action>
     </package>
 
 </struts>
