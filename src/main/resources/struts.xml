@@ -41,6 +41,21 @@
             <result name="updateSchoolGraduation">/background/school_graduaction_update.jsp</result>
         </action>
 
+        <!--校内图册-->
+        <action name="*Gallery" class="schoolGallery" method="{1}">
+            <result name="findSchoolGallery">/background/school_gallery.jsp</result>
+            <!--<result type="json" name="success">-->
+                <!--<param name="contentType">-->
+                    <!--text/html-->
+                <!--</param>-->
+            <!--</result>-->
+            <!--<result type="json" name="error">-->
+                <!--<param name="contentType">-->
+                    <!--text/html-->
+                <!--</param>-->
+            <!--</result>-->
+        </action>
+
         <!--校长致辞-->
         <action name="*Principal" class="principalAction" method="{1}">
             <result name="findPrincipal">/background/school_principal.jsp</result>

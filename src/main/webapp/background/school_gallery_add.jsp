@@ -1,16 +1,10 @@
-﻿<%--
-Created by IntelliJ IDEA.
-User: gaohailong
-Date: 2016/11/21
-Time: 下午1:15
-To change this template use File | Settings | File Templates.
---%>
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>首页</title>
+    <title>添加图片</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -19,18 +13,26 @@ To change this template use File | Settings | File Templates.
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="css/cloud-admin.css">
-    <link rel="stylesheet" type="text/css" href="css/themes/default.css" id="skin-switcher">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- DATE RANGE PICKER -->
-    <link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+    <!-- ANIMATE -->
+    <link rel="stylesheet" type="text/css" href="css/animatecss/animate.min.css"/>
+    <!-- COLORBOX -->
+    <link rel="stylesheet" type="text/css" href="js/colorbox/colorbox.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/cloud-admin.css" >
+    <link rel="stylesheet" type="text/css"  href="css/themes/default.css" id="skin-switcher" >
+    <link rel="stylesheet" type="text/css"  href="css/responsive.css" >
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- UNIFORM -->
-    <link rel="stylesheet" type="text/css" href="js/uniform/css/uniform.default.min.css"/>
-    <!-- INBOX CSS -->
-    <link rel="stylesheet" href="css/inbox.css">
-    <!-- FONTS -->
-    <!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
+    <link rel="stylesheet" type="text/css" href="js/uniform/css/uniform.default.min.css" />
+    <!-- JQUERY UPLOAD -->
+    <!-- blueimp Gallery styles -->
+    <link rel="stylesheet" href="js/blueimp/gallery/blueimp-gallery.min.css">
+    <!-- JQUERY -->
+    <script src="js/jquery/jquery-2.0.3.min.js"></script>
+    <script src="self/js/ajaxfileupload.js"></script>
+    <script src="self/js/photo.js"></script>
 </head>
 <body>
 <!-- HEADER -->
@@ -89,7 +91,7 @@ To change this template use File | Settings | File Templates.
                     <i class="fa fa-angle-down"></i>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="login.html"><i class="fa fa-power-off"></i> Log Out</a></li>
+                    <li><a href="login.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
                 </ul>
             </li>
             <!-- END USER LOGIN DROPDOWN -->
@@ -411,12 +413,13 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
-                        <li><a class="" href="findRotatePicture.action"><span class="sub-menu-text">首页轮播图</span></a></li>
-                        <li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
-                        <li><a class="" href="findSchoolVideo.action"><span class="sub-menu-text">视频展示</span></a></li>
-                        <li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
-                        <li><a class="" href="findSchoolGallery.action"><span class="sub-menu-text">校内图册</span></a></li>
+                        <li><a class="" href="school_notification.jsp"><span class="sub-menu-text">通知公告</span></a></li>
+                        <li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a>
+                        </li>
+                        <li><a class="" href="school_news.jsp"><span class="sub-menu-text">学校要闻</span></a></li>
+                        <li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
+                        <li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
+                        <li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -425,9 +428,9 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="findSchoolPrincipal.action"><span class="sub-menu-text">校长致辞</span></a></li>
+                        <li><a class="" href="school_principal.jsp"><span class="sub-menu-text">校长致辞</span></a></li>
                         <li><a class="" href="school_lead.jsp"><span class="sub-menu-text">现任领导</span></a></li>
-                        <li><a class="" href="findSchoolIntroduce.action"><span class="sub-menu-text">学校简介</span></a></li>
+                        <li><a class="" href="school_introduce.jsp"><span class="sub-menu-text">学校简介</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -439,8 +442,7 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
                         <li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
-                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a>
-                        </li>
+                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -449,7 +451,7 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="findServiceTeacher.action"><span class="sub-menu-text">师资服务</span></a></li>
+                        <li><a class="" href="teachers_service.jsp"><span class="sub-menu-text">师资服务</span></a></li>
                         <li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a>
                         </li>
                         <li><a class="" href="nice_class.jsp"><span class="sub-menu-text">精品课程</span></a></li>
@@ -465,9 +467,9 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
                     </ul>
                 </li>
-                <li class=""><a class="" href="exchangeSchoolWork.action"><i class="fa fa-envelope-o fa-fw"></i> <span
+                <li class=""><a class="" href="exchange.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
                         class="menu-text">交流合作</span><span class="selected"></span></a></li>
-                <li class=""><a class="" href="findSchoolRecruitment.action"><i class="fa fa-file-text fa-fw"></i> <span
+                <li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
                         class="menu-text">招就招聘</span><span class="selected"></span></a></li>
             </ul>
             <!-- /SIDEBAR MENU -->
@@ -475,59 +477,92 @@ To change this template use File | Settings | File Templates.
     </div>
     <!-- /SIDEBAR -->
     <div id="main-content">
-        <div class="container">
-            <div class="row">
-                <div class="separator"></div>
-                <div class="col-md-12">
-                    <div class="box border blue">
-                        <div class="box-title">
-                            <h4><i class="fa fa-dot-circle-o"></i>欢迎</h4>
-                        </div>
-                        <div class="box-body big">
-                            <div class="jumbotron">
-                                <h1>欢迎登陆学校管理系统!</h1>
-                                <p>Welcome to the school management system！</p>
-                                <!--<p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>-->
-                            </div>
-                        </div>
+        <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Box Settings</h4>
+                    </div>
+                    <div class="modal-body">
+                        Here goes box setting content.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+        <div class="container">
+            <div class="row">
+                <div id="content" class="col-lg-12">
+                    <!-- GALLERY -->
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top:20px">
+                            <!-- BOX -->
+                            <div class="box">
+                                <div class="box-title">
+                                    <h4><i class="fa fa-bars"></i>相册</h4>
+                                    <div class="tools">
+                                        <%--<a href="javascript:void(0)">--%>
+                                            <%--<button class="btn btn-success tip-right" onclick="javascript:ajaxFileUpload();">添加</button>--%>
+                                        <%--</a>--%>
+                                    </div>
+                                </div>
+                                <div class="box-body clearfix">
+                                    <form action="addSchoolGallery.action" method="post" enctype="multipart/form-data">
+                                        <textarea rows="3" cols="5" name="des" class="countable form-control" maxlength="80" data-limit="100"></textarea>
+                                        <div>最多输入80字</div>
+                                        <input type="file" name="imagefile"/>
+                                        <input type="submit" value="提交">
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- /BOX -->
+                        </div>
+                    </div>
+                    <!-- /GALLERY -->
+                </div><!-- /CONTENT-->
             </div>
         </div>
     </div>
 </section>
 <!--/PAGE -->
-<!-- JQUERY -->
-<script src="js/jquery/jquery-2.0.3.min.js"></script>
 <!-- JQUERY UI-->
 <script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+<!-- CUSTOM SCRIPT -->
+<script src="js/script.js"></script>
+<!-- SELECT2 -->
+<script type="text/javascript" src="js/select2/select2.min.js"></script>
+<!-- JQUERY UPLOAD -->
+<!-- The Templates plugin is included to render the upload/download listings -->
+<script src="js/blueimp/javascript-template/tmpl.min.js"></script>
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="js/blueimp/javascript-loadimg/load-image.min.js"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="js/blueimp/javascript-canvas-to-blob/canvas-to-blob.min.js"></script>
 <!-- BOOTSTRAP -->
 <script src="bootstrap-dist/js/bootstrap.min.js"></script>
-<!-- LESS CSS -->
-<!--<script src="js/lesscss/less-1.4.1.min.js" type="text/javascript"></script>	-->
-<!-- DATE RANGE PICKER -->
-<script src="js/bootstrap-daterangepicker/moment.min.js"></script>
-<script src="js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
 <!-- SLIMSCROLL -->
 <script type="text/javascript" src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
 <script type="text/javascript" src="js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
 <!-- BLOCK UI -->
 <script type="text/javascript" src="js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
-<!-- UNIFORM -->
-<script type="text/javascript" src="js/uniform/jquery.uniform.min.js"></script>
-<!-- BOOTSTRAP WYSIWYG -->
-<script type="text/javascript" src="js/bootstrap-wysiwyg/jquery.hotkeys.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-wysiwyg/bootstrap-wysiwyg.min.js"></script>
+<!-- ISOTOPE -->
+<script type="text/javascript" src="js/isotope/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="js/isotope/imagesloaded.pkgd.min.js"></script>
+<!-- COLORBOX -->
+<script type="text/javascript" src="js/colorbox/jquery.colorbox.min.js"></script>
 <!-- COOKIE -->
 <script type="text/javascript" src="js/jQuery-Cookie/jquery.cookie.min.js"></script>
-<!-- CUSTOM SCRIPT -->
-<script src="js/script.js"></script>
-<script src="js/inbox.js"></script>
 <script>
     jQuery(document).ready(function () {
-        App.setPage("inbox");  //Set current page
+        App.setPage("gallery");  //Set current page
         App.init(); //Initialise plugins and elements
-        Inbox.init();
     });
 </script>
 <!-- /JAVASCRIPTS -->

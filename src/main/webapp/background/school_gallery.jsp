@@ -1,4 +1,5 @@
-﻿<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -521,30 +522,34 @@
 									</div>
 								</div>
 								<div class="box-body clearfix">
-									<%--<div id="filter-controls" class="btn-group">--%>
-									<%--<div class="hidden-xs">--%>
-									<%--<a href="#" class="btn btn-default" data-filter="*">All</a>--%>
-									<%--<a href="#" class="btn btn-info" data-filter=".category_1">Android Apps</a>--%>
-									<%--<a href="#" class="btn btn-danger" data-filter=".category_2">iPhone Apps</a>--%>
-									<%--<a href="#" class="btn btn-success" data-filter=".category_3">Windows Apps</a>--%>
-									<%--<a href="#" class="btn btn-warning" data-filter=".category_4">Web Apps</a>--%>
-									<%--</div>--%>
-									<%--<div class="visible-xs">--%>
-									<%--<select id="e1" class="form-control">--%>
-									<%--<option value="*">All</option>--%>
-									<%--<option value=".category_1">Android Apps</option>--%>
-									<%--<option value=".category_2">iPhone Apps</option>--%>
-									<%--<option value=".category_3">Windows Apps</option>--%>
-									<%--<option value=".category_4">Web Apps</option>--%>
-									<%--</select>--%>
-									<%--</div>--%>
-									<%--</div>--%>
 									<div id="filter-items" class="row">
-										<div class="col-md-3 category_1 item">
+										<c:forEach var="image" items="${images}">
+											<div class="col-md-3  item">
+												<div class="filter-content">
+													<img src="img/gallery/1.png" alt="" class="img-responsive" />
+													<div class="hover-content">
+														<h4 style="font-size: 12px;">国家领导来我校视察作为新安发生了房间谁的风景拉萨方式风粉色的浪费撒地方但是</h4>
+														<a class="btn btn-danger hover-link">
+															<i class="fa fa-trash-o fa-1x"></i>
+														</a>
+														<a class="btn btn-success hover-link">
+															<i class="fa fa-edit fa-1x"></i>
+														</a>
+														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/1.png" title="Image Title">
+															<i class="fa fa-search-plus fa-1x"></i>
+														</a>
+													</div>
+												</div>
+											</div>
+										</c:forEach>
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/1.png" alt="" class="img-responsive" />
 												<div class="hover-content">
-													<h4>Image Title</h4>
+													<h4 style="font-size: 12px;">国家领导来我校视察作为新安发生了房间谁的风景拉萨方式风粉色的浪费撒地方但是国家领导来我校视察作为新安发生我校视察作为新安发生我校视察作为新安发生我校视察作为新安发生</h4>
+													<a class="btn btn-danger hover-link">
+														<i class="fa fa-trash-o fa-1x"></i>
+													</a>
 													<a class="btn btn-success hover-link">
 														<i class="fa fa-edit fa-1x"></i>
 													</a>
@@ -554,7 +559,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-3 category_2 item">
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/2.jpg" alt="" class="img-responsive" />
 												<div class="hover-content">
@@ -568,7 +573,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-3 category_3 item">
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/3.png" alt="" class="img-responsive" />
 												<div class="hover-content">
@@ -582,7 +587,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-3 category_4 item">
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/4.png" alt="" class="img-responsive" />
 												<div class="hover-content">
@@ -596,7 +601,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-3 category_1 item">
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/5.png" alt="" class="img-responsive" />
 												<div class="hover-content">
@@ -610,7 +615,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-3 category_2 item">
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/8.png" alt="" class="img-responsive" />
 												<div class="hover-content">
@@ -624,7 +629,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-3 category_4 item">
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/7.jpg" alt="" class="img-responsive" />
 												<div class="hover-content">
@@ -638,7 +643,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-md-3 category_4 item">
+										<div class="col-md-3  item">
 											<div class="filter-content">
 												<img src="img/gallery/2.jpg" alt="" class="img-responsive" />
 												<div class="hover-content">

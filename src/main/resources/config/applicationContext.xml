@@ -142,6 +142,17 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="categoryService" ref="categoryService"/>
     </bean>
 
+    <!--校内图册-->
+    <bean id="schoolGalleryDao" class="com.sxau.cyschool.dao.impl.SchoolGalleryDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolGalleryService" class="com.sxau.cyschool.service.impl.SchoolGalleryServiceImpl">
+        <property name="schoolGalleryDao" ref="schoolGalleryDao"/>
+    </bean>
+
+    <bean id="schoolGallery" class="com.sxau.cyschool.controller.SchoolGallery" scope="prototype">
+        <property name="schoolGalleryService" ref="schoolGalleryService"/>
+    </bean>
+
     <!--校长致辞-->
     <bean id="principalDao" class="com.sxau.cyschool.dao.impl.PrincipalDaoImpl" parent="baseHibernateDaoImpl"/>
 
@@ -167,13 +178,15 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     </bean>
 
     <!--师资服务-->
-    <bean id="schooServiceTeacherDao" class="com.sxau.cyschool.dao.impl.SchooServiceTeacherDaoImpl" parent="baseHibernateDaoImpl"/>
+    <bean id="schooServiceTeacherDao" class="com.sxau.cyschool.dao.impl.SchooServiceTeacherDaoImpl"
+          parent="baseHibernateDaoImpl"/>
 
     <bean id="schoolServiceTeacher" class="com.sxau.cyschool.service.impl.SchoolServiceTeacherServiceImpl">
         <property name="titleDao" ref="schooServiceTeacherDao"/>
     </bean>
 
-    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction" scope="prototype">
+    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction"
+          scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="schoolServiceTeacher"/>
     </bean>
