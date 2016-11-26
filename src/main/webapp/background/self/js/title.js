@@ -293,6 +293,63 @@ function confirmDeletePrincipal(tid) {
     }
 }
 
+//添加现任领导
+function addLeader() {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "addSchoolLeader.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//修改现任领导
+function updateLeader(id) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "updateSchoolLeader.action?tid="+id,
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//删除校长致辞
+function confirmDeleteLeader(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteSchoolLeader.action?tid=' + tid;
+    }
+}
+
 //添加学校简介
 function addIntroduce() {
     var content = getContentByUeditor();

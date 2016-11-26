@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Cloud Admin | Gallery</title>
+	<title>相册</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="css/animatecss/animate.min.css" />
 	<!-- COLORBOX -->
 	<link rel="stylesheet" type="text/css" href="js/colorbox/colorbox.min.css" />
+
+	<script src="self/js/photo.js"></script>
 	<!-- FONTS -->
 	<!-- <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'> -->
 </head>
@@ -486,31 +488,6 @@
 		<div class="container">
 			<div class="row">
 				<div id="content" class="col-lg-12">
-					<!-- PAGE HEADER-->
-					<%--<div class="row">--%>
-					<%--<div class="col-sm-12">--%>
-					<%--<div class="page-header">--%>
-					<%--<!-- STYLER -->--%>
-					<%----%>
-					<%--<!-- /STYLER -->--%>
-					<%--<!-- BREADCRUMBS -->--%>
-					<%--<ul class="breadcrumb">--%>
-					<%--<li>--%>
-					<%--<i class="fa fa-home"></i>--%>
-					<%--<a href="index.html">Home</a>--%>
-					<%--</li>--%>
-					<%--<li>Gallery</li>--%>
-					<%--</ul>--%>
-					<%--<!-- /BREADCRUMBS -->--%>
-					<%--<div class="clearfix">--%>
-					<%--<h3 class="content-title pull-left">Gallery</h3>--%>
-					<%--</div>--%>
-					<%--<div class="description">Portfolio Gallery</div>--%>
-					<%--</div>--%>
-					<%--</div>--%>
-					<%--</div>--%>
-					<!-- /PAGE HEADER -->
-					<!-- GALLERY -->
 					<div class="row">
 						<div class="col-md-12"  style="margin-top:20px">
 							<!-- BOX -->
@@ -518,7 +495,7 @@
 								<div class="box-title">
 									<h4><i class="fa fa-bars"></i>相册</h4>
 									<div class="tools">
-										<a href="findOneSchoolVideo.action?vid=${video.VId}"><button class="btn btn-success tip-right" >增加</button></a>
+										<a href="school_gallery_add.jsp"><button class="btn btn-success tip-right" >增加</button></a>
 									</div>
 								</div>
 								<div class="box-body clearfix">
@@ -528,11 +505,11 @@
 												<div class="filter-content">
 													<img src="img/gallery/1.png" alt="" class="img-responsive" />
 													<div class="hover-content">
-														<h4 style="font-size: 12px;">国家领导来我校视察作为新安发生了房间谁的风景拉萨方式风粉色的浪费撒地方但是</h4>
-														<a class="btn btn-danger hover-link">
+														<h4 style="font-size: 12px;">${image.IDes}</h4>
+														<a class="btn btn-danger hover-link" href="deleteSchoolGallery.action?imageId=${image.IId}">
 															<i class="fa fa-trash-o fa-1x"></i>
 														</a>
-														<a class="btn btn-success hover-link">
+														<a class="btn btn-success hover-link" href="findOneSchoolGallery.action?imageId=${image.IId}">
 															<i class="fa fa-edit fa-1x"></i>
 														</a>
 														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/1.png" title="Image Title">
@@ -542,121 +519,121 @@
 												</div>
 											</div>
 										</c:forEach>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/1.png" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4 style="font-size: 12px;">国家领导来我校视察作为新安发生了房间谁的风景拉萨方式风粉色的浪费撒地方但是国家领导来我校视察作为新安发生我校视察作为新安发生我校视察作为新安发生我校视察作为新安发生</h4>
-													<a class="btn btn-danger hover-link">
-														<i class="fa fa-trash-o fa-1x"></i>
-													</a>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/1.png" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/2.jpg" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4>Image Title</h4>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/2.jpg" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/3.png" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4>Image Title</h4>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/3.png" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/4.png" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4>Image Title</h4>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/4.png" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/5.png" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4>Image Title</h4>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/5.png" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/8.png" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4>Image Title</h4>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/8.png" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/7.jpg" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4>Image Title</h4>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/7.jpg" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="col-md-3  item">
-											<div class="filter-content">
-												<img src="img/gallery/2.jpg" alt="" class="img-responsive" />
-												<div class="hover-content">
-													<h4>Image Title</h4>
-													<a class="btn btn-success hover-link">
-														<i class="fa fa-edit fa-1x"></i>
-													</a>
-													<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/2.jpg" title="Image Title">
-														<i class="fa fa-search-plus fa-1x"></i>
-													</a>
-												</div>
-											</div>
-										</div>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/1.png" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4 style="font-size: 12px;">国家领导来我校视察作为新安发生了房间谁的风景拉萨方式风粉色的浪费撒地方但是国家领导来我校视察作为新安发生我校视察作为新安发生我校视察作为新安发生我校视察作为新安发生</h4>--%>
+													<%--<a class="btn btn-danger hover-link">--%>
+														<%--<i class="fa fa-trash-o fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/1.png" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/2.jpg" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4>Image Title</h4>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/2.jpg" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/3.png" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4>Image Title</h4>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/3.png" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/4.png" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4>Image Title</h4>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/4.png" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/5.png" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4>Image Title</h4>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/5.png" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/8.png" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4>Image Title</h4>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/8.png" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/7.jpg" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4>Image Title</h4>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/7.jpg" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
+										<%--<div class="col-md-3  item">--%>
+											<%--<div class="filter-content">--%>
+												<%--<img src="img/gallery/2.jpg" alt="" class="img-responsive" />--%>
+												<%--<div class="hover-content">--%>
+													<%--<h4>Image Title</h4>--%>
+													<%--<a class="btn btn-success hover-link">--%>
+														<%--<i class="fa fa-edit fa-1x"></i>--%>
+													<%--</a>--%>
+													<%--<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/2.jpg" title="Image Title">--%>
+														<%--<i class="fa fa-search-plus fa-1x"></i>--%>
+													<%--</a>--%>
+												<%--</div>--%>
+											<%--</div>--%>
+										<%--</div>--%>
 									</div>
 								</div>
 							</div>

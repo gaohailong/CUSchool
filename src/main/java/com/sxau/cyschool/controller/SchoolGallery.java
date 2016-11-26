@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sxau.cyschool.pojo.Image;
 import com.sxau.cyschool.service.SchoolGalleryService;
 import com.sxau.cyschool.utils.Page;
+import com.sxau.cyschool.utils.UTimeUtil;
 import org.apache.struts2.ServletActionContext;
 
 import java.io.File;
@@ -26,6 +27,7 @@ public class SchoolGallery extends ActionSupport {
     private File imagefile;
     private String imagefileFileName;
     private String imagefileContentType;
+    private Integer imageId;
 
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
@@ -37,17 +39,20 @@ public class SchoolGallery extends ActionSupport {
         return "findSchoolGallery";
     }
 
-    public String updateSchool() throws Exception {
-        Image image = new Image();
-        //todo 先查询
-        image.setIDes(des);
-        schoolGalleryService.updatePhotoByPhoto(image);
-        return "updateSchoolGallery";
+    public String findOneSchool() throws Exception {
+        if (imageId != null) {
+            image = schoolGalleryService.findImageById(imageId);
+            return "updateSchoolGallery";
+        } else {
+            return ERROR;
+        }
     }
 
-    public String addSchool() throws Exception {
-//        System.out.print(imagefileFileName);
-        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/");
+    public String updateSchool() throws Exception {
+        Image imageValue = schoolGalleryService.findImageById(imageId);
+        imageValue.setIDes(des);
+        String unique = UTimeUtil.timeRandom() + imagefileFileName;
+        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/" + unique);
         FileInputStream fis = new FileInputStream(imagefile);
         FileOutputStream fos = new FileOutputStream(path);
         int length = -1;
@@ -61,10 +66,39 @@ public class SchoolGallery extends ActionSupport {
         fos.flush();
         fos.close();
         fis.close();
+        image.setILink("/upload/gallery/" + unique);
+        schoolGalleryService.updatePhotoByPhoto(image);
+        return "updateSchoolGallery";
+    }
 
+    public String deleteSchool() throws Exception {
+        if (imageId != null) {
+            schoolGalleryService.deletePhotoById(imageId);
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
+    }
+
+    public String addSchool() throws Exception {
+        String unique = UTimeUtil.timeRandom() + imagefileFileName;
+        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/");
+        FileInputStream fis = new FileInputStream(imagefile);
+        FileOutputStream fos = new FileOutputStream(new File(path,unique));
+        int length = -1;
+        byte[] bytes = new byte[1024];
+        do {
+            length = fis.read(bytes);
+            if (length != -1) {
+                fos.write(bytes, 0, length);
+            }
+        } while (length != -1);
+        fos.flush();
+        fos.close();
+        fis.close();
         Image image = new Image();
         image.setIDes(des);
-        image.setILink(path);
+        image.setILink("/upload/gallery/" + unique);
         schoolGalleryService.savePhoto(image);
         return SUCCESS;
     }
@@ -131,5 +165,13 @@ public class SchoolGallery extends ActionSupport {
 
     public void setImagefileContentType(String imagefileContentType) {
         this.imagefileContentType = imagefileContentType;
+    }
+
+    public Integer getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(Integer imageId) {
+        this.imageId = imageId;
     }
 }

@@ -31,8 +31,6 @@
     <link rel="stylesheet" href="js/blueimp/gallery/blueimp-gallery.min.css">
     <!-- JQUERY -->
     <script src="js/jquery/jquery-2.0.3.min.js"></script>
-    <script src="self/js/ajaxfileupload.js"></script>
-    <script src="self/js/photo.js"></script>
 </head>
 <body>
 <!-- HEADER -->
@@ -517,8 +515,8 @@
                                     <form action="addSchoolGallery.action" method="post" enctype="multipart/form-data">
                                         <textarea rows="3" cols="5" name="des" class="countable form-control" maxlength="80" data-limit="100"></textarea>
                                         <div>最多输入80字</div>
-                                        <input type="file" name="imagefile"/>
-                                        <input type="submit" value="提交">
+                                        <input type="file" name="imagefile" style="padding: 5px 10px;"/>
+                                        <input class="btn btn-success" style="margin-top:20px;" type="submit" value="提交">
                                     </form>
                                 </div>
                             </div>

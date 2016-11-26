@@ -97,6 +97,10 @@ public class SchoolGalleryServiceImpl implements SchoolGalleryService {
         return pagee;
     }
 
+    public Image findImageById(int id) throws Exception {
+        return this.schoolGalleryDao.findImageById(id);
+    }
+
     public int queryImageCount(Image image) throws Exception {
         return this.schoolGalleryDao.queryImageCount(image);
     }
@@ -108,4 +112,6 @@ public class SchoolGalleryServiceImpl implements SchoolGalleryService {
     public void setSchoolGalleryDao(SchoolGalleryDao schoolGalleryDao) {
         this.schoolGalleryDao = schoolGalleryDao;
     }
+
+
 }

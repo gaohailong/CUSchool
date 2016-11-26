@@ -51,4 +51,12 @@ public interface SchoolGalleryDao {
      * @throws Exception
      */
     int queryImageCount(Image image) throws Exception;
+
+    /**
+     * 通过id查询图片
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    Image findImageById(int id) throws Exception;
 }

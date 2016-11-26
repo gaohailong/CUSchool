@@ -102,7 +102,6 @@ public class SchoolGalleryDaoImpl extends BaseHibernateDaoImpl<Image> implements
         StringBuffer stringBuffer = new StringBuffer("select count(*) from Image i where 1 = 1");
         if (image == null) {
             return this.getInt(stringBuffer.toString());
-//            throw new SystemException("传入的参数为空");
         } else {
             if (image.getIDes() != null) {
                 stringBuffer.append("and i.IDes like '%" + image.getIDes() + "%'");
@@ -110,4 +109,11 @@ public class SchoolGalleryDaoImpl extends BaseHibernateDaoImpl<Image> implements
             return this.getInt(stringBuffer.toString());
         }
     }
+
+    public Image findImageById(int id) throws Exception {
+        Image image = this.getObject(Image.class, id);
+        return image;
+    }
+
+
 }

@@ -165,6 +165,18 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleService" ref="principalService"/>
     </bean>
 
+    <!--现任领导-->
+    <bean id="leaderDao" class="com.sxau.cyschool.dao.impl.LeaderDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="leaderService" class="com.sxau.cyschool.service.impl.LeaderServiceImpl">
+         <property name="titleDao" ref="leaderDao"/>
+    </bean>
+
+    <bean id="leaderAction" class="com.sxau.cyschool.controller.LeaderAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="leaderService"/>
+    </bean>
+
     <!--学校简介-->
     <bean id="introduceDao" class="com.sxau.cyschool.dao.impl.IntroduceDaoImpl" parent="baseHibernateDaoImpl"/>
 
