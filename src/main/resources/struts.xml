@@ -83,6 +83,13 @@
             <result name="updateNiceCourse">/background/nice_course_update.jsp</result>
         </action>
 
+        <!--学科建设-->
+        <action name="*Subject" class="subjectBuildAction" method="{1}">
+            <result name="findBuildSubject">/background/subject_build.jsp</result>
+            <result name="addBuildSubject">/background/subject_add.jsp</result>
+            <result name="updateOneBuildSubject">/background/subject_update.jsp</result>
+        </action>
+
         <!--交流合作-->
         <action name="*Work" class="exchangeWorkAction" method="{1}">
             <result name="findExchangeSchool">/background/exchange.jsp</result>

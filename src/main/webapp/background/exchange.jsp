@@ -11,7 +11,7 @@ To change this template use File | Settings | File Templates.
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Cloud Admin | Inbox</title>
+    <title>交流合作</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -486,7 +486,7 @@ To change this template use File | Settings | File Templates.
                 <!-- BOX -->
                 <div class="box border inverse">
                     <div class="box-title">
-                        <h4><i class="fa fa-table"></i>要闻列表</h4>
+                        <h4><i class="fa fa-table"></i>交流合作</h4>
                         <div class="tools">
                             <c:forEach var="titles" items="${titleList}">
                                 <a href="javascript:confirmDeleteExchangeWork(${titles.TId});">

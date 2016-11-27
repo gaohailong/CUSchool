@@ -222,9 +222,21 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="niceCourseDao"/>
     </bean>
 
-    <bean id="niceCourseAction" class="com.sxau.cyschool.controller.NiceCourseAction">
+    <bean id="niceCourseAction" class="com.sxau.cyschool.controller.NiceCourseAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="niceCourseService"/>
+    </bean>
+
+    <!--学科建设-->
+    <bean id="subjectBuildDao" class="com.sxau.cyschool.dao.impl.SubjectBuildDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="subjectBuildService" class="com.sxau.cyschool.service.impl.SubjectBuildServiceImpl">
+        <property name="titleDao" ref="subjectBuildDao"/>
+    </bean>
+
+    <bean id="subjectBuildAction" class="com.sxau.cyschool.controller.SubjectBuildAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="subjectBuildService"/>
     </bean>
 
     <!--交流合作-->

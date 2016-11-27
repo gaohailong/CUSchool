@@ -1,4 +1,5 @@
-﻿<%--
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: gaohailong
 Date: 2016/11/21
@@ -26,6 +27,7 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" type="text/css" href="js/uniform/css/uniform.default.min.css" />
 	<!-- INBOX CSS -->
 	<link rel="stylesheet" href="css/inbox.css">
+	<script src="self/js/title.js"></script>
 	<!-- FONTS -->
 	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
 </head>
@@ -474,76 +476,31 @@ To change this template use File | Settings | File Templates.
 		<div id="main-content">
 			<div class="container">
 				<div class="separator"></div>
-				<!-- PAGE HEADER-->
-				<!--<div class="row">-->
-					<!--<div class="col-sm-12">-->
-						<!--<div class="page-header">-->
-							<!--&lt;!&ndash; STYLER &ndash;&gt;-->
-
-							<!--&lt;!&ndash; /STYLER &ndash;&gt;-->
-							<!--&lt;!&ndash; BREADCRUMBS &ndash;&gt;-->
-							<!--<ul class="breadcrumb">-->
-								<!--<li>-->
-									<!--<i class="fa fa-home"></i>-->
-									<!--<a href="inbox.jsp">Home</a>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<a href="#">Tables</a>-->
-								<!--</li>-->
-								<!--<li>Simple Tables</li>-->
-							<!--</ul>-->
-							<!--&lt;!&ndash; /BREADCRUMBS &ndash;&gt;-->
-							<!--<div class="clearfix">-->
-								<!--<h3 class="content-title pull-left">Simple Tables</h3>-->
-							<!--</div>-->
-							<!--<div class="description">Simple Tables with exclusive UI experience</div>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!-- /PAGE HEADER -->
-				<div class="row">
-					<div class="col-md-12">
-						<!-- BOX -->
-						<div class="box border inverse">
-							<div class="box-title">
-								<h4><i class="fa fa-table"></i>要闻列表</h4>
-							</div>
-							<div class="box-body">
-								<table class="table table-bordered">
-									<thead>
-									<tr>
-										<th>#</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Username</th>
-									</tr>
-									</thead>
-									<tbody>
-									<tr>
-										<td>1</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Larry</td>
-										<td>the Bird</td>
-										<td>@twitter</td>
-									</tr>
-									</tbody>
-								</table>
+				<div class="col-md-12" style="margin-top: 20px;">
+					<!-- BOX -->
+					<div class="box border inverse">
+						<div class="box-title">
+							<h4><i class="fa fa-table"></i>学科建设</h4>
+							<div class="tools">
+								<c:forEach var="titles" items="${titleList}">
+									<a href="javascript:confirmDeleteBuildSubject(${titles.TId});">
+										<button class="btn btn-danger tip-left">删除</button>
+									</a>
+									<a href="findOneBuildSubject.action?tid=${titles.TId}">
+										<button class="btn btn-success tip-right">修改</button>
+									</a>
+								</c:forEach>
 							</div>
 						</div>
-						<!-- /BOX -->
+						<div class="box-body">
+							<c:forEach var="titles" items="${titleList}">
+								<div>${titles.TName}</div>
+								<div>${titles.TContent}</div>
+							</c:forEach>
+						</div>
 					</div>
 				</div>
+				<div class="separator"></div>
 			</div>
 		</div>
 	</section>
