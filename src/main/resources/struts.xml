@@ -71,6 +71,11 @@
             <result name="findOneTeacherService">/background/teacher_service_update.jsp</result>
         </action>
 
+        <action name="*Professional" class="featuredProfessionalAction" method="{1}">
+            <result name="findFeatured">/background/featured_professional.jsp</result>
+            <result name="updateFeatured">/background/featured_professional_update.jsp</result>
+        </action>
+
         <!--交流合作-->
         <action name="*Work" class="exchangeWorkAction" method="{1}">
             <result name="findExchangeSchool">/background/exchange.jsp</result>

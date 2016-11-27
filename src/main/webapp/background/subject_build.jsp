@@ -10,7 +10,7 @@ To change this template use File | Settings | File Templates.
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Cloud Admin | Inbox</title>
+	<title>学科建设</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -449,7 +449,7 @@ To change this template use File | Settings | File Templates.
 								<ul class="sub">
 									<li><a class="" href="teachers_service.jsp"><span class="sub-menu-text">师资服务</span></a></li>
 									<li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a></li>
-									<li><a class="" href="nice_class.jsp"><span class="sub-menu-text">精品课程</span></a></li>
+									<li><a class="" href="nice_course.jsp"><span class="sub-menu-text">精品课程</span></a></li>
 								</ul>
 							</li>
 							<li class="has-sub">

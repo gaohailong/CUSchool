@@ -203,6 +203,17 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleService" ref="schoolServiceTeacher"/>
     </bean>
 
+    <!--特色专业-->
+    <bean id="featuredProfessionalDao" class="com.sxau.cyschool.dao.impl.FeaturedProfessionalDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="featuredProfessionalService" class="com.sxau.cyschool.service.impl.FeaturedProfessionalServiceImpl">
+        <property name="titleDao" ref="featuredProfessionalDao"/>
+    </bean>
+
+    <bean id="featuredProfessionalAction" class="com.sxau.cyschool.controller.FeaturedProfessionalAction">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="featuredProfessionalService"/>
+    </bean>
     <!--交流合作-->
     <bean id="exchangeWorkDao" class="com.sxau.cyschool.dao.impl.ExchangeWorkDaoImpl" parent="baseHibernateDaoImpl"/>
 

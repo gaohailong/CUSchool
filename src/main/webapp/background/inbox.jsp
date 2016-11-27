@@ -450,9 +450,8 @@ To change this template use File | Settings | File Templates.
                     </a>
                     <ul class="sub">
                         <li><a class="" href="findServiceTeacher.action"><span class="sub-menu-text">师资服务</span></a></li>
-                        <li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a>
-                        </li>
-                        <li><a class="" href="nice_class.jsp"><span class="sub-menu-text">精品课程</span></a></li>
+                        <li><a class="" href="featuredSchoolProfessional.action"><span class="sub-menu-text">特色专业</span></a></li>
+                        <li><a class="" href="nice_course.jsp"><span class="sub-menu-text">精品课程</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">

@@ -11,7 +11,7 @@ To change this template use File | Settings | File Templates.
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>通知公告</title>
+    <title>修改特色专业</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -516,7 +516,7 @@ To change this template use File | Settings | File Templates.
                         }
                     </script>
                     <div class="separator-two"></div>
-                    <button class="btn btn-block btn-primary" onclick="javascript:updateNotification(${title.TId})">提交</button>
+                    <button class="btn btn-block btn-primary" onclick="javascript:updateFeaturedProfessional(${title.TId})">提交</button>
                 </div>
             </div>
         </div>
