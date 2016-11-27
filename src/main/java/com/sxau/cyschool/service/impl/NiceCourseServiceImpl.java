@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * Created by gaohailong on 2016/11/22.
- * 校长致辞
+ *
  */
 public class NiceCourseServiceImpl implements TitleService {
 

@@ -524,6 +524,64 @@ function confirmDeleteFeaturedProfessional(tid) {
     }
 }
 
+//添加精品课程
+function addNiceCourse() {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "addNiceCourse.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+
+//修改精品课程
+function updateNiceCourse(id) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "updateNiceCourse.action?tid="+id,
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//删除精品课程
+function confirmDeleteNiceCourse(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteNiceCourse.action?tid=' + tid;
+    }
+}
+
 //添加交流合作
 function addExchange() {
     var content = getContentByUeditor();

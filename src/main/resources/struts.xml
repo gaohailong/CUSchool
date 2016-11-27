@@ -71,9 +71,16 @@
             <result name="findOneTeacherService">/background/teacher_service_update.jsp</result>
         </action>
 
+        <!--特色专业-->
         <action name="*Professional" class="featuredProfessionalAction" method="{1}">
             <result name="findFeatured">/background/featured_professional.jsp</result>
             <result name="updateFeatured">/background/featured_professional_update.jsp</result>
+        </action>
+
+        <!--精品课程-->
+        <action name="*Course" class="niceCourseAction" method="{1}">
+            <result name="findNiceCourse">/background/nice_course.jsp</result>
+            <result name="updateNiceCourse">/background/nice_course_update.jsp</result>
         </action>
 
         <!--交流合作-->

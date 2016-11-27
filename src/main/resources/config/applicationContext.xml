@@ -214,6 +214,19 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="featuredProfessionalService"/>
     </bean>
+
+    <!--精品课程-->
+    <bean id="niceCourseDao" class="com.sxau.cyschool.dao.impl.NiceCourseDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="niceCourseService" class="com.sxau.cyschool.service.impl.NiceCourseServiceImpl">
+        <property name="titleDao" ref="niceCourseDao"/>
+    </bean>
+
+    <bean id="niceCourseAction" class="com.sxau.cyschool.controller.NiceCourseAction">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="niceCourseService"/>
+    </bean>
+
     <!--交流合作-->
     <bean id="exchangeWorkDao" class="com.sxau.cyschool.dao.impl.ExchangeWorkDaoImpl" parent="baseHibernateDaoImpl"/>
 
