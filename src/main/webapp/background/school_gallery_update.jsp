@@ -411,13 +411,12 @@
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="school_notification.jsp"><span class="sub-menu-text">通知公告</span></a></li>
-                        <li><a class="" href="school_rotate_picture.jsp"><span class="sub-menu-text">首页轮播图</span></a>
-                        </li>
-                        <li><a class="" href="school_news.jsp"><span class="sub-menu-text">学校要闻</span></a></li>
-                        <li><a class="" href="school_video.jsp"><span class="sub-menu-text">视频展示</span></a></li>
-                        <li><a class="" href="school_graduation.jsp"><span class="sub-menu-text">毕业风采</span></a></li>
-                        <li><a class="" href="school_gallery.jsp"><span class="sub-menu-text">校内图册</span></a></li>
+                        <li><a class="" href="findNotificationTitle.action"><span class="sub-menu-text">通知公告</span></a></li>
+                        <li><a class="" href="findRotatePicture.action"><span class="sub-menu-text">首页轮播图</span></a></li>
+                        <li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
+                        <li><a class="" href="findSchoolVideo.action"><span class="sub-menu-text">视频展示</span></a></li>
+                        <li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
+                        <li><a class="" href="findSchoolGallery.action"><span class="sub-menu-text">校内图册</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -426,9 +425,9 @@
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="school_principal.jsp"><span class="sub-menu-text">校长致辞</span></a></li>
-                        <li><a class="" href="school_lead.jsp"><span class="sub-menu-text">现任领导</span></a></li>
-                        <li><a class="" href="school_introduce.jsp"><span class="sub-menu-text">学校简介</span></a></li>
+                        <li><a class="" href="findSchoolPrincipal.action"><span class="sub-menu-text">校长致辞</span></a></li>
+                        <li><a class="" href="findSchoolLeader.action"><span class="sub-menu-text">现任领导</span></a></li>
+                        <li><a class="" href="findSchoolIntroduce.action"><span class="sub-menu-text">学校简介</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -437,10 +436,11 @@
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
-                        <li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a>
+                        <li><a class="" href="findSchoolAdministration.action"><span class="sub-menu-text">行政机构</span></a></li>
+                        <li><a class="" href="findInstitutionsTeaching.action"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
-                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a></li>
+                        <li><a class="" href="findImmediateOther.action"><span class="sub-menu-text">直属及其他</span></a>
+                        </li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -449,10 +449,9 @@
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="teachers_service.jsp"><span class="sub-menu-text">师资服务</span></a></li>
-                        <li><a class="" href="featured_professional.jsp"><span class="sub-menu-text">特色专业</span></a>
-                        </li>
-                        <li><a class="" href="nice_course.jsp"><span class="sub-menu-text">精品课程</span></a></li>
+                        <li><a class="" href="findServiceTeacher.action"><span class="sub-menu-text">师资服务</span></a></li>
+                        <li><a class="" href="featuredSchoolProfessional.action"><span class="sub-menu-text">特色专业</span></a></li>
+                        <li><a class="" href="findNiceCourse.action"><span class="sub-menu-text">精品课程</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">
@@ -461,13 +460,13 @@
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="subject_build.jsp"><span class="sub-menu-text">学科建设</span></a></li>
-                        <li><a class="" href="society_service.jsp"><span class="sub-menu-text">社会服务</span></a></li>
+                        <li><a class="" href="findBuildSubject.action"><span class="sub-menu-text">学科建设</span></a></li>
+                        <li><a class="" href="findServiceSociety.action"><span class="sub-menu-text">社会服务</span></a></li>
                     </ul>
                 </li>
-                <li class=""><a class="" href="exchange.jsp"><i class="fa fa-envelope-o fa-fw"></i> <span
+                <li class=""><a class="" href="exchangeSchoolWork.action"><i class="fa fa-envelope-o fa-fw"></i> <span
                         class="menu-text">交流合作</span><span class="selected"></span></a></li>
-                <li class=""><a class="" href="for_recruitment.jsp"><i class="fa fa-file-text fa-fw"></i> <span
+                <li class=""><a class="" href="findSchoolRecruitment.action"><i class="fa fa-file-text fa-fw"></i> <span
                         class="menu-text">招就招聘</span><span class="selected"></span></a></li>
             </ul>
             <!-- /SIDEBAR MENU -->
