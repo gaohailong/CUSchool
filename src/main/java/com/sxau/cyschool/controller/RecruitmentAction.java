@@ -40,14 +40,14 @@ public class RecruitmentAction extends ActionSupport {
         totalPage = page.getTotalPage();
         if (titleList.size() > 0) {
             return "findRecruitmentSchool";
-        }else {
+        } else {
             return "addRecruitmentSchool";
         }
     }
 
     //查找一个通知
     public String findOne() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null || tid == 0) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
