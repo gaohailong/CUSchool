@@ -220,7 +220,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="immediateAndOtherDao"/>
     </bean>
 
-    <bean id="immediateAndOtherAction" class="com.sxau.cyschool.controller.ImmediateAndOtherAction">
+    <bean id="immediateAndOtherAction" class="com.sxau.cyschool.controller.ImmediateAndOtherAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="immediateAndOtherService"/>
     </bean>

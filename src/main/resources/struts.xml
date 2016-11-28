@@ -80,6 +80,7 @@
         <!--直属及其他-->
         <action name="*Other" class="immediateAndOtherAction" method="{1}">
             <result name="findImmediateOther">/background/immediate_and_other.jsp</result>
+            <result name="updateSchoolAdministration">/background/immediate_and_other_update.jsp</result>
         </action>
 
         <!--师资服务-->

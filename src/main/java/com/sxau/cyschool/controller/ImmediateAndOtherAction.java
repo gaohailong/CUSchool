@@ -51,7 +51,7 @@ public class ImmediateAndOtherAction extends ActionSupport {
     }
 
     //添加现任领导通知
-    public String addSchool() throws Exception {
+    public String addImmediate() throws Exception {
         Title title = new Title();
         title.setTContent(notificationContent);
         title.setTName(notificationHead);
@@ -64,13 +64,13 @@ public class ImmediateAndOtherAction extends ActionSupport {
     }
 
     //删除现任领导通知
-    public String deleteSchool() throws Exception {
+    public String deleteImmediate() throws Exception {
         titleService.deleteTitle(tid);
         return SUCCESS;
     }
 
     //修改现任领导
-    public String updateSchool() throws Exception {
+    public String updateImmediate() throws Exception {
         if (tid == null || tid == 0) {
             return ERROR;
         }
