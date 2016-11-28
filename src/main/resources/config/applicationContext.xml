@@ -239,6 +239,17 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleService" ref="subjectBuildService"/>
     </bean>
 
+    <!--社会服务-->
+    <bean id="societyService" class="com.sxau.cyschool.dao.impl.SocietyServiceDaoImpl" parent="baseHibernateDaoImpl"/>
+    <bean id="societyServiceService" class="com.sxau.cyschool.service.impl.SocietyServiceServiceImpl">
+        <property name="titleDao" ref="societyService"/>
+    </bean>
+
+    <bean id="societyServiceAction" class="com.sxau.cyschool.controller.SocietyServiceAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="societyServiceService"/>
+    </bean>
+
     <!--交流合作-->
     <bean id="exchangeWorkDao" class="com.sxau.cyschool.dao.impl.ExchangeWorkDaoImpl" parent="baseHibernateDaoImpl"/>
 

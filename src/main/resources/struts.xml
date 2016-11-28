@@ -90,6 +90,13 @@
             <result name="updateOneBuildSubject">/background/subject_update.jsp</result>
         </action>
 
+        <!--社会服务-->
+        <action name="*Society" class="societyServiceAction" method="{1}">
+            <result name="findServiceSociety">/background/society_service.jsp</result>
+            <result name="addServiceSociety">/background/society_service_add.jsp</result>
+            <result name="updateOneServiceSociety">/background/society_service_update.jsp</result>
+        </action>
+
         <!--交流合作-->
         <action name="*Work" class="exchangeWorkAction" method="{1}">
             <result name="findExchangeSchool">/background/exchange.jsp</result>

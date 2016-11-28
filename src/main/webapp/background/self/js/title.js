@@ -639,6 +639,63 @@ function confirmDeleteBuildSubject(tid) {
     }
 }
 
+//添加社会服务
+function addSocietyService() {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "addServiceSociety.action",
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//修改社会服务
+function updateSocietyService(id) {
+    var content = getContentByUeditor();
+    var head = $("#t-notification").val();
+    if (content == null) {
+        alert("未输入任何内容！");
+    } else if (head == null) {
+        alert("请输入文章标题！");
+    } else {
+        var data = {"notificationHead": head, "notificationContent": content};
+        $.ajax({
+            type: "POST",
+            url: "updateServiceSociety.action?tid="+id,
+            data: data,
+            dataType: "text",
+            success: function (data) {
+                window.location.href = "/background/success.jsp";
+            },
+            error: function (error) {
+                window.location.href = "/background/fail.jsp";
+            }
+        });
+    }
+}
+
+//删除社会服务
+function confirmDeleteSocietyService(tid) {
+    if (confirm("确定要删除这篇文章吗？")) {
+        location.href = 'deleteServiceSociety.action?tid=' + tid;
+    }
+}
+
 //添加交流合作
 function addExchange() {
     var content = getContentByUeditor();
