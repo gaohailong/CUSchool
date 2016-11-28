@@ -36,10 +36,7 @@ public class VideoAction extends ActionSupport {
     }
 
     public String addSchool() throws Exception {
-        System.out.print("test");
-        System.out.print(videoService.findCountVideo() + "fasdkfjaslf");
         if (videoService.findCountVideo() > 0) {
-            System.out.print("fadsfjaslf");
             return ERROR;
         } else {
             Video video = new Video();
