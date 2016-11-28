@@ -30,6 +30,7 @@ To change this template use File | Settings | File Templates.
     <link rel="stylesheet" type="text/css" href="js/uniform/css/uniform.default.min.css"/>
     <!-- INBOX CSS -->
     <link rel="stylesheet" href="css/inbox.css">
+    <script src="self/js/title.js"></script>
     <!-- FONTS -->
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
 </head>
@@ -478,7 +479,7 @@ To change this template use File | Settings | File Templates.
         <div class="container">
             <div class="separator"></div>
             <div class="row">
-                <div class="col-md-12"><a href="<%request.getContextPath();%>/background/teacher_service_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+                <div class="col-md-12"><a href="<%request.getContextPath();%>/background/teaching_institutions_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
                 <div class="col-md-12" style="margin-top: 20px;">
                     <!-- BOX -->
                     <div class="box border inverse">
@@ -522,7 +523,7 @@ To change this template use File | Settings | File Templates.
                     <!-- /BOX -->
                     <div class="col-md-offset-4">
                         <i class="col-md-5"></i>
-                        <ul class="col-md-7 pagination pagination-lg  ">
+                        <ul class="col-md-5 pagination pagination-lg  ">
                             <c:forEach begin="1" end="${totalPage}" varStatus="i">
                                 <li><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
                             </c:forEach>
