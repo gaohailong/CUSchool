@@ -65,6 +65,23 @@
             <result name="updateIntroduce">/background/school_introduce_update.jsp</result>
         </action>
 
+        <!--行政机构-->
+        <action name="*Administration" class="administrationlAction" method="{1}">
+            <result name="findSchoolAdministration">/background/administration.jsp</result>
+            <result name="updateSchoolAdministration">/background/administration_update.jsp</result>
+        </action>
+
+        <!--教辅机构-->
+        <action name="*Teaching" class="teachingInstitutionsAction" method="{1}">
+            <result name="findInstitution">/background/teaching_institutions.jsp</result>
+            <result name="findOneInstitutions">/background/teaching_institutions_update.jsp</result>
+        </action>
+
+        <!--直属及其他-->
+        <action name="*Other" class="immediateAndOtherAction" method="{1}">
+            <result name="findImmediateOther">/background/immediate_and_other.jsp</result>
+        </action>
+
         <!--师资服务-->
         <action name="*Teacher" class="schoolServiceTeacherAction" method="{1}">
             <result name="findServiceTeacher">/background/teachers_service.jsp</result>

@@ -1,4 +1,5 @@
-﻿<%--
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: gaohailong
 Date: 2016/11/21
@@ -27,6 +28,7 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" type="text/css" href="js/uniform/css/uniform.default.min.css" />
 	<!-- INBOX CSS -->
 	<link rel="stylesheet" href="css/inbox.css">
+	<script src="self/js/title.js"></script>
 	<!-- FONTS -->
 	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
 </head>
@@ -475,74 +477,62 @@ To change this template use File | Settings | File Templates.
 		<div id="main-content">
 			<div class="container">
 				<div class="separator"></div>
-				<!-- PAGE HEADER-->
-				<!--<div class="row">-->
-					<!--<div class="col-sm-12">-->
-						<!--<div class="page-header">-->
-							<!--&lt;!&ndash; STYLER &ndash;&gt;-->
-
-							<!--&lt;!&ndash; /STYLER &ndash;&gt;-->
-							<!--&lt;!&ndash; BREADCRUMBS &ndash;&gt;-->
-							<!--<ul class="breadcrumb">-->
-								<!--<li>-->
-									<!--<i class="fa fa-home"></i>-->
-									<!--<a href="inbox.jsp">Home</a>-->
-								<!--</li>-->
-								<!--<li>-->
-									<!--<a href="#">Tables</a>-->
-								<!--</li>-->
-								<!--<li>Simple Tables</li>-->
-							<!--</ul>-->
-							<!--&lt;!&ndash; /BREADCRUMBS &ndash;&gt;-->
-							<!--<div class="clearfix">-->
-								<!--<h3 class="content-title pull-left">Simple Tables</h3>-->
-							<!--</div>-->
-							<!--<div class="description">Simple Tables with exclusive UI experience</div>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!-- /PAGE HEADER -->
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12"><a href="<%request.getContextPath();%>/background/immediate_and_other_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+					<div class="col-md-12" style="margin-top: 20px;">
 						<!-- BOX -->
 						<div class="box border inverse">
 							<div class="box-title">
-								<h4><i class="fa fa-table"></i>要闻列表</h4>
+								<h4><i class="fa fa-table"></i>校长致辞</h4>
 							</div>
 							<div class="box-body">
 								<table class="table table-bordered">
 									<thead>
 									<tr>
-										<th>#</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Username</th>
+										<th>序号</th>
+										<th>标题</th>
+										<th>日期</th>
+										<th>浏览量</th>
+										<th>操作</th>
 									</tr>
 									</thead>
 									<tbody>
-									<tr>
-										<td>1</td>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Larry</td>
-										<td>the Bird</td>
-										<td>@twitter</td>
-									</tr>
+									<c:forEach var="titles" items="${titleList}" step="1" varStatus="i">
+										<tr>
+											<td>${i.index+1}</td>
+											<td>${titles.TName}</td>
+											<td>${titles.TDate}</td>
+											<td>${titles.TRead}</td>
+											<td>
+												<a href="findOneImmediateOther.action?tid=${titles.TId}" style="text-underline: none">
+													<img src="self/images/update.png" alt="update"
+														 style="width: 20px;height: 20px;margin-left: 10px"/>
+												</a>
+												<a href="javascript:confirmDeleteImmediateAndOther(${titles.TId});">
+													<img src="self/images/delete.png" alt="delete"
+														 style="width: 20px;height: 20px;margin-left: 10px">
+												</a>
+											</td>
+										</tr>
+									</c:forEach>
 									</tbody>
 								</table>
 							</div>
 						</div>
 						<!-- /BOX -->
+						<i class="col-md-5"></i>
+						<ul class="col-md-7 pagination pagination-lg  ">
+							<c:forEach begin="1" end="${totalPage}" varStatus="i">
+								<li><a href="findSchoolPrincipal.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+							</c:forEach>
+							<%--<li><a href="#">&laquo;</a></li>--%>
+							<%--<li class="active"><a href="#">1</a></li>--%>
+							<%--<li><a href="#">2</a></li>--%>
+							<%--<li><a href="#">3</a></li>--%>
+							<%--<li><a href="#">4</a></li>--%>
+							<%--<li><a href="#">5</a></li>--%>
+							<%--<li><a href="#">&raquo;</a></li>--%>
+						</ul>
 					</div>
 				</div>
 			</div>

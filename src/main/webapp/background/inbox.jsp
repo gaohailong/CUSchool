@@ -436,10 +436,10 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li><a class="" href="administration.jsp"><span class="sub-menu-text">行政机构</span></a></li>
-                        <li><a class="" href="teaching_institutions.jsp"><span class="sub-menu-text">教辅机构</span></a>
+                        <li><a class="" href="findSchoolAdministration.action"><span class="sub-menu-text">行政机构</span></a></li>
+                        <li><a class="" href="findInstitutionsTeaching.action"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
-                        <li><a class="" href="immediate_and_other.jsp"><span class="sub-menu-text">直属及其他</span></a>
+                        <li><a class="" href="findImmediateOther.action"><span class="sub-menu-text">直属及其他</span></a>
                         </li>
                     </ul>
                 </li>

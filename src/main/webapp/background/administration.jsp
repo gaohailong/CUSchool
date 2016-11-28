@@ -1,4 +1,5 @@
-﻿<%--
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: gaohailong
 Date: 2016/11/21
@@ -10,11 +11,14 @@ To change this template use File | Settings | File Templates.
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>管理</title>
+	<title>行政机构</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<!-- STYLESHEETS --><!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+	<!-- STYLESHEETS --><!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="css/cloud-admin.css" >
 	<link rel="stylesheet" type="text/css"  href="css/themes/default.css" id="skin-switcher" >
 	<link rel="stylesheet" type="text/css"  href="css/responsive.css" >
@@ -24,6 +28,7 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
 	<!-- TABLE CLOTH -->
 	<link rel="stylesheet" type="text/css" href="js/tablecloth/css/tablecloth.min.css" />
+	<script src="self/js/title.js"></script>
 	<!-- FONTS -->
 	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
 </head>
@@ -469,34 +474,66 @@ To change this template use File | Settings | File Templates.
 				</div>
 				<!-- /SIDEBAR -->
 		<div id="main-content">
-			<!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
-			<div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-				  <div class="modal-content">
-					<div class="modal-header">
-					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					  <h4 class="modal-title">Box Settings</h4>
-					</div>
-					<div class="modal-body">
-					  Here goes box setting content.
-					</div>
-					<div class="modal-footer">
-					  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					  <button type="button" class="btn btn-primary">Save changes</button>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			<!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
 			<div class="container">
-				<div class="row">
-					<div class="footer-tools">
-							<span class="go-top">
-								<i class="fa fa-chevron-up"></i> Top
-							</span>
-						</div>
-					</div><!-- /CONTENT-->
 				<div class="separator"></div>
+				<div class="row">
+					<div class="col-md-12"><a href="<%request.getContextPath();%>/background/administration_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+					<div class="col-md-12" style="margin-top: 20px;">
+						<!-- BOX -->
+						<div class="box border inverse">
+							<div class="box-title">
+								<h4><i class="fa fa-table"></i>校长致辞</h4>
+							</div>
+							<div class="box-body">
+								<table class="table table-bordered">
+									<thead>
+									<tr>
+										<th>序号</th>
+										<th>标题</th>
+										<th>日期</th>
+										<th>浏览量</th>
+										<th>操作</th>
+									</tr>
+									</thead>
+									<tbody>
+									<c:forEach var="titles" items="${titleList}" step="1" varStatus="i">
+										<tr>
+											<td>${i.index+1}</td>
+											<td>${titles.TName}</td>
+											<td>${titles.TDate}</td>
+											<td>${titles.TRead}</td>
+											<td>
+												<a href="findOneSchoolLeader.action?tid=${titles.TId}" style="text-underline: none">
+													<img src="self/images/update.png" alt="update"
+														 style="width: 20px;height: 20px;margin-left: 10px"/>
+												</a>
+												<a href="javascript:confirmDeleteAdministration(${titles.TId});">
+													<img src="self/images/delete.png" alt="delete"
+														 style="width: 20px;height: 20px;margin-left: 10px">
+												</a>
+											</td>
+										</tr>
+									</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- /BOX -->
+						<i class="col-md-5"></i>
+						<ul class="col-md-7 pagination pagination-lg  ">
+							<c:forEach begin="1" end="${totalPage}" varStatus="i">
+								<li><a href="findSchoolPrincipal.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+							</c:forEach>
+							<%--<li><a href="#">&laquo;</a></li>--%>
+							<%--<li class="active"><a href="#">1</a></li>--%>
+							<%--<li><a href="#">2</a></li>--%>
+							<%--<li><a href="#">3</a></li>--%>
+							<%--<li><a href="#">4</a></li>--%>
+							<%--<li><a href="#">5</a></li>--%>
+							<%--<li><a href="#">&raquo;</a></li>--%>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

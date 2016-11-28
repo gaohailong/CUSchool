@@ -189,6 +189,42 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleService" ref="introduceService"/>
     </bean>
 
+    <!--行政机构-->
+    <bean id="administrationDao" class="com.sxau.cyschool.dao.impl.AdministrationDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="administrationlService" class="com.sxau.cyschool.service.impl.AdministrationlServiceImpl">
+        <property name="titleDao" ref="administrationDao"/>
+    </bean>
+
+    <bean id="administrationlAction" class="com.sxau.cyschool.controller.AdministrationlAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="administrationlService"/>
+    </bean>
+
+    <!--教辅机构-->
+    <bean id="teachingInstitutionsDao" class="com.sxau.cyschool.dao.impl.TeachingInstitutionsDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="teachingInstitutionsService" class="com.sxau.cyschool.service.impl.TeachingInstitutionsServiceImpl">
+        <property name="titleDao" ref="teachingInstitutionsDao"/>
+    </bean>
+
+    <bean id="teachingInstitutionsAction" class="com.sxau.cyschool.controller.TeachingInstitutionsAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="teachingInstitutionsService"/>
+    </bean>
+
+    <!--直属及其他-->
+    <bean id="immediateAndOtherDao" class="com.sxau.cyschool.dao.impl.ImmediateAndOtherDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="immediateAndOtherService" class="com.sxau.cyschool.service.impl.ImmediateAndOtherServiceImpl">
+        <property name="titleDao" ref="immediateAndOtherDao"/>
+    </bean>
+
+    <bean id="immediateAndOtherAction" class="com.sxau.cyschool.controller.ImmediateAndOtherAction">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="immediateAndOtherService"/>
+    </bean>
+
     <!--师资服务-->
     <bean id="schooServiceTeacherDao" class="com.sxau.cyschool.dao.impl.SchooServiceTeacherDaoImpl"
           parent="baseHibernateDaoImpl"/>
@@ -197,8 +233,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="schooServiceTeacherDao"/>
     </bean>
 
-    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction"
-          scope="prototype">
+    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="schoolServiceTeacher"/>
     </bean>
