@@ -479,7 +479,7 @@ To change this template use File | Settings | File Templates.
 					<!-- BOX -->
 					<div class="box border inverse">
 						<div class="box-title">
-							<h4><i class="fa fa-table"></i>学科建设</h4>
+							<h4><i class="fa fa-table"></i>社会服务</h4>
 							<div class="tools">
 								<c:forEach var="titles" items="${titleList}">
 									<a href="javascript:confirmDeleteSocietyService(${titles.TId});">

@@ -481,7 +481,7 @@ To change this template use File | Settings | File Templates.
 						<!-- BOX -->
 						<div class="box border inverse">
 							<div class="box-title">
-								<h4><i class="fa fa-table"></i>校长致辞</h4>
+								<h4><i class="fa fa-table"></i>行政机构</h4>
 							</div>
 							<div class="box-body">
 								<table class="table table-bordered">

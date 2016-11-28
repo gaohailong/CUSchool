@@ -20,7 +20,7 @@
         <!--首页轮播图-->
         <action name="*Picture" class="rotatePictureAction" method="{1}">
             <result name="findRotate">/background/school_rotate_picture.jsp</result>
-            <result name="findOneSchoolRotate">/background/school_graduaction_update.jsp</result>
+            <result name="findOneSchoolRotate">/background/school_graduation_update.jsp</result>
         </action>
 
         <!--学校要闻-->
@@ -38,7 +38,7 @@
         <!--毕业风采-->
         <action name="*Graduation" class="schoolGraduationAction" method="{1}">
             <result name="findGraduation">/background/school_graduation.jsp</result>
-            <result name="updateSchoolGraduation">/background/school_graduaction_update.jsp</result>
+            <result name="updateSchoolGraduation">/background/school_graduation_update.jsp</result>
         </action>
 
         <!--校内图册-->
