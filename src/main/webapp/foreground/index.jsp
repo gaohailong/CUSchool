@@ -197,7 +197,7 @@
                                                                         <li><a href="news_post_w_video.html">News Post With Video</a></li>
                                                                     </ul> -->
                             </li>
-                            <li><a href="recruitment.jsp">招就招聘</a>
+                            <li><a href="findAllDataRecruitment.action">招就招聘</a>
                                 <!--  <ul>
                                      <li><a href="blog.html">Our Blog Style 1</a></li>
                                      <li><a href="blog_style_2.html">Our Blog Style 2</a></li>

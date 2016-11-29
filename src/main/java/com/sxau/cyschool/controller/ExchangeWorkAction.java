@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sxau.cyschool.pojo.Category;
 import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.CategoryService;
+import com.sxau.cyschool.service.HomeService;
 import com.sxau.cyschool.service.TitleService;
 import com.sxau.cyschool.utils.Page;
 
@@ -18,6 +19,7 @@ public class ExchangeWorkAction extends ActionSupport {
     //注入元素
     private TitleService titleService;
     private CategoryService categoryService;
+    private HomeService homeService;
     //传输部分
     private String notificationHead;
     private String notificationContent;

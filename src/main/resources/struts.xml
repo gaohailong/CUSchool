@@ -133,6 +133,7 @@
             <result name="findRecruitmentSchool">/background/for_recruitment.jsp</result>
             <result name="addRecruitmentSchool">/background/for_recruitment_add.jsp</result>
             <result name="updateOneRecruitment">/background/for_recruitment_update.jsp</result>
+            <result name="findAllData">/foreground/detail.jsp</result>
         </action>
 
 
