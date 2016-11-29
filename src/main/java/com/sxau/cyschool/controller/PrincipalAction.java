@@ -41,7 +41,11 @@ public class PrincipalAction extends ActionSupport {
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         totalPage = page.getTotalPage();
-        return "findPrincipal";
+        if (titleList.size() > 0) {
+            return "findPrincipal";
+        } else {
+            return "findPrincipal";
+        }
     }
 
     //查找一个通知

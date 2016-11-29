@@ -38,7 +38,11 @@ public class IntroduceAction extends ActionSupport {
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         totalPage = page.getTotalPage();
-        return "findIntroduce";
+        if (titleList.size() > 0) {
+            return "findIntroduce";
+        } else{
+            return "addIntroduce";
+        }
     }
 
     //查找一个通知

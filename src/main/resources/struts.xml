@@ -66,6 +66,7 @@
         <action name="*Introduce" class="introduceAction" method="{1}">
             <result name="findIntroduce">/background/school_introduce.jsp</result>
             <result name="updateIntroduce">/background/school_introduce_update.jsp</result>
+            <result name="addIntroduce">/background/school_introduce_add.jsp</result>
         </action>
 
         <!--行政机构-->
