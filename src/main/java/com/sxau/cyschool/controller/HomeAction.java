@@ -36,14 +36,14 @@ public class HomeAction extends ActionSupport {
         graduations = homeService.queryGraduation();
         rotates = homeService.queryRotate();
         notifications = homeService.queryNotification();
-//      image = imageService.queryImage();
+// TODO     image = imageService.queryImage();
         video = videoService.queryVideoService();
         return "findAllHome";
     }
 
     //查找一个通知
     public String findOneSchool() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null || tid == 0) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);

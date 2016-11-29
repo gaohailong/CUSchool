@@ -60,6 +60,7 @@
         <action name="*Leader" class="leaderAction" method="{1}">
             <result name="findLeader">/background/school_lead.jsp</result>
             <result name="updateLeader">/background/school_lead_update.jsp</result>
+            <result name="findAllLeader">/foreground/leader.jsp</result>
         </action>
 
         <!--学校简介-->
@@ -67,6 +68,7 @@
             <result name="findIntroduce">/background/school_introduce.jsp</result>
             <result name="updateIntroduce">/background/school_introduce_update.jsp</result>
             <result name="addIntroduce">/background/school_introduce_add.jsp</result>
+            <result name="findDataPreIntroduce">/foreground/detail.jsp</result>
         </action>
 
         <!--行政机构-->

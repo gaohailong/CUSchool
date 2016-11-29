@@ -162,8 +162,8 @@
                             <li class="big_dropdown"><a href="javascript:void(0)">学校概况</a>
                                 <ul>
                                     <li><a href="findPreAllPrincipal.action">校长致辞</a></li>
-                                    <li><a href="leader.jsp">现任领导</a></li>
-                                    <li><a href="school_introduce.jsp">学校简介</a></li>
+                                    <li><a href="findAllDataLeader.action">现任领导</a></li>
+                                    <li><a href="findPreAllIntroduce.action">学校简介</a></li>
                                 </ul>
                             </li>
                             <li class="big_dropdown"><a href="javascript:void(0)">组织结构</a>

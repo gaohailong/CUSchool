@@ -91,12 +91,18 @@ public class PrincipalAction extends ActionSupport {
 
     //=============================前台===================================
     public String findPreAll() throws Exception {
-        if (tid == null || tid == 0) {
+        if (nowPage == null || nowPage == 0) {
+            nowPage = 1;
+        }
+        page = titleService.queryTitleByCondition(title, nowPage, 10);
+        titleList = page.getRows();
+        if (titleList != null) {
+            title = titleList.get(0);
+            notifications = homeService.queryNotification();
+            return "findDataPre";
+        } else {
             return ERROR;
         }
-        title = titleService.findTitleById(tid);
-        notifications = homeService.queryNotification();
-        return "findDataPre";
     }
 
     public TitleService getTitleService() {

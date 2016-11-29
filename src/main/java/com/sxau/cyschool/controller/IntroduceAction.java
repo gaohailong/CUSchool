@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sxau.cyschool.pojo.Category;
 import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.CategoryService;
+import com.sxau.cyschool.service.HomeService;
 import com.sxau.cyschool.service.TitleService;
 import com.sxau.cyschool.utils.Page;
 
@@ -18,10 +19,12 @@ public class IntroduceAction extends ActionSupport {
     //注入元素
     private TitleService titleService;
     private CategoryService categoryService;
+    private HomeService homeService;
     //传输部分
     private String notificationHead;
     private String notificationContent;
     private List<Title> titleList;
+    private List<Title> notifications;
     private Title title;
     private Integer nowPage;
     private int totalPage;
@@ -40,14 +43,14 @@ public class IntroduceAction extends ActionSupport {
         totalPage = page.getTotalPage();
         if (titleList.size() > 0) {
             return "findIntroduce";
-        } else{
+        } else {
             return "addIntroduce";
         }
     }
 
     //查找一个通知
     public String findOneSchool() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null || tid == 0) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -84,6 +87,22 @@ public class IntroduceAction extends ActionSupport {
         title.setTContent(notificationContent);
         titleService.updateTitle(title);
         return SUCCESS;
+    }
+
+    //===============================前台==================================
+    public String findPreAll() throws Exception {
+        if (nowPage == null || nowPage == 0) {
+            nowPage = 1;
+        }
+        page = titleService.queryTitleByCondition(title, nowPage, 10);
+        titleList = page.getRows();
+        if (titleList != null) {
+            title = titleList.get(0);
+            notifications = homeService.queryNotification();
+            return "findDataPreIntroduce";
+        } else {
+            return ERROR;
+        }
     }
 
     public TitleService getTitleService() {
@@ -164,5 +183,21 @@ public class IntroduceAction extends ActionSupport {
 
     public void setT_category(Category t_category) {
         this.t_category = t_category;
+    }
+
+    public HomeService getHomeService() {
+        return homeService;
+    }
+
+    public void setHomeService(HomeService homeService) {
+        this.homeService = homeService;
+    }
+
+    public List<Title> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Title> notifications) {
+        this.notifications = notifications;
     }
 }
