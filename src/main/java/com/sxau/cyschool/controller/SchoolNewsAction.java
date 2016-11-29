@@ -29,6 +29,8 @@ public class SchoolNewsAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+    //=====================后台===========================
+
     //查找通知
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
@@ -160,4 +162,12 @@ public class SchoolNewsAction extends ActionSupport {
     public void setT_category(Category t_category) {
         this.t_category = t_category;
     }
+
+//    public List<Title> getNewss() {
+//        return newss;
+//    }
+//
+//    public void setNewss(List<Title> newss) {
+//        this.newss = newss;
+//    }
 }

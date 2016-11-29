@@ -194,6 +194,17 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         }
     }
 
+    public List<T> findData(String queryString) throws Exception {
+        if (queryString == null) {
+            throw new SystemException("传入参数为空");
+        } else {
+            Query query = sessionFactory.getCurrentSession().createQuery(queryString);
+            List<T> resultList = query.list();
+            return resultList;
+        }
+    }
+
+
     public List<T> findPageByQuery(String queryString, int startIndex, int endIndex) throws Exception {
         if (queryString == null) {
             throw new SystemException("传入参数为空");

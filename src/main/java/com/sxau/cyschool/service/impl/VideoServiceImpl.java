@@ -12,6 +12,10 @@ import java.util.List;
 public class VideoServiceImpl implements VideoService {
     private VideoDao videoDao;
 
+    public Video queryVideoService() throws Exception {
+        return this.videoDao.queryVideo();
+    }
+
     public Video findVideoById(Integer id) throws Exception {
         return this.videoDao.findVideoById(id);
     }

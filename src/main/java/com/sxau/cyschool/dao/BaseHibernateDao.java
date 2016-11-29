@@ -216,8 +216,17 @@ public interface BaseHibernateDao<T> {
 
     /**
      * 更新一个对象
+     *
      * @param t
      * @throws Exception
      */
     void updateObjectOfUpdate(T t) throws Exception;
+
+    /**
+     * 通过hql查询
+     * @param queryString
+     * @return
+     * @throws Exception
+     */
+    List<T> findData(String queryString) throws Exception;
 }

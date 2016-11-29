@@ -49,10 +49,18 @@ public interface VideoDao {
     void deleteVideoById(Integer id) throws Exception;
 
     /**
-     * 查找所有的cideo总数
+     * 查找所有的video总数
      *
      * @return
      * @throws Exception
      */
     int findCountVideo() throws Exception;
+
+    /**
+     * 查询视频
+     *
+     * @return
+     * @throws Exception
+     */
+    Video queryVideo() throws Exception;
 }

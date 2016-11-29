@@ -27,6 +27,8 @@
         <action name="*News" class="schoolNewsAction" method="{1}">
             <result name="findSchoolNews">/background/school_news.jsp</result>
             <result name="updateSchoolNews">/background/school_news_update.jsp</result>
+
+            <!--<result name="findForNews">/foreground/index.jsp</result>-->
         </action>
 
         <!--视频展示-->
@@ -51,6 +53,7 @@
         <action name="*Principal" class="principalAction" method="{1}">
             <result name="findPrincipal">/background/school_principal.jsp</result>
             <result name="updatePrincipal">/background/school_principal_update.jsp</result>
+            <result name="findDataPre">/foreground/detail.jsp</result>
         </action>
 
         <!--现任领导-->
@@ -127,6 +130,14 @@
             <result name="findRecruitmentSchool">/background/for_recruitment.jsp</result>
             <result name="addRecruitmentSchool">/background/for_recruitment_add.jsp</result>
             <result name="updateOneRecruitment">/background/for_recruitment_update.jsp</result>
+        </action>
+
+
+        <!--===============================前台=====================================-->
+        <!--首页-->
+        <action name="*Home" class="homeAction" method="{1}">
+            <result name="findAllHome">/foreground/index.jsp</result>
+            <result name="findOneTitle">/foreground/detail.jsp</result>
         </action>
     </package>
 

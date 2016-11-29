@@ -23,6 +23,8 @@
     <filter-mapping>
         <filter-name>struts</filter-name>
         <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
 
 </web-app>

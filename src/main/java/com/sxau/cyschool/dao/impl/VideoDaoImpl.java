@@ -37,4 +37,16 @@ public class VideoDaoImpl extends BaseHibernateDaoImpl<Video> implements VideoDa
         int count = this.getInt(hql);
         return count;
     }
+
+    public Video queryVideo() throws Exception {
+        Video video;
+        String hql = "from Video";
+        List<Video> videos = this.findData(hql);
+        if (videos != null) {
+            video = videos.get(0);
+            return video;
+        } else {
+            return null;
+        }
+    }
 }
