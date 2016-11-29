@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 
 <head>
@@ -400,7 +401,7 @@
                     <!--</div>-->
                     <div class="separator" style="height:30px;"></div>
 
-                    <h2>Testimonials</h2>
+                    <h2>行政机构</h2>
 
                     <div class="line_4" style="margin:0px 0px 20px;"></div>
 
@@ -415,20 +416,31 @@
                     <!--<div class="author"><p><a href="#">John Doe</a>. <a href="#" class="position">Designer</a></p></div>-->
                     <!--</div>-->
 
-                    <div class="line_2" style="margin:17px 0px 20px;"></div>
+                    <%--<div class="line_2" style="margin:17px 0px 20px;"></div>--%>
+                    <c:forEach var="title" items="${titleList}">
+                        <h5 style="padding-bottom:12px;">${title.TName}</h5>
+                        <div class="block_testimonial_type_2">
+                            <div class="text">
+                                <p style="max-height: 40px;overflow: auto;">${title.TContent}</p>
+                            </div>
 
-                    <h5 style="padding-bottom:12px;">Style 2</h5>
-
-                    <div class="block_testimonial_type_2">
-                        <div class="text">
-                            <p>Words which don't look even slightly believable. If you are going to use a passage. You
-                                need to be sure there isn't anything embarrassing established fact that a reader.</p>
+                                <%--<div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>--%>
                         </div>
 
-                        <div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>
-                    </div>
+                        <div class="line_2" style="margin:17px 0px 20px;"></div>
+                    </c:forEach>
+                    <%--<h5 style="padding-bottom:12px;">Style 2</h5>--%>
 
-                    <div class="line_2" style="margin:17px 0px 20px;"></div>
+                    <%--<div class="block_testimonial_type_2">--%>
+                        <%--<div class="text">--%>
+                            <%--<p>Words which don't look even slightly believable. If you are going to use a passage. You--%>
+                                <%--need to be sure there isn't anything embarrassing established fact that a reader.</p>--%>
+                        <%--</div>--%>
+
+                        <%--<div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="line_2" style="margin:17px 0px 20px;"></div>--%>
 
                     <!--<h5>Style 3</h5>-->
 

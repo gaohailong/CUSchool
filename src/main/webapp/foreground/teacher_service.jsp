@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 
 <head>
@@ -13,47 +14,34 @@
     <!--[if lt IE 9]>
     <script type="text/javascript" src="layout/plugins/html5.js"></script>
     <![endif]-->
-
     <link rel="stylesheet" href="layout/style.css" type="text/css"/>
-    <!--<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />-->
-    <!--<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />-->
-    <!--<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />-->
-
     <script type="text/javascript" src="layout/js/jquery.js"></script>
-
     <!-- PrettyPhoto start -->
     <link rel="stylesheet" href="layout/plugins/prettyphoto/css/prettyPhoto.css" type="text/css"/>
     <script type="text/javascript" src="layout/plugins/prettyphoto/jquery.prettyPhoto.js"></script>
     <!-- PrettyPhoto end -->
-
     <!-- jQuery tools start -->
     <script type="text/javascript" src="layout/plugins/tools/jquery.tools.min.js"></script>
     <!-- jQuery tools end -->
-
     <!-- Calendar start -->
     <link rel="stylesheet" href="layout/plugins/calendar/calendar.css" type="text/css"/>
     <script type="text/javascript" src="layout/plugins/calendar/calendar.js"></script>
     <!-- Calendar end -->
-
     <!-- ScrollTo start -->
     <script type="text/javascript" src="layout/plugins/scrollto/jquery.scroll.to.min.js"></script>
     <!-- ScrollTo end -->
-
     <!-- MediaElements start -->
     <link rel="stylesheet" href="layout/plugins/video-audio/mediaelementplayer.css"/>
     <script src="layout/plugins/video-audio/mediaelement-and-player.js"></script>
     <!-- MediaElements end -->
-
     <!-- FlexSlider start -->
     <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css"/>
     <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
     <!-- FlexSlider end -->
-
     <!-- iButtons start -->
     <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css"/>
     <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
     <!-- iButtons end -->
-
     <!-- jQuery Form Plugin start -->
     <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script>
     <!-- jQuery Form Plugin end -->
@@ -415,20 +403,31 @@
                     <!--<div class="author"><p><a href="#">John Doe</a>. <a href="#" class="position">Designer</a></p></div>-->
                     <!--</div>-->
 
-                    <div class="line_2" style="margin:17px 0px 20px;"></div>
+                    <%--<div class="line_2" style="margin:17px 0px 20px;"></div>--%>
+                    <c:forEach var="title" items="${titleList}">
+                        <h5 style="padding-bottom:12px;">${title.TName}</h5>
+                        <div class="block_testimonial_type_2">
+                            <div class="text">
+                                <p style="max-height: 40px;overflow: auto;">${title.TContent}</p>
+                            </div>
 
-                    <h5 style="padding-bottom:12px;">Style 2</h5>
-
-                    <div class="block_testimonial_type_2">
-                        <div class="text">
-                            <p>Words which don't look even slightly believable. If you are going to use a passage. You
-                                need to be sure there isn't anything embarrassing established fact that a reader.</p>
+                                <%--<div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>--%>
                         </div>
 
-                        <div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>
-                    </div>
+                        <div class="line_2" style="margin:17px 0px 20px;"></div>
+                    </c:forEach>
+                    <%--<h5 style="padding-bottom:12px;">Style 2</h5>--%>
 
-                    <div class="line_2" style="margin:17px 0px 20px;"></div>
+                    <%--<div class="block_testimonial_type_2">--%>
+                        <%--<div class="text">--%>
+                            <%--<p>Words which don't look even slightly believable. If you are going to use a passage. You--%>
+                                <%--need to be sure there isn't anything embarrassing established fact that a reader.</p>--%>
+                        <%--</div>--%>
+
+                        <%--<div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="line_2" style="margin:17px 0px 20px;"></div>--%>
 
                     <!--<h5>Style 3</h5>-->
 

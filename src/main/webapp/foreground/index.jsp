@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"  isErrorPage="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -168,16 +168,16 @@
                             </li>
                             <li class="big_dropdown"><a href="javascript:void(0)">组织结构</a>
                                 <ul>
-                                    <li><a href="administration.jsp">行政机构</a></li>
-                                    <li><a href="teaching_institutions.jsp">教辅机构</a></li>
-                                    <li><a href="immediate_and_others.jsp">直属及其他</a></li>
+                                    <li><a href="findAllDataAdministration.action">行政机构</a></li>
+                                    <li><a href="findAllDataTeaching.action">教辅机构</a></li>
+                                    <li><a href="findAllDataOther.action">直属及其他</a></li>
                                 </ul>
                             </li>
                             <li class="big_dropdown"><a href="javascript:void(0)">人才培养</a>
                                 <ul>
-                                    <li><a href="teacher_service.jsp">师资服务</a></li>
-                                    <li><a href="special_major.jsp">特色专业</a></li>
-                                    <li><a href="nice_course.jsp">精品课程</a></li>
+                                    <li><a href="findAllDataTeacher.action">师资服务</a></li>
+                                    <li><a href="findAllDataProfessional.action">特色专业</a></li>
+                                    <li><a href="findAllDataCourse.action">精品课程</a></li>
                                 </ul>
                             </li>
                             <li><a href="javascript:void(0)">科研服务</a>
