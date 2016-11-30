@@ -3,6 +3,10 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+    <welcome-file-list>
+        <!--<welcome-file>findAllHome.action</welcome-file>-->
+        <!--<welcome-file>/background/inbox.jsp</welcome-file>-->
+    </welcome-file-list>
     <!-- 配置 Spring 配置文件的名称和位置 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
