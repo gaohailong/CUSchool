@@ -93,8 +93,19 @@ public class TeachingInstitutionsAction extends ActionSupport {
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         notifications=homeService.queryNotification();
+        totalPage=page.getTotalPage();
         return "findAllData";
     }
+
+    //查找一个通知
+    public String findPreOneSchool() throws Exception {
+        if (tid == null || tid == 0) {
+            return ERROR;
+        }
+        title = titleService.findTitleById(tid);
+        return "findPreOneSchool";
+    }
+
 
     public TitleService getTitleService() {
         return titleService;

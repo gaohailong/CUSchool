@@ -404,17 +404,37 @@
 
                     <div class="line_4" style="margin:0px 0px 20px;"></div>
                     <c:forEach var="title" items="${titleList}">
-                        <h5 style="padding-bottom:12px;">${title.TName}</h5>
-                        <div class="block_testimonial_type_2">
+                        <div class="block_home_post">
                             <div class="text">
-                                <p style="max-height: 40px;overflow: auto;">${title.TContent}</p>
+                                <p class="title"><a href="findPreOneSchoolCourse.action?tid=${title.TId}">${title.TName}</a></p>
+                                    <%--<div class="date"><p>${title.TDate}</p></div>--%>
+                                <div class="icons">
+                                    <ul>
+                                        <li><a href="#" class="views">${title.TRead}</a></li>
+                                    </ul>
+                                </div>
                             </div>
-
-                                <%--<div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>--%>
                         </div>
-
-                        <div class="line_2" style="margin:17px 0px 20px;"></div>
+                        <div class="line_3" style="margin:14px 0px 17px;"></div>
                     </c:forEach>
+                    <div class="block_pager">
+                        <a href="javascript:void(0)" class="prev">Previous</a>
+                        <a href="javascript:void(0)" class="next">Next</a>
+
+                        <div class="pages">
+                            <ul>
+                                <c:forEach begin="1" end="${totalPage}" varStatus="i">
+                                    <li class="current" ><a href="findAllDataCourse.action?nowPage=${i.index}">${i.index}</a></li>
+                                </c:forEach>
+                                <%--<li class="current"><a href="">1</a></li>--%>
+                                <%--<li><a href="#">2</a></li>--%>
+                                <%--<li><a href="#">3</a></li>--%>
+                                <%--<li><a href="#">4</a></li>--%>
+                                <%--<li><a href="#">5</a></li>--%>
+                                <%--<li><a href="#">6</a></li>--%>
+                            </ul>
+                        </div>
+                    </div>
                     <!--<h5>Style 1</h5>-->
 
                     <!--<div class="block_testimonial_type_1">-->

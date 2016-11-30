@@ -46,7 +46,7 @@ public class SchoolServiceTeacherAction extends ActionSupport {
 
     //查找一个通知
     public String findOneService() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0  ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -75,7 +75,7 @@ public class SchoolServiceTeacherAction extends ActionSupport {
 
     //修改通知
     public String updateService() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0 ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -93,7 +93,18 @@ public class SchoolServiceTeacherAction extends ActionSupport {
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         notifications = homeService.queryNotification();
+        totalPage=page.getTotalPage();
         return "findAllData";
+    }
+
+    //查找一个通知
+    public String findPreOneSchool() throws Exception {
+        if (tid == null || tid == 0) {
+            return ERROR;
+        }
+        title = titleService.findTitleById(tid);
+        notifications=homeService.queryNotification();
+        return "findPreOneSchool";
     }
 
 
