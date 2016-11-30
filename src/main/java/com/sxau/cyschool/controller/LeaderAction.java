@@ -46,7 +46,7 @@ public class LeaderAction extends ActionSupport {
 
     //查找一个现任领导
     public String findOneSchool() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0  ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -74,7 +74,7 @@ public class LeaderAction extends ActionSupport {
 
     //修改现任领导
     public String updateSchool() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0 ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -90,10 +90,21 @@ public class LeaderAction extends ActionSupport {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
-        page = titleService.queryTitleByCondition(title, nowPage, 30);
+        page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         notifications = homeService.queryNotification();
+        totalPage=page.getTotalPage();
         return "findAllLeader";
+    }
+
+    //查找一个现任领导
+    public String findPreSchool() throws Exception {
+        if (tid == null||tid == 0  ) {
+            return ERROR;
+        }
+        title = titleService.findTitleById(tid);
+        notifications=homeService.queryNotification();
+        return "findPreSchool";
     }
 
     public TitleService getTitleService() {
@@ -191,4 +202,5 @@ public class LeaderAction extends ActionSupport {
     public void setNotifications(List<Title> notifications) {
         this.notifications = notifications;
     }
+
 }

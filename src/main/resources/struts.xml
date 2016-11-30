@@ -15,6 +15,7 @@
             <result name="findNotification">/background/school_notification.jsp</result>
             <result name="addNotification">/background/school_notification_add.jsp</result>
             <result name="updateNotification">/background/school_notification_update.jsp</result>
+            <result name="findPreNotification">/foreground/notification_list.jsp</result>
         </action>
 
         <!--首页轮播图-->
@@ -27,6 +28,7 @@
         <action name="*News" class="schoolNewsAction" method="{1}">
             <result name="findSchoolNews">/background/school_news.jsp</result>
             <result name="updateSchoolNews">/background/school_news_update.jsp</result>
+            <result name="findPreSchool">/foreground/news_list.jsp</result>
         </action>
 
         <!--视频展示-->
@@ -39,6 +41,7 @@
         <action name="*Graduation" class="schoolGraduationAction" method="{1}">
             <result name="findGraduation">/background/school_graduation.jsp</result>
             <result name="updateSchoolGraduation">/background/school_graduation_update.jsp</result>
+            <result name="findPreSchool">/foreground/graduation_list.jsp</result>
         </action>
 
         <!--校内图册-->
@@ -60,6 +63,7 @@
             <result name="findLeader">/background/school_lead.jsp</result>
             <result name="updateLeader">/background/school_lead_update.jsp</result>
             <result name="findAllLeader">/foreground/leader.jsp</result>
+            <result name="findPreSchool">/foreground/detail.jsp</result>
         </action>
 
         <!--学校简介-->

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by gaohailong on 2016/11/24.
  */
-public class SchoolGallery extends ActionSupport {
+public class SchoolGalleryAction extends ActionSupport {
     private SchoolGalleryService schoolGalleryService;
 
     private Image image;
@@ -24,16 +24,15 @@ public class SchoolGallery extends ActionSupport {
     private String des;
     private Integer nowPage;
     private List<Image> images;
-    private File imagefile;
-    private String imagefileFileName;
-    private String imagefileContentType;
+    private File imagea;
+    private String imageaFileName;
+    private String imageaContentType;
     private Integer imageId;
 
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
-        //todo 更具情况更改每页页数
         page = schoolGalleryService.queryImageByCondition(image, nowPage, 20);
         images = page.getRows();
         return "findSchoolGallery";
@@ -48,43 +47,15 @@ public class SchoolGallery extends ActionSupport {
         }
     }
 
-    public String updateSchool() throws Exception {
-        Image imageValue = schoolGalleryService.findImageById(imageId);
-        imageValue.setIDes(des);
-        String unique = UTimeUtil.timeRandom() + imagefileFileName;
-        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/" + unique);
-        FileInputStream fis = new FileInputStream(imagefile);
-        FileOutputStream fos = new FileOutputStream(path);
-        int length = -1;
-        byte[] bytes = new byte[1024];
-        do {
-            length = fis.read(bytes);
-            if (length != -1) {
-                fos.write(bytes, 0, length);
-            }
-        } while (length != -1);
-        fos.flush();
-        fos.close();
-        fis.close();
-        image.setILink("/upload/gallery/" + unique);
-        schoolGalleryService.updatePhotoByPhoto(image);
-        return "updateSchoolGallery";
-    }
-
-    public String deleteSchool() throws Exception {
-        if (imageId != null) {
-            schoolGalleryService.deletePhotoById(imageId);
-            return SUCCESS;
-        } else {
-            return ERROR;
-        }
-    }
-
     public String addSchool() throws Exception {
-        String unique = UTimeUtil.timeRandom() + imagefileFileName;
-        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/");
-        FileInputStream fis = new FileInputStream(imagefile);
-        FileOutputStream fos = new FileOutputStream(new File(path,unique));
+        String unique = UTimeUtil.timeRandom() + imageaFileName;
+        System.out.print("文件名" + imageaFileName + "===");
+        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/"+imageaFileName);
+        FileInputStream fis = new FileInputStream(imagea);
+        FileOutputStream fos = new FileOutputStream(path);
+        File file = new File(path);
+        if (!file.exists())
+            file.createNewFile();
         int length = -1;
         byte[] bytes = new byte[1024];
         do {
@@ -102,6 +73,42 @@ public class SchoolGallery extends ActionSupport {
         schoolGalleryService.savePhoto(image);
         return SUCCESS;
     }
+
+//    public String updateSchool() throws Exception {
+//        Image imageValue = schoolGalleryService.findImageById(imageId);
+//        imageValue.setIDes(des);
+//        String unique = UTimeUtil.timeRandom() + imageaFileName;
+//        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/" + imageaFileName);
+//        FileInputStream fis = new FileInputStream(imagea);
+//        File file = new File(path);
+////        if(!file.exists())
+////            file.createNewFile();
+//        FileOutputStream fos = new FileOutputStream(path);
+//        int length = -1;
+//        byte[] bytes = new byte[1024];
+//        do {
+//            length = fis.read(bytes);
+//            if (length != -1) {
+//                fos.write(bytes, 0, length);
+//            }
+//        } while (length != -1);
+//        fos.flush();
+//        fos.close();
+//        fis.close();
+////        image.setILink("/upload/gallery/" + unique);
+//        schoolGalleryService.updatePhotoByPhoto(image);
+//        return "updateSchoolGallery";
+//    }
+
+    public String deleteSchool() throws Exception {
+        if (imageId != null) {
+            schoolGalleryService.deletePhotoById(imageId);
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
+    }
+
 
     public SchoolGalleryService getSchoolGalleryService() {
         return schoolGalleryService;
@@ -143,28 +150,28 @@ public class SchoolGallery extends ActionSupport {
         this.images = images;
     }
 
-    public File getImagefile() {
-        return imagefile;
+    public File getImagea() {
+        return imagea;
     }
 
-    public void setImagefile(File imagefile) {
-        this.imagefile = imagefile;
+    public void setImagea(File imagea) {
+        this.imagea = imagea;
     }
 
-    public String getImagefileFileName() {
-        return imagefileFileName;
+    public String getImageaFileName() {
+        return imageaFileName;
     }
 
-    public void setImagefileFileName(String imagefileFileName) {
-        this.imagefileFileName = imagefileFileName;
+    public void setImageaFileName(String imageaFileName) {
+        this.imageaFileName = imageaFileName;
     }
 
-    public String getImagefileContentType() {
-        return imagefileContentType;
+    public String getImageaContentType() {
+        return imageaContentType;
     }
 
-    public void setImagefileContentType(String imagefileContentType) {
-        this.imagefileContentType = imagefileContentType;
+    public void setImageaContentType(String imageaContentType) {
+        this.imageaContentType = imageaContentType;
     }
 
     public Integer getImageId() {
@@ -174,4 +181,5 @@ public class SchoolGallery extends ActionSupport {
     public void setImageId(Integer imageId) {
         this.imageId = imageId;
     }
+
 }

@@ -153,11 +153,6 @@
                     <nav class="main_menu">
                         <ul>
                             <li class="current_page_item"><a href="findAllHome.action">首页</a>
-                                <!--
-                                <ul>teaching_institutions.jsp
-                                    <li><a href="index.html">Home Page Style 1</a></li>
-                                    <li><a href="home_style_2.html">Home Page Style 2</a></li>
-                                </ul> -->
                             </li>
                             <li class="big_dropdown"><a href="javascript:void(0)">学校概况</a>
                                 <ul>
@@ -187,43 +182,9 @@
                                 </ul>
                             </li>
                             <li><a href="findAllDataWork.action">交流合作</a>
-                                <!--                                     <ul>
-                                                                        <li><a href="about.html">About Us</a></li>
-                                                                        <li><a href="about_author.html">About Author Page</a></li>
-                                                                        <li><a href="contact.html">Contact Us</a></li>
-                                                                        <li><a href="registration.html">Registration Page</a></li>
-                                                                        <li><a href="main_news.html">Main News Page</a></li>
-                                                                        <li><a href="news_post_w_slider.html">News Post With Slider</a></li>
-                                                                        <li><a href="news_post_w_video.html">News Post With Video</a></li>
-                                                                    </ul> -->
                             </li>
                             <li><a href="findAllDataRecruitment.action">招就招聘</a>
-                                <!--  <ul>
-                                     <li><a href="blog.html">Our Blog Style 1</a></li>
-                                     <li><a href="blog_style_2.html">Our Blog Style 2</a></li>
-                                     <li><a href="blog_post.html">Blog Post Page</a></li>
-                                     <li><a href="blog_post_w_slider.html">Post With Slider</a></li>
-                                     <li><a href="blog_post_w_video.html">Post With Video</a></li>
-                                 </ul> -->
                             </li>
-                            <!-- <li><a href="typography.html">Shortcodes</a>
-
-                          <ul>
-                              <li><a href="accordion.html">Accordeon</a></li>
-                              <li><a href="blockquote.html">Blockquote</a></li>
-                              <li><a href="table.html">Table</a></li>
-                              <li><a href="columns.html">Columns</a></li>
-                              <li><a href="pricing_table.html">Pricing Table</a></li>
-                              <li><a href="testimonials.html">Testimonials</a></li>
-                              <li><a href="boxes.html">Info Boxes</a></li>
-                              <li><a href="dropcaps.html">Dropcaps</a></li>
-                              <li><a href="tabs.html">Tabs</a></li>
-                              <li><a href="lists.html">List Slyle</a></li>
-                              <li><a href="buttons.html">Buttons</a></li>
-                              <li><a href="video.html">Video</a></li>
-                              <li><a href="typography.html">Typography</a></li>
-                          </ul>
-                      </li> -->
                         </ul>
                     </nav>
                 </div>
@@ -499,6 +460,11 @@
                             </div>
                             <div class="line_3" style="margin:14px 0px 17px;"></div>
                         </c:forEach>
+                        <div class="clearboth"></div>
+                        <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
+                        <a href="findPreSchoolNews.action" class="lnk_all_news fl">更多</a>
+                        <div class="clearboth"></div>
+                        <div class="line_3" style="margin:13px 0px 35px;"></div>
                         <%--<div class="block_home_post">--%>
                             <%--<div class="pic">--%>
                                 <%--<a href="news_post.html" class="w_hover">--%>
@@ -701,7 +667,7 @@
                     <div class="line_3" style="margin:20px 0px 24px;"></div>
                     <div class="clearboth"></div>
                     <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
-                    <a href="main_news.html" class="lnk_all_news fl">更多</a>
+                    <a href="findPreSchoolGraduation.action" class="lnk_all_news fl">更多</a>
                     <div class="clearboth"></div>
                     <div class="line_3" style="margin:13px 0px 35px;"></div>
                     <%--<div class="block_pager">--%>
@@ -875,7 +841,7 @@
                         </c:forEach>
                         <div class="clearboth"></div>
                         <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
-                        <a href="main_news.html" class="lnk_all_news fl">更多</a>
+                        <a href="findPreNotificationTitle.action" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
                         <div class="line_3" style="margin:13px 0px 35px;"></div>
                         <%--<div class="article">--%>

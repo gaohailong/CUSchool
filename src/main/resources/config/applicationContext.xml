@@ -92,6 +92,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     <bean id="notificationAction" class="com.sxau.cyschool.controller.NotificationAction" scope="prototype">
         <property name="titleService" ref="notificationService"/>
         <property name="categoryService" ref="categoryService"/>
+        <property name="homeService" ref="homeService"/>
     </bean>
 
     <!--首页轮播图-->
@@ -116,6 +117,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     <bean id="schoolNewsAction" class="com.sxau.cyschool.controller.SchoolNewsAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="schoolNewsServiceImpl"/>
+        <property name="homeService" ref="homeService"/>
     </bean>
 
     <!--视频展示-->
@@ -140,6 +142,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     <bean id="schoolGraduationAction" class="com.sxau.cyschool.controller.SchoolGraduationAction" scope="prototype">
         <property name="titleService" ref="schoolNewsService"/>
         <property name="categoryService" ref="categoryService"/>
+        <property name="homeService" ref="homeService"/>
     </bean>
 
     <!--校内图册-->
@@ -149,7 +152,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="schoolGalleryDao" ref="schoolGalleryDao"/>
     </bean>
 
-    <bean id="schoolGallery" class="com.sxau.cyschool.controller.SchoolGallery" scope="prototype">
+    <bean id="schoolGallery" class="com.sxau.cyschool.controller.SchoolGalleryAction" scope="prototype">
         <property name="schoolGalleryService" ref="schoolGalleryService"/>
     </bean>
 
@@ -214,8 +217,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="teachingInstitutionsDao"/>
     </bean>
 
-    <bean id="teachingInstitutionsAction" class="com.sxau.cyschool.controller.TeachingInstitutionsAction"
-          scope="prototype">
+    <bean id="teachingInstitutionsAction" class="com.sxau.cyschool.controller.TeachingInstitutionsAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="teachingInstitutionsService"/>
         <property name="homeService" ref="homeService"/>
@@ -243,8 +245,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="schooServiceTeacherDao"/>
     </bean>
 
-    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction"
-          scope="prototype">
+    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="schoolServiceTeacher"/>
         <property name="homeService" ref="homeService"/>
@@ -258,7 +259,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="featuredProfessionalDao"/>
     </bean>
 
-    <bean id="featuredProfessionalAction" class="com.sxau.cyschool.controller.FeaturedProfessionalAction">
+    <bean id="featuredProfessionalAction" class="com.sxau.cyschool.controller.FeaturedProfessionalAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="featuredProfessionalService"/>
         <property name="homeService" ref="homeService"/>
@@ -292,6 +293,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
     <!--社会服务-->
     <bean id="societyService" class="com.sxau.cyschool.dao.impl.SocietyServiceDaoImpl" parent="baseHibernateDaoImpl"/>
+
     <bean id="societyServiceService" class="com.sxau.cyschool.service.impl.SocietyServiceServiceImpl">
         <property name="titleDao" ref="societyService"/>
     </bean>

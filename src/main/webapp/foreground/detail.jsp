@@ -151,7 +151,7 @@
                 <div class="inner">
                     <nav class="main_menu">
                         <ul>
-                            <li class="current_page_item"><a href="findAllHome.action">首页</a>
+                            <li class="big_dropdown"><a href="findAllHome.action">首页</a>
                                 <!--
                                 <ul>teaching_institutions.jsp
                                     <li><a href="index.html">Home Page Style 1</a></li>

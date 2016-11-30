@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sxau.cyschool.pojo.Category;
 import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.CategoryService;
+import com.sxau.cyschool.service.HomeService;
 import com.sxau.cyschool.service.TitleService;
 import com.sxau.cyschool.utils.Page;
 
@@ -17,10 +18,12 @@ public class NotificationAction extends ActionSupport {
     //注入元素
     private TitleService titleService;
     private CategoryService categoryService;
+    private HomeService homeService;
     //传输部分
     private String notificationHead;
     private String notificationContent;
     private List<Title> titleList;
+    private List<Title> notifications;
     private Title title;
     private Integer nowPage;
     private int totalPage;
@@ -43,7 +46,7 @@ public class NotificationAction extends ActionSupport {
 
     //查找一个通知
     public String findOneNotification() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null ||tid == 0  ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -73,7 +76,7 @@ public class NotificationAction extends ActionSupport {
 
     //修改通知
     public String updateNotification() throws Exception {
-        if (tid == 0 && tid == null) {
+        if ( tid == null||tid == 0 ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -81,6 +84,19 @@ public class NotificationAction extends ActionSupport {
         title.setTContent(notificationContent);
         titleService.updateTitle(title);
         return SUCCESS;
+    }
+
+    //==============================前台===============================
+    //查找通知
+    public String findPreNotification() throws Exception {
+        if (nowPage == null || nowPage == 0) {
+            nowPage = 1;
+        }
+        page = titleService.queryTitleByCondition(title, nowPage, 10);
+        titleList = page.getRows();
+        totalPage = page.getTotalPage();
+        notifications=homeService.queryNotification();
+        return "findPreNotification";
     }
 
     public TitleService getTitleService() {
@@ -161,5 +177,21 @@ public class NotificationAction extends ActionSupport {
 
     public void setT_category(Category t_category) {
         this.t_category = t_category;
+    }
+
+    public List<Title> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Title> notifications) {
+        this.notifications = notifications;
+    }
+
+    public HomeService getHomeService() {
+        return homeService;
+    }
+
+    public void setHomeService(HomeService homeService) {
+        this.homeService = homeService;
     }
 }

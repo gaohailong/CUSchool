@@ -1,16 +1,11 @@
 package com.sxau.cyschool.service.impl;
 
-import com.sxau.cyschool.controller.SchoolGallery;
 import com.sxau.cyschool.dao.SchoolGalleryDao;
-import com.sxau.cyschool.dao.TitleDao;
 import com.sxau.cyschool.pojo.Image;
-import com.sxau.cyschool.pojo.Title;
 import com.sxau.cyschool.service.SchoolGalleryService;
-import com.sxau.cyschool.service.TitleService;
 import com.sxau.cyschool.utils.Page;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by gaohailong on 2016/11/24.
