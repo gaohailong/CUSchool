@@ -224,6 +224,15 @@ public interface BaseHibernateDao<T> {
 
     /**
      * 通过hql查询
+     *
+     * @param queryString
+     * @return
+     * @throws Exception
+     */
+    List<T> findData(String queryString, int firstResult, int maxResult) throws Exception;
+
+    /**
+     * 通过hql查询
      * @param queryString
      * @return
      * @throws Exception
