@@ -153,7 +153,7 @@
                 <div class="inner">
                     <nav class="main_menu">
                         <ul>
-                            <li class="current_page_item"><a href="findAllHome.action">首页</a>
+                            <li class="big_dropdown"><a href="findAllHome.action">首页</a>
                                 <!--
                                 <ul>teaching_institutions.jsp
                                     <li><a href="index.html">Home Page Style 1</a></li>
@@ -174,7 +174,7 @@
                                     <li><a href="findAllDataOther.action">直属及其他</a></li>
                                 </ul>
                             </li>
-                            <li class="big_dropdown"><a href="javascript:void(0)">人才培养</a>
+                            <li class="current_page_item"><a href="javascript:void(0)">人才培养</a>
                                 <ul>
                                     <li><a href="findAllDataTeacher.action">师资服务</a></li>
                                     <li><a href="findAllDataProfessional.action">特色专业</a></li>
@@ -500,172 +500,176 @@
 
                     <div class="block_popular_posts">
                         <h4>通知公告</h4>
+                        <c:forEach var="notification" items="${notifications}" >
+                            <div class="article">
+                                <!--<div class="pic">-->
+                                <!--<a href="#" class="w_hover">-->
+                                <!--&lt;!&ndash;<img src="images/pic_popular_post_1.jpg" alt="" />&ndash;&gt;-->
+                                <!--<span></span>-->
+                                <!--</a>-->
+                                <!--</div>-->
 
-                        <div class="article">
-                            <!--<div class="pic">-->
-                            <!--<a href="#" class="w_hover">-->
-                            <!--&lt;!&ndash;<img src="images/pic_popular_post_1.jpg" alt="" />&ndash;&gt;-->
-                            <!--<span></span>-->
-                            <!--</a>-->
-                            <!--</div>-->
-
-                            <div class="text">
-                                <p class="title"><a href="#">Packages and web page editors their default text.</a></p>
-                                <div class="date"><p>11 July, 2012</p></div>
-                                <div class="icons">
-                                    <ul>
-                                        <li><a href="#" class="views">41</a></li>
-                                        <!-- <li><a href="#" class="comments">22</a></li> -->
-                                    </ul>
+                                <div class="text">
+                                    <p class="title"><a href="findOneSchoolHome.action?tid=${notification.TId}">${notification.TName}</a></p>
+                                    <div class="date"><p>${notification.TDate}</p></div>
+                                    <div class="icons">
+                                        <ul>
+                                            <li><a href="#" class="views">${notification.TRead}</a></li>
+                                            <!-- <li><a href="#" class="comments">22</a></li> -->
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="line_3"></div>
-
-                        <div class="article">
-                            <!--<div class="pic">-->
-                            <!--<a href="#" class="w_hover">-->
-                            <!--<img src="images/pic_popular_post_2.jpg" alt="" />-->
-                            <!--<span></span>-->
-                            <!--</a>-->
-                            <!--</div>-->
-
-                            <div class="text">
-                                <p class="title"><a href="#">Web page editors their default model text, and a search
-                                    for.</a></p>
-                                <div class="date"><p>07 July, 2012</p></div>
-                                <div class="icons">
-                                    <ul>
-                                        <li><a href="#" class="views">24</a></li>
-                                        <!--<li><a href="#" class="comments">16</a></li>-->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line_3"></div>
-
-                        <div class="article">
-                            <!--<div class="pic">-->
-                            <!--<a href="#" class="w_hover">-->
-                            <!--&lt;!&ndash;<img src="images/pic_popular_post_3.jpg" alt="" />&ndash;&gt;-->
-                            <!--<span></span>-->
-                            <!--</a>-->
-                            <!--</div>-->
-
-                            <div class="text">
-                                <p class="title"><a href="#">Editors their default model text, and a search
-                                    uncover.default model text, </a></p>
-                                <div class="date"><p>05 July, 2012</p></div>
-                                <div class="icons">
-                                    <ul>
-                                        <li><a href="#" class="views">33</a></li>
-                                        <!--<li><a href="#" class="comments">25</a></li>-->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line_2"></div>
-                    </div>
-
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_popular_stuff">
-                        <h4>视频展示</h4>
-
-                        <div class="content">
-                            <!--<a href="#" class="view_all">Show all video</a>-->
-                            <div class="media"><a href="http://www.youtube.com/watch?v=ySIvism2af8"
-                                                  class="general_pic_hover play no_fx" data-rel="prettyPhoto"
-                                                  title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>
-                            </div>
-                            <p><a href="blog_post_w_video.html">Publishing packages and web page editors their default
-                                model.</a> <img src="images/icon_video.gif" alt=""/></p>
-                            <p class="date">11 July, 2012</p>
-                        </div>
-
-                        <div class="info">
-                            <ul>
-                                <li class="comments"><a href="#">115</a></li>
-                                <li class="views"><a href="#">220</a></li>
-                            </ul>
-                        </div>
-
+                            <div class="line_3"></div>
+                        </c:forEach>
                         <div class="clearboth"></div>
-
-                        <div class="line_2"></div>
-                    </div>
-
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_calendar">
-                        <h4>日历</h4>
-
-                        <div class="calendar" id="calendar_sidebar">
-                        </div>
-
-                        <script type="text/javascript">
-                            var today = new Date();
-                            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-                            $('#calendar_sidebar').DatePicker({
-                                flat: true,
-                                date: date,
-                                calendars: 1,
-                                starts: 1,
-                                locale: {
-                                    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                                    daysMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
-                                    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                                    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                                    weekMin: 'wk'
-                                }
-                            });
-                        </script>
-
-                        <div class="line_2"></div>
-                    </div>
-
-                    <!-- <div class="separator" style="height:31px;"></div> -->
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_popular_stuff">
-                        <h4>校内图册</h4>
-
-                        <div class="content">
-                            <a href="#" class="view_all">Show all photos</a>
-                            <div class="media"><a href="images/pic_pop_photo_big.jpg"
-                                                  class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"
-                                                  title="Popular Photo"><img src="images/pic_pop_photo.jpg" alt=""/></a>
-                            </div>
-                            <p><a href="blog_post_w_slider.html">Editors their default model text, and a search for will
-                                uncover many.</a> <img src="images/icon_photo.gif" alt=""/></p>
-                            <p class="date">11 July, 2012</p>
-                        </div>
-
-                        <div class="info">
-                            <ul>
-                                <li class="comments"><a href="#">100</a></li>
-                                <li class="views"><a href="#">134</a></li>
-                            </ul>
-                        </div>
-
+                        <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
+                        <a href="main_news.html" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
+                        <div class="line_3" style="margin:13px 0px 35px;"></div>
+                        <%--<div class="article">--%>
+                        <%--<!--<div class="pic">-->--%>
+                        <%--<!--<a href="#" class="w_hover">-->--%>
+                        <%--<!--<img src="images/pic_popular_post_2.jpg" alt="" />-->--%>
+                        <%--<!--<span></span>-->--%>
+                        <%--<!--</a>-->--%>
+                        <%--<!--</div>-->--%>
 
-                        <div class="line_2"></div>
+                        <%--<div class="text">--%>
+                        <%--<p class="title"><a href="#">Web page editors their default model text, and a search--%>
+                        <%--for.</a></p>--%>
+                        <%--<div class="date"><p>07 July, 2012</p></div>--%>
+                        <%--<div class="icons">--%>
+                        <%--<ul>--%>
+                        <%--<li><a href="#" class="views">24</a></li>--%>
+                        <%--<!--<li><a href="#" class="comments">16</a></li>-->--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="line_3"></div>--%>
+
+                        <%--<div class="article">--%>
+                        <%--<!--<div class="pic">-->--%>
+                        <%--<!--<a href="#" class="w_hover">-->--%>
+                        <%--<!--&lt;!&ndash;<img src="images/pic_popular_post_3.jpg" alt="" />&ndash;&gt;-->--%>
+                        <%--<!--<span></span>-->--%>
+                        <%--<!--</a>-->--%>
+                        <%--<!--</div>-->--%>
+
+                        <%--<div class="text">--%>
+                        <%--<p class="title"><a href="#">Editors their default model text, and a search--%>
+                        <%--uncover.default model text, </a></p>--%>
+                        <%--<div class="date"><p>05 July, 2012</p></div>--%>
+                        <%--<div class="icons">--%>
+                        <%--<ul>--%>
+                        <%--<li><a href="#" class="views">33</a></li>--%>
+                        <%--<!--<li><a href="#" class="comments">25</a></li>-->--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="line_2"></div>--%>
                     </div>
 
                     <div class="separator" style="height:31px;"></div>
 
-                    <div class="block_newsletter">
-                        <h4>Newsletter</h4>
+                    <%--<div class="block_popular_stuff">--%>
+                    <%--<h4>视频展示</h4>--%>
 
-                        <form action="#"/>
-                        <div class="field"><input type="text" class="w_def_text" title="Enter Your Email Addres"/></div>
-                        <input type="submit" class="button" value="Subscribe"/>
+                    <%--<div class="content">--%>
+                    <%--<!--<a href="#" class="view_all">Show all video</a>-->--%>
+                    <%--<div class="media"><a href="${video.VLink}"--%>
+                    <%--class="general_pic_hover play no_fx" data-rel="prettyPhoto"--%>
+                    <%--title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>--%>
+                    <%--</div>--%>
+                    <%--<p><a href="blog_post_w_video.html">${video.VDes}</a> <img src="images/icon_video.gif" alt=""/></p>--%>
+                    <%--<p class="date">${video.VDate}</p>--%>
+                    <%--</div>--%>
 
-                        <div class="clearboth"></div>
-                        </form>
-                    </div>
+                    <%--<div class="info">--%>
+                    <%--<ul>--%>
+                    <%--&lt;%&ndash;<li class="comments"><a href="#">115</a></li>&ndash;%&gt;--%>
+                    <%--<li class="views"><a href="#">${video.VRead}</a></li>--%>
+                    <%--</ul>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="clearboth"></div>--%>
+
+                    <%--<div class="line_2"></div>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="separator" style="height:31px;"></div>--%>
+
+                    <%--<div class="block_calendar">--%>
+                    <%--<h4>日历</h4>--%>
+
+                    <%--<div class="calendar" id="calendar_sidebar">--%>
+                    <%--</div>--%>
+
+                    <%--<script type="text/javascript">--%>
+                    <%--var today = new Date();--%>
+                    <%--var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();--%>
+                    <%--$('#calendar_sidebar').DatePicker({--%>
+                    <%--flat: true,--%>
+                    <%--date: date,--%>
+                    <%--calendars: 1,--%>
+                    <%--starts: 1,--%>
+                    <%--locale: {--%>
+                    <%--days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],--%>
+                    <%--daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],--%>
+                    <%--daysMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],--%>
+                    <%--months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],--%>
+                    <%--monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],--%>
+                    <%--weekMin: 'wk'--%>
+                    <%--}--%>
+                    <%--});--%>
+                    <%--</script>--%>
+
+                    <%--<div class="line_2"></div>--%>
+                    <%--</div>--%>
+
+                    <%--<!-- <div class="separator" style="height:31px;"></div> -->--%>
+                    <%--<div class="separator" style="height:31px;"></div>--%>
+
+                    <%--<div class="block_popular_stuff">--%>
+                    <%--<h4>校内图册</h4>--%>
+
+                    <%--<div class="content">--%>
+                    <%--<a href="#" class="view_all">Show all photos</a>--%>
+                    <%--<div class="media"><a href="images/pic_pop_photo_big.jpg"--%>
+                    <%--class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"--%>
+                    <%--title="Popular Photo"><img src="images/pic_pop_photo.jpg" alt=""/></a>--%>
+                    <%--</div>--%>
+                    <%--<p><a href="blog_post_w_slider.html">Editors their default model text, and a search for will--%>
+                    <%--uncover many.</a> <img src="images/icon_photo.gif" alt=""/></p>--%>
+                    <%--<p class="date">11 July, 2012</p>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="info">--%>
+                    <%--<ul>--%>
+                    <%--<li class="comments"><a href="#">100</a></li>--%>
+                    <%--<li class="views"><a href="#">134</a></li>--%>
+                    <%--</ul>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="clearboth"></div>--%>
+
+                    <%--<div class="line_2"></div>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="separator" style="height:31px;"></div>--%>
+
+                    <%--<div class="block_newsletter">--%>
+                    <%--<h4>Newsletter</h4>--%>
+
+                    <%--<form action="#"/>--%>
+                    <%--<div class="field"><input type="text" class="w_def_text" title="Enter Your Email Addres"/></div>--%>
+                    <%--<input type="submit" class="button" value="Subscribe"/>--%>
+
+                    <%--<div class="clearboth"></div>--%>
+                    <%--</form>--%>
+                    <%--</div>--%>
 
                 </div>
 

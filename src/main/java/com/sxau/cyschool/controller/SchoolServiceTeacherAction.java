@@ -184,4 +184,12 @@ public class SchoolServiceTeacherAction extends ActionSupport {
     public void setHomeService(HomeService homeService) {
         this.homeService = homeService;
     }
+
+    public List<Title> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Title> notifications) {
+        this.notifications = notifications;
+    }
 }

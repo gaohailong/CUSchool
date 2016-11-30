@@ -27,8 +27,6 @@
         <action name="*News" class="schoolNewsAction" method="{1}">
             <result name="findSchoolNews">/background/school_news.jsp</result>
             <result name="updateSchoolNews">/background/school_news_update.jsp</result>
-
-            <!--<result name="findForNews">/foreground/index.jsp</result>-->
         </action>
 
         <!--视频展示-->
@@ -53,7 +51,7 @@
         <action name="*Principal" class="principalAction" method="{1}">
             <result name="findPrincipal">/background/school_principal.jsp</result>
             <result name="updatePrincipal">/background/school_principal_update.jsp</result>
-            <result name="findDataPre">/foreground/detail.jsp</result>
+            <result name="findDataPre">/foreground/principal.jsp</result>
         </action>
 
         <!--现任领导-->
@@ -68,7 +66,7 @@
             <result name="findIntroduce">/background/school_introduce.jsp</result>
             <result name="updateIntroduce">/background/school_introduce_update.jsp</result>
             <result name="addIntroduce">/background/school_introduce_add.jsp</result>
-            <result name="findDataPreIntroduce">/foreground/detail.jsp</result>
+            <result name="findDataPreIntroduce">/foreground/school_introduce.jsp</result>
         </action>
 
         <!--行政机构-->
@@ -119,7 +117,7 @@
             <result name="findBuildSubject">/background/subject_build.jsp</result>
             <result name="addBuildSubject">/background/subject_add.jsp</result>
             <result name="updateOneBuildSubject">/background/subject_update.jsp</result>
-            <result name="findAllData">/foreground/detail.jsp</result>
+            <result name="findAllData">/foreground/subject_build.jsp</result>
         </action>
 
         <!--社会服务-->
@@ -127,7 +125,7 @@
             <result name="findServiceSociety">/background/society_service.jsp</result>
             <result name="addServiceSociety">/background/society_service_add.jsp</result>
             <result name="updateOneServiceSociety">/background/society_service_update.jsp</result>
-            <result name="findAllData">/foreground/detail.jsp</result>
+            <result name="findAllData">/foreground/society_service.jsp</result>
         </action>
 
         <!--交流合作-->
@@ -135,7 +133,7 @@
             <result name="findExchangeSchool">/background/exchange.jsp</result>
             <result name="addExchangeSchool">/background/exchange_add.jsp</result>
             <result name="updateOneExchange">/background/exchange_update.jsp</result>
-            <result name="findAllData">/foreground/detail.jsp</result>
+            <result name="findAllData">/foreground/exchange_work.jsp</result>
         </action>
 
         <!--招就招聘-->
@@ -143,7 +141,7 @@
             <result name="findRecruitmentSchool">/background/for_recruitment.jsp</result>
             <result name="addRecruitmentSchool">/background/for_recruitment_add.jsp</result>
             <result name="updateOneRecruitment">/background/for_recruitment_update.jsp</result>
-            <result name="findAllData">/foreground/detail.jsp</result>
+            <result name="findAllData">/foreground/recruitment.jsp</result>
         </action>
 
 

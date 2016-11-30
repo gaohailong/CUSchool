@@ -152,14 +152,14 @@
                 <div class="inner">
                     <nav class="main_menu">
                         <ul>
-                            <li class="current_page_item"><a href="findAllHome.action">首页</a>
+                            <li class="big_dropdown"><a href="findAllHome.action">首页</a>
                                 <!--
                                 <ul>teaching_institutions.jsp
                                     <li><a href="index.html">Home Page Style 1</a></li>
                                     <li><a href="home_style_2.html">Home Page Style 2</a></li>
                                 </ul> -->
                             </li>
-                            <li class="big_dropdown"><a href="javascript:void(0)">学校概况</a>
+                            <li class="current_page_item"><a href="javascript:void(0)">学校概况</a>
                                 <ul>
                                     <li><a href="findPreAllPrincipal.action">校长致辞</a></li>
                                     <li><a href="findAllDataLeader.action">现任领导</a></li>

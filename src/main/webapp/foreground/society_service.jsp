@@ -1,8 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-
 <head>
-    <title>校长致辞</title>
+    <title>社会服务</title>
 
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
@@ -152,7 +152,7 @@
                 <div class="inner">
                     <nav class="main_menu">
                         <ul>
-                            <li class="current_page_item"><a href="findAllHome.action">首页</a>
+                            <li class="big_dropdown"><a href="findAllHome.action">首页</a>
                                 <!--
                                 <ul>teaching_institutions.jsp
                                     <li><a href="index.html">Home Page Style 1</a></li>
@@ -180,7 +180,7 @@
                                     <li><a href="findAllDataCourse.action">精品课程</a></li>
                                 </ul>
                             </li>
-                            <li><a href="javascript:void(0)">科研服务</a>
+                            <li class="current_page_item"><a href="javascript:void(0)">科研服务</a>
                                 <ul>
                                     <li><a href="findAllDataSubject.action">学科建设</a></li>
                                     <li><a href="findAllDataSociety.action">社会服务</a></li>
@@ -392,220 +392,72 @@
                 <div class="main_content">
                     <!--<div class="block_breadcrumbs">-->
                     <!--<div class="text"><p>You are here:</p></div>-->
-                    <!---->
+
                     <!--<ul>-->
                     <!--<li><a href="index.jsp">Home</a></li>-->
-                    <!--<li><a href="business.html">Business News</a></li>-->
-                    <!--<li>News Name</li>-->
+                    <!--<li>Testimonials</li>-->
                     <!--</ul>-->
                     <!--</div>-->
                     <div class="separator" style="height:30px;"></div>
 
-                    <article class="block_single_news">
-                        <div class="f_pic"><a href="#"><img src="images/pic_news_post_1.jpg" alt=""/></a></div>
-                        <p class="title"><a href="#">Words which don't look even slightly.</a></p>
-                        <p class="subtitle">Many variations of passages of available, but the majority have suffered
-                            alteration in some form. Humour, or randomised words which don't look even slightly
-                            believable.</p>
+                    <h2>社会服务</h2>
 
-                        <div class="info">
-                            <div class="date"><p>15 July, 2012</p></div>
-                            <div class="author"><p>By: <a href="#">John Doe</a></p></div>
+                    <div class="line_4" style="margin:0px 0px 20px;"></div>
 
-                            <div class="r_part">
-                                <div class="category"><p><a href="#">Life</a></p></div>
-                                <a href="#" class="views">220</a>
-                                <a href="#" class="comments">25</a>
+                    <!--<h5>Style 1</h5>-->
+
+                    <!--<div class="block_testimonial_type_1">-->
+                    <!--<div class="text">-->
+                    <!--<div class="tail"></div>-->
+                    <!--<p>Randomised words which don't look even slightly believable. If you are going to use a passage. You need to be sure there isn't anything embarrassing hidden in the middle of text.</p>-->
+                    <!--</div>-->
+
+                    <!--<div class="author"><p><a href="#">John Doe</a>. <a href="#" class="position">Designer</a></p></div>-->
+                    <!--</div>-->
+
+                    <%--<div class="line_2" style="margin:17px 0px 20px;"></div>--%>
+                    <c:forEach var="title" items="${titleList}">
+                        <h5 style="padding-bottom:12px;">${title.TName}</h5>
+                        <div class="block_testimonial_type_2">
+                            <div class="text">
+                                <p style="max-height: 40px;overflow: auto;">${title.TContent}</p>
                             </div>
+
+                                <%--<div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>--%>
                         </div>
 
-                        <div class="content">
-                            <p>There are many variations of passages of available, but the majority have suffered
-                                alteration in some form, by injected humour, or <b>randomised words</b> which don't look
-                                even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
-                                be sure there isn't <a href="#" class="lnk_blue"><b>anything embarrassing hidden</b></a>
-                                in the middle of text. All the generators on the Internet tend to repeat predefined
-                                chunks as necessary, making this the first true generator on the Internet. It uses a
-                                dictionary of over words, combined with a handful of model sentence structures, to
-                                generate which looks reasonable. Theherefore <b>always free from repetition</b>,
-                                injected humour words etc.</p>
-                            <blockquote class="full">Going to use a passage you need to be sure there isn't anything
-                                embarrassing hidden in the middle of text. established fact that a reader will be
-                                distracted by the readable content.
-                            </blockquote>
-                            <p>Available, but the majority have suffered alteration.By injected humour, or randomised
-                                words which don't look even slightly believable. If you are <a href="#"><b>going to use
-                                    a passage</b></a> of Lorem Ipsum, you need to be sure there isn't anything
-                                embarrassing hidden in the middle of text. Established fact that a reader will be
-                                distracted by the readable content of a page when <b>looking at its layout</b>. The
-                                point of using Lorem Ipsum is that it has a more-or-less.</p>
-                        </div>
-                    </article>
+                        <div class="line_2" style="margin:17px 0px 20px;"></div>
+                    </c:forEach>
 
-                    <div class="separator" style="height:4px;"></div>
 
-                    <!--<div class="block_post_tags">-->
-                    <!--<p>Tags: <a href="#">business,</a><a href="#">stock market</a></p>-->
+
+                    <!--<h5>Style 3</h5>-->
+
+                    <!--<div class="one_half">-->
+                    <!--<div class="block_testimonial_type_3">-->
+                    <!--<div class="text">-->
+                    <!--<div class="tail"></div>-->
+                    <!--<p>Going to use a passage. You need to be sure there isn't anything embarrassing hidden in the middle of text.</p>-->
                     <!--</div>-->
 
-                    <!--<div class="block_post_social">-->
-                    <!--<h4><span>B</span></h4>-->
-                    <!---->
-                    <!--<section class="rating">-->
-                    <!--<p class="title"><span>Rating</span></p>-->
-                    <!---->
-                    <!--<ul>-->
-                    <!--<li><span>1024</span>views</li>-->
-                    <!--<li><span>4</span>comments</li>-->
-                    <!--</ul>-->
-                    <!--</section>-->
-                    <!---->
-                    <!--<section class="subscribe">-->
-                    <!--<p class="title"><span>Subscribe</span></p>-->
-                    <!--<a href="#">Subscribe to comments</a>-->
-                    <!--</section>-->
-                    <!---->
-                    <!--<section class="recommend">-->
-                    <!--<p class="title"><span>recommend to friends</span></p>-->
-                    <!---->
-                    <!--<ul>-->
-                    <!--<li><a href="http://www.facebook.com/share.php?u=http://google.com" target="_blank"><img src="images/button_social_1.png" alt="" /></a></li>-->
-                    <!--<li><a href="https://twitter.com/share?text=I like BusinessNews Template and You?" target="_blank"><img src="images/button_social_2.png" alt="" /></a></li>-->
-                    <!--<li><a href="https://plusone.google.com/_/+1/confirm?url=http://google.com" target="_blank"><img src="images/button_social_3.png" alt="" /></a></li>-->
-                    <!--<li><a href="http://pinterest.com/pin/create/button/?url=http://google.com" target="_blank"><img src="images/button_social_4.png" alt="" /></a></li>-->
-                    <!--</ul>-->
-                    <!--</section>-->
-                    <!---->
-                    <!--<div class="clearboth"></div>-->
+                    <!--<div class="author"><p><a href="#">Bryan Defo</a>. <span class="position">Designer</span></p></div>-->
+                    <!--</div>-->
                     <!--</div>-->
 
-                    <!--<div class="line_2" style="margin:22px 0px 29px;"></div>-->
-                    <!---->
-                    <!--<div class="block_related_posts">-->
-                    <!--<h3>Related Posts</h3>-->
-                    <!---->
-                    <!--<div class="block_main_news">-->
-                    <!--<article class="block_news_post">-->
-                    <!--<div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_9.jpg" alt="" /></a></div>-->
-                    <!--<p class="category"><a href="#">photography</a></p>-->
-                    <!--<p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>11 July, 2012</p></div>-->
-                    <!--<a href="#" class="views">183</a>-->
-                    <!---->
-                    <!--<div class="clearboth"></div>-->
+                    <!--<div class="one_half last">-->
+                    <!--<div class="block_testimonial_type_3">-->
+                    <!--<div class="text">-->
+                    <!--<div class="tail"></div>-->
+                    <!--<p>There  isn't anything embarrassing hidden in the middle of text. established fact that a reader will be distracted by the readable.</p>-->
                     <!--</div>-->
-                    <!--</article>-->
-                    <!---->
-                    <!--<article class="block_news_post">-->
-                    <!--<div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_4.jpg" alt="" /></a></div>-->
-                    <!--<p class="category"><a href="#">sport</a></p>-->
-                    <!--<p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>11 July, 2012</p></div>-->
-                    <!--<a href="#" class="views">183</a>-->
-                    <!---->
-                    <!--<div class="clearboth"></div>-->
-                    <!--</div>-->
-                    <!--</article>-->
-                    <!---->
-                    <!--<article class="block_news_post">-->
-                    <!--<div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_6.jpg" alt="" /></a></div>-->
-                    <!--<p class="category"><a href="#">business</a></p>-->
-                    <!--<p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>11 July, 2012</p></div>-->
-                    <!--<a href="#" class="views">183</a>-->
-                    <!---->
-                    <!--<div class="clearboth"></div>-->
-                    <!--</div>-->
-                    <!--</article>-->
-                    <!---->
-                    <!--<article class="block_news_post">-->
-                    <!--<div class="f_pic"><a href="#" class="general_pic_hover scale_small"><img src="images/pic_main_news_13.jpg" alt="" /></a></div>-->
-                    <!--<p class="category"><a href="#">video</a></p>-->
-                    <!--<p class="title"><a href="#">Many desktop publishing packages and web page editors.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>11 July, 2012</p></div>-->
-                    <!--<a href="#" class="views">183</a>-->
-                    <!---->
-                    <!--<div class="clearboth"></div>-->
-                    <!--</div>-->
-                    <!--</article>-->
-                    <!---->
-                    <!--<div class="clearboth"></div>-->
+
+                    <!--<div class="author"><p>Sara Decker. <a href="#" class="position">Manager</a></p></div>-->
                     <!--</div>-->
                     <!--</div>-->
-                    <!---->
-                    <!--<div class="line_2" style="margin:5px 0px 30px;"></div>-->
-                    <!---->
-                    <!--<div class="block_comments_type_2">-->
-                    <!--<h3>3 Comments</h3>-->
-                    <!--<a href="#" class="add_new">Add new comment</a>-->
-                    <!---->
-                    <!--<div class="comment">-->
-                    <!--<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>-->
-                    <!---->
-                    <!--<div class="comment_wrap">-->
-                    <!--<div class="name"><p><a href="#">John Doe</a></p></div>-->
-                    <!--<div class="date"><p>Febr 16, 2012 at 4:43 pm</p></div>-->
-                    <!--<div class="content">-->
-                    <!--<p>Established fact that a reader will be distracted by the readable content of a page.</p>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="clearboth"></div>-->
-                    <!--<div class="line_3"></div>-->
-                    <!--</div>-->
-                    <!---->
-                    <!--<div class="comment">-->
-                    <!--<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>-->
-                    <!---->
-                    <!--<div class="comment_wrap">-->
-                    <!--<div class="name"><p><a href="#">Sara Jonson</a></p></div>-->
-                    <!--<div class="date"><p>Febr 16, 2012 at 4:43 pm</p></div>-->
-                    <!--<div class="content">-->
-                    <!--<p>Established fact that a reader will be distracted by the readable content of a page. When looking at its layout. The point of using is that it has a more-or-less normal distribution of letters.</p>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="clearboth"></div>-->
-                    <!--<div class="line_3"></div>-->
-                    <!--</div>-->
-                    <!---->
-                    <!--<div class="comment">-->
-                    <!--<div class="userpic"><a href="#"><img src="images/ava_default_1.jpg" alt="" /></a></div>-->
-                    <!---->
-                    <!--<div class="comment_wrap">-->
-                    <!--<div class="name"><p><a href="#">Mark Defo</a></p></div>-->
-                    <!--<div class="date"><p>Febr 16, 2012 at 4:43 pm</p></div>-->
-                    <!--<div class="content">-->
-                    <!--<p>Page when looking at its layout. The point of usinghas a more-or-less normal distribution.</p>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="clearboth"></div>-->
-                    <!--<div class="line_3"></div>-->
-                    <!--</div>-->
-                    <!---->
-                    <!--</div>-->
-                    <!---->
-                    <!--<div class="separator" style="height:30px;"></div>-->
-                    <!---->
-                    <!--<div class="block_leave_reply">-->
-                    <!--<h3>Leave a Reply</h3>-->
-                    <!--<p class="text">Your email address will not be published. Required fields are marked <span>*</span></p>-->
-                    <!---->
-                    <!--<form class="w_validation" action="#" />-->
-                    <!--<p>Name<span>*</span></p>-->
-                    <!--<div class="field"><input type="text" class="req" /></div>-->
-                    <!---->
-                    <!--<p>E-mail<span>*</span></p>-->
-                    <!--<div class="field"><input type="text" class="req" /></div>-->
-                    <!---->
-                    <!--<p>Comment</p>-->
-                    <!--<div class="textarea"><textarea cols="1" rows="1"></textarea></div>-->
-                    <!---->
-                    <!--<input type="submit" class="general_button" value="Post comment" />-->
-                    <!--</form>-->
-                    <!--</div>-->
+
+                    <div class="clearboth"></div>
+
+                    <!--<div class="line_2" style="margin:17px 0px 0px;"></div>-->
 
                 </div>
 
@@ -637,172 +489,199 @@
 
                     <div class="block_popular_posts">
                         <h4>通知公告</h4>
+                        <c:forEach var="notification" items="${notifications}" >
+                            <div class="article">
+                                <!--<div class="pic">-->
+                                <!--<a href="#" class="w_hover">-->
+                                <!--&lt;!&ndash;<img src="images/pic_popular_post_1.jpg" alt="" />&ndash;&gt;-->
+                                <!--<span></span>-->
+                                <!--</a>-->
+                                <!--</div>-->
 
-                        <div class="article">
-                            <!--<div class="pic">-->
-                            <!--<a href="#" class="w_hover">-->
-                            <!--&lt;!&ndash;<img src="images/pic_popular_post_1.jpg" alt="" />&ndash;&gt;-->
-                            <!--<span></span>-->
-                            <!--</a>-->
-                            <!--</div>-->
-
-                            <div class="text">
-                                <p class="title"><a href="#">Packages and web page editors their default text.</a></p>
-                                <div class="date"><p>11 July, 2012</p></div>
-                                <div class="icons">
-                                    <ul>
-                                        <li><a href="#" class="views">41</a></li>
-                                        <!-- <li><a href="#" class="comments">22</a></li> -->
-                                    </ul>
+                                <div class="text">
+                                    <p class="title"><a href="findOneSchoolHome.action?tid=${notification.TId}">${notification.TName}</a></p>
+                                    <div class="date"><p>${notification.TDate}</p></div>
+                                    <div class="icons">
+                                        <ul>
+                                            <li><a href="#" class="views">${notification.TRead}</a></li>
+                                            <!-- <li><a href="#" class="comments">22</a></li> -->
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="line_3"></div>
-
-                        <div class="article">
-                            <!--<div class="pic">-->
-                            <!--<a href="#" class="w_hover">-->
-                            <!--<img src="images/pic_popular_post_2.jpg" alt="" />-->
-                            <!--<span></span>-->
-                            <!--</a>-->
-                            <!--</div>-->
-
-                            <div class="text">
-                                <p class="title"><a href="#">Web page editors their default model text, and a search
-                                    for.</a></p>
-                                <div class="date"><p>07 July, 2012</p></div>
-                                <div class="icons">
-                                    <ul>
-                                        <li><a href="#" class="views">24</a></li>
-                                        <!--<li><a href="#" class="comments">16</a></li>-->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line_3"></div>
-
-                        <div class="article">
-                            <!--<div class="pic">-->
-                            <!--<a href="#" class="w_hover">-->
-                            <!--&lt;!&ndash;<img src="images/pic_popular_post_3.jpg" alt="" />&ndash;&gt;-->
-                            <!--<span></span>-->
-                            <!--</a>-->
-                            <!--</div>-->
-
-                            <div class="text">
-                                <p class="title"><a href="#">Editors their default model text, and a search
-                                    uncover.default model text, </a></p>
-                                <div class="date"><p>05 July, 2012</p></div>
-                                <div class="icons">
-                                    <ul>
-                                        <li><a href="#" class="views">33</a></li>
-                                        <!--<li><a href="#" class="comments">25</a></li>-->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line_2"></div>
-                    </div>
-
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_popular_stuff">
-                        <h4>视频展示</h4>
-
-                        <div class="content">
-                            <!--<a href="#" class="view_all">Show all video</a>-->
-                            <div class="media"><a href="http://www.youtube.com/watch?v=ySIvism2af8"
-                                                  class="general_pic_hover play no_fx" data-rel="prettyPhoto"
-                                                  title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>
-                            </div>
-                            <p><a href="blog_post_w_video.html">Publishing packages and web page editors their default
-                                model.</a> <img src="images/icon_video.gif" alt=""/></p>
-                            <p class="date">11 July, 2012</p>
-                        </div>
-
-                        <div class="info">
-                            <ul>
-                                <li class="comments"><a href="#">115</a></li>
-                                <li class="views"><a href="#">220</a></li>
-                            </ul>
-                        </div>
-
+                            <div class="line_3"></div>
+                        </c:forEach>
                         <div class="clearboth"></div>
-
-                        <div class="line_2"></div>
-                    </div>
-
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_calendar">
-                        <h4>日历</h4>
-
-                        <div class="calendar" id="calendar_sidebar">
-                        </div>
-
-                        <script type="text/javascript">
-                            var today = new Date();
-                            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-                            $('#calendar_sidebar').DatePicker({
-                                flat: true,
-                                date: date,
-                                calendars: 1,
-                                starts: 1,
-                                locale: {
-                                    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-                                    daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                                    daysMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
-                                    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-                                    monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                                    weekMin: 'wk'
-                                }
-                            });
-                        </script>
-
-                        <div class="line_2"></div>
-                    </div>
-
-                    <!-- <div class="separator" style="height:31px;"></div> -->
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_popular_stuff">
-                        <h4>校内图册</h4>
-
-                        <div class="content">
-                            <a href="#" class="view_all">Show all photos</a>
-                            <div class="media"><a href="images/pic_pop_photo_big.jpg"
-                                                  class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"
-                                                  title="Popular Photo"><img src="images/pic_pop_photo.jpg" alt=""/></a>
-                            </div>
-                            <p><a href="blog_post_w_slider.html">Editors their default model text, and a search for will
-                                uncover many.</a> <img src="images/icon_photo.gif" alt=""/></p>
-                            <p class="date">11 July, 2012</p>
-                        </div>
-
-                        <div class="info">
-                            <ul>
-                                <li class="comments"><a href="#">100</a></li>
-                                <li class="views"><a href="#">134</a></li>
-                            </ul>
-                        </div>
-
+                        <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
+                        <a href="main_news.html" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
+                        <div class="line_3" style="margin:13px 0px 35px;"></div>
 
-                        <div class="line_2"></div>
+                        <%--<div class="article">--%>
+                        <%--<!--<div class="pic">-->--%>
+                        <%--<!--<a href="#" class="w_hover">-->--%>
+                        <%--<!--&lt;!&ndash;<img src="images/pic_popular_post_1.jpg" alt="" />&ndash;&gt;-->--%>
+                        <%--<!--<span></span>-->--%>
+                        <%--<!--</a>-->--%>
+                        <%--<!--</div>-->--%>
+
+                        <%--<div class="text">--%>
+                        <%--<p class="title"><a href="#">Packages and web page editors their default text.</a></p>--%>
+                        <%--<div class="date"><p>11 July, 2012</p></div>--%>
+                        <%--<div class="icons">--%>
+                        <%--<ul>--%>
+                        <%--<li><a href="#" class="views">41</a></li>--%>
+                        <%--<!-- <li><a href="#" class="comments">22</a></li> -->--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="line_3"></div>--%>
+
+                        <%--<div class="article">--%>
+                        <%--<!--<div class="pic">-->--%>
+                        <%--<!--<a href="#" class="w_hover">-->--%>
+                        <%--<!--<img src="images/pic_popular_post_2.jpg" alt="" />-->--%>
+                        <%--<!--<span></span>-->--%>
+                        <%--<!--</a>-->--%>
+                        <%--<!--</div>-->--%>
+
+                        <%--<div class="text">--%>
+                        <%--<p class="title"><a href="#">Web page editors their default model text, and a search--%>
+                        <%--for.</a></p>--%>
+                        <%--<div class="date"><p>07 July, 2012</p></div>--%>
+                        <%--<div class="icons">--%>
+                        <%--<ul>--%>
+                        <%--<li><a href="#" class="views">24</a></li>--%>
+                        <%--<!--<li><a href="#" class="comments">16</a></li>-->--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="line_3"></div>--%>
+
+                        <%--<div class="article">--%>
+                        <%--<!--<div class="pic">-->--%>
+                        <%--<!--<a href="#" class="w_hover">-->--%>
+                        <%--<!--&lt;!&ndash;<img src="images/pic_popular_post_3.jpg" alt="" />&ndash;&gt;-->--%>
+                        <%--<!--<span></span>-->--%>
+                        <%--<!--</a>-->--%>
+                        <%--<!--</div>-->--%>
+
+                        <%--<div class="text">--%>
+                        <%--<p class="title"><a href="#">Editors their default model text, and a search--%>
+                        <%--uncover.default model text, </a></p>--%>
+                        <%--<div class="date"><p>05 July, 2012</p></div>--%>
+                        <%--<div class="icons">--%>
+                        <%--<ul>--%>
+                        <%--<li><a href="#" class="views">33</a></li>--%>
+                        <%--<!--<li><a href="#" class="comments">25</a></li>-->--%>
+                        <%--</ul>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="line_2"></div>--%>
                     </div>
 
-                    <div class="separator" style="height:31px;"></div>
+                    <%--<div class="separator" style="height:31px;"></div>--%>
 
-                    <div class="block_newsletter">
-                        <h4>Newsletter</h4>
+                    <%--<div class="block_popular_stuff">--%>
+                    <%--<h4>视频展示</h4>--%>
 
-                        <form action="#"/>
-                        <div class="field"><input type="text" class="w_def_text" title="Enter Your Email Addres"/></div>
-                        <input type="submit" class="button" value="Subscribe"/>
+                    <%--<div class="content">--%>
+                    <%--<!--<a href="#" class="view_all">Show all video</a>-->--%>
+                    <%--<div class="media"><a href="http://www.youtube.com/watch?v=ySIvism2af8"--%>
+                    <%--class="general_pic_hover play no_fx" data-rel="prettyPhoto"--%>
+                    <%--title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>--%>
+                    <%--</div>--%>
+                    <%--<p><a href="blog_post_w_video.html">Publishing packages and web page editors their default--%>
+                    <%--model.</a> <img src="images/icon_video.gif" alt=""/></p>--%>
+                    <%--<p class="date">11 July, 2012</p>--%>
+                    <%--</div>--%>
 
-                        <div class="clearboth"></div>
-                        </form>
-                    </div>
+                    <%--<div class="info">--%>
+                    <%--<ul>--%>
+                    <%--<li class="comments"><a href="#">115</a></li>--%>
+                    <%--<li class="views"><a href="#">220</a></li>--%>
+                    <%--</ul>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="clearboth"></div>--%>
+
+                    <%--<div class="line_2"></div>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="separator" style="height:31px;"></div>--%>
+
+                    <%--<div class="block_calendar">--%>
+                    <%--<h4>日历</h4>--%>
+
+                    <%--<div class="calendar" id="calendar_sidebar">--%>
+                    <%--</div>--%>
+
+                    <%--<script type="text/javascript">--%>
+                    <%--var today = new Date();--%>
+                    <%--var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();--%>
+                    <%--$('#calendar_sidebar').DatePicker({--%>
+                    <%--flat: true,--%>
+                    <%--date: date,--%>
+                    <%--calendars: 1,--%>
+                    <%--starts: 1,--%>
+                    <%--locale: {--%>
+                    <%--days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],--%>
+                    <%--daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],--%>
+                    <%--daysMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],--%>
+                    <%--months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],--%>
+                    <%--monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],--%>
+                    <%--weekMin: 'wk'--%>
+                    <%--}--%>
+                    <%--});--%>
+                    <%--</script>--%>
+
+                    <%--<div class="line_2"></div>--%>
+                    <%--</div>--%>
+
+                    <%--<!-- <div class="separator" style="height:31px;"></div> -->--%>
+                    <%--<div class="separator" style="height:31px;"></div>--%>
+
+                    <%--<div class="block_popular_stuff">--%>
+                    <%--<h4>校内图册</h4>--%>
+
+                    <%--<div class="content">--%>
+                    <%--<a href="#" class="view_all">Show all photos</a>--%>
+                    <%--<div class="media"><a href="images/pic_pop_photo_big.jpg"--%>
+                    <%--class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"--%>
+                    <%--title="Popular Photo"><img src="images/pic_pop_photo.jpg" alt=""/></a>--%>
+                    <%--</div>--%>
+                    <%--<p><a href="blog_post_w_slider.html">Editors their default model text, and a search for will--%>
+                    <%--uncover many.</a> <img src="images/icon_photo.gif" alt=""/></p>--%>
+                    <%--<p class="date">11 July, 2012</p>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="info">--%>
+                    <%--<ul>--%>
+                    <%--<li class="comments"><a href="#">100</a></li>--%>
+                    <%--<li class="views"><a href="#">134</a></li>--%>
+                    <%--</ul>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="clearboth"></div>--%>
+
+                    <%--<div class="line_2"></div>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="separator" style="height:31px;"></div>--%>
+
+                    <%--<div class="block_newsletter">--%>
+                    <%--<h4>Newsletter</h4>--%>
+
+                    <%--<form action="#"/>--%>
+                    <%--<div class="field"><input type="text" class="w_def_text" title="Enter Your Email Addres"/></div>--%>
+                    <%--<input type="submit" class="button" value="Subscribe"/>--%>
+
+                    <%--<div class="clearboth"></div>--%>
+                    <%--</form>--%>
+                    <%--</div>--%>
 
                 </div>
 
