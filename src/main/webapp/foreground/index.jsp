@@ -78,7 +78,7 @@
                     <div class="fl">
                         <div class="block_top_menu">
                             <ul>
-                                <li class="current"><a href="index.jsp">首页</a></li>
+                                <li class="current"><a href="findAllHome.action">首页</a></li>
                                 <li><a href="#">地图</a></li>
                                 <!-- <li><a href="typography.html">Typography</a></li> -->
                                 <li><a href="contact.html">联系我们</a></li>
@@ -1010,18 +1010,6 @@
                     </div>
 
                     <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_newsletter">
-                        <h4>Newsletter</h4>
-
-                        <form action="#"/>
-                        <div class="field"><input type="text" class="w_def_text" title="Enter Your Email Addres"/></div>
-                        <input type="submit" class="button" value="Subscribe"/>
-
-                        <div class="clearboth"></div>
-                        </form>
-                    </div>
-
                 </div>
 
                 <div class="clearboth"></div>

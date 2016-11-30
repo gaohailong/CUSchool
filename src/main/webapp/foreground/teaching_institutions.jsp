@@ -76,7 +76,7 @@
                     <div class="fl">
                         <div class="block_top_menu">
                             <ul>
-                                <li class="current"><a href="index.jsp">首页</a></li>
+                                <li class="current"><a href="findAllHome.action">首页</a></li>
                                 <li><a href="#">地图</a></li>
                                 <!-- <li><a href="typography.html">Typography</a></li> -->
                                 <li><a href="contact.html">联系我们</a></li>
