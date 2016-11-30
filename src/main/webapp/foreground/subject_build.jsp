@@ -152,41 +152,41 @@
                 <div class="inner">
                     <nav class="main_menu">
                         <ul>
-                            <li class=""><a href="index.jsp">首页</a>
+                            <li class="current_page_item"><a href="findAllHome.action">首页</a>
                                 <!--
                                 <ul>teaching_institutions.jsp
-                                    <li><a href="index.jsp">Home Page Style 1</a></li>
+                                    <li><a href="index.html">Home Page Style 1</a></li>
                                     <li><a href="home_style_2.html">Home Page Style 2</a></li>
                                 </ul> -->
                             </li>
                             <li class="big_dropdown"><a href="javascript:void(0)">学校概况</a>
                                 <ul>
-                                    <li><a href="principal.jsp">校长致辞</a></li>
-                                    <li><a href="leader.jsp">现任领导</a></li>
-                                    <li><a href="school_introduce.jsp">学校简介</a></li>
+                                    <li><a href="findPreAllPrincipal.action">校长致辞</a></li>
+                                    <li><a href="findAllDataLeader.action">现任领导</a></li>
+                                    <li><a href="findPreAllIntroduce.action">学校简介</a></li>
                                 </ul>
                             </li>
                             <li class="big_dropdown"><a href="javascript:void(0)">组织结构</a>
                                 <ul>
-                                    <li><a href="administration.jsp">行政机构</a></li>
-                                    <li><a href="teaching_institutions.jsp">教辅机构</a></li>
-                                    <li><a href="immediate_and_others.jsp">直属及其他</a></li>
+                                    <li><a href="findAllDataAdministration.action">行政机构</a></li>
+                                    <li><a href="findAllDataTeaching.action">教辅机构</a></li>
+                                    <li><a href="findAllDataOther.action">直属及其他</a></li>
                                 </ul>
                             </li>
                             <li class="big_dropdown"><a href="javascript:void(0)">人才培养</a>
                                 <ul>
-                                    <li><a href="teacher_service.jsp">师资服务</a></li>
-                                    <li><a href="special_major.jsp">特色专业</a></li>
-                                    <li><a href="nice_course.jsp">精品课程</a></li>
+                                    <li><a href="findAllDataTeacher.action">师资服务</a></li>
+                                    <li><a href="findAllDataProfessional.action">特色专业</a></li>
+                                    <li><a href="findAllDataCourse.action">精品课程</a></li>
                                 </ul>
                             </li>
-                            <li class="current_page_item"><a href="javascript:void(0)">科研服务</a>
+                            <li><a href="javascript:void(0)">科研服务</a>
                                 <ul>
-                                    <li><a href="subject_build.jsp">学科建设</a></li>
-                                    <li><a href="society_service.jsp">社会服务</a></li>
+                                    <li><a href="findAllDataSubject.action">学科建设</a></li>
+                                    <li><a href="findAllDataSociety.action">社会服务</a></li>
                                 </ul>
                             </li>
-                            <li><a href="exchange_work.jsp">交流合作</a>
+                            <li><a href="findAllDataWork.action">交流合作</a>
                                 <!--                                     <ul>
                                                                         <li><a href="about.html">About Us</a></li>
                                                                         <li><a href="about_author.html">About Author Page</a></li>
@@ -197,7 +197,7 @@
                                                                         <li><a href="news_post_w_video.html">News Post With Video</a></li>
                                                                     </ul> -->
                             </li>
-                            <li><a href="recruitment.jsp">招就招聘</a>
+                            <li><a href="findAllDataRecruitment.action">招就招聘</a>
                                 <!--  <ul>
                                      <li><a href="blog.html">Our Blog Style 1</a></li>
                                      <li><a href="blog_style_2.html">Our Blog Style 2</a></li>

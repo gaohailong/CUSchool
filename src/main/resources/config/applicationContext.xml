@@ -299,6 +299,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     <bean id="societyServiceAction" class="com.sxau.cyschool.controller.SocietyServiceAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="societyServiceService"/>
+        <property name="homeService" ref="homeService"/>
     </bean>
 
     <!--交流合作-->
@@ -311,6 +312,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     <bean id="exchangeWorkAction" class="com.sxau.cyschool.controller.ExchangeWorkAction" scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="exchangeWorkService"/>
+        <property name="homeService" ref="homeService"/>
     </bean>
 
     <!--招就招聘-->

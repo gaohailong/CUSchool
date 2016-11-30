@@ -88,8 +88,7 @@ public class SubjectBuildAction extends ActionSupport {
         titleService.updateTitle(title);
         return SUCCESS;
     }
-    
-    //// TODO: 2016/11/29  
+
     //================================前端=====================================
     public String findAllData() throws Exception {
         if (nowPage == null || nowPage == 0) {
@@ -97,7 +96,10 @@ public class SubjectBuildAction extends ActionSupport {
         }
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
-        notifications=homeService.queryNotification();
+        if (titleList != null) {
+            title = titleList.get(0);
+        }
+        notifications = homeService.queryNotification();
         return "findAllData";
     }
 

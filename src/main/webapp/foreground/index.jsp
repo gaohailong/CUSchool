@@ -182,11 +182,11 @@
                             </li>
                             <li><a href="javascript:void(0)">科研服务</a>
                                 <ul>
-                                    <li><a href="subject_build.jsp">学科建设</a></li>
-                                    <li><a href="society_service.jsp">社会服务</a></li>
+                                    <li><a href="findAllDataSubject.action">学科建设</a></li>
+                                    <li><a href="findAllDataSociety.action">社会服务</a></li>
                                 </ul>
                             </li>
-                            <li><a href="exchange_work.jsp">交流合作</a>
+                            <li><a href="findAllDataWork.action">交流合作</a>
                                 <!--                                     <ul>
                                                                         <li><a href="about.html">About Us</a></li>
                                                                         <li><a href="about_author.html">About Author Page</a></li>

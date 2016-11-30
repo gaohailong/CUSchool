@@ -24,6 +24,7 @@ public class ExchangeWorkAction extends ActionSupport {
     private String notificationHead;
     private String notificationContent;
     private List<Title> titleList;
+    private List<Title> notifications;
     private Title title;
     private Integer nowPage;
     private int totalPage;
@@ -42,14 +43,14 @@ public class ExchangeWorkAction extends ActionSupport {
         totalPage = page.getTotalPage();
         if (titleList.size() > 0) {
             return "findExchangeSchool";
-        }else {
+        } else {
             return "addExchangeSchool";
         }
     }
 
     //查找一个通知
     public String findOneExchange() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null || tid == 0) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -86,6 +87,20 @@ public class ExchangeWorkAction extends ActionSupport {
         title.setTContent(notificationContent);
         titleService.updateTitle(title);
         return SUCCESS;
+    }
+
+    //================================前端=====================================
+    public String findAllData() throws Exception {
+        if (nowPage == null || nowPage == 0) {
+            nowPage = 1;
+        }
+        page = titleService.queryTitleByCondition(title, nowPage, 10);
+        titleList = page.getRows();
+        if (titleList != null) {
+            title = titleList.get(0);
+        }
+        notifications = homeService.queryNotification();
+        return "findAllData";
     }
 
     public TitleService getTitleService() {
@@ -166,5 +181,13 @@ public class ExchangeWorkAction extends ActionSupport {
 
     public void setT_category(Category t_category) {
         this.t_category = t_category;
+    }
+
+    public HomeService getHomeService() {
+        return homeService;
+    }
+
+    public void setHomeService(HomeService homeService) {
+        this.homeService = homeService;
     }
 }
