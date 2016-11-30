@@ -206,24 +206,6 @@
                                      <li><a href="blog_post_w_video.html">Post With Video</a></li>
                                  </ul> -->
                             </li>
-                            <!-- <li><a href="typography.html">Shortcodes</a>
-
-                          <ul>
-                              <li><a href="accordion.html">Accordeon</a></li>
-                              <li><a href="blockquote.html">Blockquote</a></li>
-                              <li><a href="table.html">Table</a></li>
-                              <li><a href="columns.html">Columns</a></li>
-                              <li><a href="pricing_table.html">Pricing Table</a></li>
-                              <li><a href="testimonials.html">Testimonials</a></li>
-                              <li><a href="boxes.html">Info Boxes</a></li>
-                              <li><a href="dropcaps.html">Dropcaps</a></li>
-                              <li><a href="tabs.html">Tabs</a></li>
-                              <li><a href="lists.html">List Slyle</a></li>
-                              <li><a href="buttons.html">Buttons</a></li>
-                              <li><a href="video.html">Video</a></li>
-                              <li><a href="typography.html">Typography</a></li>
-                          </ul>
-                      </li> -->
                         </ul>
                     </nav>
                 </div>
@@ -417,16 +399,18 @@
 
                     <%--<div class="line_2" style="margin:17px 0px 20px;"></div>--%>
                     <c:forEach var="title" items="${titleList}">
-                        <h5 style="padding-bottom:12px;">${title.TName}</h5>
-                        <div class="block_testimonial_type_2">
+                        <div class="block_home_post">
                             <div class="text">
-                                <p style="max-height: 40px;overflow: auto;">${title.TContent}</p>
+                                <p class="title"><a href="findPreSchoolSociety.action?tid=${title.TId}">${title.TName}</a></p>
+                                    <%--<div class="date"><p>${title.TDate}</p></div>--%>
+                                <div class="icons">
+                                    <ul>
+                                        <li><a href="#" class="views">${title.TRead}</a></li>
+                                    </ul>
+                                </div>
                             </div>
-
-                                <%--<div class="author"><p>Alex Jonson. <span class="position">Manager</span></p></div>--%>
                         </div>
-
-                        <div class="line_2" style="margin:17px 0px 20px;"></div>
+                        <div class="line_3" style="margin:14px 0px 17px;"></div>
                     </c:forEach>
 
 
@@ -513,7 +497,7 @@
                         </c:forEach>
                         <div class="clearboth"></div>
                         <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
-                        <a href="main_news.html" class="lnk_all_news fl">更多</a>
+                        <a href="findPreNotificationTitle.action" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
                         <div class="line_3" style="margin:13px 0px 35px;"></div>
 

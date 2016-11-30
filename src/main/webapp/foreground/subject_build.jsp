@@ -664,7 +664,7 @@
                         </c:forEach>
                         <div class="clearboth"></div>
                         <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
-                        <a href="main_news.html" class="lnk_all_news fl">更多</a>
+                        <a href="findPreNotificationTitle.action" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
                         <div class="line_3" style="margin:13px 0px 35px;"></div>
                     </div>

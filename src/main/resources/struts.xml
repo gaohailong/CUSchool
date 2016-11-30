@@ -136,6 +136,7 @@
             <result name="addServiceSociety">/background/society_service_add.jsp</result>
             <result name="updateOneServiceSociety">/background/society_service_update.jsp</result>
             <result name="findAllData">/foreground/society_service.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
         </action>
 
         <!--交流合作-->

@@ -102,7 +102,14 @@ public class SocietyServiceAction extends ActionSupport {
         notifications = homeService.queryNotification();
         return "findAllData";
     }
-
+    public String findPreSchool() throws Exception {
+        if (tid == null || tid == 0) {
+            return ERROR;
+        }
+        title = titleService.findTitleById(tid);
+        notifications=homeService.queryNotification();
+        return "findPreOneSchool";
+    }
     public TitleService getTitleService() {
         return titleService;
     }
