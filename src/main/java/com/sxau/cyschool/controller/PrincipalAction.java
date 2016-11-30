@@ -44,7 +44,7 @@ public class PrincipalAction extends ActionSupport {
         if (titleList.size() > 0) {
             return "findPrincipal";
         } else {
-            return "findPrincipal";
+            return "addPrincipal";
         }
     }
 

@@ -54,6 +54,7 @@ public class ImmediateAndOtherDaoImpl extends BaseHibernateDaoImpl<Title> implem
             }
         }
         string.append("and t.category.CContent='直属及其他' ");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -66,6 +67,7 @@ public class ImmediateAndOtherDaoImpl extends BaseHibernateDaoImpl<Title> implem
             }
         }
         stringBuffer.append("and t.category.CContent='直属及其他' ");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

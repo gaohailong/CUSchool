@@ -5,9 +5,9 @@
 function addNotification() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -31,9 +31,9 @@ function updateNotification(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
     // var t_category = $("#t_category").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"tid": id, "notificationHead": head, "notificationContent": content};
@@ -65,9 +65,9 @@ function addRotatePicture() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
     var picUrl = getPictureUrl(content);
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content, "picUrl": picUrl};
@@ -92,9 +92,9 @@ function updateRotatePicture(tid) {
     var head = $("#t-notification").val();
     var picUrl = getPictureUrl(content);
     // var t_category = $("#t_category").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"tid": id, "notificationHead": head, "notificationContent": content};
@@ -124,9 +124,9 @@ function confirmRotate(tid) {
 function addSchoolNews() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -149,9 +149,9 @@ function addSchoolNews() {
 function updateSchoolNews(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"tid": id, "notificationHead": head, "notificationContent": content};
@@ -182,9 +182,9 @@ function addGraduation() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
     var picUrl = getPictureUrl(content);
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content, "picUrl": picUrl};
@@ -208,9 +208,9 @@ function updateSchoolGraduation(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
     var picUrl = getPictureUrl(content);
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"tid": id, "notificationHead": head, "notificationContent": content, "picUrl": picUrl};
@@ -240,9 +240,9 @@ function confirmDeleteGraduation(tid) {
 function addPrincipal() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -265,9 +265,9 @@ function addPrincipal() {
 function updatePrincipal(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -297,9 +297,9 @@ function confirmDeletePrincipal(tid) {
 function addLeader() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -322,9 +322,9 @@ function addLeader() {
 function updateLeader(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -354,9 +354,9 @@ function confirmDeleteLeader(tid) {
 function addIntroduce() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -379,9 +379,9 @@ function addIntroduce() {
 function updateIntroduce(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -411,9 +411,9 @@ function confirmDeleteIntroduce(tid) {
 function addAdministration() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -436,9 +436,9 @@ function addAdministration() {
 function updateAdministration(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -469,9 +469,9 @@ function confirmDeleteAdministration(tid) {
 function addTeachingInstitutions() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -494,9 +494,9 @@ function addTeachingInstitutions() {
 function updateTeachingInstitutions(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -526,9 +526,9 @@ function confirmDeleteTeachingInstitutions(tid) {
 function addImmediateAndOther() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -551,9 +551,9 @@ function addImmediateAndOther() {
 function updateImmediateAndOther(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -583,9 +583,9 @@ function confirmDeleteImmediateAndOther(tid) {
 function addTeacherService() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -610,9 +610,9 @@ function addTeacherService() {
 function updateTeacherService(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -642,9 +642,9 @@ function confirmDeleteTeacherService(tid) {
 function addFeaturedProfessional() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -668,9 +668,9 @@ function addFeaturedProfessional() {
 function updateFeaturedProfessional(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -700,9 +700,9 @@ function confirmDeleteFeaturedProfessional(tid) {
 function addNiceCourse() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -726,9 +726,9 @@ function addNiceCourse() {
 function updateNiceCourse(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -758,9 +758,9 @@ function confirmDeleteNiceCourse(tid) {
 function addBuildSubject() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -783,9 +783,9 @@ function addBuildSubject() {
 function updateBuildSubject(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -815,9 +815,9 @@ function confirmDeleteBuildSubject(tid) {
 function addSocietyService() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -840,9 +840,9 @@ function addSocietyService() {
 function updateSocietyService(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -872,9 +872,9 @@ function confirmDeleteSocietyService(tid) {
 function addExchange() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -897,9 +897,9 @@ function addExchange() {
 function updateExchangeWork(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -929,9 +929,9 @@ function confirmDeleteExchangeWork(tid) {
 function addRecruitment() {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -954,9 +954,9 @@ function addRecruitment() {
 function updateRecruitment(id) {
     var content = getContentByUeditor();
     var head = $("#t-notification").val();
-    if (content == null) {
+    if (content == ""||head == null) {
         alert("未输入任何内容！");
-    } else if (head == null) {
+    } else if (head == ""||head == null) {
         alert("请输入文章标题！");
     } else {
         var data = {"notificationHead": head, "notificationContent": content};
@@ -983,8 +983,9 @@ function confirmDeleteRecruitment(tid) {
 }
 
 //激活当前页(分页)
-function pageActive() {
-
+function pageActive(tst) {
+    // onclick="javascript:pageActive(this)"
+    // tst.addClass("active");
 }
 
 

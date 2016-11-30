@@ -54,6 +54,7 @@ public class NotificationDaoImpl extends BaseHibernateDaoImpl<Title> implements 
             }
         }
         string.append("and t.category.CContent='通知公告'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -66,6 +67,7 @@ public class NotificationDaoImpl extends BaseHibernateDaoImpl<Title> implements 
             }
         }
         stringBuffer.append("and t.category.CContent='通知公告'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

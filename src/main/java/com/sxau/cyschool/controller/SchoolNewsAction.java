@@ -39,7 +39,6 @@ public class SchoolNewsAction extends ActionSupport {
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         totalPage = page.getTotalPage();
-        System.out.print(totalPage+"=================");
         return "findSchoolNews";
     }
 
@@ -74,7 +73,7 @@ public class SchoolNewsAction extends ActionSupport {
 
     //修改通知
     public String updateSchool() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0  ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);

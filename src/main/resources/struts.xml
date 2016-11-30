@@ -51,6 +51,7 @@
         <action name="*Principal" class="principalAction" method="{1}">
             <result name="findPrincipal">/background/school_principal.jsp</result>
             <result name="updatePrincipal">/background/school_principal_update.jsp</result>
+            <result name="addPrincipal">/background/school_principal_add.jsp</result>
             <result name="findDataPre">/foreground/principal.jsp</result>
         </action>
 

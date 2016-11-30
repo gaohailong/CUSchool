@@ -54,6 +54,7 @@ public class RecruitmentDaoImpl extends BaseHibernateDaoImpl<Title> implements T
             }
         }
         string.append("and t.category.CContent='招就招聘'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -66,6 +67,7 @@ public class RecruitmentDaoImpl extends BaseHibernateDaoImpl<Title> implements T
             }
         }
         stringBuffer.append("and t.category.CContent='招就招聘'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

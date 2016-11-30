@@ -503,7 +503,6 @@ To change this template use File | Settings | File Templates.
                         function getContentByUeditor() {
                             return editor.getContent();
                         }
-                        //addContentForEditorDoUpdate();
                     </script>
                     <div class="separator-two"></div>
                     <button class="btn btn-block btn-primary" onclick="javascript:addTeachingInstitutions()">提交</button>

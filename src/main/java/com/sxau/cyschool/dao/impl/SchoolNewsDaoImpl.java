@@ -53,6 +53,7 @@ public class SchoolNewsDaoImpl extends BaseHibernateDaoImpl<Title> implements Ti
             }
         }
         string.append("and t.category.CContent='学校要闻' or t.category.CContent='首页轮播图' ");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -65,6 +66,7 @@ public class SchoolNewsDaoImpl extends BaseHibernateDaoImpl<Title> implements Ti
             }
         }
         stringBuffer.append("and t.category.CContent='学校要闻' or t.category.CContent='首页轮播图' ");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

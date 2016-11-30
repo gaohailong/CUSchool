@@ -55,6 +55,7 @@ public class PrincipalDaoImpl extends BaseHibernateDaoImpl<Title> implements Tit
             }
         }
         string.append("and t.category.CContent='校长致辞'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -67,6 +68,7 @@ public class PrincipalDaoImpl extends BaseHibernateDaoImpl<Title> implements Tit
             }
         }
         stringBuffer.append("and t.category.CContent='校长致辞'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

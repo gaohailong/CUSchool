@@ -54,6 +54,7 @@ public class SubjectBuildDaoImpl extends BaseHibernateDaoImpl<Title> implements 
             }
         }
         string.append("and t.category.CContent='学科建设'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -66,6 +67,7 @@ public class SubjectBuildDaoImpl extends BaseHibernateDaoImpl<Title> implements 
             }
         }
         stringBuffer.append("and t.category.CContent='学科建设'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

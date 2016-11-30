@@ -525,7 +525,7 @@ To change this template use File | Settings | File Templates.
 							<i class="col-md-5"></i>
 							<ul class="col-md-7 pagination pagination-lg  ">
 								<c:forEach begin="1" end="${totalPage}" varStatus="i">
-									<li><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
+									<li class="" ><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
 								</c:forEach>
 							</ul>
 						</div>

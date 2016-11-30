@@ -55,6 +55,7 @@ public class LeaderDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleD
             }
         }
         string.append("and t.category.CContent='现任领导'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -67,6 +68,7 @@ public class LeaderDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleD
             }
         }
         stringBuffer.append("and t.category.CContent='现任领导'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

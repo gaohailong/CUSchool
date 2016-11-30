@@ -55,6 +55,7 @@ public class FeaturedProfessionalDaoImpl extends BaseHibernateDaoImpl<Title> imp
             }
         }
         string.append("and t.category.CContent='特色专业'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -67,6 +68,7 @@ public class FeaturedProfessionalDaoImpl extends BaseHibernateDaoImpl<Title> imp
             }
         }
         stringBuffer.append("and t.category.CContent='特色专业'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

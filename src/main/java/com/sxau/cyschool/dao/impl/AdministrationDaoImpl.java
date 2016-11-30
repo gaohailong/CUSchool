@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * Created by gaohailong on 2016/11/22.
- * 特色专业
+ *
  */
 public class AdministrationDaoImpl extends BaseHibernateDaoImpl<Title> implements TitleDao {
     public void saveTitle(Title title) throws Exception {
@@ -34,6 +34,7 @@ public class AdministrationDaoImpl extends BaseHibernateDaoImpl<Title> implement
         if (paramMap.size() != 0) {
             hql.append("and (t.tName like :key or t.tRead like :key)");
         }
+        hql.append(" order by t.TId desc ");
         List<Title> titleEntities = this.findPageByQuery(hql.toString(), paramMap, offset, limit);
         return titleEntities;
     }
@@ -55,6 +56,7 @@ public class AdministrationDaoImpl extends BaseHibernateDaoImpl<Title> implement
             }
         }
         string.append("and t.category.CContent='行政机构'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -67,6 +69,7 @@ public class AdministrationDaoImpl extends BaseHibernateDaoImpl<Title> implement
             }
         }
         stringBuffer.append("and t.category.CContent='行政机构'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

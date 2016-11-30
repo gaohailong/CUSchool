@@ -54,6 +54,7 @@ public class SocietyServiceDaoImpl extends BaseHibernateDaoImpl<Title> implement
             }
         }
         string.append("and t.category.CContent='社会服务'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -66,6 +67,7 @@ public class SocietyServiceDaoImpl extends BaseHibernateDaoImpl<Title> implement
             }
         }
         stringBuffer.append("and t.category.CContent='社会服务'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

@@ -54,6 +54,7 @@ public class SchoolGraduationDaoImpl extends BaseHibernateDaoImpl<Title> impleme
             }
         }
         string.append("and t.category.CContent='毕业风采'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -66,6 +67,7 @@ public class SchoolGraduationDaoImpl extends BaseHibernateDaoImpl<Title> impleme
             }
         }
         stringBuffer.append("and t.category.CContent='毕业风采'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }

@@ -55,6 +55,7 @@ public class NiceCourseDaoImpl extends BaseHibernateDaoImpl<Title> implements Ti
             }
         }
         string.append("and t.category.CContent='精品课程'");
+        string.append(" order by t.TId desc ");
         List<Title> titles = findDataByCondition(string.toString(), page, rows);
         return titles;
     }
@@ -67,6 +68,7 @@ public class NiceCourseDaoImpl extends BaseHibernateDaoImpl<Title> implements Ti
             }
         }
         stringBuffer.append("and t.category.CContent='精品课程'");
+        stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
 }
