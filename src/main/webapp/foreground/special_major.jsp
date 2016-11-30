@@ -136,7 +136,7 @@
 
                         <div class="block_search_top">
                             <form action="#"/>
-                            <div class="field"><input type="text" class="w_def_text" title="Enter Your Email Addres"/>
+                            <div class="field"><input type="text" class="w_def_text" title="请输入查询内容"/>
                             </div>
                             <input type="submit" class="button" value="Search"/>
 

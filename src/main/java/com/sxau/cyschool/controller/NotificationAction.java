@@ -39,7 +39,6 @@ public class NotificationAction extends ActionSupport {
         }
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
-//        nowPage = page.getPageNum();
         totalPage = page.getTotalPage();
         return "findNotification";
     }
@@ -50,7 +49,6 @@ public class NotificationAction extends ActionSupport {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
-//        System.out.print(title.getTId());
         return "updateNotification";
     }
 
