@@ -501,7 +501,7 @@ To change this template use File | Settings | File Templates.
 									<c:forEach var="titles" items="${titleList}" step="1" varStatus="i">
 										<tr>
 											<td>${i.index+1}</td>
-											<td>${titles.TName}</td>
+											<td class="col-md-6">${titles.TName}</td>
 											<td>${titles.TDate}</td>
 											<td>${titles.TRead}</td>
 											<td>
@@ -521,7 +521,7 @@ To change this template use File | Settings | File Templates.
 							</div>
 						</div>
 						<!-- /BOX -->
-						<div class="col-md-offset-4">
+						<div class="">
 							<i class="col-md-5"></i>
 							<ul class="col-md-7 pagination pagination-lg  ">
 								<c:forEach begin="1" end="${totalPage}" varStatus="i">

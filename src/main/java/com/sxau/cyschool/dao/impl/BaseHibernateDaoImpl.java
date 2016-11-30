@@ -267,8 +267,8 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         } else {
             try {
                 Query query = sessionFactory.getCurrentSession().createQuery(sql);
-                Long result = (Long) query.uniqueResult();
-                return result.intValue();
+                Object result = query.uniqueResult();
+                return Integer.parseInt(result.toString());
             } catch (Exception e) {
                 throw new SystemException("传入的sql语句不符合条件：能够返回一个能转化为整形的值");
             }

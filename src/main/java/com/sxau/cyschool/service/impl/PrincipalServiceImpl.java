@@ -56,7 +56,7 @@ public class PrincipalServiceImpl implements TitleService {
         pagee.setRows(titleDao.queryTitleByPageAndCondition(title, page, rows));
         int totals = titleDao.queryTitleCondition(title);
         pagee.setTotal(totals);
-        int totalPage = totals / rows == 0 ? totals / rows + 1 : totals / rows;
+        int totalPage = totals % rows == 0 ? totals / rows : totals / rows + 1;
         pagee.setTotalPage(totalPage);
         return pagee;
     }

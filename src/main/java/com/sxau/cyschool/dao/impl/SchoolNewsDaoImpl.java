@@ -42,8 +42,7 @@ public class SchoolNewsDaoImpl extends BaseHibernateDaoImpl<Title> implements Ti
         if (paramMap.size() != 0) {
             hql.append("and (t.tName like :key)");
         }
-        int count = this.getInt(hql.toString(), paramMap);
-        return count;
+        return this.getInt(hql.toString(), paramMap);
     }
 
     public List<Title> queryTitleByPageAndCondition(Title title, int page, int rows) throws Exception {
