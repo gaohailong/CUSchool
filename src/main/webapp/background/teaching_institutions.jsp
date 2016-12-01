@@ -520,10 +520,8 @@ To change this template use File | Settings | File Templates.
                             </table>
                         </div>
                     </div>
-                    <!-- /BOX -->
-                    <div class="col-md-offset-4">
-                        <i class="col-md-5"></i>
-                        <ul class="col-md-5 pagination pagination-lg  ">
+                        <div class="text-center">
+                        <ul class="pagination">
                             <c:forEach begin="1" end="${totalPage}" varStatus="i">
                                 <c:if test="${i.index==nowPage}">
                                   <li class="active"><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
@@ -533,7 +531,7 @@ To change this template use File | Settings | File Templates.
                                 </c:if>
                             </c:forEach>
                         </ul>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>

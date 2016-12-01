@@ -521,9 +521,8 @@ To change this template use File | Settings | File Templates.
 							</div>
 						</div>
 						<!-- /BOX -->
-						<div class="">
-							<i class="col-md-5"></i>
-							<ul class="col-md-7 pagination pagination-lg  ">
+						<div class="text-center">
+							<ul class="pagination">
 								<c:forEach begin="1" end="${totalPage}" varStatus="i">
 									<c:if test="${i.index==nowPage}">
 										<li class="active" ><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
