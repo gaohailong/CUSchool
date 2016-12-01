@@ -1,6 +1,7 @@
 package com.sxau.cyschool.service;
 
 import com.sxau.cyschool.pojo.Title;
+import com.sxau.cyschool.utils.Page;
 
 import java.util.List;
 
@@ -42,7 +43,19 @@ public interface HomeService {
 
     /**
      * 点击加一
+     *
      * @throws Exception
      */
     void clickReading(Integer id) throws Exception;
+
+    /**
+     * 通过关键字查询
+     *
+     * @param title
+     * @param page
+     * @param rows
+     * @return
+     * @throws Exception
+     */
+    Page<Title> queryAllTitleByKey(Title title, int page, int rows) throws Exception;
 }

@@ -42,4 +42,27 @@ public class HomeDaoImpl extends BaseHibernateDaoImpl<Title> implements HomeDao 
         int count = this.executeUpdate(hql);
     }
 
+    public List<Title> queryAllTitleByKey(Title title, int page, int rows) throws Exception {
+        StringBuffer string = new StringBuffer("from Title t where 1 = 1 ");
+        if (title != null) {
+            if (title.getTName() != null) {
+                string.append("and t.TName like '%" + title.getTName() + "%'");
+            }
+        }
+        string.append(" order by t.TId desc ");
+        List<Title> titles = findDataByCondition(string.toString(), page, rows);
+        return titles;
+    }
+
+    public Integer queryCountTitleByKey(Title title) throws Exception {
+        StringBuffer string = new StringBuffer("select count(*) from Title t where 1 = 1 ");
+        if (title != null) {
+            if (title.getTName() != null) {
+                string.append("and t.TName like '%" + title.getTName() + "%'");
+            }
+        }
+        string.append(" order by t.TId desc ");
+        return this.getInt(string.toString());
+    }
+
 }

@@ -123,21 +123,15 @@
 
                     <div class="fr">
                         <div class="block_languages">
-                            <!--<div class="text"><p>Language:</p></div>
-                            <ul>
-                                <li class="current"><a href="#" class="eng">English</a></li>
-                                <li><a href="#" class="french">French</a></li>
-                                <li><a href="#" class="ger">German</a></li>
-                            </ul>-->
 
                             <div class="clearboth"></div>
                         </div>
 
                         <div class="block_search_top">
-                            <form action="#"/>
-                            <div class="field"><input type="text" class="w_def_text" title="请输入查询内容"/>
+                            <form action="findSearchHome.action" method="post"/>
+                            <div class="field"><input type="text" name="keyword" class="w_def_text" title="请输入查询内容"/>
                             </div>
-                            <input type="submit" class="button" value="Search"/>
+                            <input type="submit" class="button" />
 
                             <div class="clearboth"></div>
                             </form>

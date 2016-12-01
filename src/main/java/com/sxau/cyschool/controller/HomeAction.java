@@ -8,6 +8,7 @@ import com.sxau.cyschool.service.HomeService;
 import com.sxau.cyschool.service.ImageService;
 import com.sxau.cyschool.service.TitleService;
 import com.sxau.cyschool.service.VideoService;
+import com.sxau.cyschool.utils.Page;
 
 import java.util.List;
 
@@ -25,10 +26,17 @@ public class HomeAction extends ActionSupport {
     private List<Title> graduations;
     private List<Title> rotates;
     private List<Title> notifications;
+    private List<Title> titles;
     private Image image;
     private Video video;
     private Integer tid;
     private Title title;
+    private String keyword;
+    private Integer nowPage;
+    private Integer totalPage;
+
+    private Page<Title> page;
+
 
     //查找首页所有的数据
     public String findAll() throws Exception {
@@ -50,6 +58,22 @@ public class HomeAction extends ActionSupport {
         title = titleService.findTitleById(tid);
         notifications = homeService.queryNotification();
         return "findOneTitle";
+    }
+
+    public String findSearch() throws Exception {
+        Title title = new Title();
+        if (keyword != null) {
+            keyword = keyword.trim();
+            title.setTName(keyword);
+        }
+        if (nowPage == null || nowPage == 0) {
+            nowPage = 1;
+        }
+        page = homeService.queryAllTitleByKey(title, nowPage, 10);
+        titles = page.getRows();
+        totalPage = page.getTotalPage();
+        notifications = homeService.queryNotification();
+        return "findSearch";
     }
 
     public HomeService getHomeService() {
@@ -154,5 +178,37 @@ public class HomeAction extends ActionSupport {
 
     public void setTitle(Title title) {
         this.title = title;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public Integer getNowPage() {
+        return nowPage;
+    }
+
+    public void setNowPage(Integer nowPage) {
+        this.nowPage = nowPage;
+    }
+
+    public List<Title> getTitles() {
+        return titles;
+    }
+
+    public void setTitles(List<Title> titles) {
+        this.titles = titles;
+    }
+
+    public Integer getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(Integer totalPage) {
+        this.totalPage = totalPage;
     }
 }

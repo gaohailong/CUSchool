@@ -161,6 +161,7 @@
         <action name="*Home" class="homeAction" method="{1}">
             <result name="findAllHome">/foreground/index.jsp</result>
             <result name="findOneTitle">/foreground/detail.jsp</result>
+            <result name="findSearch">/foreground/search_list.jsp</result>
         </action>
     </package>
 

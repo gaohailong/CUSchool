@@ -46,9 +46,27 @@ public interface HomeDao {
 
     /**
      * 点击加一
+     *
      * @throws Exception
      */
     void clickReading(Integer id) throws Exception;
 
+    /**
+     * 通过关键字查找文章
+     *
+     * @return
+     * @throws Exception
+     */
+    List<Title> queryAllTitleByKey(Title title, int page, int rows) throws Exception;
 
+    /**
+     * 查询文章的总数
+     *
+     * @param title
+     * @param page
+     * @param rows
+     * @return
+     * @throws Exception
+     */
+    Integer queryCountTitleByKey(Title title) throws Exception;
 }

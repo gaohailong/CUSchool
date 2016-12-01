@@ -132,10 +132,10 @@
                         </div>
 
                         <div class="block_search_top">
-                            <form action="#"/>
-                            <div class="field"><input type="text" class="w_def_text" title="请输入查询内容"/>
+                            <form action="findSearchHome.action" method="post"/>
+                            <div class="field"><input type="text" name="keyword" class="w_def_text" title="请输入查询内容"/>
                             </div>
-                            <input type="submit" class="button" value="Search"/>
+                            <input type="submit" class="button" />
 
                             <div class="clearboth"></div>
                             </form>
