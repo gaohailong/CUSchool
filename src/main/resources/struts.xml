@@ -5,10 +5,20 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
     <package name="notificationAction" extends="struts-default">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="com.sxau.cyschool.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="loginInterceptor"></interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="loginStack"></default-interceptor-ref>
         <global-results>
             <result name="success">/background/success.jsp</result>
             <result name="error">/background/fail.jsp</result>
+            <result name="fail">/background/login.jsp</result>
         </global-results>
         <!--校内通知-->
         <action name="*Title" class="notificationAction" method="{1}">
@@ -155,6 +165,12 @@
             <result name="findAllData">/foreground/recruitment.jsp</result>
         </action>
 
+        <!--登陆-->
+        <action name="*Login" class="loginAction" method="{1}">
+            <!--<interceptor-ref name="loginStack"></interceptor-ref>-->
+            <result name="main">/background/inbox.jsp</result>
+            <result name="fail">/background/login.jsp</result>
+        </action>
 
         <!--===============================前台=====================================-->
         <!--首页-->

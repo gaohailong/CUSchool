@@ -14,7 +14,7 @@
             <column name="a_name" length="20" not-null="true" />
         </property>
         <property name="APhone" type="java.lang.String">
-            <column name="a_phone" length="20" not-null="true" />
+            <column name="a_phone" length="20" />
         </property>
         <property name="AGrade" type="java.lang.Integer">
             <column name="a_grade" />

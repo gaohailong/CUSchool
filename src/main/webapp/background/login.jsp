@@ -6,6 +6,7 @@ Time: 上午 11:06
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -16,7 +17,7 @@ To change this template use File | Settings | File Templates.
 	<meta name="author" content="">
 	<!-- STYLESHEETS --><!--[if lt IE 9]><script src="js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
 	<link rel="stylesheet" type="text/css" href="css/cloud-admin.css" >
-	
+
 	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<!-- DATE RANGE PICKER -->
 	<link rel="stylesheet" type="text/css" href="js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
@@ -25,9 +26,8 @@ To change this template use File | Settings | File Templates.
 	<!-- ANIMATE -->
 	<link rel="stylesheet" type="text/css" href="css/animatecss/animate.min.css" />
 	<!-- FONTS -->
-	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
 </head>
-<body class="login">	
+<body class="login">
 	<!-- PAGE -->
 	<section id="page">
 			<!-- HEADER -->
@@ -53,19 +53,23 @@ To change this template use File | Settings | File Templates.
 							<div class="login-box">
 								<h2 class="bigintro">登陆</h2>
 								<div class="divide-40"></div>
-								<form role="form">
+								<form role="form" action="findAdminLogin.action" method="post">
 								  <div class="form-group">
 									<label for="text">用户名</label>
 									<i class="fa fa-envelope"></i>
-									<input type="text" class="form-control" id="text" >
+									<input type="text" class="form-control" name="aname" id="text" >
 								  </div>
-								  <div class="form-group"> 
-									<label for="exampleInputPassword12">密码</label>
+								  <div class="form-group">
+									<label for="textpass">密码</label>
 									<i class="fa fa-lock"></i>
-									<input type="password" class="form-control" id="exampleInputPassword12" >
+									<input type="password" class="form-control" name="apass" id="textpass" >
 								  </div>
+									<c:if test="${message!=null}">
+										<div class="form-group">
+											<label for="textpass">${message}</label>
+										</div>
+									</c:if>
 								  <div>
-									<!--<label class="checkbox"> <input type="checkbox" class="uniform" value=""> Remember me</label>-->
 									<button type="submit" class="btn btn-danger">登陆</button>
 								  </div>
 								</form>
@@ -99,12 +103,12 @@ To change this template use File | Settings | File Templates.
 									<i class="fa fa-envelope"></i>
 									<input type="email" class="form-control" id="exampleInputEmail122" >
 								  </div>
-								  <div class="form-group"> 
+								  <div class="form-group">
 									<label for="exampleInputPassword1">Password</label>
 									<i class="fa fa-lock"></i>
 									<input type="password" class="form-control" id="exampleInputPassword1" >
 								  </div>
-								  <div class="form-group"> 
+								  <div class="form-group">
 									<label for="exampleInputPassword2">Repeat Password</label>
 									<i class="fa fa-check-square-o"></i>
 									<input type="password" class="form-control" id="exampleInputPassword2" >
@@ -153,7 +157,7 @@ To change this template use File | Settings | File Templates.
 								  <div class="form-group">
 									<label for="exampleInputEmail1">Enter your Email address</label>
 									<i class="fa fa-envelope"></i>
-									<input type="email" class="form-control" id="exampleInputEmail1" >
+									<input type="text" class="form-control" id="exampleInputEmail1" >
 								  </div>
 								  <div>
 									<button type="submit" class="btn btn-info">Send Me Reset Instructions</button>
@@ -178,8 +182,8 @@ To change this template use File | Settings | File Templates.
 	<script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
 	<!-- BOOTSTRAP -->
 	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
-	
-	
+
+
 	<!-- UNIFORM -->
 	<script type="text/javascript" src="js/uniform/jquery.uniform.min.js"></script>
 	<!-- BACKSTRETCH -->
@@ -187,7 +191,7 @@ To change this template use File | Settings | File Templates.
 	<!-- CUSTOM SCRIPT -->
 	<script src="js/script.js"></script>
 	<script>
-		jQuery(document).ready(function() {		
+		jQuery(document).ready(function() {
 			App.setPage("login_bg");  //Set current page
 			App.init(); //Initialise plugins and elements
 		});
