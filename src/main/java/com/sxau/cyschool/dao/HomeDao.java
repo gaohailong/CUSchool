@@ -44,5 +44,11 @@ public interface HomeDao {
      */
     List<Title> queryGraduation() throws Exception;
 
+    /**
+     * 点击加一
+     * @throws Exception
+     */
+    void clickReading() throws Exception;
+
 
 }

@@ -73,4 +73,10 @@ public interface TitleDao extends BaseHibernateDao<Title> {
      * @return
      */
     int queryTitleCondition(Title title) throws Exception;
+
+    /**
+     * 点击加一
+     * @throws Exception
+     */
+    void clickReading() throws Exception;
 }

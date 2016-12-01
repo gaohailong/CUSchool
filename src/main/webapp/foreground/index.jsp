@@ -953,7 +953,7 @@
                         <h4>校内图册</h4>
 
                         <div class="content">
-                            <a href="#" class="view_all">Show all photos</a>
+                            <a href="#" class="view_all">显示更多</a>
                             <div class="media"><a href="images/pic_pop_photo_big.jpg"
                                                   class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"
                                                   title="Popular Photo"><img src="images/pic_pop_photo.jpg" alt=""/></a>

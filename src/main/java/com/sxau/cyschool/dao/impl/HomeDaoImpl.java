@@ -37,4 +37,8 @@ public class HomeDaoImpl extends BaseHibernateDaoImpl<Title> implements HomeDao 
         return titles;
     }
 
+    public void clickReading() throws Exception {
+
+    }
+
 }
