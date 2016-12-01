@@ -67,21 +67,6 @@
                         </div>
                     </div>
                     <div class="fr">
-                        <!--<div class="block_top_menu">-->
-                        <!--<ul>-->
-                        <!--<li class="current"><a href="#login" class="open_popup">登陆</a></li>-->
-                        <!--<li><a href="registration.html">注册</a></li>-->
-                        <!--&lt;!&ndash; <li><a href="#">Subscribe</a></li> &ndash;&gt;-->
-                        <!--</ul>-->
-                        <!--</div>-->
-
-                        <!--  <div class="block_social_top">
-                             <ul>
-                                 <li><a href="#" class="fb">Facebook</a></li>
-                                 <li><a href="#" class="tw">Twitter</a></li>
-                                 <li><a href="#" class="rss">RSS</a></li>
-                             </ul>
-                         </div> -->
                     </div>
                     <div class="clearboth"></div>
                 </div>
@@ -313,16 +298,6 @@
                             </div>
                         </div>
                         <div class="line_3" style="margin:14px 0px 17px;"></div>
-
-
-                        <%--<h5 style="padding-bottom:12px;">${title.TName}</h5>--%>
-                        <%--<div class="block_testimonial_type_2">--%>
-                            <%--<div class="text">--%>
-                                <%--<p style="max-height: 40px;overflow: auto;">${title.TContent}</p>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-
-                        <%--<div class="line_2" style="margin:17px 0px 20px;"></div>--%>
                     </c:forEach>
                     <div class="block_pager">
                         <a href="javascript:void(0)" class="prev">Previous</a>
@@ -331,14 +306,13 @@
                         <div class="pages">
                             <ul>
                                 <c:forEach begin="1" end="${totalPage}" varStatus="i">
-                                    <li class="current" ><a href="findAllDataAdministration.action?nowPage=${i.index}">${i.index}</a></li>
+                                    <c:if test="${i.index==nowPage}">
+                                       <li class="current" ><a href="findAllDataAdministration.action?nowPage=${i.index}">${i.index}</a></li>
+                                    </c:if>
+                                    <c:if test="${i.index!=nowPage}">
+                                        <li class="" ><a href="findAllDataAdministration.action?nowPage=${i.index}">${i.index}</a></li>
+                                    </c:if>
                                 </c:forEach>
-                                <%--<li class="current"><a href="">1</a></li>--%>
-                                <%--<li><a href="#">2</a></li>--%>
-                                <%--<li><a href="#">3</a></li>--%>
-                                <%--<li><a href="#">4</a></li>--%>
-                                <%--<li><a href="#">5</a></li>--%>
-                                <%--<li><a href="#">6</a></li>--%>
                             </ul>
                         </div>
                     </div>
@@ -380,8 +354,6 @@
         <div id="footer">
             <section class="top">
                 <div class="inner">
-                    <%--<div id="logo_bottom"><a href="index.jsp"><img src="images/logo_bottom.png" alt=""/></a></div>--%>
-
                     <div class="block_to_top">
                         <a href="#">回到顶部</a>
                     </div>
@@ -395,171 +367,17 @@
                     <div class="block_footer_widgets" style="margin-left: 70px">
                         <div class="" style="width: 150px;float: left;">
                             <img src="self/image/picture.jpg" style="height:100px;width: 100px;">
-                            <%--<h3>Photos on flickr</h3>--%>
-
-                            <%--<div class="block_flickr_footer">--%>
-                            <%--<ul>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_1.png" alt=""/></a></li>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_2.png" alt=""/></a></li>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_3.png" alt=""/></a></li>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_4.png" alt=""/></a></li>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_5.png" alt=""/></a></li>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_6.png" alt=""/></a></li>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_7.png" alt=""/></a></li>--%>
-                            <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                            <%--src="images/pic_flickr_8.png" alt=""/></a></li>--%>
-                            <%--</ul>--%>
-                            <%--</div>--%>
                         </div>
-
-                        <%--<div class="column">--%>
-                        <%--<h3>Tags</h3>--%>
-
-                        <%--<div class="block_tags">--%>
-                        <%--<ul>--%>
-                        <%--<li><a href="#">Business</a></li>--%>
-                        <%--<li><a href="#">Science</a></li>--%>
-                        <%--<li><a href="#">conferece</a></li>--%>
-                        <%--<li><a href="#">Photo</a></li>--%>
-                        <%--<li><a href="#">education</a></li>--%>
-                        <%--<li><a href="#">AI</a></li>--%>
-                        <%--<li><a href="#">Sport</a></li>--%>
-                        <%--<li><a href="#">mobile</a></li>--%>
-                        <%--<li><a href="#">Technology</a></li>--%>
-                        <%--<li><a href="#">computer</a></li>--%>
-                        <%--<li><a href="#">Video</a></li>--%>
-                        <%--<li><a href="#">apple</a></li>--%>
-                        <%--<li><a href="#">news</a></li>--%>
-                        <%--<li><a href="#">Euro</a></li>--%>
-                        <%--<li><a href="#">Culture</a></li>--%>
-                        <%--<li><a href="#">interior</a></li>--%>
-                        <%--<li><a href="#">Midle east</a></li>--%>
-                        <%--<li><a href="#">Design</a></li>--%>
-                        <%--<li><a href="#">euro 2012</a></li>--%>
-                        <%--<li><a href="#">flowers</a></li>--%>
-                        <%--</ul>--%>
-                        <%--</div>--%>
-                        <%--</div>--%>
 
                         <div style="margin-top: 30px;">
 
                             <p>版权所有：阳高县春雨职业学校　地址：山西省阳高县  邮政编码：038100 非经营性互联网信息服务审批号 晋ICP备05000000号</p>
                             <p style="margin-left: 290px;">Copyright© 2016 Spring Vocational School. All Rights Reserved</p>
-                            <%--<h3>most read news</h3>--%>
-
-                            <%--<div class="block_most_read_news">--%>
-                            <%--<div class="article">--%>
-                            <%--<div class="pic">--%>
-                            <%--<a href="news_post.html" class="w_hover">--%>
-                            <%--<img src="images/pic_most_read_1.png" alt=""/>--%>
-                            <%--<span></span>--%>
-                            <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                            <%--<p class="title"><a href="news_post.html">Content of a page when randomised.</a>--%>
-                            <%--</p>--%>
-                            <%--<p class="date">08 July, 2012</p>--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
-                            <%--<div class="line_1"></div>--%>
-
-                            <%--<div class="article">--%>
-                            <%--<div class="pic">--%>
-                            <%--<a href="news_post.html" class="w_hover">--%>
-                            <%--<img src="images/pic_most_read_2.png" alt=""/>--%>
-                            <%--<span></span>--%>
-                            <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                            <%--<p class="title"><a href="news_post.html">Established fact that a will be--%>
-                            <%--distracted.</a></p>--%>
-                            <%--<p class="date">08 July, 2012</p>--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
-                            <%--<div class="line_1"></div>--%>
-
-                            <%--<div class="article">--%>
-                            <%--<div class="pic">--%>
-                            <%--<a href="news_post.html" class="w_hover">--%>
-                            <%--<img src="images/pic_most_read_3.png" alt=""/>--%>
-                            <%--<span></span>--%>
-                            <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                            <%--<p class="title"><a href="news_post.html">Distracted by the readable content of--%>
-                            <%--a page.</a></p>--%>
-                            <%--<p class="date">08 July, 2012</p>--%>
-                            <%--</div>--%>
-                            <%--</div>--%>
-                            <%--<div class="line_1"></div>--%>
-
-                            <%--</div>--%>
                         </div>
-
-                        <%--<div class="column">--%>
-                        <%--<h3>contact widget</h3>--%>
-
-                        <%--<div class="block_contact_footer">--%>
-                        <%--<form action="#"/>--%>
-                        <%--<p class="text">Name:</p>--%>
-                        <%--<div class="field"><input type="text"/></div>--%>
-
-                        <%--<p class="text">Email:</p>--%>
-                        <%--<div class="field"><input type="text"/></div>--%>
-
-                        <%--<p class="text">Message:</p>--%>
-                        <%--<div class="textarea"><textarea cols="1" rows="1"></textarea></div>--%>
-
-                        <%--<div class="clear_form"><input type="reset" value="Clear form"/></div>--%>
-                        <%--<div class="send"><input type="submit" class="general_button" value="Submit"/></div>--%>
-
-                        <%--<div class="clearboth"></div>--%>
-                        <%--</form>--%>
-                        <%--</div>--%>
-                        <%--</div>--%>
-
                         <div class="clearboth"></div>
                     </div>
                 </div>
             </section>
-
-            <%--<section class="bottom">--%>
-            <%--<div class="inner">--%>
-            <%--<div class="line_1"></div>--%>
-
-            <%--<div class="fr">--%>
-            <%--<div class="block_menu_footer">--%>
-            <%--<ul>--%>
-            <%--<li><a href="business.html">Business</a></li>--%>
-            <%--<li><a href="technology.html">Technology</a></li>--%>
-            <%--<li><a href="education.html">Education</a></li>--%>
-            <%--<li><a href="media.html">Media</a></li>--%>
-            <%--</ul>--%>
-            <%--</div>--%>
-
-            <%--<div class="block_social_footer">--%>
-            <%--<ul>--%>
-            <%--<li><a href="#" class="fb">Facebook</a></li>--%>
-            <%--<li><a href="#" class="tw">Twitter</a></li>--%>
-            <%--<li><a href="#" class="rss">RSS</a></li>--%>
-            <%--</ul>--%>
-            <%--</div>--%>
-            <%--</div>--%>
-
-            <%--<div class="block_copyrights"><p>&copy; 2011 Business Press. All rights reserved. Collect from <a--%>
-            <%--href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></div>--%>
-            <%--</div>--%>
-            <%--</section>--%>
         </div>
     </footer>
     <!-- FOOTER END -->

@@ -48,16 +48,6 @@
     <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css"/>
     <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
     <!-- FlexSlider end -->
-
-    <!-- iButtons start
-    <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css" />
-    <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
-    <!-- iButtons end -->
-
-    <!-- jQuery Form Plugin start -->
-    <!-- <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script> -->
-    <!-- jQuery Form Plugin end -->
-
     <script type="text/javascript" src="layout/js/main.js"></script>
 
     <script type="text/javascript">
@@ -80,28 +70,12 @@
                             <ul>
                                 <li class="current"><a href="findAllHome.action">首页</a></li>
                                 <li><a href="#">地图</a></li>
-                                <!-- <li><a href="typography.html">Typography</a></li> -->
                                 <li><a href="contact.html">联系我们</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="fr">
-                        <!--<div class="block_top_menu">-->
-                            <!--<ul>-->
-                                <!--<li class="current"><a href="#login" class="open_popup">登陆</a></li>-->
-                                <!--<li><a href="registration.html">注册</a></li>-->
-                                <!--&lt;!&ndash; <li><a href="#">Subscribe</a></li> &ndash;&gt;-->
-                            <!--</ul>-->
-                        <!--</div>-->
-
-                        <!--  <div class="block_social_top">
-                             <ul>
-                                 <li><a href="#" class="fb">Facebook</a></li>
-                                 <li><a href="#" class="tw">Twitter</a></li>
-                                 <li><a href="#" class="rss">RSS</a></li>
-                             </ul>
-                         </div> -->
                     </div>
 
                     <div class="clearboth"></div>
@@ -316,26 +290,6 @@
                     </div>
                 </div>
             </section>
-
-            <!--    <section class="section_secondary_menu">
-                   <div class="inner">
-                       <nav class="secondary_menu">
-                           <ul>
-                               <li><a href="main_news_europe.html">Europe</a></li>
-                               <li><a href="main_news_usa.html">USA</a></li>
-                               <li><a href="main_news_m_east.html">Middle East</a></li>
-                               <li><a href="main_news_money.html">Money</a></li>
-                               <li><a href="main_news_science.html">Science and IT</a></li>
-                               <li><a href="main_news_culture.html">Culture</a></li>
-                               <li><a href="main_news_top.html">Top News</a></li>
-                             </ul>
-                       </nav>
-
-                       <div class="block_clock">
-                           <p>时间: <span id="time"></span></p>
-                       </div>
-                   </div>
-               </section> -->
         </div>
     </header>
     <!-- HEADER END -->
@@ -346,10 +300,6 @@
         <div class="inner">
             <div class="general_content">
                 <div class="main_content">
-                    <!-- <div class="block_special_topic">
-                        <div class="type"><p>Special topics</p></div>
-                        <div class="title"><p><a href="#">long established fact that a reader be distracted.</a></p></div>
-                    </div> -->
                     <div class="separator" style="height:17px;"></div>
 
                     <div class="block_home_slider">
@@ -362,56 +312,11 @@
                                                 <img src="${rotate.TImage}" alt="" style="width: 610px;height: 292px;"/>
                                                 <div class="caption">
                                                     <p class="title">${rotate.TName}</p>
-                                                    <%--<p>${rotate.}</p>--%>
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                 </c:forEach>
-                                <%--<li>--%>
-                                    <%--<div class="slide">--%>
-                                        <%--<img src="images/pic_home_slider_1.jpg" alt=""/>--%>
-                                        <%--<div class="caption">--%>
-                                            <%--<p class="title">Many desktop publishing packages and web page.</p>--%>
-                                            <%--<p>There are many variations of passages of available, but the majority have--%>
-                                                <%--suffered alteration in some form, by injected humour, or randomised.</p>--%>
-                                        <%--</div>--%>
-                                    <%--</div>--%>
-                                <%--</li>--%>
-
-                                <%--<li>--%>
-                                    <%--<div class="slide">--%>
-                                        <%--<img src="images/pic_home_slider_2.jpg" alt=""/>--%>
-                                        <%--<div class="caption">--%>
-                                            <%--<p class="title">Many desktop publishing packages.</p>--%>
-                                            <%--<p>There are many variations of passages of available, but the majority have--%>
-                                                <%--suffered alteration in some form, by injected humour, or randomised.</p>--%>
-                                        <%--</div>--%>
-                                    <%--</div>--%>
-                                <%--</li>--%>
-
-                                <%--<li>--%>
-                                    <%--<div class="slide">--%>
-                                        <%--<img src="images/pic_home_slider_3.jpg" alt=""/>--%>
-                                        <%--<div class="caption">--%>
-                                            <%--<p class="title">Many desktop publishing packages and web page.</p>--%>
-                                            <%--<p>There are many variations of passages of available, but the majority.</p>--%>
-                                        <%--</div>--%>
-                                    <%--</div>--%>
-                                <%--</li>--%>
-
-                                <%--<li>--%>
-                                    <%--<div class="slide">--%>
-                                        <%--<img src="images/pic_home_slider_4.jpg" alt=""/>--%>
-                                        <%--<div class="caption">--%>
-                                            <%--<p class="title">Many desktop publishing packages and web page.</p>--%>
-                                            <%--<p>There are many variations of passages of available, but the majority have--%>
-                                                <%--suffered alteration in some form, by injected humour, or randomised, but--%>
-                                                <%--the majority have suffered alteration in some form, by injected humour,--%>
-                                                <%--or randomised.</p>--%>
-                                        <%--</div>--%>
-                                    <%--</div>--%>
-                                <%--</li>--%>
                             </ul>
                         </div>
 
@@ -435,13 +340,6 @@
                     <div class="">
                         <c:forEach var="news" items="${newss}" >
                             <div class="block_home_post">
-                                <%--<div class="pic">--%>
-                                    <%--<a href="news_post.html" class="w_hover">--%>
-                                        <%--<img src="${news.TImage}" alt=""/>--%>
-                                        <%--<span></span>--%>
-                                    <%--</a>--%>
-                                <%--</div>--%>
-
                                 <div class="text">
                                     <p class="title"><a href="findOneSchoolHome.action?tid=${news.TId}">${news.TName}</a></p>
                                     <div class="date"><p>${news.TDate}</p></div>
@@ -455,119 +353,10 @@
                             <div class="line_3" style="margin:14px 0px 17px;"></div>
                         </c:forEach>
                         <div class="clearboth"></div>
-                        <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
                         <a href="findPreSchoolNews.action" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
                         <div class="line_3" style="margin:13px 0px 35px;"></div>
-                        <%--<div class="block_home_post">--%>
-                            <%--<div class="pic">--%>
-                                <%--<a href="news_post.html" class="w_hover">--%>
-                                    <%--<img src="images/pic_home_news_2.jpg" alt=""/>--%>
-                                    <%--<span></span>--%>
-                                <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                                <%--<p class="title"><a href="news_post.html">Variations of of available, but the majority--%>
-                                    <%--have suffered.</a></p>--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-                                <%--<div class="icons">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="#" class="views">74</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="line_3" style="margin:14px 0px 17px;"></div>--%>
-
-                        <%--<div class="block_home_post">--%>
-                            <%--<div class="pic">--%>
-                                <%--<a href="news_post.html" class="w_hover">--%>
-                                    <%--<img src="images/pic_home_news_3.jpg" alt=""/>--%>
-                                    <%--<span></span>--%>
-                                <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                                <%--<p class="title"><a href="news_post.html">Majority alteration in some form, by injected--%>
-                                    <%--humour.</a></p>--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-                                <%--<div class="icons">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="#" class="views">88</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-
                     </div>
-
-                    <%--<div class="block_home_col_2">--%>
-                        <%--<div class="line_3 first" style="margin:14px 0px 17px;"></div>--%>
-                        <%--<div class="block_home_post">--%>
-                            <%--<div class="pic">--%>
-                                <%--<a href="news_post.html" class="w_hover">--%>
-                                    <%--<img src="images/pic_home_news_4.jpg" alt=""/>--%>
-                                    <%--<span></span>--%>
-                                <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                                <%--<p class="title"><a href="news_post.html">Many variations of of available, but the--%>
-                                    <%--majority.</a></p>--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-                                <%--<div class="icons">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="#" class="views">56</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="line_3" style="margin:14px 0px 17px;"></div>--%>
-
-                        <%--<div class="block_home_post">--%>
-                            <%--<div class="pic">--%>
-                                <%--<a href="news_post.html" class="w_hover">--%>
-                                    <%--<img src="images/pic_home_news_5.jpg" alt=""/>--%>
-                                    <%--<span></span>--%>
-                                <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                                <%--<p class="title"><a href="news_post.html">Readable content of a page when looking--%>
-                                    <%--readable content.</a></p>--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-                                <%--<div class="icons">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="#" class="views">74</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="line_3" style="margin:14px 0px 17px;"></div>--%>
-
-                        <%--<div class="block_home_post">--%>
-                            <%--<div class="pic">--%>
-                                <%--<a href="news_post.html" class="w_hover">--%>
-                                    <%--<img src="images/pic_home_news_6.jpg" alt=""/>--%>
-                                    <%--<span></span>--%>
-                                <%--</a>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="text">--%>
-                                <%--<p class="title"><a href="news_post.html">Randomised words which don't look even--%>
-                                    <%--slightly believable.</a></p>--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-                                <%--<div class="icons">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="#" class="views">88</a></li>--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-
-                    <%--</div>--%>
-
                     <h4>毕业风采</h4>
                     <div class="line_4" style="margin:-4px 0px 18px;"></div>
 
@@ -578,255 +367,36 @@
                                 <p class="title"><a href="findOneSchoolHome.action?tid=${graduation.TId}">${graduation.TName}</a></p>
                                 <div class="f_pic"><a href="findOneSchoolHome.action?tid=${graduation.TId}" class="general_pic_hover scale">
                                     <img src="${graduation.TImage}" style="width: 256px;height: 121px;" alt=""/></a></div>
-                                <%--<p class="text">There are many variations of passages of available, but the majority have--%>
-                                    <%--alteration.</p>--%>
                                 <div class="info">
                                     <div class="date"><p>${graduation.TDate}</p></div>
                                     <div class="r_part">
-                                        <%--<div class="category"><p><a href="#">Business</a></p></div>--%>
                                         <a href="#" class="views">${graduation.TRead}</a>
                                     </div>
                                 </div>
                             </article>
                         </c:forEach>
-                        <%--<article class="block_topic_post">--%>
-                            <%--<p class="title"><a href="news_post.html">Many desktop publishing packages and web page--%>
-                                <%--editors now use.</a></p>--%>
-                            <%--<div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img--%>
-                                    <%--src="images/pic_home_main_news_1.jpg" alt=""/></a></div>--%>
-                            <%--<p class="text">There are many variations of passages of available, but the majority have--%>
-                                <%--alteration.</p>--%>
-                            <%--<div class="info">--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-                                <%--<div class="r_part">--%>
-                                    <%--<div class="category"><p><a href="#">Business</a></p></div>--%>
-                                    <%--<a href="#" class="views">183</a>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</article>--%>
-
-                        <%--<article class="block_topic_post">--%>
-                            <%--<p class="title"><a href="news_post.html">Many desktop publishing packages and web page--%>
-                                <%--editors now use.</a></p>--%>
-                            <%--<div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img--%>
-                                    <%--src="images/pic_home_main_news_2.jpg" alt=""/></a></div>--%>
-                            <%--<p class="text">There are many variations of passages of available, but the majority have--%>
-                                <%--alteration.</p>--%>
-                            <%--<div class="info">--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-
-                                <%--<div class="r_part">--%>
-                                    <%--<div class="category"><p><a href="#">Business</a></p></div>--%>
-                                    <%--<a href="#" class="views">183</a>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</article>--%>
-
-                        <%--<article class="block_topic_post">--%>
-                            <%--<p class="title"><a href="news_post.html">Many desktop publishing packages and web page--%>
-                                <%--editors now use.</a></p>--%>
-                            <%--<div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img--%>
-                                    <%--src="images/pic_home_main_news_3.jpg" alt=""/></a></div>--%>
-                            <%--<p class="text">There are many variations of passages of available, but the majority have--%>
-                                <%--alteration.</p>--%>
-                            <%--<div class="info">--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-
-                                <%--<div class="r_part">--%>
-                                    <%--<div class="category"><p><a href="#">Business</a></p></div>--%>
-                                    <%--<a href="#" class="views">183</a>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</article>--%>
-
-                        <%--<article class="block_topic_post">--%>
-                            <%--<p class="title"><a href="news_post.html">Many desktop publishing packages and web page--%>
-                                <%--editors now use.</a></p>--%>
-                            <%--<div class="f_pic"><a href="news_post.html" class="general_pic_hover scale"><img--%>
-                                    <%--src="images/pic_home_main_news_4.jpg" alt=""/></a></div>--%>
-                            <%--<p class="text">There are many variations of passages of available, but the majority have--%>
-                                <%--alteration.</p>--%>
-                            <%--<div class="info">--%>
-                                <%--<div class="date"><p>11 July, 2012</p></div>--%>
-
-                                <%--<div class="r_part">--%>
-                                    <%--<div class="category"><p><a href="#">Business</a></p></div>--%>
-                                    <%--<a href="#" class="views">183</a>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</article>--%>
-
                     </div>
 
                     <div class="line_3" style="margin:20px 0px 24px;"></div>
                     <div class="clearboth"></div>
-                    <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
                     <a href="findPreSchoolGraduation.action" class="lnk_all_news fl">更多</a>
                     <div class="clearboth"></div>
                     <div class="line_3" style="margin:13px 0px 35px;"></div>
-                    <%--<div class="block_pager">--%>
-                        <%--<a href="#" class="prev">Previous</a>--%>
-                        <%--<a href="#" class="next">Next</a>--%>
-
-                        <%--<div class="pages">--%>
-                            <%--<ul>--%>
-                                <%--<li class="current"><a href="#">1</a></li>--%>
-                                <%--<li><a href="#">2</a></li>--%>
-                                <%--<li><a href="#">3</a></li>--%>
-                                <%--<li><a href="#">4</a></li>--%>
-                                <%--<li><a href="#">5</a></li>--%>
-                                <%--<li><a href="#">6</a></li>--%>
-                            <%--</ul>--%>
-                        <%--</div>--%>
-
-                        <%--<div class="clearboth"></div>--%>
-                    <%--</div>--%>
-
-                    <!--<div class="line_2" style="margin:24px 0px 35px;"></div>-->
-
-                    <!--<h3 style="font-size:16px;">Best Materials</h3>-->
-                    <!--<div class="line_4" style="margin:-4px 0px 18px;"></div>-->
-
-                    <!--<div class="block_best_materials">-->
-                    <!--<div class="slider">-->
-                    <!--<div id="best_materials_slider" class="flexslider">-->
-                    <!--<ul class="slides">-->
-                    <!--<li>-->
-                    <!--<div class="block_best_material_post">-->
-                    <!--<div class="f_pic"><a href="news_post.html" class="w_hover"><img src="images/pic_home_best_materials_1.jpg" alt="" /><span></span></a></div>-->
-                    <!--<p class="title"><a href="news_post.html">Publishing packages and web page editors their.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>08 July, 2012</p></div>-->
-                    <!--<div class="category"><p><a href="#">Business</a></p></div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!---->
-                    <!--<li>-->
-                    <!--<div class="block_best_material_post">-->
-                    <!--<div class="f_pic"><a href="news_post.html" class="w_hover"><img src="images/pic_home_best_materials_2.jpg" alt="" /><span></span></a></div>-->
-                    <!--<p class="title"><a href="news_post.html">Publishing packages and web page editors their.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>08 July, 2012</p></div>-->
-                    <!--<div class="category"><p><a href="#">People</a></p></div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!---->
-                    <!--<li>-->
-                    <!--<div class="block_best_material_post">-->
-                    <!--<div class="f_pic"><a href="news_post.html" class="w_hover"><img src="images/pic_home_best_materials_3.jpg" alt="" /><span></span></a></div>-->
-                    <!--<p class="title"><a href="news_post.html">Publishing packages and web page editors their.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>08 July, 2012</p></div>-->
-                    <!--<div class="category"><p><a href="#">Technology</a></p></div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!---->
-                    <!--<li>-->
-                    <!--<div class="block_best_material_post">-->
-                    <!--<div class="f_pic"><a href="news_post.html" class="w_hover"><img src="images/pic_home_best_materials_4.jpg" alt="" /><span></span></a></div>-->
-                    <!--<p class="title"><a href="news_post.html">Publishing packages and web page editors their.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>08 July, 2012</p></div>-->
-                    <!--<div class="category"><p><a href="#">Business</a></p></div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!---->
-                    <!--<li>-->
-                    <!--<div class="block_best_material_post">-->
-                    <!--<div class="f_pic"><a href="news_post.html" class="w_hover"><img src="images/pic_home_best_materials_5.jpg" alt="" /><span></span></a></div>-->
-                    <!--<p class="title"><a href="news_post.html">Publishing packages and web page editors their.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>08 July, 2012</p></div>-->
-                    <!--<div class="category"><p><a href="#">People</a></p></div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!---->
-                    <!--<li>-->
-                    <!--<div class="block_best_material_post">-->
-                    <!--<div class="f_pic"><a href="news_post.html" class="w_hover"><img src="images/pic_home_best_materials_6.jpg" alt="" /><span></span></a></div>-->
-                    <!--<p class="title"><a href="news_post.html">Publishing packages and web page editors their.</a></p>-->
-                    <!--<div class="info">-->
-                    <!--<div class="date"><p>08 July, 2012</p></div>-->
-                    <!--<div class="category"><p><a href="#">Technology</a></p></div>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!--</ul>-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!---->
-                    <!--<script type="text/javascript">-->
-                    <!--$(function() {-->
-                    <!--$('#best_materials_slider').flexslider({-->
-                    <!--animation : 'slide',-->
-                    <!--controlNav : false,-->
-                    <!--directionNav : true,-->
-                    <!--animationLoop : false,-->
-                    <!--slideshow : false,-->
-                    <!--itemWidth: 213,-->
-                    <!--itemMargin: 0,-->
-                    <!--minItems: 1,-->
-                    <!--maxItems: 3,-->
-                    <!--move: 1,-->
-                    <!--useCSS : false-->
-                    <!--});-->
-                    <!--});-->
-                    <!--</script>-->
-                    <!--</div>-->
-
-                    <%--<div class="line_2" style="margin:20px 0px 0px;"></div>--%>
-
                 </div>
 
                 <div class="sidebar">
-                    <!-- <div class="block_subscribes_sidebar">
-                        <div class="service">
-                            <a href="#" class="rss">
-                                <span class="num">11 234</span>
-                                <span class="people">Subscribers</span>
-                            </a>
-                        </div>
-
-                        <div class="service">
-                            <a href="#" class="tw">
-                                <span class="num">781</span>
-                                <span class="people">Followers</span>
-                            </a>
-                        </div>
-
-                        <div class="service">
-                            <a href="#" class="fb">
-                                <span class="num">341</span>
-                                <span class="people">Subscribers</span>
-                            </a>
-                        </div>
-                    </div> -->
-
                     <div class="separator" style="height:31px;"></div>
 
                     <div class="block_popular_posts">
                         <h4>通知公告</h4>
                         <c:forEach var="notification" items="${notifications}" >
                             <div class="article">
-                                <!--<div class="pic">-->
-                                <!--<a href="#" class="w_hover">-->
-                                <!--&lt;!&ndash;<img src="images/pic_popular_post_1.jpg" alt="" />&ndash;&gt;-->
-                                <!--<span></span>-->
-                                <!--</a>-->
-                                <!--</div>-->
-
                                 <div class="text">
                                     <p class="title"><a href="findOneSchoolHome.action?tid=${notification.TId}">${notification.TName}</a></p>
                                     <div class="date"><p>${notification.TDate}</p></div>
                                     <div class="icons">
                                         <ul>
                                             <li><a href="#" class="views">${notification.TRead}</a></li>
-                                            <!-- <li><a href="#" class="comments">22</a></li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -834,53 +404,9 @@
                             <div class="line_3"></div>
                         </c:forEach>
                         <div class="clearboth"></div>
-                        <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
                         <a href="findPreNotificationTitle.action" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
                         <div class="line_3" style="margin:13px 0px 35px;"></div>
-                        <%--<div class="article">--%>
-                            <%--<!--<div class="pic">-->--%>
-                            <%--<!--<a href="#" class="w_hover">-->--%>
-                            <%--<!--<img src="images/pic_popular_post_2.jpg" alt="" />-->--%>
-                            <%--<!--<span></span>-->--%>
-                            <%--<!--</a>-->--%>
-                            <%--<!--</div>-->--%>
-
-                            <%--<div class="text">--%>
-                                <%--<p class="title"><a href="#">Web page editors their default model text, and a search--%>
-                                    <%--for.</a></p>--%>
-                                <%--<div class="date"><p>07 July, 2012</p></div>--%>
-                                <%--<div class="icons">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="#" class="views">24</a></li>--%>
-                                        <%--<!--<li><a href="#" class="comments">16</a></li>-->--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="line_3"></div>--%>
-
-                        <%--<div class="article">--%>
-                            <%--<!--<div class="pic">-->--%>
-                            <%--<!--<a href="#" class="w_hover">-->--%>
-                            <%--<!--&lt;!&ndash;<img src="images/pic_popular_post_3.jpg" alt="" />&ndash;&gt;-->--%>
-                            <%--<!--<span></span>-->--%>
-                            <%--<!--</a>-->--%>
-                            <%--<!--</div>-->--%>
-
-                            <%--<div class="text">--%>
-                                <%--<p class="title"><a href="#">Editors their default model text, and a search--%>
-                                    <%--uncover.default model text, </a></p>--%>
-                                <%--<div class="date"><p>05 July, 2012</p></div>--%>
-                                <%--<div class="icons">--%>
-                                    <%--<ul>--%>
-                                        <%--<li><a href="#" class="views">33</a></li>--%>
-                                        <%--<!--<li><a href="#" class="comments">25</a></li>-->--%>
-                                    <%--</ul>--%>
-                                <%--</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="line_2"></div>--%>
                     </div>
 
                     <div class="separator" style="height:31px;"></div>
@@ -889,7 +415,6 @@
                         <h4>视频展示</h4>
 
                         <div class="content">
-                            <!--<a href="#" class="view_all">Show all video</a>-->
                             <div class="media"><a href="${video.VLink}"
                                                   class="general_pic_hover play no_fx" data-rel="prettyPhoto"
                                                   title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>
@@ -900,7 +425,6 @@
 
                         <div class="info">
                             <ul>
-                                <%--<li class="comments"><a href="#">115</a></li>--%>
                                 <li class="views"><a href="#">${video.VRead}</a></li>
                             </ul>
                         </div>
@@ -983,8 +507,6 @@
         <div id="footer">
             <section class="top">
                 <div class="inner">
-                    <%--<div id="logo_bottom"><a href="index.jsp"><img src="images/logo_bottom.png" alt=""/></a></div>--%>
-
                     <div class="block_to_top">
                         <a href="#">回到顶部</a>
                     </div>
@@ -998,171 +520,15 @@
                     <div class="block_footer_widgets" style="margin-left: 70px">
                         <div class="" style="width: 150px;float: left;">
                             <img src="self/image/picture.jpg" style="height:100px;width: 100px;">
-                            <%--<h3>Photos on flickr</h3>--%>
-
-                            <%--<div class="block_flickr_footer">--%>
-                                <%--<ul>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_1.png" alt=""/></a></li>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_2.png" alt=""/></a></li>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_3.png" alt=""/></a></li>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_4.png" alt=""/></a></li>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_5.png" alt=""/></a></li>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_6.png" alt=""/></a></li>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_7.png" alt=""/></a></li>--%>
-                                    <%--<li><a href="http://www.flickr.com/" target="_blank"><img--%>
-                                            <%--src="images/pic_flickr_8.png" alt=""/></a></li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
                         </div>
-
-                        <%--<div class="column">--%>
-                            <%--<h3>Tags</h3>--%>
-
-                            <%--<div class="block_tags">--%>
-                                <%--<ul>--%>
-                                    <%--<li><a href="#">Business</a></li>--%>
-                                    <%--<li><a href="#">Science</a></li>--%>
-                                    <%--<li><a href="#">conferece</a></li>--%>
-                                    <%--<li><a href="#">Photo</a></li>--%>
-                                    <%--<li><a href="#">education</a></li>--%>
-                                    <%--<li><a href="#">AI</a></li>--%>
-                                    <%--<li><a href="#">Sport</a></li>--%>
-                                    <%--<li><a href="#">mobile</a></li>--%>
-                                    <%--<li><a href="#">Technology</a></li>--%>
-                                    <%--<li><a href="#">computer</a></li>--%>
-                                    <%--<li><a href="#">Video</a></li>--%>
-                                    <%--<li><a href="#">apple</a></li>--%>
-                                    <%--<li><a href="#">news</a></li>--%>
-                                    <%--<li><a href="#">Euro</a></li>--%>
-                                    <%--<li><a href="#">Culture</a></li>--%>
-                                    <%--<li><a href="#">interior</a></li>--%>
-                                    <%--<li><a href="#">Midle east</a></li>--%>
-                                    <%--<li><a href="#">Design</a></li>--%>
-                                    <%--<li><a href="#">euro 2012</a></li>--%>
-                                    <%--<li><a href="#">flowers</a></li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-
                         <div style="margin-top: 30px;">
 
                                 <p>版权所有：阳高县春雨职业学校　地址：山西省阳高县  邮政编码：038100 非经营性互联网信息服务审批号 晋ICP备05000000号</p>
                                 <p style="margin-left: 290px;">Copyright© 2016 Spring Vocational School. All Rights Reserved</p>
-                            <%--<h3>most read news</h3>--%>
-
-                            <%--<div class="block_most_read_news">--%>
-                                <%--<div class="article">--%>
-                                    <%--<div class="pic">--%>
-                                        <%--<a href="news_post.html" class="w_hover">--%>
-                                            <%--<img src="images/pic_most_read_1.png" alt=""/>--%>
-                                            <%--<span></span>--%>
-                                        <%--</a>--%>
-                                    <%--</div>--%>
-
-                                    <%--<div class="text">--%>
-                                        <%--<p class="title"><a href="news_post.html">Content of a page when randomised.</a>--%>
-                                        <%--</p>--%>
-                                        <%--<p class="date">08 July, 2012</p>--%>
-                                    <%--</div>--%>
-                                <%--</div>--%>
-                                <%--<div class="line_1"></div>--%>
-
-                                <%--<div class="article">--%>
-                                    <%--<div class="pic">--%>
-                                        <%--<a href="news_post.html" class="w_hover">--%>
-                                            <%--<img src="images/pic_most_read_2.png" alt=""/>--%>
-                                            <%--<span></span>--%>
-                                        <%--</a>--%>
-                                    <%--</div>--%>
-
-                                    <%--<div class="text">--%>
-                                        <%--<p class="title"><a href="news_post.html">Established fact that a will be--%>
-                                            <%--distracted.</a></p>--%>
-                                        <%--<p class="date">08 July, 2012</p>--%>
-                                    <%--</div>--%>
-                                <%--</div>--%>
-                                <%--<div class="line_1"></div>--%>
-
-                                <%--<div class="article">--%>
-                                    <%--<div class="pic">--%>
-                                        <%--<a href="news_post.html" class="w_hover">--%>
-                                            <%--<img src="images/pic_most_read_3.png" alt=""/>--%>
-                                            <%--<span></span>--%>
-                                        <%--</a>--%>
-                                    <%--</div>--%>
-
-                                    <%--<div class="text">--%>
-                                        <%--<p class="title"><a href="news_post.html">Distracted by the readable content of--%>
-                                            <%--a page.</a></p>--%>
-                                        <%--<p class="date">08 July, 2012</p>--%>
-                                    <%--</div>--%>
-                                <%--</div>--%>
-                                <%--<div class="line_1"></div>--%>
-
-                            <%--</div>--%>
-                        </div>
-
-                        <%--<div class="column">--%>
-                            <%--<h3>contact widget</h3>--%>
-
-                            <%--<div class="block_contact_footer">--%>
-                                <%--<form action="#"/>--%>
-                                <%--<p class="text">Name:</p>--%>
-                                <%--<div class="field"><input type="text"/></div>--%>
-
-                                <%--<p class="text">Email:</p>--%>
-                                <%--<div class="field"><input type="text"/></div>--%>
-
-                                <%--<p class="text">Message:</p>--%>
-                                <%--<div class="textarea"><textarea cols="1" rows="1"></textarea></div>--%>
-
-                                <%--<div class="clear_form"><input type="reset" value="Clear form"/></div>--%>
-                                <%--<div class="send"><input type="submit" class="general_button" value="Submit"/></div>--%>
-
-                                <%--<div class="clearboth"></div>--%>
-                                <%--</form>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-
                         <div class="clearboth"></div>
                     </div>
                 </div>
             </section>
-
-            <%--<section class="bottom">--%>
-                <%--<div class="inner">--%>
-                    <%--<div class="line_1"></div>--%>
-
-                    <%--<div class="fr">--%>
-                        <%--<div class="block_menu_footer">--%>
-                            <%--<ul>--%>
-                                <%--<li><a href="business.html">Business</a></li>--%>
-                                <%--<li><a href="technology.html">Technology</a></li>--%>
-                                <%--<li><a href="education.html">Education</a></li>--%>
-                                <%--<li><a href="media.html">Media</a></li>--%>
-                            <%--</ul>--%>
-                        <%--</div>--%>
-
-                        <%--<div class="block_social_footer">--%>
-                            <%--<ul>--%>
-                                <%--<li><a href="#" class="fb">Facebook</a></li>--%>
-                                <%--<li><a href="#" class="tw">Twitter</a></li>--%>
-                                <%--<li><a href="#" class="rss">RSS</a></li>--%>
-                            <%--</ul>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-
-                    <%--<div class="block_copyrights"><p>&copy; 2011 Business Press. All rights reserved. Collect from <a--%>
-                            <%--href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></div>--%>
-                <%--</div>--%>
-            <%--</section>--%>
         </div>
     </footer>
     <!-- FOOTER END -->
@@ -1209,8 +575,6 @@
             </div>
 
             <div class="subtitle"><p>SIGN IN AS A USER</p></div>
-
-            <!--<div class="fb_button"><a href="#"><img src="images/button_fb_login.png" alt="" /></a></div>-->
             <div class="text"><p>Use your account on the social network Facebook, to create a profile on
                 BusinessPress</p></div>
         </div>

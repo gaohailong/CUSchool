@@ -37,7 +37,6 @@ public class HomeAction extends ActionSupport {
 
     private Page<Title> page;
 
-
     //查找首页所有的数据
     public String findAll() throws Exception {
         newss = homeService.queryNews();

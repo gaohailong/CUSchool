@@ -194,4 +194,9 @@ public class SchoolNewsAction extends ActionSupport {
     public void setNotifications(List<Title> notifications) {
         this.notifications = notifications;
     }
+
+    public void setTid(Integer tid) {
+        this.tid = tid;
+    }
+
 }

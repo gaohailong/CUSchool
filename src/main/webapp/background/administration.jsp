@@ -521,7 +521,12 @@ To change this template use File | Settings | File Templates.
 						<i class="col-md-5"></i>
 						<ul class="col-md-7 pagination pagination-lg  ">
 							<c:forEach begin="1" end="${totalPage}" varStatus="i">
-								<li><a href="findSchoolPrincipal.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+								<c:if test="${i.index==nowPage}">
+									<li class="active"><a href="findSchoolPrincipal.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+								</c:if>
+								<c:if test="${i.index!=nowPage}">
+									<li><a href="findSchoolPrincipal.action?nowPage=${i.index}" onclick="javascript">${i.index}</a></li>
+								</c:if>
 							</c:forEach>
 							<%--<li><a href="#">&laquo;</a></li>--%>
 							<%--<li class="active"><a href="#">1</a></li>--%>
