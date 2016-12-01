@@ -78,5 +78,5 @@ public interface TitleDao extends BaseHibernateDao<Title> {
      * 点击加一
      * @throws Exception
      */
-    void clickReading() throws Exception;
+    void clickReading(Integer id) throws Exception;
 }

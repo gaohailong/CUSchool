@@ -70,4 +70,9 @@ public class ExchangeWorkDaoImpl extends BaseHibernateDaoImpl<Title> implements 
         stringBuffer.append(" order by t.TId desc ");
         return this.getInt(stringBuffer.toString());
     }
+
+    public void clickReading(Integer id) throws Exception {
+        String hql = "update title t set t.t_read=t_read+1 where t.id=" + id;
+        int count = this.executeUpdate(hql);
+    }
 }

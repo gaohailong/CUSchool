@@ -110,7 +110,6 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         if (queryString == null) {
             throw new SystemException("传入的参数为空");
         } else {
-//            System.out.print(sessionFactory);
             List<T> lists = getSession().createQuery(queryString).list();
             return lists;
         }
@@ -202,7 +201,6 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
             query.setFirstResult(firstResult);
             query.setMaxResults(maxResult);
             List<T> resultList = query.list();
-            System.out.print("查询数据有条数一点"+resultList.size());
             return resultList;
         }
     }
@@ -213,7 +211,6 @@ public class BaseHibernateDaoImpl<T> implements BaseHibernateDao<T> {
         } else {
             Query query = sessionFactory.getCurrentSession().createQuery(queryString);
             List<T> resultList = query.list();
-            System.out.print("查询数据有条数二点"+resultList.size());
             return resultList;
         }
     }

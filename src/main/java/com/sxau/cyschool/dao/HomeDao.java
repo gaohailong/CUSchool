@@ -48,7 +48,7 @@ public interface HomeDao {
      * 点击加一
      * @throws Exception
      */
-    void clickReading() throws Exception;
+    void clickReading(Integer id) throws Exception;
 
 
 }

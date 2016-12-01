@@ -67,4 +67,10 @@ public interface TitleService {
      * 条件分页查询
      */
     Page<Title> queryTitleByCondition(Title title, int page, int rows) throws Exception;
+
+    /**
+     * 点击加一
+     * @throws Exception
+     */
+    void updateClickReading(Integer id) throws Exception;
 }

@@ -79,7 +79,7 @@ public class ExchangeWorkAction extends ActionSupport {
 
     //修改通知
     public String updateExchange() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0 ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -102,12 +102,12 @@ public class ExchangeWorkAction extends ActionSupport {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
+        titleService.updateClickReading(tid);
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         if (titleList != null) {
             title = titleList.get(0);
         }
-
         notifications = homeService.queryNotification();
         return "findAllData";
     }

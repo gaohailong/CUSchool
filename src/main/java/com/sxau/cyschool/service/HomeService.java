@@ -39,4 +39,10 @@ public interface HomeService {
      * @throws Exception
      */
     List<Title> queryGraduation() throws Exception;
+
+    /**
+     * 点击加一
+     * @throws Exception
+     */
+    void clickReading(Integer id) throws Exception;
 }

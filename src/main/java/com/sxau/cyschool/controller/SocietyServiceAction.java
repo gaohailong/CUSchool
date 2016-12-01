@@ -106,6 +106,7 @@ public class SocietyServiceAction extends ActionSupport {
         if (tid == null || tid == 0) {
             return ERROR;
         }
+        titleService.updateClickReading(tid);
         title = titleService.findTitleById(tid);
         notifications=homeService.queryNotification();
         return "findPreOneSchool";

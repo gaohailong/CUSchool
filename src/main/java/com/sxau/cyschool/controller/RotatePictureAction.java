@@ -69,7 +69,7 @@ public class RotatePictureAction extends ActionSupport {
     public String deleteSchoolRotate() throws Exception {
 //       titleService.deleteTitle(tid);
         //TODO 和修改一样，只是将文章的category改为学校要闻
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0 ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -81,7 +81,7 @@ public class RotatePictureAction extends ActionSupport {
 
     //修改轮播图文章
     public String updateSchoolRotate() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);

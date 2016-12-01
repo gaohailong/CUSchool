@@ -46,6 +46,7 @@ public class HomeAction extends ActionSupport {
         if (tid == null || tid == 0) {
             return ERROR;
         }
+        homeService.clickReading(tid);
         title = titleService.findTitleById(tid);
         notifications = homeService.queryNotification();
         return "findOneTitle";

@@ -60,6 +60,9 @@ public class SubjectBuildServiceImpl implements TitleService {
         return pagee;
     }
 
+    public void updateClickReading(Integer id) throws Exception {
+        titleDao.clickReading(id);
+    }
 
     public TitleDao getTitleDao() {
         return titleDao;

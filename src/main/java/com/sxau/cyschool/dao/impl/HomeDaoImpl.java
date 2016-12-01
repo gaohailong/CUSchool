@@ -15,7 +15,7 @@ import java.util.Map;
 public class HomeDaoImpl extends BaseHibernateDaoImpl<Title> implements HomeDao {
     public List<Title> queryNews() throws Exception {
         String hql = "from Title t where t.category.CContent='学校要闻' order by t.TId desc";
-        List<Title> titles = this.findData(hql,0,5);
+        List<Title> titles = this.findData(hql, 0, 5);
         return titles;
     }
 
@@ -27,18 +27,19 @@ public class HomeDaoImpl extends BaseHibernateDaoImpl<Title> implements HomeDao 
 
     public List<Title> queryNotification() throws Exception {
         String hql = "from Title t where t.category.CContent='通知公告' order by t.TId desc";
-        List<Title> titles = this.findData(hql,0,5);
+        List<Title> titles = this.findData(hql, 0, 5);
         return titles;
     }
 
     public List<Title> queryGraduation() throws Exception {
         String hql = "from Title t where t.category.CContent='毕业风采' order by t.TId desc";
-        List<Title> titles = this.findData(hql,0,4);
+        List<Title> titles = this.findData(hql, 0, 4);
         return titles;
     }
 
-    public void clickReading() throws Exception {
-
+    public void clickReading(Integer id) throws Exception {
+        String hql = "update title t set t.t_read=t_read+1 where t.id=" + id;
+        int count = this.executeUpdate(hql);
     }
 
 }
