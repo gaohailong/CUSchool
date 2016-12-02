@@ -49,7 +49,7 @@ public class HomeAction extends ActionSupport {
     }
 
     //查找一个通知
-    public String findOneSchool() throws Exception {
+    public String findOneSchoolPre() throws Exception {
         if (tid == null || tid == 0) {
             return ERROR;
         }

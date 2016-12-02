@@ -354,7 +354,7 @@
                             <div class="article">
 
                                 <div class="text">
-                                    <p class="title"><a href="findOneSchoolHome.action?tid=${notification.TId}">${notification.TName}</a></p>
+                                    <p class="title"><a href="findOneSchoolPreHome.action?tid=${notification.TId}">${notification.TName}</a></p>
                                     <div class="date"><p>${notification.TDate}</p></div>
                                     <div class="icons">
                                         <ul>

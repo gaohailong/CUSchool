@@ -20,7 +20,7 @@
                         findBuild,findOneBuild,addBuild,deleteBuild,updateBuild
                     </param>
                     <param name="excludeMethods">
-                        findAll
+                        findAll,findOneSchoolPre
                     </param>
                 </interceptor-ref>
                 <interceptor-ref name="defaultStack"></interceptor-ref>

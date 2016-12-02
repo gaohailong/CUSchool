@@ -312,7 +312,7 @@
                     <c:forEach var="title" items="${titleList}">
                         <div class="block_home_post">
                             <div class="text">
-                                <p class="title"><a href="findOneSchoolHome.action?tid=${title.TId}">${title.TName}</a></p>
+                                <p class="title"><a href="findOneSchoolPreHome.action?tid=${title.TId}">${title.TName}</a></p>
                                 <div class="date"><p>${title.TDate}</p></div>
                                 <div class="icons">
                                     <ul>

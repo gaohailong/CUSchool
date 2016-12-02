@@ -57,7 +57,6 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
-
 <body>
 <div class="wrapper sticky_footer">
     <!-- HEADER BEGIN -->
@@ -307,7 +306,7 @@
                             <ul class="slides">
                                 <c:forEach var="rotate" items="${rotates}">
                                     <li>
-                                        <a href="findOneSchoolHome.action?tid=${rotate.TId}">
+                                        <a href="findOneSchoolPreHome.action?tid=${rotate.TId}">
                                             <div class="slide">
                                                 <img src="${rotate.TImage}" alt="" style="width: 610px;height: 292px;"/>
                                                 <div class="caption">
@@ -341,7 +340,7 @@
                         <c:forEach var="news" items="${newss}" >
                             <div class="block_home_post">
                                 <div class="text">
-                                    <p class="title"><a href="findOneSchoolHome.action?tid=${news.TId}">${news.TName}</a></p>
+                                    <p class="title"><a href="findOneSchoolPreHome.action?tid=${news.TId}">${news.TName}</a></p>
                                     <div class="date"><p>${news.TDate}</p></div>
                                     <div class="icons">
                                         <ul>
@@ -364,8 +363,8 @@
 
                         <c:forEach items="${graduations}" var="graduation">
                             <article class="block_topic_post">
-                                <p class="title"><a href="findOneSchoolHome.action?tid=${graduation.TId}">${graduation.TName}</a></p>
-                                <div class="f_pic"><a href="findOneSchoolHome.action?tid=${graduation.TId}" class="general_pic_hover scale">
+                                <p class="title"><a href="findOneSchoolPreHome.action?tid=${graduation.TId}">${graduation.TName}</a></p>
+                                <div class="f_pic"><a href="findOneSchoolPreHome.action?tid=${graduation.TId}" class="general_pic_hover scale">
                                     <img src="${graduation.TImage}" style="width: 256px;height: 121px;" alt=""/></a></div>
                                 <div class="info">
                                     <div class="date"><p>${graduation.TDate}</p></div>
@@ -392,7 +391,7 @@
                         <c:forEach var="notification" items="${notifications}" >
                             <div class="article">
                                 <div class="text">
-                                    <p class="title"><a href="findOneSchoolHome.action?tid=${notification.TId}">${notification.TName}</a></p>
+                                    <p class="title"><a href="findOneSchoolPreHome.action?tid=${notification.TId}">${notification.TName}</a></p>
                                     <div class="date"><p>${notification.TDate}</p></div>
                                     <div class="icons">
                                         <ul>
