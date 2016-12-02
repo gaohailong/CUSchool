@@ -42,7 +42,7 @@ public class HomeServiceImpl implements HomeService {
         pagee.setRows(homeDao.queryAllTitleByKey(title, page, rows));
         int totals = homeDao.queryCountTitleByKey(title);
         pagee.setTotal(totals);
-        int totalPage = totals / rows == 0 ? totals / rows + 1 : totals / rows;
+        int totalPage = totals % rows == 0 ? totals / rows : totals / rows + 1;
         pagee.setTotalPage(totalPage);
         return pagee;
     }

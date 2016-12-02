@@ -43,7 +43,6 @@ public class HomeAction extends ActionSupport {
         graduations = homeService.queryGraduation();
         rotates = homeService.queryRotate();
         notifications = homeService.queryNotification();
-// TODO
         image = imageService.queryImage();
         video = videoService.queryVideoService();
         return "findAllHome";

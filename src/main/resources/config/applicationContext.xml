@@ -217,7 +217,8 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="teachingInstitutionsDao"/>
     </bean>
 
-    <bean id="teachingInstitutionsAction" class="com.sxau.cyschool.controller.TeachingInstitutionsAction" scope="prototype">
+    <bean id="teachingInstitutionsAction" class="com.sxau.cyschool.controller.TeachingInstitutionsAction"
+          scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="teachingInstitutionsService"/>
         <property name="homeService" ref="homeService"/>
@@ -245,7 +246,8 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="schooServiceTeacherDao"/>
     </bean>
 
-    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction" scope="prototype">
+    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction"
+          scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="schoolServiceTeacher"/>
         <property name="homeService" ref="homeService"/>
@@ -259,7 +261,8 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="titleDao" ref="featuredProfessionalDao"/>
     </bean>
 
-    <bean id="featuredProfessionalAction" class="com.sxau.cyschool.controller.FeaturedProfessionalAction" scope="prototype">
+    <bean id="featuredProfessionalAction" class="com.sxau.cyschool.controller.FeaturedProfessionalAction"
+          scope="prototype">
         <property name="categoryService" ref="categoryService"/>
         <property name="titleService" ref="featuredProfessionalService"/>
         <property name="homeService" ref="homeService"/>
@@ -374,7 +377,13 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
     <!--图片-->
     <bean id="imageDao" class="com.sxau.cyschool.dao.impl.ImageDaoImpl" parent="baseHibernateDaoImpl"/>
+
     <bean id="imageService" class="com.sxau.cyschool.service.impl.ImageServiceImpl">
         <property name="imageDao" ref="imageDao"/>
+    </bean>
+
+    <bean id="imageAction" class="com.sxau.cyschool.controller.ImageAction" scope="prototype">
+        <property name="imageService" ref="imageService"/>
+        <property name="homeService" ref="homeService"/>
     </bean>
 </beans>

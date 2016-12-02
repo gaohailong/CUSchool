@@ -1,8 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"  isErrorPage="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
+
 <head>
-    <title>首页</title>
+    <title>详情</title>
 
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
@@ -15,9 +16,6 @@
     <![endif]-->
 
     <link rel="stylesheet" href="layout/style.css" type="text/css"/>
-    <!--<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css" />-->
-    <!--<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css" />-->
-    <!--<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic" rel="stylesheet" type="text/css" />-->
 
     <script type="text/javascript" src="layout/js/jquery.js"></script>
 
@@ -48,6 +46,16 @@
     <link rel="stylesheet" href="layout/plugins/flexslider/flexslider.css" type="text/css"/>
     <script type="text/javascript" src="layout/plugins/flexslider/jquery.flexslider-min.js"></script>
     <!-- FlexSlider end -->
+
+    <!-- iButtons start -->
+    <link rel="stylesheet" href="layout/plugins/ibuttons/css/jquery.ibutton.css" type="text/css"/>
+    <script type="text/javascript" src="layout/plugins/ibuttons/lib/jquery.ibutton.min.js"></script>
+    <!-- iButtons end -->
+
+    <!-- jQuery Form Plugin start -->
+    <script type="text/javascript" src="layout/plugins/ajaxform/jquery.form.js"></script>
+    <!-- jQuery Form Plugin end -->
+
     <script type="text/javascript" src="layout/js/main.js"></script>
 
     <script type="text/javascript">
@@ -57,6 +65,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
+
 <body>
 <div class="wrapper sticky_footer">
     <!-- HEADER BEGIN -->
@@ -84,7 +93,7 @@
             <section class="bottom">
                 <div class="inner">
                     <div id="logo_top"><a href="index.jsp"><img src="images/logo_top.png" alt="BusinessNews"
-                                                                 title="BusinessNews"/></a></div>
+                                                                title="BusinessNews"/></a></div>
 
                     <div class="block_today_date">
                         <div class="num"><p id="num_top"/></div>
@@ -96,7 +105,6 @@
 
                     <div class="fr">
                         <div class="block_languages">
-
                             <div class="clearboth"></div>
                         </div>
 
@@ -128,7 +136,7 @@
                                     <li><a href="findPreAllIntroduce.action">学校简介</a></li>
                                 </ul>
                             </li>
-                            <li class="big_dropdown"><a href="javascript:void(0)">组织结构</a>
+                            <li class=""><a href="javascript:void(0)">组织结构</a>
                                 <ul>
                                     <li><a href="findAllDataAdministration.action">行政机构</a></li>
                                     <li><a href="findAllDataTeaching.action">教辅机构</a></li>
@@ -292,95 +300,60 @@
         </div>
     </header>
     <!-- HEADER END -->
-    <div class="inner_copyright">Collect from <a href="http://www.cssmoban.com/" target="_blank" title="网站模板">网站模板</a>
-    </div>
+
     <!-- CONTENT BEGIN -->
     <div id="content" class="right_sidebar">
         <div class="inner">
             <div class="general_content">
                 <div class="main_content">
-                    <div class="separator" style="height:17px;"></div>
+                    <div class="separator" style="height:30px;"></div>
+                    <div class="line_4" style="margin:0px 0px 20px;"></div>
+                        <div class="block_author_posts">
+                            <h2>校内图册</h2>
+                                <div class="posts">
+                                    <c:forEach var="image" items="${images}">
 
-                    <div class="block_home_slider">
-                        <div id="home_slider" class="flexslider">
-                            <ul class="slides">
-                                <c:forEach var="rotate" items="${rotates}">
-                                    <li>
-                                        <a href="findOneSchoolPreHome.action?tid=${rotate.TId}">
-                                            <div class="slide">
-                                                <img src="${rotate.TImage}" alt="" style="width: 610px;height: 292px;"/>
-                                                <div class="caption">
-                                                    <p class="title">${rotate.TName}</p>
-                                                </div>
+                                    <article class="block_author_post">
+                                        <div class="f_pic">
+                                            <a href="${image.ILink}" onclick="javascript:" class="general_pic_hover zoom no_fx" data-rel="prettyPhoto" title="${image.IDes}"><img style="width: 288px;height: 170px" src="${image.ILink}" alt="" /></a>
+                                            <!-- <span class="date">09:52  11 July 2012</span> -->
+                                        </div>
+
+                                        <div class="info">
+                                            <%--<div class="category"><p>category: <a href="#">BUSINESS</a></p></div>--%>
+
+                                            <div class="r_part">
+                                                <%--<a href="#" class="comments">33</a>--%>
+                                                <%--<a href="javascript:void(0)" class=" views">${image.IClick}</a>--%>
                                             </div>
-                                        </a>
-                                    </li>
+                                        </div>
+                                        <p class="title" style="height: 38px;overflow: auto;"><a href="javascript:void(0)">${image.IDes}</a></p>
+                                    </article>
+                                    </c:forEach>
+
+                                </div>
+                        </div>
+                    <div class="separator" style="height:31px;"></div>
+                    <div class="block_pager">
+                        <a href="javascript:void(0)" class="prev">Previous</a>
+                        <a href="javascript:void(0)" class="next">Next</a>
+
+                        <div class="pages">
+                            <ul>
+                                <c:forEach begin="1" end="${totalPage}" varStatus="i">
+                                    <c:if test="${i.index==nowPage}">
+                                         <li class="current" ><a href="findPrePicImage.action?nowPage=${i.index}">${i.index}</a></li>
+                                    </c:if>
+                                    <c:if test="${i.index!=nowPage}">
+                                        <li class=""><a href="findPrePicImage.action?nowPage=${i.index}">${i.index}</a></li>
+                                    </c:if>
                                 </c:forEach>
                             </ul>
                         </div>
 
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#home_slider').flexslider({
-                                    animation: 'slide',
-                                    controlNav: true,
-                                    directionNav: true,
-                                    animationLoop: true,
-                                    slideshow: false,
-                                    useCSS: false
-                                });
-
-                            });
-                        </script>
-                    </div>
-
-                    <div class="line_2" style="margin:34px 0px 28px;"></div>
-                    <h4>学校要闻</h4>
-                    <div class="">
-                        <c:forEach var="news" items="${newss}" >
-                            <div class="block_home_post">
-                                <div class="text">
-                                    <p class="title"><a href="findOneSchoolPreHome.action?tid=${news.TId}">${news.TName}</a></p>
-                                    <div class="date"><p>${news.TDate}</p></div>
-                                    <div class="icons">
-                                        <ul>
-                                            <li><a href="#" class="views">${news.TRead}</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="line_3" style="margin:14px 0px 17px;"></div>
-                        </c:forEach>
                         <div class="clearboth"></div>
-                        <a href="findPreSchoolNews.action" class="lnk_all_news fl">更多</a>
-                        <div class="clearboth"></div>
-                        <div class="line_3" style="margin:13px 0px 35px;"></div>
                     </div>
-                    <h4>毕业风采</h4>
-                    <div class="line_4" style="margin:-4px 0px 18px;"></div>
-
-                    <div class="block_topic_news">
-
-                        <c:forEach items="${graduations}" var="graduation">
-                            <article class="block_topic_post">
-                                <p class="title"><a href="findOneSchoolPreHome.action?tid=${graduation.TId}">${graduation.TName}</a></p>
-                                <div class="f_pic"><a href="findOneSchoolPreHome.action?tid=${graduation.TId}" class="general_pic_hover scale">
-                                    <img src="${graduation.TImage}" style="width: 256px;height: 121px;" alt=""/></a></div>
-                                <div class="info">
-                                    <div class="date"><p>${graduation.TDate}</p></div>
-                                    <div class="r_part">
-                                        <a href="#" class="views">${graduation.TRead}</a>
-                                    </div>
-                                </div>
-                            </article>
-                        </c:forEach>
-                    </div>
-
-                    <div class="line_3" style="margin:20px 0px 24px;"></div>
                     <div class="clearboth"></div>
-                    <a href="findPreSchoolGraduation.action" class="lnk_all_news fl">更多</a>
-                    <div class="clearboth"></div>
-                    <div class="line_3" style="margin:13px 0px 35px;"></div>
                 </div>
 
                 <div class="sidebar">
@@ -391,7 +364,7 @@
                         <c:forEach var="notification" items="${notifications}" >
                             <div class="article">
                                 <div class="text">
-                                    <p class="title"><a href="findOneSchoolPreHome.action?tid=${notification.TId}">${notification.TName}</a></p>
+                                    <p class="title"><a href="findOneSchoolHome.action?tid=${notification.TId}">${notification.TName}</a></p>
                                     <div class="date"><p>${notification.TDate}</p></div>
                                     <div class="icons">
                                         <ul>
@@ -403,91 +376,10 @@
                             <div class="line_3"></div>
                         </c:forEach>
                         <div class="clearboth"></div>
+                        <%--<div class="line_3" style="margin:14px 0px 13px;"></div>--%>
                         <a href="findPreNotificationTitle.action" class="lnk_all_news fl">更多</a>
                         <div class="clearboth"></div>
                         <div class="line_3" style="margin:13px 0px 35px;"></div>
-                    </div>
-
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_popular_stuff">
-                        <h4>视频展示</h4>
-
-                        <div class="content">
-                            <div class="media"><a href="${video.VLink}"
-                                                  class="general_pic_hover play no_fx" data-rel="prettyPhoto"
-                                                  title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>
-                            </div>
-                            <p><a href="blog_post_w_video.html">${video.VDes}</a> <img src="images/icon_video.gif" alt=""/></p>
-                            <p class="date">${video.VDate}</p>
-                        </div>
-
-                        <div class="info">
-                            <ul>
-                                <li class="views"><a href="#">${video.VRead}</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="clearboth"></div>
-
-                        <div class="line_2"></div>
-                    </div>
-
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_calendar">
-                        <h4>日历</h4>
-
-                        <div class="calendar" id="calendar_sidebar">
-                        </div>
-
-                        <script type="text/javascript">
-                            var today = new Date();
-                            var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-                            $('#calendar_sidebar').DatePicker({
-                                flat: true,
-                                date: date,
-                                calendars: 1,
-                                starts: 1,
-                                locale: {
-                                    days: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期日'],
-                                    daysShort: ['日', '一', '二', '三', '四', '五', '六', '日'],
-                                    daysMin: ['日', '一', '二', '三', '四', '五', '六', '日'],
-                                    months: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-                                    monthsShort: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-                                    weekMin: 'wk'
-                                }
-                            });
-                        </script>
-
-                        <div class="line_2"></div>
-                    </div>
-
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_popular_stuff">
-                        <h4>校内图册</h4>
-
-                        <div class="content">
-                            <a href="findPrePicImage.action" class="view_all" style="color: #f24024">更多</a>
-                            <div class="media"><a href="${image.ILink}"
-                                                  class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"
-                                                  title="${image.IDes}"><img src="${image.ILink}" alt=""/></a>
-                            </div>
-                            <p><a href="javascript:void(0)">${image.IDes}</a> <img src="images/icon_photo.gif" alt=""/></p>
-                            <%--<p class="date">${image.IDes}</p>--%>
-                        </div>
-
-                        <%--<div class="info">--%>
-                            <%--<ul>--%>
-                                <%--&lt;%&ndash;<li class="comments"><a href="#">100</a></li>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<li class="views"><a href="#">${image.IClick}</a></li>&ndash;%&gt;--%>
-                            <%--</ul>--%>
-                        <%--</div>--%>
-
-                        <div class="clearboth"></div>
-
-                        <div class="line_2"></div>
                     </div>
 
                     <div class="separator" style="height:31px;"></div>
@@ -498,7 +390,7 @@
         </div>
     </div>
     <!-- CONTENT END -->
-    <div class="clearboth"></div>
+
     <!-- FOOTER BEGIN -->
     <footer>
         <div id="footer">
@@ -520,8 +412,9 @@
                         </div>
                         <div style="margin-top: 30px;">
 
-                                <p>版权所有：阳高县春雨职业学校　地址：山西省阳高县  邮政编码：038100 非经营性互联网信息服务审批号 晋ICP备05000000号</p>
-                                <p style="margin-left: 290px;">Copyright© 2016 Spring Vocational School. All Rights Reserved</p>
+                            <p>版权所有：阳高县春雨职业学校　地址：山西省阳高县  邮政编码：038100 非经营性互联网信息服务审批号 晋ICP备05000000号</p>
+                            <p style="margin-left: 290px;">Copyright© 2016 Spring Vocational School. All Rights Reserved</p>
+                        </div>
                         <div class="clearboth"></div>
                     </div>
                 </div>
@@ -543,7 +436,7 @@
             <div class="form">
                 <form action="#"/>
                 <div class="column">
-                    <p class="label">登陆</p>
+                    <p class="label">Login</p>
                     <div class="field"><input type="text"/></div>
                 </div>
 
@@ -572,6 +465,7 @@
             </div>
 
             <div class="subtitle"><p>SIGN IN AS A USER</p></div>
+
             <div class="text"><p>Use your account on the social network Facebook, to create a profile on
                 BusinessPress</p></div>
         </div>

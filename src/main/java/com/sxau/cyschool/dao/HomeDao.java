@@ -63,8 +63,6 @@ public interface HomeDao {
      * 查询文章的总数
      *
      * @param title
-     * @param page
-     * @param rows
      * @return
      * @throws Exception
      */

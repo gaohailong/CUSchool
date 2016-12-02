@@ -6,12 +6,13 @@
 
 <struts>
     <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <constant name="struts.multipart.maxSize" value="209715900"/>
     <package name="notificationAction" extends="struts-default">
         <interceptors>
             <interceptor name="loginInterceptor" class="com.sxau.cyschool.interceptor.LoginInterceptor"></interceptor>
             <interceptor-stack name="loginStack">
                 <interceptor-ref name="loginInterceptor">
-                    <!--方发拦截器-->
+                    <!--方法拦截器-->
                     <param name="includeMethods">
                         findSchool,findOneSchool,addSchool,deleteSchool,updateSchool,exchangeSchool,findOneExchange,addExchange,deleteServiceExchange,updateExchange,
                         featuredSchool,addFeatured,deleteFeatured,updateFeatured,findImmediate,findOneImmediate,addImmediate,deleteImmediate,updateImmediate,
@@ -191,6 +192,10 @@
             <result name="findAllHome">/foreground/index.jsp</result>
             <result name="findOneTitle">/foreground/detail.jsp</result>
             <result name="findSearch">/foreground/search_list.jsp</result>
+        </action>
+
+        <action name="*Image" class="imageAction" method="{1}">
+            <result name="findPrePic">/foreground/image_list.jsp</result>
         </action>
     </package>
 
