@@ -504,7 +504,7 @@
 										<c:forEach var="image" items="${images}">
 											<div class="col-md-3  item">
 												<div class="filter-content">
-													<img src="img/gallery/1.png" alt="" class="img-responsive" />
+													<img src="${image.ILink}" alt="" style="width: 303px;height: 227px" class="img-responsive" />
 													<div class="hover-content">
 														<h4 style="font-size: 12px;">${image.IDes}</h4>
 														<a class="btn btn-danger hover-link" href="deleteSchoolGallery.action?imageId=${image.IId}">
@@ -513,7 +513,7 @@
 														<a class="btn btn-success hover-link" href="findOneSchoolGallery.action?imageId=${image.IId}">
 															<i class="fa fa-edit fa-1x"></i>
 														</a>
-														<a class="btn btn-warning hover-link colorbox-button" href="img/gallery/1.png" title="Image Title">
+														<a class="btn btn-warning hover-link colorbox-button" href="${image.ILink}" title="${image.IDes}">
 															<i class="fa fa-search-plus fa-1x"></i>
 														</a>
 													</div>

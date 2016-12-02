@@ -77,7 +77,7 @@ public class SchoolGalleryDaoImpl extends BaseHibernateDaoImpl<Image> implements
     }
 
     public void updatePhotoByPhoto(Image image) throws Exception {
-        this.saveOrUpdateObject(image);
+        this.updateObjectOfUpdate(image);
     }
 
     public void savePhoto(Image image) throws Exception {

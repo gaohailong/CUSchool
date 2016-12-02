@@ -28,6 +28,8 @@ public class SchoolGalleryAction extends ActionSupport {
     private String imageaFileName;
     private String imageaContentType;
     private Integer imageId;
+    private String messageDes;
+    private String messagePic;
 
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
@@ -48,14 +50,22 @@ public class SchoolGalleryAction extends ActionSupport {
     }
 
     public String addSchool() throws Exception {
+        if(des==null||"".equals(des)){
+            messageDes="描述不能为空";
+            return "addSchoolGallery";
+        }
+        if(imageaFileName==null||"".equals(imageaFileName)){
+            messagePic="图片不能为空";
+            return "addSchoolGallery";
+        }
         String unique = UTimeUtil.timeRandom() + imageaFileName;
         System.out.print("文件名" + imageaFileName + "===");
-        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/"+imageaFileName);
-        FileInputStream fis = new FileInputStream(imagea);
-        FileOutputStream fos = new FileOutputStream(path);
+        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/"+unique);
         File file = new File(path);
         if (!file.exists())
             file.createNewFile();
+        FileInputStream fis = new FileInputStream(imagea);
+        FileOutputStream fos = new FileOutputStream(path);
         int length = -1;
         byte[] bytes = new byte[1024];
         do {
@@ -72,33 +82,40 @@ public class SchoolGalleryAction extends ActionSupport {
         image.setILink("/upload/gallery/" + unique);
         schoolGalleryService.savePhoto(image);
         return SUCCESS;
+
     }
 
-//    public String updateSchool() throws Exception {
-//        Image imageValue = schoolGalleryService.findImageById(imageId);
-//        imageValue.setIDes(des);
-//        String unique = UTimeUtil.timeRandom() + imageaFileName;
-//        String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/" + imageaFileName);
-//        FileInputStream fis = new FileInputStream(imagea);
-//        File file = new File(path);
-////        if(!file.exists())
-////            file.createNewFile();
-//        FileOutputStream fos = new FileOutputStream(path);
-//        int length = -1;
-//        byte[] bytes = new byte[1024];
-//        do {
-//            length = fis.read(bytes);
-//            if (length != -1) {
-//                fos.write(bytes, 0, length);
-//            }
-//        } while (length != -1);
-//        fos.flush();
-//        fos.close();
-//        fis.close();
-////        image.setILink("/upload/gallery/" + unique);
-//        schoolGalleryService.updatePhotoByPhoto(image);
-//        return "updateSchoolGallery";
-//    }
+    public String updateSchool() throws Exception {
+        String unique = UTimeUtil.timeRandom() + imageaFileName;
+        Image imageValue = schoolGalleryService.findImageById(imageId);
+        if(des!=null&&!"".equals(des)){
+            System.out.print("设置值了"+des);
+            imageValue.setIDes(des);
+        }
+        if(imageaFileName!=null&&!"".equals(imageaFileName)){
+            System.out.print("设置值了"+imageaFileName);
+            imageValue.setILink("/upload/gallery/" + unique);
+            String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/" + unique);
+            File file = new File(path);
+            if (!file.exists())
+                file.createNewFile();
+            FileInputStream fis = new FileInputStream(imagea);
+            FileOutputStream fos = new FileOutputStream(path);
+            int length = -1;
+            byte[] bytes = new byte[1024];
+            do {
+                length = fis.read(bytes);
+                if (length != -1) {
+                    fos.write(bytes, 0, length);
+                }
+            } while (length != -1);
+            fos.flush();
+            fos.close();
+            fis.close();
+        }
+        schoolGalleryService.updatePhotoByPhoto(imageValue);
+        return SUCCESS;
+    }
 
     public String deleteSchool() throws Exception {
         if (imageId != null) {
@@ -182,4 +199,19 @@ public class SchoolGalleryAction extends ActionSupport {
         this.imageId = imageId;
     }
 
+    public String getMessageDes() {
+        return messageDes;
+    }
+
+    public void setMessageDes(String messageDes) {
+        this.messageDes = messageDes;
+    }
+
+    public String getMessagePic() {
+        return messagePic;
+    }
+
+    public void setMessagePic(String messagePic) {
+        this.messagePic = messagePic;
+    }
 }
