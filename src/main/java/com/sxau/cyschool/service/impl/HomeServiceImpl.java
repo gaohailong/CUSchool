@@ -33,7 +33,7 @@ public class HomeServiceImpl implements HomeService {
         return homeDao.queryGraduation();
     }
 
-    public void clickReading(Integer id) throws Exception {
+    public void updateClickReading(Integer id) throws Exception {
         homeDao.clickReading(id);
     }
 

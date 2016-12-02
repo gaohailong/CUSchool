@@ -79,6 +79,7 @@ public class SchoolGalleryAction extends ActionSupport {
         fis.close();
         Image image = new Image();
         image.setIDes(des);
+        image.setIClick(0);
         image.setILink("/upload/gallery/" + unique);
         schoolGalleryService.savePhoto(image);
         return SUCCESS;

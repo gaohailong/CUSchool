@@ -21,4 +21,9 @@ public class ImageDaoImpl extends BaseHibernateDaoImpl<Image> implements ImageDa
             return null;
         }
     }
+
+    public void imageClickRead(Integer id) throws Exception {
+        String hql="update Image i set i.IClic=i.IClic+1 where i.IId="+id;
+        int count = this.executeUpdate(hql);
+    }
 }

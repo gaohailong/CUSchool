@@ -46,7 +46,7 @@ public interface HomeService {
      *
      * @throws Exception
      */
-    void clickReading(Integer id) throws Exception;
+    void updateClickReading(Integer id) throws Exception;
 
     /**
      * 通过关键字查询

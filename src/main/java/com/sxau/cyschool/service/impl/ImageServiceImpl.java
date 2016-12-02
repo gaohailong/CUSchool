@@ -14,6 +14,10 @@ public class ImageServiceImpl implements ImageService {
         return imageDao.queryImage();
     }
 
+    public void updateImgClickReading(Integer id) throws Exception {
+        imageDao.imageClickRead(id);
+    }
+
     public ImageDao getImageDao() {
         return imageDao;
     }

@@ -463,27 +463,25 @@
                         <div class="line_2"></div>
                     </div>
 
-                    <!-- <div class="separator" style="height:31px;"></div> -->
                     <div class="separator" style="height:31px;"></div>
 
                     <div class="block_popular_stuff">
                         <h4>校内图册</h4>
 
                         <div class="content">
-                            <a href="#" class="view_all">显示更多</a>
-                            <div class="media"><a href="images/pic_pop_photo_big.jpg"
+                            <a href="#" class="view_all" style="color: #f24024">更多</a>
+                            <div class="media"><a href="${image.ILink}"
                                                   class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"
-                                                  title="Popular Photo"><img src="images/pic_pop_photo.jpg" alt=""/></a>
+                                                  title=""><img src="${image.ILink}" alt=""/></a>
                             </div>
-                            <p><a href="blog_post_w_slider.html">Editors their default model text, and a search for will
-                                uncover many.</a> <img src="images/icon_photo.gif" alt=""/></p>
-                            <p class="date">11 July, 2012</p>
+                            <p><a href="blog_post_w_slider.html">${image.IDes}</a> <img src="images/icon_photo.gif" alt=""/></p>
+                            <%--<p class="date">${image.IDes}</p>--%>
                         </div>
 
                         <div class="info">
                             <ul>
-                                <li class="comments"><a href="#">100</a></li>
-                                <li class="views"><a href="#">134</a></li>
+                                <%--<li class="comments"><a href="#">100</a></li>--%>
+                                <li class="views"><a href="#">${image.IClick}</a></li>
                             </ul>
                         </div>
 

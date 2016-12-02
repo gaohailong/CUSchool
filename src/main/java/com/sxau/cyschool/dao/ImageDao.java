@@ -13,4 +13,11 @@ public interface ImageDao {
      * @throws Exception
      */
     Image queryImage() throws Exception;
+
+    /**
+     * 修改阅读量
+     *
+     * @throws Exception
+     */
+    void imageClickRead(Integer id) throws Exception;
 }

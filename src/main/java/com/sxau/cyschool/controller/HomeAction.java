@@ -43,7 +43,8 @@ public class HomeAction extends ActionSupport {
         graduations = homeService.queryGraduation();
         rotates = homeService.queryRotate();
         notifications = homeService.queryNotification();
-// TODO     image = imageService.queryImage();
+// TODO
+        image = imageService.queryImage();
         video = videoService.queryVideoService();
         return "findAllHome";
     }
@@ -53,7 +54,7 @@ public class HomeAction extends ActionSupport {
         if (tid == null || tid == 0) {
             return ERROR;
         }
-        homeService.clickReading(tid);
+        homeService.updateClickReading(tid);
         title = titleService.findTitleById(tid);
         notifications = homeService.queryNotification();
         return "findOneTitle";
