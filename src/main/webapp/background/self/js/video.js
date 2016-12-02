@@ -35,10 +35,10 @@ function updateVideo(id) {
     } else if (link == null) {
         alert("未输入链接！");
     } else {
-        var data = {"desc": desc, "link": link};
+        var data = {"desc": desc, "link": link,"vid":id};
         $.ajax({
             type: "POST",
-            url: "updateSchoolVideo.action?tid=" + id,
+            url: "updateSchoolVideo.action",
             data: data,
             dataType: "text",
             success: function (data) {
