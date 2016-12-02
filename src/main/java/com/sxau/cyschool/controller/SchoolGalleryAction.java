@@ -90,11 +90,9 @@ public class SchoolGalleryAction extends ActionSupport {
         String unique = UTimeUtil.timeRandom() + imageaFileName;
         Image imageValue = schoolGalleryService.findImageById(imageId);
         if(des!=null&&!"".equals(des)){
-            System.out.print("设置值了"+des);
             imageValue.setIDes(des);
         }
         if(imageaFileName!=null&&!"".equals(imageaFileName)){
-            System.out.print("设置值了"+imageaFileName);
             imageValue.setILink("/upload/gallery/" + unique);
             String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/" + unique);
             File file = new File(path);

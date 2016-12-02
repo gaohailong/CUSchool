@@ -50,11 +50,13 @@ public class VideoAction extends ActionSupport {
     }
 
     public String updateSchool() throws Exception {
+        System.out.print("tsteeeee==========");
         Video video = videoService.findVideoById(vid);
         video.setVLink(link);
         video.setVDes(desc);
+        System.out.print("link"+link+"desc"+desc);
         videoService.updateVideo(video);
-        return null;
+        return SUCCESS;
     }
 
     public VideoService getVideoService() {

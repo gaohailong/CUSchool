@@ -414,19 +414,32 @@
                         <h4>视频展示</h4>
 
                         <div class="content">
-                            <div class="media"><a href="${video.VLink}"
-                                                  class="general_pic_hover play no_fx" data-rel="prettyPhoto"
-                                                  title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>
+                          <div class="media">
+                              <video width="340" height="240">
+                                  <source src="${video.VLink}" type="video/mp4">
+                                  <source src="${video.VLink}" type="video/ogg">
+                                  <source src="${video.VLink}" type="video/webm">
+                                  <object data="${video.VLink}" width="320" height="240">
+                                      <embed src="${video.VLink}" width="320" height="240">
+                                  </object>
+                              </video>
+                              <%--<embed src="${video.VLink}" autostart="false" >--%>
+
+                              <%--</embed>--%>
+                          <%--<a href="${video.VLink}"--%>
+                                                  <%--class="general_pic_hover play no_fx" data-rel="prettyPhoto"--%>
+                                                  <%--title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>--%>
+                                <%--<embed src="${video.VLink}"  >--%>
                             </div>
-                            <p><a href="blog_post_w_video.html">${video.VDes}</a> <img src="images/icon_video.gif" alt=""/></p>
+                            <p><a href="javascript:void(0)">${video.VDes}</a> <img src="images/icon_video.gif" alt=""/></p>
                             <p class="date">${video.VDate}</p>
                         </div>
 
-                        <div class="info">
-                            <ul>
-                                <li class="views"><a href="#">${video.VRead}</a></li>
-                            </ul>
-                        </div>
+                        <%--<div class="info">--%>
+                            <%--<ul>--%>
+                                <%--<li class="views"><a href="#">${video.VRead}</a></li>--%>
+                            <%--</ul>--%>
+                        <%--</div>--%>
 
                         <div class="clearboth"></div>
 

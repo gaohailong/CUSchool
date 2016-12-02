@@ -496,7 +496,7 @@ To change this template use File | Settings | File Templates.
                                 </div>
                             </div>
                             <div class="box-body big">
-                                <form class="form-horizontal" role="form">
+                                <form class="form-horizontal" role="form" >
                                     <div class="form-group">
                                         <label for="video_link" class="col-sm-2 control-label">视频链接</label>
                                         <div class="col-sm-10">
