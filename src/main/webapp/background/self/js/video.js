@@ -5,9 +5,9 @@
 function addVideo() {
     var desc = $("#video_des").val();
     var link = $("#video_link").val();
-    if (desc == null) {
+    if (desc == "") {
         alert("未输入描述！");
-    } else if (link == null) {
+    } else if (link == "") {
         alert("未输入链接！");
     } else {
         var data = {"desc": desc, "link": link};
@@ -30,9 +30,9 @@ function addVideo() {
 function updateVideo(id) {
     var desc = $("#video_des").val();
     var link = $("#video_link").val();
-    if (desc == null) {
+    if (desc == "") {
         alert("未输入描述！");
-    } else if (link == null) {
+    } else if (link == "") {
         alert("未输入链接！");
     } else {
         var data = {"desc": desc, "link": link,"vid":id};

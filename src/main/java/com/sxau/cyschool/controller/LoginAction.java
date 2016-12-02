@@ -4,7 +4,10 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sxau.cyschool.pojo.Admin;
 import com.sxau.cyschool.service.LoginService;
+import org.apache.struts2.ServletActionContext;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +20,7 @@ public class LoginAction extends ActionSupport {
     private String aname;
     private String apass;
     private String message;
+    private String loginUser;
 
     public String findAdmin() throws Exception {
         aname = aname.trim();
@@ -25,12 +29,26 @@ public class LoginAction extends ActionSupport {
         if (admins != null && admins.size() != 0) {
             ActionContext actionContext = ActionContext.getContext();
             Map session = actionContext.getSession();
+            loginUser = admins.get(0).getAName();
+            Cookie cookie = new Cookie("loginUser", loginUser);
+            cookie.setMaxAge(60 * 60 * 24 * 365);
+            ServletActionContext.getResponse().addCookie(cookie);
             session.put("admin", admins.get(0));
             return "main";
-        } else {
+        } else
+
+        {
             message = "用户名或密码错误";
             return "fail";
         }
+
+    }
+
+    public String logOut() throws Exception {
+        ActionContext actionContext = ActionContext.getContext();
+        Map session = actionContext.getSession();
+        session.remove("admin");
+        return "fail";
     }
 
     public LoginService getLoginService() {
@@ -63,5 +81,13 @@ public class LoginAction extends ActionSupport {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getLoginUser() {
+        return loginUser;
+    }
+
+    public void setLoginUser(String loginUser) {
+        this.loginUser = loginUser;
     }
 }

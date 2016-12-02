@@ -93,17 +93,18 @@ To change this template use File | Settings | File Templates.
         <!-- /NAVBAR LEFT -->
         <!-- BEGIN TOP NAVIGATION MENU -->
         <ul class="nav navbar-nav pull-right">
+            <li><a href="logOutLogin.action" style="color: #fff; margin-left: 200px;">退出</a></li>
             <!-- BEGIN USER LOGIN DROPDOWN -->
-            <li class="dropdown user" id="header-user">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img alt="" src="img/avatars/avatar3.jpg"/>
-                    <span class="username">John Doe</span>
-                    <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="login.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>
-                </ul>
-            </li>
+            <%--<li class="dropdown user" id="header-user">--%>
+                <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown">--%>
+                    <%--<img alt="" src="img/avatars/avatar3.jpg"/>--%>
+                    <%--<span class="username">John Doe</span>--%>
+                    <%--<i class="fa fa-angle-down"></i>--%>
+                <%--</a>--%>
+                <%--<ul class="dropdown-menu">--%>
+                    <%--<li><a href="login.jsp"><i class="fa fa-power-off"></i> Log Out</a></li>--%>
+                <%--</ul>--%>
+            <%--</li>--%>
             <!-- END USER LOGIN DROPDOWN -->
         </ul>
         <!-- END TOP NAVIGATION MENU -->

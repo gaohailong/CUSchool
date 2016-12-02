@@ -423,9 +423,6 @@
                                       <embed src="${video.VLink}" width="320" height="240">
                                   </object>
                               </video>
-                              <%--<embed src="${video.VLink}" autostart="false" >--%>
-
-                              <%--</embed>--%>
                           <%--<a href="${video.VLink}"--%>
                                                   <%--class="general_pic_hover play no_fx" data-rel="prettyPhoto"--%>
                                                   <%--title="Popular Video"><img src="images/pic_pop_video.jpg" alt=""/></a>--%>

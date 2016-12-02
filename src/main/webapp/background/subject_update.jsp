@@ -93,6 +93,7 @@ To change this template use File | Settings | File Templates.
         <!-- /NAVBAR LEFT -->
         <!-- BEGIN TOP NAVIGATION MENU -->
         <ul class="nav navbar-nav pull-right">
+            <li><a href="logOutLogin.action" style="color: #fff; margin-left: 200px;">退出</a></li>
             <!-- BEGIN USER LOGIN DROPDOWN -->
             <li class="dropdown user" id="header-user">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

@@ -18,7 +18,6 @@ public class LoginInterceptor extends MethodFilterInterceptor {
         Map session = actionContext.getSession();
         Admin admin = (Admin) session.get("admin");
         if (admin == null) {
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaa:没有登录");
             return "fail";
         }
         return actionInvocation.invoke();
