@@ -79,7 +79,7 @@ public class IntroduceAction extends ActionSupport {
 
     //修改通知
     public String updateSchool() throws Exception {
-        if (tid == 0 && tid == null) {
+        if (tid == null||tid == 0 ) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);

@@ -89,14 +89,6 @@ public class ExchangeWorkAction extends ActionSupport {
         return SUCCESS;
     }
 
-    public List<Title> getNotifications() {
-        return notifications;
-    }
-
-    public void setNotifications(List<Title> notifications) {
-        this.notifications = notifications;
-    }
-
     //================================前端=====================================
     public String findAllData() throws Exception {
         if (nowPage == null || nowPage == 0) {
@@ -198,5 +190,13 @@ public class ExchangeWorkAction extends ActionSupport {
 
     public void setHomeService(HomeService homeService) {
         this.homeService = homeService;
+    }
+
+    public List<Title> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Title> notifications) {
+        this.notifications = notifications;
     }
 }

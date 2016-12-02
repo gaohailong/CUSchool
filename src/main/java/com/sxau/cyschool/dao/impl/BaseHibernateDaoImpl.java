@@ -1,6 +1,5 @@
 package com.sxau.cyschool.dao.impl;
 
-import com.mchange.v2.c3p0.DataSources;
 import com.sxau.cyschool.dao.BaseHibernateDao;
 import com.sxau.cyschool.exception.SystemException;
 import org.hibernate.Query;

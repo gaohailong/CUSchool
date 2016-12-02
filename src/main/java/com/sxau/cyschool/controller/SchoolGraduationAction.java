@@ -87,6 +87,7 @@ public class SchoolGraduationAction extends ActionSupport {
         return SUCCESS;
     }
 
+    //================================前台==========================================
     //查找通知
     public String findPreSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
