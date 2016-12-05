@@ -35,6 +35,16 @@ To change this template use File | Settings | File Templates.
 
     <!--video的js-->
     <script src="self/js/video.js"></script>
+
+    <link href="self/css/highlight.css"/>
+    <link href="self/css/main.css">
+
+    <%--<link href="http://jssdk.demo.qiniu.io/images/favicon.ico" rel="shortcut icon">--%>
+    <link rel="stylesheet" href="self/qiniu/bootstrap.css">
+    <link rel="stylesheet" href="self/qiniu/main.css">
+    <link rel="stylesheet" href="self/qiniu/highlight.css">
+    <style type="text/css" adt="123"></style>
+    <script src="self/js/jquery-2.0.3.min.js"></script>
 </head>
 <body>
 <!-- HEADER -->
@@ -501,15 +511,66 @@ To change this template use File | Settings | File Templates.
                                     <div class="form-group">
                                         <label for="video_link" class="col-sm-2 control-label">视频链接</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="${video.VLink}" id="video_link" placeholder="">
+                                            <input type="text" disabled="true" class="form-control" value="${video.VLink}" id="video_link" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="video_link" class="col-sm-2 control-label">视频描述</label>
+                                        <label for="video_des" class="col-sm-2 control-label">视频描述</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" value="${video.VDes}" id="video_des" placeholder="">
+                                            <input type="hidden" id="sourceLink" value="">
                                         </div>
                                     </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-12" >
+                                                <div class="container">
+                                                    <div class="tab-content">
+                                                        <div role="tabpanel" class="tab-pane fade in active" id="demo" aria-labelledby="demo-tab">
+
+                                                            <div class="row" style="margin-top: 20px;">
+
+                                                                <input type="hidden" id="uptoken_url" value="${videoToken}">
+                                                                <div class="col-md-12">
+                                                                    <div id="container" style="position: relative;">
+                                                                        <a class="btn btn-block btn-primary" style="width: 100%" id="pickfiles" href="http://oh506qab5.bkt.clouddn.com/"
+                                                                           style="position: relative; z-index: 1;">
+                                                                            <i class="glyphicon glyphicon-plus"></i>
+                                                                            <span>选择文件</span>
+                                                                            ${message}
+                                                                        </a>
+                                                                        <div id="html5_1aj3rtennnga1n5h927gjn8343_container" class="moxie-shim moxie-shim-html5"
+                                                                             style="position: absolute; top: 0px; left: 0px; width: 171px; height: 46px; overflow: hidden; z-index: 0;">
+                                                                            <input id="html5_1aj3rtennnga1n5h927gjn8343" type="file"
+                                                                                   style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"
+                                                                                   multiple="" accept=""></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="display:none" id="success" class="col-md-12">
+                                                                    <div class="alert-success">
+                                                                        队列全部文件处理完毕
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12 ">
+                                                                    <table class="table table-striped table-hover text-left" style="margin-top:40px;display:none">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th class="col-md-4">文件名</th>
+                                                                            <th class="col-md-2">大小</th>
+                                                                            <th class="col-md-6">详情</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody id="fsUploadProgress">
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                 </form>
                             </div>
                         </div>
@@ -521,6 +582,19 @@ To change this template use File | Settings | File Templates.
         </div>
     </div>
 </section>
+
+
+<script type="text/javascript" src="self/qiniu/jquery.min.js"></script>
+<script type="text/javascript" src="self/qiniu/bootstrap.min.js"></script>
+<script type="text/javascript" src="self/qiniu/moxie.js"></script>
+<script type="text/javascript" src="self/qiniu/plupload.dev.js"></script>
+<script type="text/javascript" src="self/qiniu/zh_CN.js"></script>
+<script type="text/javascript" src="self/qiniu/ui.js"></script>
+<script type="text/javascript" src="self/qiniu/qiniu.js"></script>
+<script type="text/javascript" src="self/qiniu/highlight.js"></script>
+<script type="text/javascript" src="self/qiniu/main.js"></script>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
 <!--/PAGE -->
 <!-- JAVASCRIPTS -->
 <!-- Placed at the end of the document so the pages load faster -->

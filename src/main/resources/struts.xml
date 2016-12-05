@@ -58,6 +58,7 @@
         <action name="*Video" class="videoAction" method="{1}">
             <result name="findVideo">/background/school_video.jsp</result>
             <result name="findOneVideo">/background/school_video_update.jsp</result>
+            <result name="qiniuToken">/background/school_video_add.jsp</result>
         </action>
 
         <!--毕业风采-->
@@ -197,6 +198,7 @@
         <action name="*Image" class="imageAction" method="{1}">
             <result name="findPrePic">/foreground/image_list.jsp</result>
         </action>
+        
     </package>
 
 </struts>

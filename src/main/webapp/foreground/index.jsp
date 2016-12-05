@@ -415,12 +415,12 @@
 
                         <div class="content">
                           <div class="media">
-                              <video width="340" height="240">
+                              <video width="340px" controls height="240px">
                                   <source src="${video.VLink}" type="video/mp4">
                                   <source src="${video.VLink}" type="video/ogg">
                                   <source src="${video.VLink}" type="video/webm">
-                                  <object data="${video.VLink}" width="320" height="240">
-                                      <embed src="${video.VLink}" width="320" height="240">
+                                  <object data="${video.VLink}" width="320px" height="240px">
+                                      <embed src="${video.VLink}" width="320px" height="240px">
                                   </object>
                               </video>
                           <%--<a href="${video.VLink}"--%>
