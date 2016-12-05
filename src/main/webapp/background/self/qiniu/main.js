@@ -25,7 +25,7 @@ $(function () {
             mime_types: [
                 // {title : "mp4 files", extensions : "mkv"}
                 // {title : "flv files", extensions : "flv,jpg"}
-                // {title : "Video files", extensions : "flv,mpg,mpeg,avi,wmv,mov,asf,rm,rmvb,mkv,m4v,mp4"}
+                {title : "Video files", extensions : "flv,mpg,mpeg,avi,wmv,mov,asf,rm,rmvb,mkv,m4v,mp4"}
                 // {title : "Video files", extensions : "avi,mp4,wmv,mpg,mov,flv,mkv,mpeg"}
                 // {title : "Image files", extensions : "jpg,gif,png"}
                 // {title : "Zip files", extensions : "zip"}

@@ -1,9 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-
 <head>
-    <title>特色专业</title>
+    <title>学校地图</title>
 
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
@@ -57,6 +56,8 @@
     <!-- jQuery Form Plugin end -->
 
     <script type="text/javascript" src="layout/js/main.js"></script>
+
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=85fc75a90bb3babe4f86d759ab014693"></script>
 
     <script type="text/javascript">
         jQuery(function () {
@@ -129,7 +130,7 @@
                         <ul>
                             <li class="big_dropdown"><a href="findAllHome.action">首页</a>
                             </li>
-                            <li class="big_dropdown"><a href="javascript:void(0)">学校概况</a>
+                            <li class="current_page_item"><a href="javascript:void(0)">学校概况</a>
                                 <ul>
                                     <li><a href="findPreAllPrincipal.action">校长致辞</a></li>
                                     <li><a href="findAllDataLeader.action">现任领导</a></li>
@@ -143,7 +144,7 @@
                                     <li><a href="findAllDataOther.action">直属及其他</a></li>
                                 </ul>
                             </li>
-                            <li class="current_page_item"><a href="javascript:void(0)">人才培养</a>
+                            <li class="big_dropdown"><a href="javascript:void(0)">人才培养</a>
                                 <ul>
                                     <li><a href="findAllDataTeacher.action">师资服务</a></li>
                                     <li><a href="findAllDataProfessional.action">特色专业</a></li>
@@ -305,71 +306,31 @@
     <div id="content" class="right_sidebar">
         <div class="inner">
             <div class="general_content">
-                <div class="main_content">
-                    <div class="separator" style="height:30px;"></div>
-
-                    <h2>特色专业</h2>
-
-                    <div class="line_4" style="margin:0px 0px 20px;"></div>
-                    <c:forEach var="title" items="${titleList}">
-                        <div class="block_home_post">
-                            <div class="text">
-                                <p class="title"><a href="findPreOneSchoolProfessional.action?tid=${title.TId}">${title.TName}</a></p>
-                                <div class="icons">
-                                    <ul>
-                                        <li><a href="#" class="views">${title.TRead}</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="line_3" style="margin:14px 0px 17px;"></div>
-                    </c:forEach>
-                    <div class="block_pager">
-                        <a href="javascript:void(0)" class="prev">Previous</a>
-                        <a href="javascript:void(0)" class="next">Next</a>
-
-                        <div class="pages">
-                            <ul>
-                                <c:forEach begin="1" end="${totalPage}" varStatus="i">
-                                    <c:if test="${i.index==nowPage}">
-                                        <li class="current" ><a href="findAllDataProfessional.action?nowPage=${i.index}">${i.index}</a></li>
-                                    </c:if>
-                                    <c:if test="${i.index!=nowPage}">
-                                        <li class="" ><a href="findAllDataProfessional.action?nowPage=${i.index}">${i.index}</a></li>
-                                    </c:if>
-                                </c:forEach>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="clearboth"></div>
+                <div id="container" style="width: 100%;height: 500px">
+                    <script type="text/javascript">
+                    var map = new AMap.Map('container',{
+                        zoom: 10,
+                        center: [113.752652,40.367605]
+                    });
+                    var marker = new AMap.Marker({
+                        position: [113.752652, 40.367605]
+                    });
+                    marker.setMap(map);
+                    var circle = new AMap.Circle({
+                        center: [113.752652, 40.367605],
+                        radius: 100,
+                        fillOpacity:0.2,
+                        strokeWeight:1
+                    })
+                    circle.setMap(map);
+                    map.setFitView()
+                    var info = new AMap.InfoWindow({
+                        content:"阳高县春雨职业学校",
+                        offset:new AMap.Pixel(0,-28)
+                    })
+                    info.open(map,marker.getPosition())
+                    </script>
                 </div>
-                <div class="sidebar">
-                    <div class="separator" style="height:31px;"></div>
-
-                    <div class="block_popular_posts">
-                        <h4>通知公告</h4>
-                        <c:forEach var="notification" items="${notifications}" >
-                            <div class="article">
-                                <div class="text">
-                                    <p class="title"><a href="findOneSchoolPreHome.action?tid=${notification.TId}">${notification.TName}</a></p>
-                                    <div class="date"><p>${notification.TDate}</p></div>
-                                    <div class="icons">
-                                        <ul>
-                                            <li><a href="#" class="views">${notification.TRead}</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="line_3"></div>
-                        </c:forEach>
-                        <div class="clearboth"></div>
-                        <a href="findPreNotificationTitle.action" class="lnk_all_news fl">更多</a>
-                        <div class="clearboth"></div>
-                        <div class="line_3" style="margin:13px 0px 35px;"></div>
-                    </div>
-                    <div class="separator" style="height:31px;"></div>
-                </div>
-
                 <div class="clearboth"></div>
             </div>
         </div>
@@ -395,7 +356,6 @@
                         <div class="" style="width: 150px;float: left;">
                             <img src="self/image/picture.jpg" style="height:100px;width: 100px;">
                         </div>
-
                         <div style="margin-top: 30px;">
 
                             <p>版权所有：阳高县春雨职业学校　地址：山西省阳高县  邮政编码：038100 非经营性互联网信息服务审批号 晋ICP备05000000号</p>
@@ -452,6 +412,7 @@
 
             <div class="subtitle"><p>SIGN IN AS A USER</p></div>
 
+            <!--<div class="fb_button"><a href="#"><img src="images/button_fb_login.png" alt="" /></a></div>-->
             <div class="text"><p>Use your account on the social network Facebook, to create a profile on
                 BusinessPress</p></div>
         </div>

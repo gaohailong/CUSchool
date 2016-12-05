@@ -76,8 +76,8 @@
                         <div class="block_top_menu">
                             <ul>
                                 <li class="current"><a href="findAllHome.action">首页</a></li>
-                                <li><a href="#">地图</a></li>
-                                <li><a href="contact.html">联系我们</a></li>
+                                <li><a href="map.jsp">地图</a></li>
+                                <%--<li><a href="contact.html">联系我们</a></li>--%>
                             </ul>
                         </div>
                     </div>
