@@ -456,7 +456,7 @@ To change this template use File | Settings | File Templates.
                         </li>
                     </ul>
                 </li>
-                <li class="has-sub">
+                <li class="has-sub active">
                     <a href="javascript:;" class="">
                         <i class="fa fa-table fa-fw"></i> <span class="menu-text">人才培养</span>
                         <span class="arrow"></span>
@@ -464,7 +464,7 @@ To change this template use File | Settings | File Templates.
                     <ul class="sub">
                         <li><a class="" href="findServiceTeacher.action"><span class="sub-menu-text">师资服务</span></a></li>
                         <li><a class="" href="featuredSchoolProfessional.action"><span class="sub-menu-text">特色专业</span></a></li>
-                        <li><a class="" href="findNiceCourse.action"><span class="sub-menu-text">精品课程</span></a></li>
+                        <li class="current"><a class="" href="findNiceCourse.action"><span class="sub-menu-text">精品课程</span></a></li>
                     </ul>
                 </li>
                 <li class="has-sub">

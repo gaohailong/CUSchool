@@ -399,7 +399,7 @@
 			<ul>
 				<li class="active"><a class="" href="inbox.jsp"><i class="fa fa-briefcase fa-fw"></i> <span
 						class="menu-text">欢迎</span><span class="selected"></span></a></li>
-				<li class="has-sub">
+				<li class="has-sub active">
 					<a href="javascript:;" class="">
 						<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">首页</span>
 						<span class="arrow"></span>
@@ -410,7 +410,7 @@
 						<li><a class="" href="findSchoolNews.action"><span class="sub-menu-text">学校要闻</span></a></li>
 						<li><a class="" href="findSchoolVideo.action"><span class="sub-menu-text">视频展示</span></a></li>
 						<li><a class="" href="findSchoolGraduation.action"><span class="sub-menu-text">毕业风采</span></a></li>
-						<li><a class="" href="findSchoolGallery.action"><span class="sub-menu-text">校内图册</span></a></li>
+						<li class="current"><a class="" href="findSchoolGallery.action"><span class="sub-menu-text">校内图册</span></a></li>
 					</ul>
 				</li>
 				<li class="has-sub">

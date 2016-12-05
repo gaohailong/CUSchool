@@ -432,14 +432,14 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="findSchoolGallery.action"><span class="sub-menu-text">校内图册</span></a></li>
                     </ul>
                 </li>
-                <li class="has-sub">
+                <li class="has-sub active">
                     <a href="javascript:;" class="">
                         <i class="fa fa-th-large fa-fw"></i> <span class="menu-text">学校概况</span>
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
                         <li><a class="" href="findSchoolPrincipal.action"><span class="sub-menu-text">校长致辞</span></a></li>
-                        <li><a class="" href="findSchoolLeader.action"><span class="sub-menu-text">现任领导</span></a></li>
+                        <li class="current"><a class="" href="findSchoolLeader.action"><span class="sub-menu-text">现任领导</span></a></li>
                         <li><a class="" href="findSchoolIntroduce.action"><span class="sub-menu-text">学校简介</span></a></li>
                     </ul>
                 </li>

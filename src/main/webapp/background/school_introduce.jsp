@@ -1,5 +1,4 @@
-﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
+﻿<%--
 Created by IntelliJ IDEA.
 User: gaohailong
 Date: 2016/11/21
@@ -7,7 +6,7 @@ Time: 上午 11:06
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -28,7 +27,6 @@ To change this template use File | Settings | File Templates.
 	<link rel="stylesheet" type="text/css" href="js/tablecloth/css/tablecloth.min.css" />
 	<!-- FONTS -->
 	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
-
 	<!--title js-->
 	<script src="self/js/title.js"></script>
 </head>
@@ -419,7 +417,7 @@ To change this template use File | Settings | File Templates.
 									<li><a class="" href="findSchoolGallery.action"><span class="sub-menu-text">校内图册</span></a></li>
 								</ul>
 							</li>
-							<li class="has-sub">
+							<li class="has-sub active">
 								<a href="javascript:;" class="">
 									<i class="fa fa-th-large fa-fw"></i> <span class="menu-text">学校概况</span>
 									<span class="arrow"></span>
@@ -427,7 +425,7 @@ To change this template use File | Settings | File Templates.
 								<ul class="sub">
 									<li><a class="" href="findSchoolPrincipal.action"><span class="sub-menu-text">校长致辞</span></a></li>
 									<li><a class="" href="findSchoolLeader.action"><span class="sub-menu-text">现任领导</span></a></li>
-									<li><a class="" href="findSchoolIntroduce.action"><span class="sub-menu-text">学校简介</span></a></li>
+									<li class="current"> <a class="" href="findSchoolIntroduce.action"><span class="sub-menu-text">学校简介</span></a></li>
 								</ul>
 							</li>
 							<li class="has-sub">
