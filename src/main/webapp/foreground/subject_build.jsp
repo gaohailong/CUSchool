@@ -90,7 +90,7 @@
             </section>
             <section class="bottom">
                 <div class="inner">
-                    <div id="logo_top"><a href="index.jsp"><img src="images/logo_top.png" alt="BusinessNews"
+                    <div id="logo_top"><a href="findAllHome.action"><img src="images/logo_top.png" alt="BusinessNews"
                                                                 title="BusinessNews"/></a></div>
 
                     <div class="block_today_date">
