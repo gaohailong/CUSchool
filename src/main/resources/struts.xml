@@ -185,6 +185,7 @@
             <!--<interceptor-ref name="loginStack"></interceptor-ref>-->
             <result name="main">/background/inbox.jsp</result>
             <result name="fail">/background/login.jsp</result>
+
         </action>
 
         <!--===============================前台=====================================-->
