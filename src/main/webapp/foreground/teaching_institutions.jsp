@@ -93,9 +93,11 @@
 
             <section class="bottom">
                 <div class="inner">
-                    <div id="logo_top"><a href="findAllHome.action"><img src="images/logo_top.png" alt="BusinessNews"
-                                                                title="BusinessNews"/></a></div>
-
+                    <div id="logo_top"><a href="findAllHome.action">
+                        <%--<img src="images/logo_top.png" alt="BusinessNews" title="BusinessNews"/>--%>
+                        <p style=" font-size: 30px;">阳高县春雨职业学校</p>
+                    </a>
+                    </div>
                     <div class="block_today_date">
                         <div class="num"><p id="num_top"/></div>
                         <div class="other">
@@ -397,13 +399,14 @@
                     <div class="line_1"></div>
 
                     <div class="block_footer_widgets" style="margin-left: 70px">
-                        <div class="" style="width: 150px;float: left;">
-                            <img src="self/image/picture.jpg" style="height:100px;width: 100px;">
-                        </div>
-                        <div style="margin-top: 30px;">
+                        <%--<div class="" style="width: 150px;float: left;">--%>
+                        <%--<img src="self/image/picture.jpg" style="height:100px;width: 100px;">--%>
+                        <%--</div>--%>
+
+                        <div style="margin-top: 30px;margin-left: 60px;">
 
                             <p>版权所有：阳高县春雨职业学校　地址：山西省阳高县  邮政编码：038100 非经营性互联网信息服务审批号 晋ICP备05000000号</p>
-                            <p style="margin-left: 290px;">Copyright© 2016 Spring Vocational School. All Rights Reserved</p>
+                            <p style="margin-left: 160px;">Copyright© 2016 Spring Vocational School. All Rights Reserved</p>
                         </div>
                         <div class="clearboth"></div>
                     </div>
