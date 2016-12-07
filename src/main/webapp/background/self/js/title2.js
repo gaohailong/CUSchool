@@ -1,5 +1,6 @@
 /**
  * Created by gaohailong on 2016/11/16.
+ * 服务器上使用的代码
  */
 //添加通知新闻
 function addNotification() {

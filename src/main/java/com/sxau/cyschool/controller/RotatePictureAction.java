@@ -89,7 +89,7 @@ public class RotatePictureAction extends ActionSupport {
         title.setTName(notificationHead);
         title.setTContent(notificationContent);
         titleService.updateTitle(title);
-        return SUCCESS;
+        return null;
     }
 
     public TitleService getTitleService() {

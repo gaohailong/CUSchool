@@ -86,7 +86,7 @@ public class IntroduceAction extends ActionSupport {
         title.setTName(notificationHead);
         title.setTContent(notificationContent);
         titleService.updateTitle(title);
-        return SUCCESS;
+        return null;
     }
 
     //===============================前台==================================

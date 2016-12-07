@@ -45,7 +45,7 @@ public class NotificationAction extends ActionSupport {
 
     //查找一个通知
     public String findOneNotification() throws Exception {
-        if (tid == null ||tid == 0  ) {
+        if (tid == null || tid == 0) {
             return ERROR;
         }
         title = titleService.findTitleById(tid);
@@ -74,14 +74,18 @@ public class NotificationAction extends ActionSupport {
 
     //修改通知
     public String updateNotification() throws Exception {
-        if ( tid == null||tid == 0 ) {
-            return ERROR;
+        try {
+            if (tid == null || tid == 0) {
+                return ERROR;
+            }
+            title = titleService.findTitleById(tid);
+            title.setTName(notificationHead);
+            title.setTContent(notificationContent);
+            titleService.updateTitle(title);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        title = titleService.findTitleById(tid);
-        title.setTName(notificationHead);
-        title.setTContent(notificationContent);
-        titleService.updateTitle(title);
-        return SUCCESS;
+        return null;
     }
 
     //==============================前台===============================
@@ -93,7 +97,7 @@ public class NotificationAction extends ActionSupport {
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
         totalPage = page.getTotalPage();
-        notifications=homeService.queryNotification();
+        notifications = homeService.queryNotification();
         return "findPreNotification";
     }
 
