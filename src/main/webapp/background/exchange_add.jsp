@@ -467,7 +467,7 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="findNiceCourse.action"><span class="sub-menu-text">精品课程</span></a></li>
                     </ul>
                 </li>
-                <li class="has-sub active">
+                <li class="has-sub">
                     <a href="javascript:;" class="">
                         <i class="fa fa-file-text fa-fw"></i> <span class="menu-text">科研服务</span>
                         <span class="arrow"></span>
@@ -477,7 +477,7 @@ To change this template use File | Settings | File Templates.
                         <li><a class="" href="findServiceSociety.action"><span class="sub-menu-text">社会服务</span></a></li>
                     </ul>
                 </li>
-                <li class="current"><a class="" href="exchangeSchoolWork.action"><i class="fa fa-envelope-o fa-fw"></i> <span
+                <li class="current active"><a class="" href="exchangeSchoolWork.action"><i class="fa fa-envelope-o fa-fw"></i> <span
                         class="menu-text">交流合作</span><span class="selected"></span></a></li>
                 <li class=""><a class="" href="findSchoolRecruitment.action"><i class="fa fa-file-text fa-fw"></i> <span
                         class="menu-text">招就招聘</span><span class="selected"></span></a></li>
