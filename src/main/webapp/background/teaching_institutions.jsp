@@ -439,8 +439,8 @@ To change this template use File | Settings | File Templates.
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li class="current"><a class="" href="findSchoolAdministration.action"><span class="sub-menu-text">行政机构</span></a></li>
-                        <li><a class="" href="findInstitutionsTeaching.action"><span class="sub-menu-text">教辅机构</span></a>
+                        <li><a class="" href="findSchoolAdministration.action"><span class="sub-menu-text">行政机构</span></a></li>
+                        <li class="current"><a class="" href="findInstitutionsTeaching.action"><span class="sub-menu-text">教辅机构</span></a>
                         </li>
                         <li><a class="" href="findImmediateOther.action"><span class="sub-menu-text">直属及其他</span></a>
                         </li>
@@ -525,10 +525,10 @@ To change this template use File | Settings | File Templates.
                         <ul class="pagination">
                             <c:forEach begin="1" end="${totalPage}" varStatus="i">
                                 <c:if test="${i.index==nowPage}">
-                                  <li class="active"><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
+                                  <li class="active"><a href="findInstitutionsTeaching.action?nowPage=${i.index}">${i.index}</a></li>
                                 </c:if>
                                 <c:if test="${i.index!=nowPage}">
-                                    <li class=""><a href="findSchoolNews.action?nowPage=${i.index}">${i.index}</a></li>
+                                    <li class=""><a href="findInstitutionsTeaching.action?nowPage=${i.index}">${i.index}</a></li>
                                 </c:if>
                             </c:forEach>
                         </ul>

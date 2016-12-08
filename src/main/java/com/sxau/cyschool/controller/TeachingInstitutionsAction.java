@@ -34,7 +34,6 @@ public class TeachingInstitutionsAction extends ActionSupport {
 
     //查找通知
     public String findInstitutions() throws Exception {
-        System.out.print("test");
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
         }
