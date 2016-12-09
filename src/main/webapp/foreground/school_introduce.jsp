@@ -308,6 +308,7 @@
 
     <!-- CONTENT BEGIN -->
     <div id="content" class="right_sidebar">
+
         <div class="inner">
             <div class="general_content">
                 <div class="main_content">
@@ -318,12 +319,10 @@
                     </article>
                     <div class="separator" style="height:4px;"></div>
                 </div>
-
                 <div class="sidebar">
                     <div class="separator" style="height:31px;"></div>
                     <div class="block_popular_posts">
                         <h4>通知公告</h4>
-
                         <c:forEach var="notification" items="${notifications}" >
                             <div class="article">
                                 <div class="text">
