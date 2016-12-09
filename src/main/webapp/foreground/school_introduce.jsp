@@ -310,9 +310,8 @@
     <div id="content" class="right_sidebar">
         <div class="inner">
             <div class="general_content">
-
+                <div class="main_content">
                     <div class="separator" style="height:30px;"></div>
-
                     <article class="block_single_news">
                         <p class="title"> ${title.TName}</p>
                         <div>${title.TContent}</div>
