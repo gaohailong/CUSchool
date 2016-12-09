@@ -103,6 +103,7 @@ public class TeachingInstitutionsAction extends ActionSupport {
         }
         titleService.updateClickReading(tid);
         title = titleService.findTitleById(tid);
+        notifications=homeService.queryNotification();
         return "findPreOneSchool";
     }
 
