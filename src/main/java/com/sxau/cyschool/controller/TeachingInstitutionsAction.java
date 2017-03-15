@@ -32,6 +32,12 @@ public class TeachingInstitutionsAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+    public String tour() throws Exception {
+
+        return "tourTeaching";
+    }
+
+
     //查找通知
     public String findInstitutions() throws Exception {
         if (nowPage == null || nowPage == 0) {

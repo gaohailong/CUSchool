@@ -33,6 +33,18 @@ public class SchoolServiceTeacherAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+
+    //查找通知
+    public String tour() throws Exception {
+        if (nowPage == null || nowPage == 0) {
+            nowPage = 1;
+        }
+        page = titleService.queryTitleByCondition(title, nowPage, 10);
+        titleList = page.getRows();
+        totalPage = page.getTotalPage();
+        return "tourSchoolService";
+    }
+
     //查找通知
     public String findService() throws Exception {
         if (nowPage == null || nowPage == 0) {

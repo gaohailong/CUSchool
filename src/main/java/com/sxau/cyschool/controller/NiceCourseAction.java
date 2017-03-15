@@ -33,6 +33,11 @@ public class NiceCourseAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+
+    public String tourNiceCourse() throws Exception {
+        return "tourNiceCourse";
+    }
+
     //查找现任领导
     public String findNice() throws Exception {
         if (nowPage == null || nowPage == 0) {

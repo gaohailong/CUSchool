@@ -39,6 +39,7 @@
             <result name="addNotification">/background/school_notification_add.jsp</result>
             <result name="updateNotification">/background/school_notification_update.jsp</result>
             <result name="findPreNotification">/foreground/notification_list.jsp</result>
+            <result name="tourNotification">/background/school_notification_add.jsp</result>
         </action>
 
         <!--首页轮播图-->
@@ -52,6 +53,7 @@
             <result name="findSchoolNews">/background/school_news.jsp</result>
             <result name="updateSchoolNews">/background/school_news_update.jsp</result>
             <result name="findPreSchool">/foreground/news_list.jsp</result>
+            <result name="tourNews">/background/school_news_add.jsp</result>
         </action>
 
         <!--视频展示-->
@@ -66,6 +68,7 @@
             <result name="findGraduation">/background/school_graduation.jsp</result>
             <result name="updateSchoolGraduation">/background/school_graduation_update.jsp</result>
             <result name="findPreSchool">/foreground/graduation_list.jsp</result>
+            <result name="tourSchoolGallery">/background/school_graduation_add.jsp</result>
         </action>
 
         <!--校内图册-->
@@ -73,6 +76,8 @@
             <result name="findSchoolGallery">/background/school_gallery.jsp</result>
             <result name="updateSchoolGallery">/background/school_gallery_update.jsp</result>
             <result name="addSchoolGallery">/background/school_gallery_add.jsp</result>
+            <result name="successAdd">/background/success.jsp</result>
+
         </action>
 
         <!--校长致辞-->
@@ -89,6 +94,7 @@
             <result name="updateLeader">/background/school_lead_update.jsp</result>
             <result name="findAllLeader">/foreground/leader.jsp</result>
             <result name="findPreSchool">/foreground/detail.jsp</result>
+            <result name="tourLeader">/background/school_lead_add.jsp</result>
         </action>
 
         <!--学校简介-->
@@ -104,6 +110,7 @@
             <result name="findSchoolAdministration">/background/administration.jsp</result>
             <result name="updateSchoolAdministration">/background/administration_update.jsp</result>
             <result name="findAllData">/foreground/administration.jsp</result>
+            <result name="adminAdd">/background/administration_add.jsp</result>
             <result name="findPreOneSchool">/foreground/detail.jsp</result>
         </action>
 
@@ -113,6 +120,7 @@
             <result name="findOneInstitutions">/background/teaching_institutions_update.jsp</result>
             <result name="findAllData">/foreground/teaching_institutions.jsp</result>
             <result name="findPreOneSchool">/foreground/detail.jsp</result>
+            <result name="tourTeaching">/background/teaching_institutions_add.jsp</result>
         </action>
 
         <!--直属及其他-->
@@ -121,6 +129,7 @@
             <result name="updateSchoolAdministration">/background/immediate_and_other_update.jsp</result>
             <result name="findAllData">/foreground/immediate_and_others.jsp</result>
             <result name="findPreOneSchool">/foreground/detail.jsp</result>
+            <result name="tourImmediate">/background/immediate_and_other_add.jsp</result>
         </action>
 
         <!--师资服务-->
@@ -129,6 +138,7 @@
             <result name="findOneTeacherService">/background/teacher_service_update.jsp</result>
             <result name="findAllData">/foreground/teacher_service.jsp</result>
             <result name="findPreOneSchool">/foreground/detail.jsp</result>
+            <result name="tourSchoolService">/background/teacher_service_add.jsp</result>
         </action>
 
         <!--特色专业-->
@@ -137,6 +147,8 @@
             <result name="updateFeatured">/background/featured_professional_update.jsp</result>
             <result name="findAllData">/foreground/special_major.jsp</result>
             <result name="findPreOneSchool">/foreground/detail.jsp</result>
+            <result name="featureAdd">/foreground/featured_professional_add.jsp</result>
+
         </action>
 
         <!--精品课程-->
@@ -145,6 +157,7 @@
             <result name="updateNiceCourse">/background/nice_course_update.jsp</result>
             <result name="findAllData">/foreground/nice_course.jsp</result>
             <result name="findPreOneSchool">/foreground/detail.jsp</result>
+            <result name="tourNiceCourse">/foreground/nice_course_add.jsp</result>
         </action>
 
         <!--学科建设-->

@@ -34,6 +34,11 @@ public class SchoolNewsAction extends ActionSupport {
 
     //=====================后台===========================
 
+    public String tour() throws Exception {
+
+        return "tourNews";
+    }
+
     //查找通知
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {

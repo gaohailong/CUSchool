@@ -32,7 +32,9 @@ public class ImmediateAndOtherAction extends ActionSupport {
     private Category t_category;
     //变量
     private Page<Title> page;
-
+    public String tourImmediate() throws Exception {
+        return "tourImmediate";
+    }
     //查找现任领导
     public String findImmediate() throws Exception {
         if (nowPage == null || nowPage == 0) {

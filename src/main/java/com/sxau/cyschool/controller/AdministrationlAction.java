@@ -33,6 +33,11 @@ public class AdministrationlAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+    public String tourSchool() throws Exception {
+
+        return "adminAdd";
+    }
+
     //查找现任领导
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {

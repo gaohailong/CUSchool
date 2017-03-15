@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd ">
+
+    <!--扫描的包配置-->
+    <context:component-scan base-package="com.sxau.cyschool"/>
+
+    <!--获取数据库的配置文件-->
+    <context:property-placeholder location="classpath:config/db.properties"/>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClass}"/>
+        <property name="user" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}"/>
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
+        <property name="minPoolSize" value="${jdbc.minPoolSize}"/>
+        <property name="maxStatements" value="${jdbc.maxStatements}"/>
+        <property name="initialPoolSize" value="${jdbc.initPoolSize}"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:config/hibernate.cfg.xml"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:/hbm/Admin.hbm.xml</value>
+                <value>classpath:/hbm/Title.hbm.xml</value>
+                <value>classpath:/hbm/Category.hbm.xml</value>
+                <value>classpath:/hbm/Image.hbm.xml</value>
+                <value>classpath:/hbm/Video.hbm.xml</value>
+                <value>classpath:/hbm/Sort.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--配置事务-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!--配置事务，使用代理的方式-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="update" propagation="REQUIRED"/>
+            <tx:method name="delete" propagation="REQUIRED"/>
+            <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut id="poincut" expression="execution(* com.sxau.cyschool.service.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="poincut"/>
+    </aop:config>
+
+    <!--配置基于注解的事务支持-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--添加注解功能-->
+    <context:annotation-config/>
+
+    <!--hibernate配置-->
+    <bean id="baseHibernateDaoImpl" class="com.sxau.cyschool.dao.impl.BaseHibernateDaoImpl" abstract="true">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    <!--通知公告-->
+    <bean id="notificationDao" class="com.sxau.cyschool.dao.impl.NotificationDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="notificationService" class="com.sxau.cyschool.service.impl.NotificationServiceImpl">
+        <property name="titleDao" ref="notificationDao"/>
+    </bean>
+
+    <bean id="notificationAction" class="com.sxau.cyschool.controller.NotificationAction" scope="prototype">
+        <property name="titleService" ref="notificationService"/>
+        <property name="categoryService" ref="categoryService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--首页轮播图-->
+    <bean id="rotatePictureDao" class="com.sxau.cyschool.dao.impl.RotatePictureDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="rotateService" class="com.sxau.cyschool.service.impl.RotateServiceImpl">
+        <property name="titleDao" ref="rotatePictureDao"/>
+    </bean>
+
+    <bean id="rotatePictureAction" class="com.sxau.cyschool.controller.RotatePictureAction" scope="prototype">
+        <property name="titleService" ref="rotateService"/>
+        <property name="categoryService" ref="categoryService"/>
+    </bean>
+
+    <!--学校要闻-->
+    <bean id="schoolNewsDao" class="com.sxau.cyschool.dao.impl.SchoolNewsDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolNewsServiceImpl" class="com.sxau.cyschool.service.impl.SchoolNewsServiceImpl">
+        <property name="titleDao" ref="schoolNewsDao"/>
+    </bean>
+
+    <bean id="schoolNewsAction" class="com.sxau.cyschool.controller.SchoolNewsAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="schoolNewsServiceImpl"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--视频展示-->
+    <bean id="videoDaoImpl" class="com.sxau.cyschool.dao.impl.VideoDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="videoServiceImpl" class="com.sxau.cyschool.service.impl.VideoServiceImpl">
+        <property name="videoDao" ref="videoDaoImpl"/>
+    </bean>
+
+    <bean id="videoAction" class="com.sxau.cyschool.controller.VideoAction" scope="prototype">
+        <property name="videoService" ref="videoServiceImpl"/>
+    </bean>
+
+    <!--毕业风采-->
+    <bean id="schoolGraduationDao" class="com.sxau.cyschool.dao.impl.SchoolGraduationDaoImpl"
+          parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolNewsService" class="com.sxau.cyschool.service.impl.SchoolNewsServiceImpl">
+        <property name="titleDao" ref="schoolGraduationDao"/>
+    </bean>
+
+    <bean id="schoolGraduationAction" class="com.sxau.cyschool.controller.SchoolGraduationAction" scope="prototype">
+        <property name="titleService" ref="schoolNewsService"/>
+        <property name="categoryService" ref="categoryService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--校内图册-->
+    <bean id="schoolGalleryDao" class="com.sxau.cyschool.dao.impl.SchoolGalleryDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolGalleryService" class="com.sxau.cyschool.service.impl.SchoolGalleryServiceImpl">
+        <property name="schoolGalleryDao" ref="schoolGalleryDao"/>
+    </bean>
+
+    <bean id="schoolGallery" class="com.sxau.cyschool.controller.SchoolGalleryAction" scope="prototype">
+        <property name="schoolGalleryService" ref="schoolGalleryService"/>
+    </bean>
+
+    <!--校长致辞-->
+    <bean id="principalDao" class="com.sxau.cyschool.dao.impl.PrincipalDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="principalService" class="com.sxau.cyschool.service.impl.PrincipalServiceImpl">
+        <property name="titleDao" ref="principalDao"/>
+    </bean>
+
+    <bean id="principalAction" class="com.sxau.cyschool.controller.PrincipalAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="principalService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--现任领导-->
+    <bean id="leaderDao" class="com.sxau.cyschool.dao.impl.LeaderDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="leaderService" class="com.sxau.cyschool.service.impl.LeaderServiceImpl">
+        <property name="titleDao" ref="leaderDao"/>
+    </bean>
+
+    <bean id="leaderAction" class="com.sxau.cyschool.controller.LeaderAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="leaderService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--学校简介-->
+    <bean id="introduceDao" class="com.sxau.cyschool.dao.impl.IntroduceDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="introduceService" class="com.sxau.cyschool.service.impl.IntroduceServiceImpl">
+        <property name="titleDao" ref="introduceDao"/>
+    </bean>
+
+    <bean id="introduceAction" class="com.sxau.cyschool.controller.IntroduceAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="introduceService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--行政机构-->
+    <bean id="administrationDao" class="com.sxau.cyschool.dao.impl.AdministrationDaoImpl"
+          parent="baseHibernateDaoImpl"/>
+
+    <bean id="administrationlService" class="com.sxau.cyschool.service.impl.AdministrationlServiceImpl">
+        <property name="titleDao" ref="administrationDao"/>
+    </bean>
+
+    <bean id="administrationlAction" class="com.sxau.cyschool.controller.AdministrationlAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="administrationlService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--教辅机构-->
+    <bean id="teachingInstitutionsDao" class="com.sxau.cyschool.dao.impl.TeachingInstitutionsDaoImpl"
+          parent="baseHibernateDaoImpl"/>
+
+    <bean id="teachingInstitutionsService" class="com.sxau.cyschool.service.impl.TeachingInstitutionsServiceImpl">
+        <property name="titleDao" ref="teachingInstitutionsDao"/>
+    </bean>
+
+    <bean id="teachingInstitutionsAction" class="com.sxau.cyschool.controller.TeachingInstitutionsAction"
+          scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="teachingInstitutionsService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--直属及其他-->
+    <bean id="immediateAndOtherDao" class="com.sxau.cyschool.dao.impl.ImmediateAndOtherDaoImpl"
+          parent="baseHibernateDaoImpl"/>
+
+    <bean id="immediateAndOtherService" class="com.sxau.cyschool.service.impl.ImmediateAndOtherServiceImpl">
+        <property name="titleDao" ref="immediateAndOtherDao"/>
+    </bean>
+
+    <bean id="immediateAndOtherAction" class="com.sxau.cyschool.controller.ImmediateAndOtherAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="immediateAndOtherService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--师资服务-->
+    <bean id="schooServiceTeacherDao" class="com.sxau.cyschool.dao.impl.SchooServiceTeacherDaoImpl"
+          parent="baseHibernateDaoImpl"/>
+
+    <bean id="schoolServiceTeacher" class="com.sxau.cyschool.service.impl.SchoolServiceTeacherServiceImpl">
+        <property name="titleDao" ref="schooServiceTeacherDao"/>
+    </bean>
+
+    <bean id="schoolServiceTeacherAction" class="com.sxau.cyschool.controller.SchoolServiceTeacherAction"
+          scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="schoolServiceTeacher"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--特色专业-->
+    <bean id="featuredProfessionalDao" class="com.sxau.cyschool.dao.impl.FeaturedProfessionalDaoImpl"
+          parent="baseHibernateDaoImpl"/>
+
+    <bean id="featuredProfessionalService" class="com.sxau.cyschool.service.impl.FeaturedProfessionalServiceImpl">
+        <property name="titleDao" ref="featuredProfessionalDao"/>
+    </bean>
+
+    <bean id="featuredProfessionalAction" class="com.sxau.cyschool.controller.FeaturedProfessionalAction"
+          scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="featuredProfessionalService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--精品课程-->
+    <bean id="niceCourseDao" class="com.sxau.cyschool.dao.impl.NiceCourseDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="niceCourseService" class="com.sxau.cyschool.service.impl.NiceCourseServiceImpl">
+        <property name="titleDao" ref="niceCourseDao"/>
+    </bean>
+
+    <bean id="niceCourseAction" class="com.sxau.cyschool.controller.NiceCourseAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="niceCourseService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--学科建设-->
+    <bean id="subjectBuildDao" class="com.sxau.cyschool.dao.impl.SubjectBuildDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="subjectBuildService" class="com.sxau.cyschool.service.impl.SubjectBuildServiceImpl">
+        <property name="titleDao" ref="subjectBuildDao"/>
+    </bean>
+
+    <bean id="subjectBuildAction" class="com.sxau.cyschool.controller.SubjectBuildAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="subjectBuildService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--社会服务-->
+    <bean id="societyService" class="com.sxau.cyschool.dao.impl.SocietyServiceDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="societyServiceService" class="com.sxau.cyschool.service.impl.SocietyServiceServiceImpl">
+        <property name="titleDao" ref="societyService"/>
+    </bean>
+
+    <bean id="societyServiceAction" class="com.sxau.cyschool.controller.SocietyServiceAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="societyServiceService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--交流合作-->
+    <bean id="exchangeWorkDao" class="com.sxau.cyschool.dao.impl.ExchangeWorkDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="exchangeWorkService" class="com.sxau.cyschool.service.impl.ExchangeWorkServiceImpl">
+        <property name="titleDao" ref="exchangeWorkDao"/>
+    </bean>
+
+    <bean id="exchangeWorkAction" class="com.sxau.cyschool.controller.ExchangeWorkAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="exchangeWorkService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--招就招聘-->
+    <bean id="recruitmentDao" class="com.sxau.cyschool.dao.impl.RecruitmentDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="recruitmentService" class="com.sxau.cyschool.service.impl.RecruitmentServiceImpl">
+        <property name="titleDao" ref="recruitmentDao"/>
+    </bean>
+
+    <bean id="recruitmentAction" class="com.sxau.cyschool.controller.RecruitmentAction" scope="prototype">
+        <property name="categoryService" ref="categoryService"/>
+        <property name="titleService" ref="recruitmentService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--登陆-->
+    <bean id="loginDao" class="com.sxau.cyschool.dao.impl.LoginDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="loginService" class="com.sxau.cyschool.service.impl.LoginServiceImpl">
+        <property name="loginDao" ref="loginDao"/>
+    </bean>
+
+    <bean id="loginAction" class="com.sxau.cyschool.controller.LoginAction" scope="prototype">
+        <property name="loginService" ref="loginService"/>
+    </bean>
+
+    <!--======================================前台========================================-->
+
+    <!--首页-->
+    <bean id="homeDao" class="com.sxau.cyschool.dao.impl.HomeDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="homeService" class="com.sxau.cyschool.service.impl.HomeServiceImpl">
+        <property name="homeDao" ref="homeDao"/>
+    </bean>
+
+    <bean id="homeAction" class="com.sxau.cyschool.controller.HomeAction" scope="prototype">
+        <property name="imageService" ref="imageService"/>
+        <property name="videoService" ref="videoService"/>
+        <property name="homeService" ref="homeService"/>
+        <property name="titleService" ref="schoolNewsService"/>
+    </bean>
+
+    <!--======================================其他========================================-->
+    <!--分类-->
+    <bean id="categoryDao" class="com.sxau.cyschool.dao.impl.CategoryDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="categoryService" class="com.sxau.cyschool.service.impl.CategoryServiceImpl">
+        <property name="categoryDao" ref="categoryDao"/>
+    </bean>
+
+    <!--视频-->
+    <bean id="videoDao" class="com.sxau.cyschool.dao.impl.VideoDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="videoService" class="com.sxau.cyschool.service.impl.VideoServiceImpl">
+        <property name="videoDao" ref="videoDao"/>
+    </bean>
+
+    <!--图片-->
+    <bean id="imageDao" class="com.sxau.cyschool.dao.impl.ImageDaoImpl" parent="baseHibernateDaoImpl"/>
+
+    <bean id="imageService" class="com.sxau.cyschool.service.impl.ImageServiceImpl">
+        <property name="imageDao" ref="imageDao"/>
+    </bean>
+
+    <bean id="imageAction" class="com.sxau.cyschool.controller.ImageAction" scope="prototype">
+        <property name="imageService" ref="imageService"/>
+        <property name="homeService" ref="homeService"/>
+    </bean>
+
+    <!--七牛-->
+    <bean id="qiniuAction" class="com.sxau.cyschool.controller.QiniuAction" scope="prototype"/>
+</beans>

@@ -33,6 +33,11 @@ public class NotificationAction extends ActionSupport {
     private Page<Title> page;
 
     //查找通知
+    public String tour() throws Exception {
+        return "tourNotification";
+    }
+
+    //查找通知
     public String findNotification() throws Exception {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;

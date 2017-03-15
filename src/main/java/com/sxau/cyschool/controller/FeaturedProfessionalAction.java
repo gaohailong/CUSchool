@@ -33,6 +33,10 @@ public class FeaturedProfessionalAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+    public String tourFeature() throws Exception {
+        return "featureAdd";
+    }
+
     //查找现任领导
     public String featuredSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {

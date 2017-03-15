@@ -33,6 +33,10 @@ public class LeaderAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+    public String tour() throws Exception {
+        return "tourLeader";
+    }
+
     //查找现任领导
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {

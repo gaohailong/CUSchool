@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <constant name="struts.multipart.maxSize" value="209715900"/>
+    <package name="notificationAction" extends="struts-default">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="com.sxau.cyschool.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="loginInterceptor">
+                    <!--方法拦截器-->
+                    <param name="includeMethods">
+                        findSchool,findOneSchool,addSchool,deleteSchool,updateSchool,exchangeSchool,findOneExchange,addExchange,deleteServiceExchange,updateExchange,
+                        featuredSchool,addFeatured,deleteFeatured,updateFeatured,findImmediate,findOneImmediate,addImmediate,deleteImmediate,updateImmediate,
+                        findNice,findOneNice,addNice,deleteNice,updateNice,findNotification,findOneNotification,addNotification,deleteNotification,updateNotification,
+                        findOne,findRotate,findOneSchoolRotate,addRotate,deleteSchoolRotate,updateSchoolRotate,findService,findOneService,addService,deleteService,updateService,
+                        findBuild,findOneBuild,addBuild,deleteBuild,updateBuild
+                    </param>
+                    <param name="excludeMethods">
+                        findAll,findOneSchoolPre
+                    </param>
+                </interceptor-ref>
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="loginStack"></default-interceptor-ref>
+        <global-results>
+            <result name="success">/background/success.jsp</result>
+            <result name="error">/background/fail.jsp</result>
+            <result name="fail">/background/login.jsp</result>
+        </global-results>
+        <!--校内通知-->
+        <action name="*Title" class="notificationAction" method="{1}">
+            <result name="findNotification">/background/school_notification.jsp</result>
+            <result name="addNotification">/background/school_notification_add.jsp</result>
+            <result name="updateNotification">/background/school_notification_update.jsp</result>
+            <result name="findPreNotification">/foreground/notification_list.jsp</result>
+        </action>
+
+        <!--首页轮播图-->
+        <action name="*Picture" class="rotatePictureAction" method="{1}">
+            <result name="findRotate">/background/school_rotate_picture.jsp</result>
+            <result name="findOneSchoolRotate">/background/school_graduation_update.jsp</result>
+        </action>
+
+        <!--学校要闻-->
+        <action name="*News" class="schoolNewsAction" method="{1}">
+            <result name="findSchoolNews">/background/school_news.jsp</result>
+            <result name="updateSchoolNews">/background/school_news_update.jsp</result>
+            <result name="findPreSchool">/foreground/news_list.jsp</result>
+        </action>
+
+        <!--视频展示-->
+        <action name="*Video" class="videoAction" method="{1}">
+            <result name="findVideo">/background/school_video.jsp</result>
+            <result name="findOneVideo">/background/school_video_update.jsp</result>
+            <result name="qiniuToken">/background/school_video_add.jsp</result>
+        </action>
+
+        <!--毕业风采-->
+        <action name="*Graduation" class="schoolGraduationAction" method="{1}">
+            <result name="findGraduation">/background/school_graduation.jsp</result>
+            <result name="updateSchoolGraduation">/background/school_graduation_update.jsp</result>
+            <result name="findPreSchool">/foreground/graduation_list.jsp</result>
+        </action>
+
+        <!--校内图册-->
+        <action name="*Gallery" class="schoolGallery" method="{1}">
+            <result name="findSchoolGallery">/background/school_gallery.jsp</result>
+            <result name="updateSchoolGallery">/background/school_gallery_update.jsp</result>
+            <result name="addSchoolGallery">/background/school_gallery_add.jsp</result>
+            <result name="successAdd">/background/success.jsp</result>
+        </action>
+
+        <!--校长致辞-->
+        <action name="*Principal" class="principalAction" method="{1}">
+            <result name="findPrincipal">/background/school_principal.jsp</result>
+            <result name="updatePrincipal">/background/school_principal_update.jsp</result>
+            <result name="addPrincipal">/background/school_principal_add.jsp</result>
+            <result name="findDataPre">/foreground/principal.jsp</result>
+        </action>
+
+        <!--现任领导-->
+        <action name="*Leader" class="leaderAction" method="{1}">
+            <result name="findLeader">/background/school_lead.jsp</result>
+            <result name="updateLeader">/background/school_lead_update.jsp</result>
+            <result name="findAllLeader">/foreground/leader.jsp</result>
+            <result name="findPreSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--学校简介-->
+        <action name="*Introduce" class="introduceAction" method="{1}">
+            <result name="findIntroduce">/background/school_introduce.jsp</result>
+            <result name="updateIntroduce">/background/school_introduce_update.jsp</result>
+            <result name="addIntroduce">/background/school_introduce_add.jsp</result>
+            <result name="findDataPreIntroduce">/foreground/school_introduce.jsp</result>
+        </action>
+
+        <!--行政机构-->
+        <action name="*Administration" class="administrationlAction" method="{1}">
+            <result name="findSchoolAdministration">/background/administration.jsp</result>
+            <result name="updateSchoolAdministration">/background/administration_update.jsp</result>
+            <result name="findAllData">/foreground/administration.jsp</result>
+            <result name="adminAdd">/background/administration_add.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--教辅机构-->
+        <action name="*Teaching" class="teachingInstitutionsAction" method="{1}">
+            <result name="findInstitution">/background/teaching_institutions.jsp</result>
+            <result name="findOneInstitutions">/background/teaching_institutions_update.jsp</result>
+            <result name="findAllData">/foreground/teaching_institutions.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--直属及其他-->
+        <action name="*Other" class="immediateAndOtherAction" method="{1}">
+            <result name="findImmediateOther">/background/immediate_and_other.jsp</result>
+            <result name="updateSchoolAdministration">/background/immediate_and_other_update.jsp</result>
+            <result name="findAllData">/foreground/immediate_and_others.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--师资服务-->
+        <action name="*Teacher" class="schoolServiceTeacherAction" method="{1}">
+            <result name="findServiceTeacher">/background/teachers_service.jsp</result>
+            <result name="findOneTeacherService">/background/teacher_service_update.jsp</result>
+            <result name="findAllData">/foreground/teacher_service.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--特色专业-->
+        <action name="*Professional" class="featuredProfessionalAction" method="{1}">
+            <result name="findFeatured">/background/featured_professional.jsp</result>
+            <result name="updateFeatured">/background/featured_professional_update.jsp</result>
+            <result name="findAllData">/foreground/special_major.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--精品课程-->
+        <action name="*Course" class="niceCourseAction" method="{1}">
+            <result name="findNiceCourse">/background/nice_course.jsp</result>
+            <result name="updateNiceCourse">/background/nice_course_update.jsp</result>
+            <result name="findAllData">/foreground/nice_course.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--学科建设-->
+        <action name="*Subject" class="subjectBuildAction" method="{1}">
+            <result name="findBuildSubject">/background/subject_build.jsp</result>
+            <result name="addBuildSubject">/background/subject_add.jsp</result>
+            <result name="updateOneBuildSubject">/background/subject_update.jsp</result>
+            <result name="findAllData">/foreground/subject_build.jsp</result>
+        </action>
+
+        <!--社会服务-->
+        <action name="*Society" class="societyServiceAction" method="{1}">
+            <result name="findServiceSociety">/background/society_service.jsp</result>
+            <result name="addServiceSociety">/background/society_service_add.jsp</result>
+            <result name="updateOneServiceSociety">/background/society_service_update.jsp</result>
+            <result name="findAllData">/foreground/society_service.jsp</result>
+            <result name="findPreOneSchool">/foreground/detail.jsp</result>
+        </action>
+
+        <!--交流合作-->
+        <action name="*Work" class="exchangeWorkAction" method="{1}">
+            <result name="findExchangeSchool">/background/exchange.jsp</result>
+            <result name="addExchangeSchool">/background/exchange_add.jsp</result>
+            <result name="updateOneExchange">/background/exchange_update.jsp</result>
+            <result name="findAllData">/foreground/exchange_work.jsp</result>
+        </action>
+
+        <!--招就招聘-->
+        <action name="*Recruitment" class="recruitmentAction" method="{1}">
+            <result name="findRecruitmentSchool">/background/for_recruitment.jsp</result>
+            <result name="addRecruitmentSchool">/background/for_recruitment_add.jsp</result>
+            <result name="updateOneRecruitment">/background/for_recruitment_update.jsp</result>
+            <result name="findAllData">/foreground/recruitment.jsp</result>
+        </action>
+
+        <!--登陆-->
+        <action name="*Login" class="loginAction" method="{1}">
+            <!--<interceptor-ref name="loginStack"></interceptor-ref>-->
+            <result name="main">/background/inbox.jsp</result>
+            <result name="fail">/background/login.jsp</result>
+
+        </action>
+
+        <!--===============================前台=====================================-->
+        <!--首页-->
+        <action name="*Home" class="homeAction" method="{1}">
+            <result name="findAllHome">/foreground/index.jsp</result>
+            <result name="findOneTitle">/foreground/detail.jsp</result>
+            <result name="findSearch">/foreground/search_list.jsp</result>
+        </action>
+
+        <action name="*Image" class="imageAction" method="{1}">
+            <result name="findPrePic">/foreground/image_list.jsp</result>
+        </action>
+        
+    </package>
+
+</struts>

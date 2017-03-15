@@ -33,6 +33,11 @@ public class SchoolGraduationAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+    public String tour() throws Exception {
+
+        return "tourSchoolGallery";
+    }
+
     //查找通知
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {

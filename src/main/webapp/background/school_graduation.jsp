@@ -480,7 +480,7 @@ To change this template use File | Settings | File Templates.
 				<div class="separator"></div>
 				<!-- /PAGE HEADER -->
 				<div class="row">
-					<div class="col-md-12"><a href="<%request.getContextPath();%>/background/school_graduation_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+					<div class="col-md-12"><a href="tourGraduation.action" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
 					<div class="col-md-12" style="margin-top: 20px">
 						<!-- BOX -->
 						<div class="box border inverse">
