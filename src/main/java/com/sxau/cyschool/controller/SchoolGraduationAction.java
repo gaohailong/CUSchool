@@ -35,7 +35,7 @@ public class SchoolGraduationAction extends ActionSupport {
 
     public String tour() throws Exception {
 
-        return "tourSchoolGallery";
+        return "tourSchoolGraduation";
     }
 
     //查找通知

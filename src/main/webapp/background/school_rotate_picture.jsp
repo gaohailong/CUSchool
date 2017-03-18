@@ -7,6 +7,11 @@ To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	request.setAttribute("basePath", basePath);
+%>
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -491,7 +496,7 @@ To change this template use File | Settings | File Templates.
 		<div id="main-content">
 			<div class="container">
 				<div class="separator"></div>
-                <div class="col-md-12"><a href="<%request.getContextPath();%>/background/school_rotate_add.jsp" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+                <div class="col-md-12"><a href="tourPicture.action" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
                 <div class="col-md-12" style="margin-top: 20px;">
 					<!-- BASIC -->
 						<div class="box-body big">

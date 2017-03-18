@@ -17,10 +17,10 @@ function addNotification() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -43,10 +43,10 @@ function updateNotification(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -77,10 +77,10 @@ function addRotatePicture() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -104,10 +104,10 @@ function updateRotatePicture(tid) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -136,10 +136,10 @@ function addSchoolNews() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -161,10 +161,10 @@ function updateSchoolNews(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -194,10 +194,10 @@ function addGraduation() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -220,10 +220,10 @@ function updateSchoolGraduation(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -252,10 +252,10 @@ function addPrincipal() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -277,10 +277,10 @@ function updatePrincipal(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -309,10 +309,10 @@ function addLeader() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -334,10 +334,10 @@ function updateLeader(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -366,10 +366,10 @@ function addIntroduce() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -391,10 +391,10 @@ function updateIntroduce(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -423,10 +423,10 @@ function addAdministration() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -448,10 +448,10 @@ function updateAdministration(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -481,10 +481,10 @@ function addTeachingInstitutions() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -506,10 +506,10 @@ function updateTeachingInstitutions(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -538,10 +538,10 @@ function addImmediateAndOther() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -563,10 +563,10 @@ function updateImmediateAndOther(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -595,10 +595,10 @@ function addTeacherService() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -622,10 +622,10 @@ function updateTeacherService(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -654,10 +654,10 @@ function addFeaturedProfessional() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -680,10 +680,10 @@ function updateFeaturedProfessional(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -712,10 +712,10 @@ function addNiceCourse() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -738,10 +738,10 @@ function updateNiceCourse(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -770,10 +770,10 @@ function addBuildSubject() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -795,10 +795,10 @@ function updateBuildSubject(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -827,10 +827,10 @@ function addSocietyService() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -852,10 +852,10 @@ function updateSocietyService(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -884,10 +884,10 @@ function addExchange() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -909,10 +909,10 @@ function updateExchangeWork(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -941,10 +941,10 @@ function addRecruitment() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -966,10 +966,10 @@ function updateRecruitment(id) {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = "/cyschool/background/success.jsp";
+                window.location.href = getRootPath()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = "/cyschool/background/fail.jsp";
+                window.location.href = getRootPath()+"/fail.jsp";
             }
         });
     }
@@ -1020,4 +1020,27 @@ function getPictureUrl(htmlStr) {
     return finalData;
 }
 
+
+function getRootPath() {
+    //获取当前网址，如： http://localhost:9527/zdss-web/login/login.do
+    var curWwwPath = window.document.location.href;
+    //   console.log("当前网址：" + curWwwPath);
+
+    //获取主机地址之后的目录，如：zdss-web/login/login.do
+    var pathName = window.document.location.pathname;
+    //  console.log("当前路径：" + pathName);
+
+    var pos = curWwwPath.indexOf(pathName);
+    //   console.log("路径位置：" + pos);
+
+    //获取主机地址，如： http://localhost:9527
+    var localhostPath = curWwwPath.substring(0, pos);
+    console.log("当前主机地址：" + localhostPath);
+
+    //获取带"/"的项目名，如：/zdss-web
+    var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+    console.log("当前项目名称：" + projectName);
+
+    return localhostPath+projectName;
+}
 

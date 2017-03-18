@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Created by gaohailong on 2016/11/22.
- * 特色专业
+ * 行政机构
  */
 public class AdministrationlAction extends ActionSupport {
     //注入元素
@@ -33,7 +33,7 @@ public class AdministrationlAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
-    public String tourSchool() throws Exception {
+    public String adminAdd() throws Exception {
 
         return "adminAdd";
     }

@@ -88,7 +88,7 @@ FileProgress.prototype.setChunkProgess = function(chunk_size) {
         return false;
     }
 
-    var viewProgess = $('<button class="btn btn-default">查看分块上传进度</button>');
+    var viewProgess = $('<button class="btn btn-default" style="display: none;">查看分块上传进度</button>');
 
     var progressBarChunkTr = $('<tr class="chunk-status-tr"><td colspan=3></td></tr>');
     var progressBarChunk = $('<div/>');

@@ -30,6 +30,10 @@ public class RotatePictureAction extends ActionSupport {
     //变量
     private Page<Title> page;
 
+    public String tour() throws Exception {
+        return "school_rotate_add";
+    }
+
     //查找所有轮播图文章
     public String findRotate() throws Exception {
         if (nowPage == null || nowPage == 0) {
