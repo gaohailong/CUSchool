@@ -14,39 +14,6 @@
           <root url="file://$MODULE_DIR$/src/main/resources" />
         </sourceRoots>
       </configuration>
-      <facet type="Struts2" name="Struts 2">
-        <configuration>
-          <fileset id="s2fileset" name="My Fileset " removed="false">
-            <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
-          </fileset>
-          <fileset id="s2fileset2" name="My Fileset 2" removed="false">
-            <file>jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/struts2-core-2.3.15.3.jar!/struts-default.xml</file>
-            <file>jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/struts2-json-plugin-2.3.15.1.jar!/struts-plugin.xml</file>
-            <file>jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/struts2-spring-plugin-2.3.15.3.jar!/struts-plugin.xml</file>
-            <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
-          </fileset>
-          <propertiesKeys disabled="false" />
-        </configuration>
-      </facet>
-    </facet>
-    <facet type="hibernate" name="Hibernate">
-      <configuration>
-        <datasource-map>
-          <unit-entry name="config:hibernate.cfg.xml" />
-        </datasource-map>
-        <naming-strategy-map />
-        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/config/hibernate.cfg.xml" />
-      </configuration>
-    </facet>
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/config/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/background/font-awesome/fonts/fontawesome-webfont.eot</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/background/font-awesome/fonts/FontAwesome.otf</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/background/bootstrap-dist/css</file>
-        </fileset>
-      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
@@ -60,7 +27,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="asm-3.3" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:4.1.5.Final" level="project" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.1.0.GA" level="project" />
@@ -98,5 +64,6 @@
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.6" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.6" level="project" />
     <orderEntry type="library" name="Maven: jstl:jstl:1.2" level="project" />
+    <orderEntry type="library" name="asm-3.3" level="project" />
   </component>
 </module>
