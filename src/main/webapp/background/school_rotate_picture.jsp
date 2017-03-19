@@ -496,7 +496,7 @@ To change this template use File | Settings | File Templates.
 		<div id="main-content">
 			<div class="container">
 				<div class="separator"></div>
-                <div class="col-md-12"><a href="tourPicture.action" class="col-md-offset-10"><button class="btn btn-primary">添加文章</button></a></div>
+                <div class="col-md-12"><a href="tourPicture.action" class="col-md-offset-10"><button class="btn btn-primary">添加轮播图</button></a></div>
                 <div class="col-md-12" style="margin-top: 20px;">
 					<!-- BASIC -->
 						<div class="box-body big">
