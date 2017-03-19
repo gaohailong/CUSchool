@@ -46,7 +46,7 @@
         <action name="*Picture" class="rotatePictureAction" method="{1}">
             <result name="findRotate">/background/school_rotate_picture.jsp</result>
             <result name="findOneSchoolRotate">/background/school_graduation_update.jsp</result>
-            <result name="school_rotate_add">/background/school_graduation_add.jsp</result>
+            <result name="school_rotate_add">/background/school_rotate_add.jsp</result>
         </action>
 
         <!--学校要闻-->
