@@ -1,5 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    request.setAttribute("basePath", basePath);
+%>
 <html>
 
 <head>
@@ -317,7 +322,7 @@
 
                                     <article class="block_author_post">
                                         <div class="f_pic">
-                                            <a href="${image.ILink}" onclick="javascript:" class="general_pic_hover zoom no_fx" data-rel="prettyPhoto" title="${image.IDes}"><img style="width: 288px;height: 170px" src="${image.ILink}" alt="" /></a>
+                                            <a href="<%=basePath%>${image.ILink}"  onclick="javascript:" class="general_pic_hover zoom no_fx" data-rel="prettyPhoto" title="${image.IDes}"><img style="width: 288px;height: 170px" src="<%=basePath%>${image.ILink}" alt="" /></a>
                                             <!-- <span class="date">09:52  11 July 2012</span> -->
                                         </div>
 
