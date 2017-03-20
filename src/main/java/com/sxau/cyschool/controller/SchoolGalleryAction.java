@@ -31,6 +31,12 @@ public class SchoolGalleryAction extends ActionSupport {
     private String messageDes;
     private String messagePic;
 
+
+    public String tour() throws Exception {
+
+        return "addSchoolGallery";
+    }
+
     public String findSchool() throws Exception {
         if (nowPage == null || nowPage == 0) {
             nowPage = 1;
@@ -80,7 +86,7 @@ public class SchoolGalleryAction extends ActionSupport {
         Image image = new Image();
         image.setIDes(des);
         image.setIClick(0);
-        image.setILink("/cyschool/upload/gallery/" + unique);
+        image.setILink("upload/gallery/" + unique);
         schoolGalleryService.savePhoto(image);
         return SUCCESS;
 
@@ -93,7 +99,7 @@ public class SchoolGalleryAction extends ActionSupport {
             imageValue.setIDes(des);
         }
         if(imageaFileName!=null&&!"".equals(imageaFileName)){
-            imageValue.setILink("/cyschool/upload/gallery/" + unique);
+            imageValue.setILink("upload/gallery/" + unique);
             String path = ServletActionContext.getServletContext().getRealPath("/upload/gallery/" + unique);
             File file = new File(path);
             if (!file.exists())

@@ -19,10 +19,10 @@ function addVideo() {
             data: data,
             dataType: "text",
             success: function (data) {
-                window.location.href = getRootPath2()+"/background/success.jsp";
+                window.location.href = getRootPath2()+"/success.jsp";
             },
             error: function (error) {
-                window.location.href = getRootPath2()+"/background/fail.jsp";
+                window.location.href = getRootPath2()+"/fail.jsp";
             }
         });
     }
@@ -48,10 +48,10 @@ function updateVideo(id) {
                 data: data,
                 dataType: "text",
                 success: function (data) {
-                    window.location.href = getRootPath2()+"/background/success.jsp";
+                    window.location.href = getRootPath2()+"/success.jsp";
                 },
                 error: function (error) {
-                    window.location.href =getRootPath2()+ "/background/fail.jsp";
+                    window.location.href =getRootPath2()+ "/fail.jsp";
                 }
             });
         }else {
@@ -62,10 +62,10 @@ function updateVideo(id) {
                 data: default_data,
                 dataType: "text",
                 success: function (data) {
-                    window.location.href = getRootPath2()+"/background/success.jsp";
+                    window.location.href = getRootPath2()+"/success.jsp";
                 },
                 error: function (error) {
-                    window.location.href = getRootPath2()+"/background/fail.jsp";
+                    window.location.href = getRootPath2()+"/fail.jsp";
                 }
             });
         }

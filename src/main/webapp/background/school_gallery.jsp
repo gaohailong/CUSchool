@@ -502,7 +502,7 @@
 								<div class="box-title">
 									<h4><i class="fa fa-bars"></i>相册</h4>
 									<div class="tools">
-										<a href="school_gallery_add.jsp"><button class="btn btn-success tip-right" >增加</button></a>
+										<a href="tourGallery.action"><button class="btn btn-success tip-right" >增加</button></a>
 									</div>
 								</div>
 								<div class="box-body clearfix">
@@ -510,7 +510,7 @@
 										<c:forEach var="image" items="${images}">
 											<div class="col-md-3  item">
 												<div class="filter-content">
-													<img src="${image.ILink}" alt="" style="width: 303px;height: 227px" class="img-responsive" />
+													<img src="<%=basePath%>${image.ILink}" alt="" style="width: 303px;height: 227px" class="img-responsive" />
 													<div class="hover-content">
 														<h4 style="font-size: 12px;">${image.IDes}</h4>
 														<a class="btn btn-danger hover-link" href="deleteSchoolGallery.action?imageId=${image.IId}">
