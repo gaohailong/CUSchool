@@ -61,6 +61,7 @@ public class VideoAction extends ActionSupport {
             video.setVLink(link);
             video.setVDes(desc);
             video.setVRead(0);
+            System.out.print(link+"获取到的链接是这个");
             video.setVDate(new Date());
             videoService.saveVideo(video);
             return null;
