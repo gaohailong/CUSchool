@@ -14,7 +14,7 @@ public class ImageDaoImpl extends BaseHibernateDaoImpl<Image> implements ImageDa
     public Image queryImage() throws Exception {
         String hql = "from Image i order by i.IId desc limit 0,1";
         List<Image> images = this.findData(hql);
-        if (images != null) {
+        if (images != null && images.size()!= 0) {
             Image image = images.get(0);
             return image;
         } else {

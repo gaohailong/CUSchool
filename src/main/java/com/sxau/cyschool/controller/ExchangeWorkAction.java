@@ -97,7 +97,7 @@ public class ExchangeWorkAction extends ActionSupport {
         titleService.updateClickReading(tid);
         page = titleService.queryTitleByCondition(title, nowPage, 10);
         titleList = page.getRows();
-        if (titleList != null) {
+        if (titleList != null&&titleList.size()!= 0) {
             title = titleList.get(0);
         }
         notifications = homeService.queryNotification();
