@@ -519,7 +519,7 @@
 														<a class="btn btn-success hover-link" href="findOneSchoolGallery.action?imageId=${image.IId}">
 															<i class="fa fa-edit fa-1x"></i>
 														</a>
-														<a class="btn btn-warning hover-link colorbox-button" href="${image.ILink}" title="${image.IDes}">
+														<a class="btn btn-warning hover-link colorbox-button" href="<%=basePath%>${image.ILink}" title="${image.IDes}">
 															<i class="fa fa-search-plus fa-1x"></i>
 														</a>
 													</div>

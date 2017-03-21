@@ -1,5 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"  isErrorPage="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    request.setAttribute("basePath", basePath);
+%>
 <html>
 <head>
     <title>首页</title>
@@ -482,9 +487,9 @@
 
                         <div class="content">
                             <a href="findPrePicImage.action" class="view_all" style="color: #f24024">更多</a>
-                            <div class="media"><a href="${image.ILink}"
+                            <div class="media"><a href="<%=basePath%>${image.ILink}"
                                                   class="general_pic_hover zoom no_fx" data-rel="prettyPhoto"
-                                                  title="${image.IDes}"><img src="${image.ILink}" alt=""/></a>
+                                                  title="${image.IDes}"><img src="<%=basePath%>${image.ILink}" alt=""/></a>
                             </div>
                             <p><a href="javascript:void(0)">${image.IDes}</a> <img src="images/icon_photo.gif" alt=""/></p>
                             <%--<p class="date">${image.IDes}</p>--%>
