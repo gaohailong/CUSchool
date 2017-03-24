@@ -12,7 +12,7 @@ public class ImageDaoImpl extends BaseHibernateDaoImpl<Image> implements ImageDa
     private ImageDao imageDao;
 
     public Image queryImage() throws Exception {
-        String hql = "from Image i order by i.IId desc limit 0,1";
+        String hql = "from Image i order by i.IId desc ";
         List<Image> images = this.findData(hql);
         if (images != null && images.size()!= 0) {
             Image image = images.get(0);
@@ -23,7 +23,7 @@ public class ImageDaoImpl extends BaseHibernateDaoImpl<Image> implements ImageDa
     }
 
     public void imageClickRead(Integer id) throws Exception {
-        String hql = "update Image i set i.IClic=i.IClic+1 where i.IId=" + id;
+        String hql = "update Image i set i.IClick=i.IClick+1 where i.IId=" + id;
         int count = this.executeUpdate(hql);
     }
 

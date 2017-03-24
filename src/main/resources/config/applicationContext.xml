@@ -32,7 +32,9 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
         <property name="configLocation" value="classpath:config/hibernate.cfg.xml"/>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>-->
+                <!--oracle数据库配置-->
+                <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
@@ -388,5 +390,5 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
     </bean>
 
     <!--七牛-->
-    <bean id="qiniuAction" class="com.sxau.cyschool.controller.QiniuAction" scope="prototype"/>
+    <!--<bean id="qiniuAction" class="com.sxau.cyschool.controller.QiniuAction" scope="prototype"/>-->
 </beans>
